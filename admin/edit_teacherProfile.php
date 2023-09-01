@@ -3493,7 +3493,7 @@
                         <div role="tabpanel" class="tab-pane" id="other">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <a name="#other1"></a>
-                                <h3 class="semi-bold text-primary">Other Information asdasda</h3>
+                                <h3 class="semi-bold text-primary">Other Informations</h3>
                                 
                                 <!-- <div class="row">
                                     <div class="col-auto">
