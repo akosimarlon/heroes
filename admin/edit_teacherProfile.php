@@ -6585,7 +6585,7 @@
         var desList = {
             Teaching : ['Teacher', 'District Principal In-Charge', 'School Head / Teacher In-Charge'],
 
-            Teaching_Related :  ['CID', 'SGOD', 'District Supervisor', 'District Principal In-Charge', 'School Head / Teacher In-Charge'],
+            Teaching_Related :  ['CID', 'SGOD', 'District Supervisor', 'District Principal In-Charge', 'School Head / Teacher In-Charge', 'Head Teacher','Guidance Counselor'],
 
             Non_Teaching :  ['School','District','Division']   
         };
@@ -6713,13 +6713,16 @@
         $(document).ready(function() {
             var philnum = document.querySelector('#philnum');
 
-            philnum.addEventListener('keyup', function(e){
-            if (event.key != 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
-                philnum.value += '-';
-            }
-            if (event.key == 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
-                philnum.value += '-';
-            }
+            philnum.addEventListener('keypress', function(e){
+                if (isNaN(e.key)) e.preventDefault();
+                else{
+                    if (event.key != 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
+                        philnum.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
+                        philnum.value += '-';
+                    }
+                }
             });
         });
 
@@ -6727,13 +6730,17 @@
         $(document).ready(function() {
             var sssnum = document.querySelector('#sssnum');
 
-            sssnum.addEventListener('keyup', function(e){
-            if (event.key != 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
-                sssnum.value += '-';
-            }
-            if (event.key == 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
-                sssnum.value += '-';
-            }
+            sssnum.addEventListener('keypress', function(e){
+                if (isNaN(e.key)) e.preventDefault();
+                else{
+                    if (event.key != 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
+                        sssnum.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
+                        sssnum.value += '-';
+                    }
+                }
+            
             });
         });
 
@@ -6741,8 +6748,9 @@
         $(document).ready(function() {
             var tinnum = document.querySelector('#tinnum');
 
-            tinnum.addEventListener('keyup', function(e){
-                if(!isNaN(event.key)){
+            tinnum.addEventListener("keypress", function (e) {
+                if (isNaN(e.key)) e.preventDefault();
+                else{
                     if (event.key != 'Backspace' && (tinnum.value.length === 3 || tinnum.value.length === 7 || tinnum.value.length === 11)){
                         tinnum.value += '-';
                     }
@@ -6750,10 +6758,6 @@
                         tinnum.value += '-';
                     }
                 }
-                else{
-                    event.preventDefault();
-                } 
-
             });
         });
 
