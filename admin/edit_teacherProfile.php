@@ -1789,7 +1789,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">TIN No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['tin_no'];?>" name="tin" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
+                                                    <input type="tel" value="<?=$user['tin_no'];?>" id="tinnum" name="tin" onKeyPress="if(this.value.length==15) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -4199,7 +4199,10 @@
                                             
                                             <div class="col-auto mb-5">
                                                 <label for="">Designation</label>
-                                                <input type="text" name="designation" value="<?=$emp_rec['designation'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
+                                                <!-- <input type="text" name="designation" value="" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus> -->
+                                                <select name="designation" id="child_designation" class="form-control border-success" required >
+                                                    <option value="">--Select Designation--</option>
+                                                </select>
                                             </div>
                                             
                                             <h5 class="semi-bold text-primary">School Information</h5> 
@@ -6572,17 +6575,29 @@
                 foreach($users_run as $emp_rec){
         ?>
         var mList = {
-            Teaching : ['Teacher I', 'Teacher II', 'Teacher III', 'Master Teacher I', 'Master Teacher II', 'Master Teacher III', 'Special Education Teacher I', 'Special Education Teacher II', 'Special Education Teacher III', 'Special Science Teacher I','Head Teacher I', 'Head Teacher II', 'Head Teacher III', 'Head Teacher IV', 'Head Teacher V', 'School Principal I', 'School Principal II', 'School Principal III', 'School Principal IV'],
+            Teaching : ['Teacher I', 'Teacher II', 'Teacher III', 'Master Teacher I', 'Master Teacher II', 'Master Teacher III', 'Special Education Teacher I', 'Special Education Teacher II', 'Special Education Teacher III', 'Special Science Teacher I'],
 
-            Teaching_Related :  ['Public School District Supervisor', 'Chief Education Supervisor', 'Education Program Supervisor', 'Education Program Supervisor II','Senior Education Program Specialist'],
+            Teaching_Related :  ['Chief Education Supervisor', 'Education Program Supervisor', 'Education Program Specialist II','Head Teacher I', 'Head Teacher II', 'Head Teacher III', 'Head Teacher IV', 'Head Teacher V', 'School Principal I', 'School Principal II', 'School Principal III', 'School Principal IV', 'Public School District Supervisor','Guidance Counselor I','Guidance Counselor II','Guidance Counselor III'],
 
-            Non_Teaching :  ['Administrative Aide I', 'Administrative Aide II', 'Administrative Aide III', 'Administrative Aide IV', 'Administrative Aide V', 'Administrative Aide VI', 'Administrative Assistant I', 'Administrative Assistant II', 'Administrative Assistant III', 'Administrative Assistant IV', 'Administrative Assistant V', 'Administrative Assistant VI', 'Schools Division Superintendent', 'Assistant Schools Division Superintendent', 'Information Technolgy Officer I', 'Legal Officer III', 'Administrative Office IV', 'Administrative Office V', 'Security Guard I', 'Accountant III', 'Project Development Officer I', 'Project Development Officer II', 'Engineer III', 'Dentist II', 'Dental Aide', 'Nurse II', 'Auditor III']            
+            Non_Teaching :  ['Administrative Aide I', 'Administrative Aide II', 'Administrative Aide III', 'Administrative Aide IV', 'Administrative Aide V', 'Administrative Aide VI', 'Administrative Assistant I', 'Administrative Assistant II', 'Administrative Assistant III', 'Administrative Assistant IV', 'Administrative Assistant V', 'Administrative Assistant VI', 'Schools Division Superintendent', 'Assistant Schools Division Superintendent', 'Senior Education Program Specialist', 'Information Technology Officer I', 'Legal Officer III', 'Administrative Office IV', 'Administrative Office V', 'Security Guard I', 'Accountant III', 'Project Development Officer I', 'Project Development Officer II', 'Engineer III', 'Dentist II', 'Dental Aide', 'Nurse II', 'Planning Office I', 'Planning Office II', 'Planning Office III']            
+        };
+
+        var desList = {
+            Teaching : ['Teacher', 'District Principal In-Charge', 'School Head / Teacher In-Charge'],
+
+            Teaching_Related :  ['CID', 'SGOD', 'District Supervisor', 'District Principal In-Charge', 'School Head / Teacher In-Charge'],
+
+            Non_Teaching :  ['School','District','Division']   
         };
 
         el_parent = document.getElementById("parent_select");
         el_child = document.getElementById("child_select");
+        el_designation = document.getElementById("child_designation");
+
         const $select = document.querySelector('#parent_select');
         const $sel = document.querySelector('#child_select');
+        const $des = document.querySelector('#child_designation');
+
         for (key in mList) {
             el_parent.innerHTML = el_parent.innerHTML + '<option>'+ key +'</option>';
         }
@@ -6591,17 +6606,27 @@
         
         el_parent.addEventListener('change', function populate_child(e){
             el_child.innerHTML = '';
+            el_designation.innerHTML = '';
             itm = e.target.value;            
+            //alert (itm);
             if(itm in mList){                
                     for (i = 0; i < mList[itm].length; i++) {
                         el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';                        
                     }                                     
             }  
+            
+            if(itm in desList){                
+                    for (i = 0; i < desList[itm].length; i++) {
+                        el_designation.innerHTML = el_designation.innerHTML + '<option>'+ desList[itm][i] +'</option>';                        
+                    }                                     
+            }  
         });
            
         $(document).ready(function populate_child(e) {            
-            el_child.innerHTML = '';            
+            el_child.innerHTML = '';   
+            el_designation.innerHTML = '';         
             itm = '<?=$emp_rec['position_type']?>';
+            
             if(itm in mList){                
                     for (i = 0; i < mList[itm].length; i++) {
                         el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';   
@@ -6609,6 +6634,14 @@
                     }     
                                                     
             }  
+
+            if(itm in desList){                
+                    for (i = 0; i < desList[itm].length; i++) {
+                        el_designation.innerHTML = el_designation.innerHTML + '<option>'+ desList[itm][i] +'</option>';    
+                        $des.value = '<?=$emp_rec['designation']?>';                                            
+                    }                                     
+            }
+
         });                    
 
       <?php
@@ -6709,12 +6742,18 @@
             var tinnum = document.querySelector('#tinnum');
 
             tinnum.addEventListener('keyup', function(e){
-            if (event.key != 'Backspace' && (tinnum.value.length === 2 || tinnum.value.length === 10)){
-                tinnum.value += '-';
-            }
-            if (event.key == 'Backspace' && (tinnum.value.length === 2 || tinnum.value.length === 10)){
-                tinnum.value += '-';
-            }
+                if(!isNaN(event.key)){
+                    if (event.key != 'Backspace' && (tinnum.value.length === 3 || tinnum.value.length === 7 || tinnum.value.length === 11)){
+                        tinnum.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (tinnum.value.length === 3 || tinnum.value.length === 7 || tinnum.value.length === 11)){
+                        tinnum.value += '-';
+                    }
+                }
+                else{
+                    event.preventDefault();
+                } 
+
             });
         });
 
