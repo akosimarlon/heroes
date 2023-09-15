@@ -2226,6 +2226,10 @@ if(isset($_POST['savePersonal'])){
     $dual_birth = '0';
     $dual_natural = '0';
 
+    if($sss == ""){
+        $sss = "N/A";
+    }
+
     $radioCitizen = clean($_POST['citizen']);
     if($radioCitizen == "filipino"){
         $is_filipino = "yes";

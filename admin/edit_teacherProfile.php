@@ -1779,8 +1779,10 @@
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">SSS No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="tel" value="<?=$user['sss_no'];?>" id="sssnum" name="sss" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
-                                                </div>
+                                                    <input type="tel" value="<?=$user['sss_no'];?>" id="sssnum" name="sss" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus <?=$user['sss_no']=='N/A' ? 'disabled':'' ?>>
+                                                    <input type="checkbox" id="nosss" name="nosss" width="70px" height="70px" <?=$user['sss_no']=='N/A' ? 'checked':'' ?>>
+                                                    <label for="" class="text-danger">Check if not applicable (N/A)</label>
+                                                </div>                                      
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Date of Birth:</label>
@@ -1798,8 +1800,20 @@
                                                     <input type="text" value="<?=$user['pob'];?>" name="pob" class="form-control border-success" required autocomplete="off"  >
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Blood Type:</label>
-                                                <div class="col-sm-3">                                                    
-                                                    <input type="text" name="bloodtype" value="<?=$user['bloodtype'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                                <div class="col-sm-3">  
+                                                    <select name="bloodtype" class="form-control border-success" required style="width:150px;">
+                                                        <option value="">--Select Type--</option>
+                                                        <option value="A+" <?=$user['bloodtype']=='A+' ? 'selected':'' ?> >A+</option>
+                                                        <option value="A-" <?=$user['bloodtype']=='A-' ? 'selected':'' ?> >A-</option>                                    
+                                                        <option value="B+" <?=$user['bloodtype']=='B+' ? 'selected':'' ?> >B+</option>
+                                                        <option value="B-" <?=$user['bloodtype']=='B-' ? 'selected':'' ?> >B-</option>                                    
+                                                        <option value="AB+" <?=$user['bloodtype']=='AB+' ? 'selected':'' ?> >AB+</option>
+                                                        <option value="AB-" <?=$user['bloodtype']=='AB-' ? 'selected':'' ?> >AB-</option>                                    
+                                                        <option value="O+" <?=$user['bloodtype']=='O+' ? 'selected':'' ?> >O+</option>
+                                                        <option value="O-" <?=$user['bloodtype']=='O-' ? 'selected':'' ?> >O-</option>
+                                                    </select>                                                  
+                                                    
+                                                    <!-- <input type="text" name="bloodtype" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus> -->
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1813,7 +1827,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Height (m):</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" name="height" value="<?=$user['height'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                                    <input type="number" name="height" value="<?=$user['height'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1830,7 +1844,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Weight (kg):</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" name="weight" value="<?=$user['weight'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                                    <input type="number" name="weight" value="<?=$user['weight'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1857,7 +1871,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Mobile No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['mobile'];?>" name="mobile" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
+                                                    <input type="tel" value="<?=$user['mobile'];?>" name="mobile" class="form-control border-success" autocomplete="off" onKeyPress="if(this.value.length==11) return false;" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">                                                
@@ -2371,7 +2385,22 @@
                                         </div>
                                         <div class="col-auto">
                                             <label for="">Extension Name</label>
-                                            <input type="text" name="fatherxname" value="<?=$family['father_exname'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                            <!-- <input type="text" name="fatherxname" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus> -->
+
+                                            <select name="fatherxname" class="form-control border-success" required style="width:90px;">
+                                                <option value="">--Select Ext. Name--</option>
+                                                <option value="N/A" <?=$family['father_exname']=='N/A' ? 'selected':'' ?> >N/A</option>
+                                                <option value="Sr." <?=$family['father_exname']=='Sr.' ? 'selected':'' ?> >Sr.</option>
+                                                <option value="Jr." <?=$family['father_exname']=='Jr.' ? 'selected':'' ?> >Jr.</option>                                    
+                                                <option value="I" <?=$family['father_exname']=='I' ? 'selected':'' ?> >I</option>                                    
+                                                <option value="II" <?=$family['father_exname']=='II' ? 'selected':'' ?> >II</option>                                    
+                                                <option value="III" <?=$family['father_exname']=='III' ? 'selected':'' ?> >III</option>                                    
+                                                <option value="IV" <?=$family['father_exname']=='IV' ? 'selected':'' ?> >IV</option>                                    
+                                                <option value="V" <?=$family['father_exname']=='V' ? 'selected':'' ?> >V</option>                                    
+                                                <option value="VI" <?=$family['father_exname']=='VI' ? 'selected':'' ?> >VI</option>                                    
+                                            </select>
+
+
                                         </div>
                                         <!-- <div class="col-md-3 mb-3">
                                             <label for="">Mother's Maiden name</label>
@@ -6510,6 +6539,22 @@
     });
 </script>
 
+<!-- ############### CHECKBOX IN NO SSS ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nosss").click(function () {
+            if ($(this).is(":checked")) {
+                $("#sssnum").attr("disabled", "disabled");
+                $('#sssnum').val('N/A');
+            } else {
+                $("#sssnum").removeAttr("disabled");
+                $('#sssnum').val('');
+                
+            }
+        });
+    });
+</script>
+
 <!-- ############### CHECKBOX IN School Information ##################    -->
 <script type="text/javascript">
     $(function () {
@@ -6558,7 +6603,6 @@
         });
     });
 </script>
-
 
 <!-- ############### SELECT OPTIONS FOR POSITION TYPE ##################    -->
 <script type="text/javascript">    
