@@ -118,7 +118,7 @@
                     </div>
                     <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-4">   
                         <input type="hidden" id="uempno<?=$user_id?>" value="<?=$user_id?>">
-                        <input type="hidden" id="u_nameofuser<?=$user['emp_no']?>" value="<?=$user['lastname'].'_'.$user['firstname']?>">                     
+                        <input type="hidden" id="u_nameofuser<?=$user['emp_no']?>" value="<?=$user['lastname'].'_'.$user['firstname'].'_'.$user['emp_no']?>">                     
                         <button class="btn btn-success uploadbtn" value="<?=$user_id?>" data-bs-target="#editImageModal" data-bs-toggle="modal"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i>   Change Profile Picture</button>
                     </div>    
                 </div>
@@ -184,6 +184,16 @@
                                 <span id="passwordHelpInline" class="form-text">
                                     Must match with the new password.
                                 </span>
+                            </div>
+                        </div>   
+                    </div> 
+                    <div class="d-sm-flex align-items-left justify-content-left mb-4 mt-4">                    
+                        <div class="row g-3 align-items-center">  
+                            <div class="col" style="width:200px;">
+                                <label for="inputPassword6" class="col-form-label"></label>
+                            </div>
+                            <div class="col-auto">
+                                
                             </div>
                         </div>   
                     </div> 

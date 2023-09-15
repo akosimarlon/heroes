@@ -1775,7 +1775,7 @@
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Email Address:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="email" value="<?=$user['email'];?>" name="email" class="form-control border-success" autocomplete="off" required autofocus>
+                                                    <input type="email" value="<?=$user['email'];?>" name="email" class="form-control border-success" readonly autocomplete="off" required autofocus>
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">SSS No.:</label>
                                                 <div class="col-sm-3">                                                    
@@ -2255,7 +2255,19 @@
                                         </div>
                                         <div class="col-auto">
                                             <label for="">Extension Name</label>
-                                            <input type="text" name="spousexname" value="<?=$family['spouse_exname'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                            <!-- <input type="text" name="spousexname" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus> -->
+                                            <select name="spousexname" class="form-control border-success" required style="width:90px;">
+                                                <option value="">--Select Ext. Name--</option>
+                                                <option value="N/A" <?=$family['spouse_exname']=='N/A' ? 'selected':'' ?> >N/A</option>
+                                                <option value="Sr." <?=$family['spouse_exname']=='Sr.' ? 'selected':'' ?> >Sr.</option>
+                                                <option value="Jr." <?=$family['spouse_exname']=='Jr.' ? 'selected':'' ?> >Jr.</option>                                    
+                                                <option value="I" <?=$family['spouse_exname']=='I' ? 'selected':'' ?> >I</option>                                    
+                                                <option value="II" <?=$family['spouse_exname']=='II' ? 'selected':'' ?> >II</option>                                    
+                                                <option value="III" <?=$family['spouse_exname']=='III' ? 'selected':'' ?> >III</option>                                    
+                                                <option value="IV" <?=$family['spouse_exname']=='IV' ? 'selected':'' ?> >IV</option>                                    
+                                                <option value="V" <?=$family['spouse_exname']=='V' ? 'selected':'' ?> >V</option>                                    
+                                                <option value="VI" <?=$family['spouse_exname']=='VI' ? 'selected':'' ?> >VI</option>                                    
+                                            </select>
                                         </div> 
                                         <div class="col-md-3 mb-3">
                                             <label for="">Occupation</label>
@@ -2286,7 +2298,7 @@
                                             <table class="table table-bordered" width="100%" cellspacing="0">
                                                 <thead class="bg-primary text-light">
                                                     <tr>                                                        
-                                                        <th>NAME of CHILDREN</th>
+                                                        <th>Name of Children</th>
                                                         <th>Date of Birth</th>                                                        
                                                         <th>Actions</th>
                                                         
