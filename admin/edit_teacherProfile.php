@@ -1827,7 +1827,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Height (m):</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="number" name="height" value="<?=$user['height'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                                    <input type="number" name="height" value="<?=$user['height'];?>" onchange="setTwoNumberDecimal" min="0" max="10" step="0.1" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -2226,9 +2226,92 @@
 
                         <div role="tabpanel" class="tab-pane" id="family">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
-                                <h3 class="semi-bold text-primary">Family Background</h3>
+                                <h3 class="semi-bold text-primary mb-5">Family Background</h3>
                                 <form action="code.php" method="POST">                                    
                                     <div class="row">
+
+                                    <h5 class="semi-bold text-primary mb-3">CHILDREN'S INFORMATION</h5>
+                                    
+                                    <div class="col-md-9 mb-3">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                            <thead class="bg-primary text-light">
+                                                <tr>                                                        
+                                                    <th>Name of Children</th>
+                                                    <th>Date of Birth</th>                                                        
+                                                    <th>Actions</th>
+                                                    
+                                                </tr>
+                                            </thead>                            
+                                            <tbody>
+                                                        <?php
+                                                            $address = "SELECT * FROM children WHERE emp_no='$user_id'";
+                                                            $address_run = mysqli_query($con,$address);
+                                                            
+                                                            if(mysqli_num_rows($address_run) > 0 ){
+                                                                foreach($address_run as $row){
+                                                        ?>
+                                                            <tr>
+                                                                <td><?= $row['child_name'] ?></td>
+                                                                <td><?= $row['child_dob'] ?></td>
+
+                                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
+                                                                <input type="hidden" id="ufullname<?=$row['id']?>" value="<?=$row['child_name']?>">
+                                                                <input type="hidden" id="udob<?=$row['id']?>" value="<?=$row['child_dob']?>">
+                                                                <input type="hidden" id="utable<?=$row['id']?>" value="children">
+                                                                
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteChild" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                    }
+                                                    else{
+                                                        ?>
+                                                            <tr>
+                                                                <td colspan="6">No Records Found.</td>
+                                                            </tr>
+                                                        <?php
+                                                    }
+
+                                                ?>                      
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
+                                            <?php
+                                                $na = "SELECT * FROM children WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal" disabled><i class="fa fa-plus"></i> Add Child</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal"><i class="fa fa-plus"></i> Add Child</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal"><i class="fa fa-plus"></i> Add Child</button>
+                                                    <?php
+                                                }        
+                                            ?>
+                                            
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="text-success mb-3">
+                                        <hr class="border border-success border-2 opacity-50">
+                                    </div>
+
                                     <?php 
                                     if(isset($_GET['emp_no'])){
                                         $user_id = $_GET['emp_no'];
@@ -2240,7 +2323,7 @@
                                             foreach($users_run as $family){
                                     ?>
                                         <input type="hidden" name="emp_no" value="<?=$family['emp_no'];?>">
-                                        <h5 class="semi-bold text-primary">SPOUSE'S INFORMATION</h5>
+                                        <h5 class="semi-bold text-primary mb-3">SPOUSE'S INFORMATION</h5>
                                         <div class="col-md-3 mb-3">
                                             <label for="">Last Name</label>
                                             <input type="text" name="spouselname" value="<?=$family['spouse_lastname'];?>" class="form-control border-success" autocomplete="off" required autofocus>
@@ -2281,7 +2364,7 @@
                                             <label for="">Business Address</label>
                                             <input type="text" name="spouseBusAdd" value="<?=$family['spouse_buss_add'];?>" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
-                                        <div class="col-md-3 mb-3">
+                                        <div class="col-md-3 mb-5">
                                             <label for="">Telephone Number</label>
                                             <input type="text" name="spouseTelno" value="<?=$family['spouse_buss_tel'];?>" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
@@ -2294,85 +2377,9 @@
                                                 <?php
                                             }
                                         ?>                                        
-                                        <div class="col-md-9 mb-3">
-                                            <table class="table table-bordered" width="100%" cellspacing="0">
-                                                <thead class="bg-primary text-light">
-                                                    <tr>                                                        
-                                                        <th>Name of Children</th>
-                                                        <th>Date of Birth</th>                                                        
-                                                        <th>Actions</th>
-                                                        
-                                                    </tr>
-                                                </thead>                            
-                                                <tbody>
-                                                            <?php
-                                                                $address = "SELECT * FROM children WHERE emp_no='$user_id'";
-                                                                $address_run = mysqli_query($con,$address);
-                                                                
-                                                                if(mysqli_num_rows($address_run) > 0 ){
-                                                                    foreach($address_run as $row){
-                                                            ?>
-                                                                <tr>
-                                                                    <td><?= $row['child_name'] ?></td>
-                                                                    <td><?= $row['child_dob'] ?></td>
-
-                                                                    <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
-                                                                    <input type="hidden" id="ufullname<?=$row['id']?>" value="<?=$row['child_name']?>">
-                                                                    <input type="hidden" id="udob<?=$row['id']?>" value="<?=$row['child_dob']?>">
-                                                                    <input type="hidden" id="utable<?=$row['id']?>" value="children">
-                                                                    
-                                                                    <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
-                                                                    <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteChild" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
-                                                                </tr>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        else{
-                                                            ?>
-                                                                <tr>
-                                                                    <td colspan="6">No Records Found.</td>
-                                                                </tr>
-                                                            <?php
-                                                        }
-
-                                                    ?>                      
-                                                </tbody>
-                                            </table>
-                                        </div>
                                         
-                                        <div class="row">
-                                            <div class="col-md-3 mb-3">
-                                                <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                                <?php
-                                                    $na = "SELECT * FROM children WHERE emp_no='$user_id' LIMIT 1";
-                                                    $na_run = mysqli_query($con,$na);
-                                                    
-                                                    if(mysqli_num_rows($na_run) > 0 ){
-                                                        foreach($na_run as $row){
-                                                            if($row['n_a']=="1"){
-                                                            ?>
-                                                                <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal" disabled><i class="fa fa-plus"></i> Add Child</button>
-                                                            <?php
-                                                            }else{
-                                                            ?>
-                                                                <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal"><i class="fa fa-plus"></i> Add Child</button>
-                                                            <?php
-                                                            }
-                                                        }
-                                                    }else{
-                                                        ?>
-                                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addchildrenModal"><i class="fa fa-plus"></i> Add Child</button>
-                                                        <?php
-                                                    }        
-                                                ?>
-                                                
-                                            </div>
-                                        </div>
-
                                         
-                                        <div class="text-success">
-                                            <hr class="border border-success border-2 opacity-50">
-                                        </div>                                        
+                                                                                
                                     </div>
                                     <h5 class="semi-bold text-primary">PARENTS INFORMATION</h5>
                                     <div class="row">
@@ -2426,7 +2433,7 @@
                                             <label for="">First Name</label>
                                             <input type="text" name="motherfname" value="<?=$family['mother_firstname'];?>" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
-                                        <div class="col-md-3 mb-3">
+                                        <div class="col-md-3 mb-5">
                                             <label for="">Middle Name</label>
                                             <input type="text" name="mothermname" value="<?=$family['mother_middlename'];?>" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
@@ -6817,5 +6824,10 @@
             });
         });
 
+        function setTwoNumberDecimal(event) {
+            
+            this.value = parseFloat(this.value).toFixed(2);
+            alert (this.value);
+        }
 
 </script>
