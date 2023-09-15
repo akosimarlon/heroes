@@ -48,14 +48,29 @@
         
         $total = $pi_completed + $fb_completed + $child_completed + $eb_completed + $sec_completed + $voc_completed + $col_completed + $grad_completed + $cse_completed + $we_completed + $vw_completed + $ld_completed + $skills_completed + $nacad_completed + $mem_completed + $oi_completed + $ei_completed + $tr_completed + $nc_completed + $mm_completed + $spec_completed + $aw_completed;
 
-        $percentage = ($total / 147) * 100;
-        $percentage =  round($percentage).'%';
+        $per = ($total / 153) * 100;
+        $percentage =  round($per).'%';
 
         $query = "UPDATE profile_completion SET completed_total='$total',completed_percentage='$percentage' WHERE emp_no='$empid' ";
         $query_run = mysqli_query($con,$query);
 
-       
-        echo '<div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><b>'.$percentage.'</b></div>';
+        if($per<=20){
+            echo '<div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+        }
+        if($per<=60 && $per>20){
+            echo '<div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+        }
+        if($per<=90 && $per>60){
+            echo '<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+        }
+        if($per<=99 && $per>90){
+            echo '<div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+        }
+        if($per==100){
+            echo '<div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+        }
+        
+        
         
     }
     

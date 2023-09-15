@@ -27,6 +27,20 @@
 
                 </div>
             </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">School List  (Excel Format)</h6>
+                </div>
+                <div class="card-body">
+
+                <form action="code.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="import_file" class="form-control" required />
+                    <button type="submit" name="save_excel_school_data" class="btn btn-primary mt-3">Import</button>
+                </form>
+
+                </div>
+            </div>
         
  
 

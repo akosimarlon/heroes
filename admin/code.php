@@ -417,6 +417,11 @@ if(isset($_POST['registerTeacher'])){
                             VALUES ('$empno','5','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','5','3%','$status');";  
                 
                 $query .= "INSERT INTO employment_record (emp_no,grade_level,date_of_emp,yrs_in_serv,position_rank,item_no,plantilla_no,status) VALUES ('$empno','','','','','','','$status')";
+
+                 //position_type='$position_type', position_id='$p', designation='$designation', item_no='$item_no', plantilla_no='$plantilla_no', school_id='$school_id',
+                 // school_name='$school_name', district='$district'
+
+
                 //$query_run4 = mysqli_query($con,$query4);
                
                 $query_run = mysqli_multi_query($con, $query);   
@@ -989,11 +994,18 @@ if(isset($_POST['registerSpecialSkills'])){
 //########## For Adding Non-Academic Distinctions Data ##############################################
 if(isset($_POST['registerNonAcademic'])){
     $empno = $_POST['emp_no'];
-    $non_academic = ucwords(clean($_POST['non_academic']));        
+
+    $nonacad = $_POST['nonacad'] == true ? '1':'0'; 
+
+    if($nonacad == '1'){
+        $non_academic = "N/A";        
+    }else{
+        $non_academic = ucwords(clean($_POST['non_academic']));        
+    }            
     
     try {        
-        $query = "INSERT INTO non_academic (emp_no, non_academic, status) 
-                    VALUES ('$empno','$non_academic','1')";
+        $query = "INSERT INTO non_academic (emp_no, non_academic, n_a , status) 
+                    VALUES ('$empno','$non_academic','$nonacad','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1033,11 +1045,19 @@ if(isset($_POST['registerNonAcademic'])){
 //########## For Adding Membership in Association / Organization Data ##############################################
 if(isset($_POST['registerMeminAsso'])){
     $empno = $_POST['emp_no'];
-    $mem_in_asso = ucwords(clean($_POST['mem_in_asso']));        
+    
+    $nomem = $_POST['nomem'] == true ? '1':'0'; 
+
+    if($nomem == '1'){
+        $mem_in_asso = "N/A";        
+    }else{
+        $mem_in_asso = ucwords(clean($_POST['mem_in_asso']));        
+    } 
+            
     
     try {        
-        $query = "INSERT INTO association (emp_no, mem_in_asso, status) 
-                    VALUES ('$empno','$mem_in_asso','1')";
+        $query = "INSERT INTO association (emp_no, mem_in_asso, n_a, status) 
+                    VALUES ('$empno','$mem_in_asso','$nomem','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1074,13 +1094,22 @@ if(isset($_POST['registerMeminAsso'])){
 //########## For Adding Subject in Employment Information ##############################################
 if(isset($_POST['registerSubject'])){
     $empno = $_POST['emp_no'];
-    $subject = ucwords(clean($_POST['subject']));
-    $semester = ucwords(clean($_POST['semester']));    
-    $school_year = ucwords(clean($_POST['school_year']));    
+    
+    $nosubj = $_POST['nosubj'] == true ? '1':'0'; 
+
+    if($nosubj == '1'){
+        $subject = "N/A";        
+        $semester = "N/A";        
+        $school_year = "N/A";        
+    }else{
+        $subject = ucwords(clean($_POST['subject']));
+        $semester = ucwords(clean($_POST['semester']));    
+        $school_year = ucwords(clean($_POST['school_year']));       
+    } 
     
     try {
-        $query = "INSERT INTO subject_handled (emp_no,subject,semester,school_year,status) 
-                    VALUES ('$empno','$subject','$semester','$school_year','1')";
+        $query = "INSERT INTO subject_handled (emp_no,subject,semester,school_year, n_a,status) 
+                    VALUES ('$empno','$subject','$semester','$school_year','$nosubj','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1119,14 +1148,23 @@ if(isset($_POST['registerSubject'])){
 
 //########## For Adding National Certificates in Employment Information ##############################################
 if(isset($_POST['registerNC'])){
-    $empno = $_POST['emp_no'];
-    $nctitle = ucwords(clean($_POST['nctitle']));
-    $nclevel = ucwords(clean($_POST['nclevel']));    
-    $validuntil = ucwords(clean($_POST['validuntil']));    
+    $empno = $_POST['emp_no'];       
     
+    $nonc = $_POST['nonc'] == true ? '1':'0'; 
+
+    if($nonc == '1'){
+        $nctitle = "N/A";        
+        $nclevel = "N/A";        
+        $validuntil = "N/A";        
+    }else{
+        $nctitle = ucwords(clean($_POST['nctitle']));
+        $nclevel = ucwords(clean($_POST['nclevel']));    
+        $validuntil = ucwords(clean($_POST['validuntil']));        
+    } 
+
     try {
-        $query = "INSERT INTO national_cert (emp_no,nc_title,nc_level,valid_until,status) 
-                    VALUES ('$empno','$nctitle','$nclevel','$validuntil','1')";
+        $query = "INSERT INTO national_cert (emp_no,nc_title,nc_level,valid_until,n_a,status) 
+                    VALUES ('$empno','$nctitle','$nclevel','$validuntil','$nonc','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1163,16 +1201,23 @@ if(isset($_POST['registerNC'])){
 
 }
 
-
 //########## For Adding Major and Minor in Employment Information ##############################################
 if(isset($_POST['registerMajorMinor'])){
-    $empno = $_POST['emp_no'];
-    $major = ucwords(clean($_POST['major']));
-    $minor = ucwords(clean($_POST['minor']));    
+    $empno = $_POST['emp_no'];      
+    
+    $nomm = $_POST['nomm'] == true ? '1':'0'; 
+
+    if($nomm == '1'){
+        $major = "N/A";        
+        $minor = "N/A";
+    }else{
+        $major = ucwords(clean($_POST['major']));
+        $minor = ucwords(clean($_POST['minor']));         
+    } 
     
     try {
-        $query = "INSERT INTO major_minor (emp_no,major,minor,status) 
-                    VALUES ('$empno','$major','$minor','1')";
+        $query = "INSERT INTO major_minor (emp_no,major,minor,n_a,status) 
+                    VALUES ('$empno','$major','$minor','$nomm','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1211,14 +1256,23 @@ if(isset($_POST['registerMajorMinor'])){
 
 //########## For Adding Specialization in Employment Information ##############################################
 if(isset($_POST['registerSpecialization'])){
-    $empno = $_POST['emp_no'];
-    $track = ucwords(clean($_POST['track']));
-    $strand = ucwords(clean($_POST['strand']));    
-    $titlespecialization = ucwords(clean($_POST['titlespecialization']));    
+    $empno = $_POST['emp_no'];        
     
+    $nospecial = $_POST['nospecial'] == true ? '1':'0'; 
+
+    if($nospecial == '1'){
+        $track = "N/A";        
+        $strand = "N/A";
+        $titlespecialization = "N/A";
+    }else{
+        $track = ucwords(clean($_POST['track']));
+        $strand = ucwords(clean($_POST['strand']));    
+        $titlespecialization = ucwords(clean($_POST['titlespecialization']));         
+    }
+
     try {
-        $query = "INSERT INTO specialization (emp_no,track,strand,title,status) 
-                    VALUES ('$empno','$track','$strand','$titlespecialization','1')";
+        $query = "INSERT INTO specialization (emp_no,track,strand,title,n_a,status) 
+                    VALUES ('$empno','$track','$strand','$titlespecialization','$nospecial','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -1257,14 +1311,23 @@ if(isset($_POST['registerSpecialization'])){
 
 //########## For Adding Anciliary Work in Employment Information ##############################################
 if(isset($_POST['registerAnciliaryWork'])){
-    $empno = $_POST['emp_no'];
-    $antitle = ucwords(clean($_POST['antitle']));
-    $datestart = $_POST['datestart'];    
-    $dateend = $_POST['dateend'];
+    $empno = $_POST['emp_no'];   
+
+    $noanci = $_POST['noanci'] == true ? '1':'0'; 
+
+    if($noanci == '1'){
+        $antitle = "N/A";        
+        $datestart = "N/A";
+        $dateend = "N/A";
+    }else{
+        $antitle = ucwords(clean($_POST['antitle']));
+        $datestart = $_POST['datestart'];    
+        $dateend = $_POST['dateend'];         
+    }
         
     try {
-        $query = "INSERT INTO anciliary_work (emp_no,title,start_date,end_date,status) 
-                    VALUES ('$empno','$antitle','$datestart','$dateend','1')";
+        $query = "INSERT INTO anciliary_work (emp_no,title,start_date,end_date,n_a,status) 
+                    VALUES ('$empno','$antitle','$datestart','$dateend','$noanci','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -2050,48 +2113,6 @@ if(isset($_POST['updateNC'])){
     } 
 }
 
-//########## For Update National Certificate #######################################################
-if(isset($_POST['updateNC'])){
-    $empno = $_POST['empno'];
-    $nc_id = $_POST['nc_id'];
-    $nctitle = $_POST['nctitle'];
-    $nclevel = $_POST['nclevel'];
-    $validuntil = $_POST['validuntil'];   
-    
-    try{
-        $query = "UPDATE national_cert SET nc_title='$nctitle', nc_level='$nclevel', valid_until='$validuntil'
-                WHERE id='$nc_id' ";
-        $query_run = mysqli_query($con,$query); 
-        
-        if($query_run){
-            $_SESSION['message'] = "National Certificate Updated Successfuly!";
-            $_SESSION['message_type'] = "primary";
-            $_SESSION['tab_page'] = "#employment";
-            header("Window-target: _top");
-            header("Location: edit_teacherProfile.php?emp_no=$empno");            
-            exit(0);
-        }
-        else{
-            $_SESSION['message'] = "Something went wrong.";
-            $_SESSION['message_type'] = "danger";
-            $_SESSION['tab_page'] = "#employment";
-            header("Window-target: _top");
-            header("Location: edit_teacherProfile.php?emp_no=$empno");
-            exit(0);
-        }
-
-    }
-    catch(Exception $e) {
-        echo 'Message: ' .$e->getMessage();
-        $_SESSION['message'] = "Something went wrong. ".$e->getMessage();
-        $_SESSION['message_type'] = "danger";
-        $_SESSION['tab_page'] = "#employment";
-        header("Window-target: _top");
-        header("Location: edit_teacherProfile.php?emp_no=$empno");
-        exit(0);
-    } 
-}
-
 //########## For Update Specialization #######################################################
 if(isset($_POST['updateSpecialization'])){
     $empno = $_POST['empno'];
@@ -2183,7 +2204,7 @@ if(isset($_POST['savePersonal'])){
     $lname = ucwords(clean($_POST['lname']));    
     $fname = ucwords(clean($_POST['fname']));
     $mname = ucwords(clean($_POST['mname']));
-    $xname = ucwords(clean($_POST['xname']));
+    $xname = $_POST['xname'];
     $dob = $_POST['dob'];
     $pob = ucwords(clean($_POST['pob']));   
     $sex = $_POST['sex'];
@@ -2501,6 +2522,28 @@ if(isset($_POST['saveEmpRecord'])){
     $item_no = clean($_POST['item_no']);
     $plantilla_no = clean($_POST['plantilla_no']);  
 
+    $position_type = clean($_POST['position_type']);      
+    $designation = clean($_POST['designation']); 
+    $school_id = clean($_POST['school_id']); 
+    $sch_name = clean($_POST['sch_name']); 
+    $district = clean($_POST['district']);  
+        
+    $functional_div = clean($_POST['functional_div']);
+    $office_name = clean($_POST['office_name']);
+
+    $notteaching = clean($_POST['notteaching']);
+    $notnonteaching = clean($_POST['notnonteaching']);
+    
+    if($notteaching == "yes" ){
+        $school_id = "N/A";
+        $sch_name = "N/A";
+        $district = "N/A";
+    } 
+    if($notnonteaching == "yes" ){
+        $functional_div = "N/A";
+        $office_name = "N/A";
+    } 
+
     if($position_rank == "teacher1" ) $p = "1";
     if($position_rank == "teacher2" ) $p = "2";
     if($position_rank == "teacher3" ) $p = "3";
@@ -2509,12 +2552,11 @@ if(isset($_POST['saveEmpRecord'])){
     if($position_rank == "mteacher2" ) $p = "6";
     if($position_rank == "mteacher3" ) $p = "7";
 
-
-
     try{
-        $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', position_rank='$position_rank', position_id='$p',
-                  item_no='$item_no', plantilla_no='$plantilla_no'
-                 WHERE emp_no='$emp_no' ";
+        $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', position_type='$position_type',
+                        position_rank='$position_rank', position_id='$p', designation='$designation', item_no='$item_no', plantilla_no='$plantilla_no', 
+                        notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district', notnonteaching='$notnonteaching', 
+                        functional_div='$functional_div', office_name='$office_name' WHERE emp_no='$emp_no' ";
 
         $query_run = mysqli_query($con,$query);         
 
@@ -2531,7 +2573,7 @@ if(isset($_POST['saveEmpRecord'])){
     
     if($query_run){
 
-        $query2 = "UPDATE profile_completion SET ei_completed_fileds='6' WHERE emp_no='$emp_no' ";
+        $query2 = "UPDATE profile_completion SET ei_completed_fileds='12' WHERE emp_no='$emp_no' ";
         $query_run2 = mysqli_query($con,$query2);
 
         $_SESSION['message'] = "Employment Record Updated Successfuly!";
@@ -2660,7 +2702,6 @@ if(isset($_POST['submitImage'])){
 }
 
 
-
 //######### Upload Excel File ()
 if(isset($_POST['save_excel_data'])){
     
@@ -2719,10 +2760,62 @@ if(isset($_POST['save_excel_data'])){
 }
 
 
+//######### Upload Excel Files Schools ()
+if(isset($_POST['save_excel_school_data'])){
+    
+    $fileName = $_FILES['import_file']['tmp_name'];
 
+    $excel=SimpleXLSX::parse($_FILES['import_file']['tmp_name']);
+		//echo "<pre>";	
+		// print_r($excel->rows(1));
+		//print_r($excel->rows());
+    $querylist = "";
+    foreach($excel->rows() as $key => $row){
+        $i=0;
+        foreach($row as $key => $cell){
+            if($i == 0){
+                $sch_id = $cell;
+            }
+            if($i == 1){
+                $sch_name = $cell;
+            }
+            if($i == 2){
+                $district = $cell;
+            }
+            $i++;
+        }
+        $querylist .= "INSERT INTO schools (school_id,school_name,district,status) 
+                VALUES ('$sch_id','$sch_name','$district','1'); ";        
+    }
 
+    
+    try {
+        
+        $query_runlist = mysqli_multi_query($con, $querylist); 
 
+        if($query_runlist){
+            $_SESSION['message'] = "Uploaded Successfuly!";
+            $_SESSION['message_type'] = "primary";                     
+            header("Location: uploadexcel.php");            
+            exit(0);
+        }
+        else{
+            $_SESSION['message'] = "Something went wrong.";
+            $_SESSION['message_type'] = "danger";                     
+            header("Location: uploadexcel.php");            
+            exit(0);
+        }
+    }
+    catch(Exception $e) {
+        $_SESSION['message'] = "Invalid File"." ".$e;
+        $_SESSION['message_type'] = "warning"; 
+        header('Location: uploadexcel.php');
+        exit(0);
+    }
 
+    
+    
+}
 
 
 

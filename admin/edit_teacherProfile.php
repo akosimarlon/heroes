@@ -162,7 +162,7 @@
 </style>
 
     <!-- Begin Page Content -->
-    <div class="container-fluid">
+    <div class="container-fluid bg-gradient-light">
         <?php
             if(isset($_GET['emp_no'])){
                 //echo $_SESSION['user_empno'];
@@ -636,8 +636,12 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Non-Academic Distinctions / Recognition (Write in full)</label>
-                                <input type="text" name="non_academic" class="form-control border-success" placeholder="" required autofocus>
-                            </div>                    
+                                <input type="text" id="non_academic" name="non_academic" class="form-control border-success" placeholder="" required autofocus>
+                            </div>  
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nonacad" name="nonacad" width="70px" height="70px">
+                            </div>                   
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -671,8 +675,12 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Membership in Association/Organization (Write in full)</label>
-                                <input type="text" name="mem_in_asso" class="form-control border-success" placeholder="" required autofocus>
-                            </div>                    
+                                <input type="text" id="mem_in_asso" name="mem_in_asso" class="form-control border-success" placeholder="" required autofocus>
+                            </div>   
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nomem" name="nomem" width="70px" height="70px">
+                            </div>                 
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -706,11 +714,11 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Subject</label>
-                                <input type="text" name="subject" class="form-control border-success" placeholder="Enter Subject" required autofocus>
+                                <input type="text" id="subject" name="subject" class="form-control border-success" placeholder="Enter Subject" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Select a Semester</label>
-                                <select name="semester" required class="form-control border-success" style="width:150px;" autofocus>
+                                <select id="semester" name="semester" required class="form-control border-success" style="width:150px;" autofocus>
                                     <option value="">--Please Select--</option>
                                     <option value="1">First Semester</option>
                                     <option value="2">Second Semester</option>                                                                                                           
@@ -718,11 +726,15 @@
                             </div> 
                             <div class="form-group">                                
                                 <label>Select a School Year</label>
-                                <select name="school_year" required class="form-control border-success" style="width:150px;" autofocus>
+                                <select id="school_year" name="school_year" required class="form-control border-success" style="width:150px;" autofocus>
                                     <option value="">--Please Select--</option>
                                     <option value="2021-2022">2021-2022</option>
                                     <option value="2022-2023">2022-2023</option>                                                                                                           
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nosubj" name="nosubj" width="70px" height="70px">
                             </div>
                             
                         </div>
@@ -758,11 +770,11 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>NC Title</label>
-                                <input type="text" name="nctitle" class="form-control border-success" placeholder="Enter NC Title" required autofocus>
+                                <input type="text" id="nctitle" name="nctitle" class="form-control border-success" placeholder="Enter NC Title" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Select a NC Level</label>
-                                <select name="nclevel" required class="form-control border-success" style="width:150px;">
+                                <select id="nclevel" name="nclevel" required class="form-control border-success" style="width:150px;">
                                     <option value="">--Please Select--</option>
                                     <option value="1">I</option>
                                     <option value="2">II</option>                                                                                                           
@@ -773,6 +785,10 @@
                             <div class="form-group">                                
                                 <label>Valid Until</label>
                                 <input type="date" class="form-control border-success" name="validuntil" id="validuntil" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nonc" name="nonc" width="70px" height="70px">
                             </div>
                             
                         </div>
@@ -808,11 +824,15 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Major</label>
-                                <input type="text" name="major" class="form-control border-success" placeholder="Enter Major Expertise" autofocus>
+                                <input type="text" id="major" name="major" class="form-control border-success" placeholder="Enter Major Expertise" autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Minor</label>
-                                <input type="text" name="minor" class="form-control border-success" placeholder="Enter Minor Expertise" autofocus>
+                                <input type="text" id="minor" name="minor" class="form-control border-success" placeholder="Enter Minor Expertise" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nomm" name="nomm" width="70px" height="70px">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -847,7 +867,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Select a Track</label>
-                                <select name="track" required class="form-control border-success">
+                                <select id="track" name="track" required class="form-control border-success">
                                     <option value="">--Please Select--</option>
                                     <option value="acad">Academic (ACAD) Track</option>
                                     <option value="tvl">Technical-Vocational-Livelihood (TVL) Track</option>                                                                                                  
@@ -855,7 +875,7 @@
                             </div>
                             <div class="form-group">                                
                                 <label>Select a Strand</label>
-                                <select name="strand" required class="form-control border-success">   
+                                <select id="strand" name="strand" required class="form-control border-success">   
                                     <option style="background-color: #F9DBBB;" disabled selected>--Please Select--</option>
                                     <option style="font-size: 0.5pt; background-color: #000000;" disabled>&nbsp;</option>                             
                                     <option style="background-color: #95BDFF;" disabled>Academic Track (ACAD) Strands</option>
@@ -872,7 +892,11 @@
                             </div> 
                             <div class="form-group">                                
                                 <label>Title / Name</label>
-                                <input type="text" name="titlespecialization" class="form-control border-success" placeholder="Enter Title / Name of Specialization" autofocus>
+                                <input type="text" id="titlespecialization" name="titlespecialization" class="form-control border-success" placeholder="Enter Title / Name of Specialization" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="nospecial" name="nospecial" width="70px" height="70px">
                             </div>
                             
                         </div>
@@ -908,7 +932,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Name / Title / Designation</label>
-                                <input type="text" name="antitle" class="form-control border-success" placeholder="Enter Name / Title / Designation" required autofocus>
+                                <input type="text" id="antitle" name="antitle" class="form-control border-success" placeholder="Enter Name / Title / Designation" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date Started	</label>
@@ -917,6 +941,10 @@
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
                                 <input type="date" class="form-control border-success" name="dateend" id="dateend" required style="width:150px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="noanci" name="noanci" width="70px" height="70px">
                             </div>
                             
                         </div>
@@ -1673,7 +1701,7 @@
                         <div role="tabpanel" class="tab-pane " id="personal">
                             <div class="design-process-content shadow bg-white text-dark rounded border-left-info">
                                 <h3 class="semi-bold text-primary">Personal Information</h3>
-                                <form action="code.php" method="POST">
+                                <form name="personalinfo_form" action="code.php" method="POST" onsubmit="return validatePersonalInfo()">
                                 <?php 
 
                                 if(isset($_GET['emp_no'])){
@@ -1708,27 +1736,40 @@
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">GSIS ID No.:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" value="<?=$user['gsis_no'];?>" name="gsis" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                
+                                                    <input type="number" value="<?=$user['gsis_no'];?>" name="gsis" onKeyPress="if(this.value.length==11) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Middle Name:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="mname" value="<?=$user['middlename'];?>" class="form-control border-success" autocomplete="off" required >
+                                                    <input type="text" id="mname" name="mname" value="<?=$user['middlename'];?>" class="form-control border-success" autocomplete="off" required >
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Pag-Ibig ID No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['pagibig_no'];?>" name="pagibig" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                    
+                                                    <input type="number" value="<?=$user['pagibig_no'];?>" name="pagibig" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                    
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Extension Name:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="xname" value="<?=$user['exname'];?>" class="form-control border-success" autocomplete="off" required style="width:90px;" >
+                                                    <!-- <input type="text" name="xname" value="<?=$user['exname'];?>" class="form-control border-success" autocomplete="off" required style="width:90px;" > -->
+                                                    <select name="xname"  class="form-control border-success" required style="width:90px;">
+                                                        <option value="">--Select Ext. Name--</option>
+                                                        <option value="N/A" <?=$user['exname']=='N/A' ? 'selected':'' ?> >N/A</option>
+                                                        <option value="Sr." <?=$user['exname']=='Sr.' ? 'selected':'' ?> >Sr.</option>
+                                                        <option value="Jr." <?=$user['exname']=='Jr.' ? 'selected':'' ?> >Jr.</option>                                    
+                                                        <option value="I" <?=$user['exname']=='I' ? 'selected':'' ?> >I</option>                                    
+                                                        <option value="II" <?=$user['exname']=='II' ? 'selected':'' ?> >II</option>                                    
+                                                        <option value="III" <?=$user['exname']=='III' ? 'selected':'' ?> >III</option>                                    
+                                                        <option value="IV" <?=$user['exname']=='IV' ? 'selected':'' ?> >IV</option>                                    
+                                                        <option value="V" <?=$user['exname']=='V' ? 'selected':'' ?> >V</option>                                    
+                                                        <option value="VI" <?=$user['exname']=='VI' ? 'selected':'' ?> >VI</option>                                    
+                                                    </select>
+                                                    <!-- Junior (Jr.), Senior (Sr.), I, II, III, IV -->
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">PhilHealth ID No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['philhealth_no'];?>" name="philhealth" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
+                                                    <input type="tel" value="<?=$user['philhealth_no'];?>" id="philnum" name="philhealth" onKeyPress="if(this.value.length==14) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1738,7 +1779,7 @@
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">SSS No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['sss_no'];?>" name="sss" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
+                                                    <input type="tel" value="<?=$user['sss_no'];?>" id="sssnum" name="sss" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -3568,7 +3609,32 @@
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <input type="hidden" id="uv_educ_level" value="vocational">
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecialSkillsModal"><i class="fa fa-plus"></i> Add Special Skills</button>
+                                            
+
+                                            <?php
+                                                    $na = "SELECT * FROM special_skills WHERE emp_no='$user_id' LIMIT 1";
+                                                    $na_run = mysqli_query($con,$na);
+                                                    
+                                                    if(mysqli_num_rows($na_run) > 0 ){
+                                                        foreach($na_run as $row){
+                                                            if($row['n_a']=="1"){
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecialSkillsModal" disabled><i class="fa fa-plus"></i> Add Special Skills</button>
+                                                            <?php
+                                                            }else{
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecialSkillsModal"><i class="fa fa-plus"></i> Add Special Skills</button>
+                                                            <?php
+                                                            }
+                                                        }
+                                                    }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecialSkillsModal"><i class="fa fa-plus"></i> Add Special Skills</button>
+                                                        <?php
+                                                    }        
+                                                ?>
+
+
                                         </div>
                                         
                                     </div>
@@ -3622,7 +3688,31 @@
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <input type="hidden" id="uv_educ_level" value="vocational">
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNonAcademicModal"><i class="fa fa-plus"></i> Add Non-Academic Distinctions</button>
+                                            
+
+                                                <?php
+                                                    $na = "SELECT * FROM non_academic WHERE emp_no='$user_id' LIMIT 1";
+                                                    $na_run = mysqli_query($con,$na);
+                                                    
+                                                    if(mysqli_num_rows($na_run) > 0 ){
+                                                        foreach($na_run as $row){
+                                                            if($row['n_a']=="1"){
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNonAcademicModal" disabled><i class="fa fa-plus"></i> Add Non-Academic Distinctions</button>
+                                                            <?php
+                                                            }else{
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNonAcademicModal"><i class="fa fa-plus"></i> Add Non-Academic Distinctions</button>
+                                                            <?php
+                                                            }
+                                                        }
+                                                    }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNonAcademicModal"><i class="fa fa-plus"></i> Add Non-Academic Distinctions</button>
+                                                        <?php
+                                                    }        
+                                                ?>
+
                                         </div>
                                         
                                     </div>
@@ -3676,7 +3766,31 @@
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <input type="hidden" id="uv_educ_level" value="vocational">
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMeminAssoModal"><i class="fa fa-plus"></i> Add Membership in Association</button>
+                                            
+
+                                                <?php
+                                                    $na = "SELECT * FROM association WHERE emp_no='$user_id' LIMIT 1";
+                                                    $na_run = mysqli_query($con,$na);
+                                                    
+                                                    if(mysqli_num_rows($na_run) > 0 ){
+                                                        foreach($na_run as $row){
+                                                            if($row['n_a']=="1"){
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMeminAssoModal" disabled><i class="fa fa-plus"></i> Add Membership in Association</button>
+                                                            <?php
+                                                            }else{
+                                                            ?>
+                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMeminAssoModal"><i class="fa fa-plus"></i> Add Membership in Association</button>
+                                                            <?php
+                                                            }
+                                                        }
+                                                    }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMeminAssoModal"><i class="fa fa-plus"></i> Add Membership in Association</button>
+                                                        <?php
+                                                    }        
+                                                ?>
+
                                         </div>
                                         
                                     </div>
@@ -3996,7 +4110,7 @@
                         <div role="tabpanel" class="tab-pane" id="employment">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <a name="#other1"></a>
-                                <h3 class="semi-bold text-primary">Employment Information</h3>
+                                <h3 class="semi-bold text-primary mb-5">Employment Information</h3>
                                 
                                 <form action="code.php" method="POST">                                    
                                     <div class="row">
@@ -4021,7 +4135,9 @@
                                                 <label for="">Years in Service</label>
                                                 <input type="text" name="yearinservice" id="yearinservice" style="width:120px;" value="<?=$emp_rec['yrs_in_serv'];?>"  class="form-control border-success" autocomplete="off" required autofocus readonly>
                                             </div>
-                                            <div class="col-auto">
+
+                                            <!-- Position -->
+                                            <!-- <div class="col-auto">
                                                 <label for="">Position</label>                                                
                                                 <select name="position_rank"  class="form-control border-success" required  style="width:220px;">
                                                     <option value="">--Select Position--</option>
@@ -4033,8 +4149,9 @@
                                                     <option value="mteacher3" <?=$emp_rec['position_rank']=='mteacher3' ? 'selected':'' ?> >Master Teacher III</option>                                    
                                                     <option value="ssteacher1" <?=$emp_rec['position_rank']=='ssteacher1' ? 'selected':'' ?> >Special Science Teacher I</option>                                    
                                                 </select>
-                                            </div>
-                                            <div class="col-auto">
+                                            </div> -->
+                                            <!-- Grade Level -->
+                                            <!-- <div class="col-auto">
                                                 <label for="">Grade Level</label>                                                
                                                 <select name="grade_level"  class="form-control border-success" required  style="width:220px;">
                                                     <option value="">--Select Grade Level--</option>
@@ -4053,15 +4170,124 @@
                                                     <option value="12" <?=$emp_rec['grade_level']=='12' ? 'selected':'' ?> >Grade 12</option>
                                                                                                                                             
                                                 </select>
-                                            </div>
+                                            </div> -->
+
                                             <div class="col-auto">
                                                 <label for="">Item Number</label>
-                                                <input type="text" name="item_no" value="<?=$emp_rec['item_no'];?>" class="form-control border-success" autocomplete="off" required autofocus>
+                                                <input type="text" name="item_no" value="<?=$emp_rec['item_no'];?>" class="form-control border-success" style="width:320px;" autocomplete="off" required autofocus>
                                             </div> 
-                                            <div class="col-auto mb-3">
+                                            <div class="col-auto mb-5">
                                                 <label for="">Plantilla Number</label>
-                                                <input type="text" name="plantilla_no" value="<?=$emp_rec['plantilla_no'];?>" class="form-control border-success" autocomplete="off" required autofocus>
-                                            </div>                                        
+                                                <input type="text" name="plantilla_no" value="<?=$emp_rec['plantilla_no'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
+                                            </div>    
+                                            
+
+                                            <h5 class="semi-bold text-primary">Plantilla Position</h5>                                            
+                                            <div class="col-auto">
+                                                <label for="">Type of Position</label>                                                
+                                                <select name="position_type" id="parent_select" class="form-control border-success" required  style="width:220px;">
+                                                    <option value="">--Select Type of Position--</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-auto">
+                                                <label for="">Position</label>                                                
+                                                <select name="position_rank" id="child_select" class="form-control border-success" required >
+                                                    <option value="">--Select Position--</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-auto mb-5">
+                                                <label for="">Designation</label>
+                                                <input type="text" name="designation" value="<?=$emp_rec['designation'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
+                                            </div>
+                                            
+                                            <h5 class="semi-bold text-primary">School Information</h5> 
+                                            <!-- <h5 class="semi-bold text-primary">School Information <br>(For Teaching and Teaching Related Position)</h5>   -->
+                                            <div class="form-group">
+                                                <label for="" class="text-danger">PLEASE TICK IF NOT APPLICABLE (N/A)</label>
+                                                <input type="checkbox" id="notteaching" value="yes" name="notteaching" width="70px" height="70px" <?=$emp_rec['notteaching']=='yes' ? 'checked':'' ?> >
+                                            </div>                                          
+                                            <div class="col-auto">
+                                                
+                                                <label for="">School ID</label>                                                
+                                                <select id="selectBox" name="school_id" class="form-control border-success" required  style="width:220px;" <?=$emp_rec['notteaching']=='yes' ? 'disabled':'' ?>>
+                                                    <option value="">--Select School ID--</option>
+                                                    <?php
+                                                        $address = "SELECT * FROM schools ";
+                                                        $address_run = mysqli_query($con,$address);
+                                                        
+                                                        if(mysqli_num_rows($address_run) > 0 ){
+                                                            foreach($address_run as $row){
+                                                    ?>
+                                                            <option value="<?=$row['school_id']?>" <?=$row['school_id']==$emp_rec['school_id'] ? 'selected':'' ?> ><?=$row['school_id']?></option>
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?>
+
+                                                </select>
+                                            </div>  
+
+                                            <div class="col-auto">
+                                                <label for="">School Name</label>
+                                                <input type="text" id="sch_name" name="sch_name" value="<?=$emp_rec['school_name'];?>" style="width:320px;" class="form-control border-success" readonly autocomplete="off" required autofocus>
+                                            </div>
+
+                                            <div class="col-auto mb-5">
+                                                <label for="">District</label>
+                                                <input type="text" id="district" name="district" value="<?=$emp_rec['district'];?>" style="width:320px;" class="form-control border-success" readonly autocomplete="off" required autofocus>
+                                            </div>
+
+                                            <h5 class="semi-bold text-primary">Office Information</h5> 
+                                            <!-- <h5 class="semi-bold text-primary">Office Information <br>(For Non Teaching Position)</h5>  -->
+                                            <div class="form-group">
+                                                <label for="" class="text-danger">PLEASE TICK IF NOT APPLICABLE (N/A)</label>
+                                                <input type="checkbox" id="notnonteaching" value="yes" name="notnonteaching" <?=$emp_rec['notnonteaching']=='yes' ? 'checked':'' ?> width="70px" height="70px">
+                                            </div> 
+                                            
+                                            <div class="col-auto">
+                                                
+                                                <label for="">Functional Division</label>                                                
+                                                <select id="functional_div" name="functional_div" <?=$emp_rec['notnonteaching']=='yes' ? 'disabled':'' ?> class="form-control border-success" required  style="width:220px;">
+                                                    <option value="">--Please Select--</option>
+                                                    <?php
+                                                        $address = "SELECT DISTINCT(functional_div) FROM office ";
+                                                        $address_run = mysqli_query($con,$address);
+                                                        
+                                                        if(mysqli_num_rows($address_run) > 0 ){
+                                                            foreach($address_run as $row){
+                                                    ?>
+                                                            <option value="<?=$row['functional_div']?>" <?=$row['functional_div']==$emp_rec['functional_div'] ? 'selected':'' ?> ><?=$row['functional_div']?></option>
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?>
+
+                                                </select>
+                                            </div>
+
+                                            <div class="col-auto mb-5">
+                                                
+                                                <label for="">Office</label>                                                
+                                                <select id="office_name" name="office_name" <?=$emp_rec['notnonteaching']=='yes' ? 'disabled':'' ?> class="form-control border-success" required  style="width:220px;">
+                                                    <option value="">--Please Select--</option>
+                                                    <?php
+                                                        $address = "SELECT DISTINCT(office_name) FROM office ";
+                                                        $address_run = mysqli_query($con,$address);
+                                                        
+                                                        if(mysqli_num_rows($address_run) > 0 ){
+                                                            foreach($address_run as $row){
+                                                    ?>
+                                                            <option value="<?=$row['office_name']?>" <?=$row['office_name']==$emp_rec['office_name'] ? 'selected':'' ?> ><?=$row['office_name']?></option>
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?>
+
+                                                </select>
+                                            </div>
+
                                             <?php
                                                     }
                                                 }
@@ -4111,7 +4337,7 @@
                                                     ?>
                                                         <tr>
                                                             <td><?= $row['subject'] ?></td>                                                            
-                                                            <td><?= $row['semester']=='1' ? 'First Semester':'Second Semester' ?></td>
+                                                            <td><?= $row['semester']=='1' ? 'First Semester': ($row['semester']=='2' ? 'Second Semester':'N/A') ?></td>
                                                             <td><?= $row['school_year'] ?></td>
 
                                                             <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
@@ -4141,7 +4367,30 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addsubjectModal"><i class="fa fa-plus"></i> Add Subject</button>
+                                            
+                                            <?php
+                                                $na = "SELECT * FROM subject_handled WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addsubjectModal" disabled><i class="fa fa-plus"></i> Add Subject</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addsubjectModal"><i class="fa fa-plus"></i> Add Subject</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" id="addRowchild" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addsubjectModal"><i class="fa fa-plus"></i> Add Subject</button>
+                                                    <?php
+                                                }        
+                                            ?>
+
                                         </div>
                                     </div>
 
@@ -4171,6 +4420,7 @@
                                                                 if($row['nc_level'] == '2'){$level="II";} 
                                                                 if($row['nc_level'] == '3'){$level="III";} 
                                                                 if($row['nc_level'] == '4'){$level="IV";} 
+                                                                if($row['nc_level'] == 'N/A'){$level="N/A";} 
                                                         ?>
                                                             <tr>
                                                                 <td><?= $row['nc_title'] ?></td>
@@ -4205,8 +4455,31 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="vocational">
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNCModal"><i class="fa fa-plus"></i> Add National Certificate</button>
+                                            <!-- <input type="hidden" id="uv_educ_level" value="vocational"> -->
+                                            
+                                            <?php
+                                                $na = "SELECT * FROM national_cert WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNCModal" disabled><i class="fa fa-plus"></i> Add National Certificate</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNCModal"><i class="fa fa-plus"></i> Add National Certificate</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addNCModal"><i class="fa fa-plus"></i> Add National Certificate</button>
+                                                    <?php
+                                                }        
+                                            ?>
+
                                         </div>
                                         
                                     </div>
@@ -4263,8 +4536,31 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="vocational">
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMajorMinorModal"><i class="fa fa-plus"></i> Add Major and Minor</button>
+                                            <!-- <input type="hidden" id="uv_educ_level" value="vocational"> -->
+                                            
+                                            <?php
+                                                $na = "SELECT * FROM major_minor WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMajorMinorModal" disabled><i class="fa fa-plus"></i> Add Major and Minor</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMajorMinorModal"><i class="fa fa-plus"></i> Add Major and Minor</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addMajorMinorModal"><i class="fa fa-plus"></i> Add Major and Minor</button>
+                                                    <?php
+                                                }        
+                                            ?>
+
                                         </div>
                                         
                                     </div>
@@ -4292,6 +4588,7 @@
 
                                                                 if($row['track'] == 'Acad'){$track="Academic Track";} 
                                                                 if($row['track'] == 'Tvl'){$track="Technical-Vocational-Livelihood Track";} 
+                                                                if($row['track'] == 'N/A'){$track="N/A";} 
                                                                 if($row['strand'] == 'Abm'){$strand="Accountancy, Business and Management";} 
                                                                 if($row['strand'] == 'Stem'){$strand="Science, Technology, Engineering, and Mathematics";} 
                                                                 if($row['strand'] == 'Humss'){$strand="Humanities and Social Science";} 
@@ -4299,6 +4596,7 @@
                                                                 if($row['strand'] == 'He'){$strand="Home Economics";} 
                                                                 if($row['strand'] == 'Ia'){$strand="Industrial Arts";} 
                                                                 if($row['strand'] == 'Ict'){$strand="Information and Communications Technology";} 
+                                                                if($row['strand'] == 'N/A'){$strand="N/A";} 
                                                         ?>
                                                             <tr>
                                                                 <td><?= $track ?></td>  
@@ -4334,7 +4632,30 @@
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <!-- <input type="hidden" id="uv_educ_level" value="vocational"> -->
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecializationModal"><i class="fa fa-plus"></i> Add Specialization</button>
+                                            
+                                            <?php
+                                                $na = "SELECT * FROM specialization WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecializationModal" disabled><i class="fa fa-plus"></i> Add Specialization</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecializationModal"><i class="fa fa-plus"></i> Add Specialization</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addSpecializationModal"><i class="fa fa-plus"></i> Add Specialization</button>
+                                                    <?php
+                                                }        
+                                            ?>
+
                                         </div>
                                         
                                     </div>
@@ -4395,7 +4716,31 @@
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <!-- <input type="hidden" id="uv_educ_level" value="vocational"> -->
-                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addAnciliaryWorkModal"><i class="fa fa-plus"></i> Add Anciliary Work</button>
+                                            
+
+                                            <?php
+                                                $na = "SELECT * FROM anciliary_work WHERE emp_no='$user_id' LIMIT 1";
+                                                $na_run = mysqli_query($con,$na);
+                                                
+                                                if(mysqli_num_rows($na_run) > 0 ){
+                                                    foreach($na_run as $row){
+                                                        if($row['n_a']=="1"){
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addAnciliaryWorkModal" disabled><i class="fa fa-plus"></i> Add Anciliary Work</button>
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addAnciliaryWorkModal"><i class="fa fa-plus"></i> Add Anciliary Work</button>
+                                                        <?php
+                                                        }
+                                                    }
+                                                }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addAnciliaryWorkModal"><i class="fa fa-plus"></i> Add Anciliary Work</button>
+                                                    <?php
+                                                }        
+                                            ?>
+
                                         </div>
                                         
                                     </div>
@@ -6044,4 +6389,334 @@
             }
         });
     });
+</script>
+
+<!-- ############### CHECKBOX IN ADD Non-Academic Distinctions (NO NON ACAD) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nonacad").click(function () {
+            if ($(this).is(":checked")) {
+                $("#non_academic").attr("disabled", "disabled");                           
+            } else {
+                $("#non_academic").removeAttr("disabled");                
+                $("#non_academic").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD Membership in Association (NO MEM) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nomem").click(function () {
+            if ($(this).is(":checked")) {
+                $("#mem_in_asso").attr("disabled", "disabled");                           
+            } else {
+                $("#mem_in_asso").removeAttr("disabled");                
+                $("#mem_in_asso").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD Subject in Employment Info (NO SUBJ) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nosubj").click(function () {
+            if ($(this).is(":checked")) {
+                $("#subject").attr("disabled", "disabled");   
+                $("#semester").attr("disabled", "disabled");   
+                $("#school_year").attr("disabled", "disabled"); 
+            } else {
+                $("#subject").removeAttr("disabled");                
+                $("#semester").removeAttr("disabled");                
+                $("#school_year").removeAttr("disabled");                
+                $("#subject").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD NC Cert in Employment Info (NO NC) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nonc").click(function () {
+            if ($(this).is(":checked")) {
+                $("#nctitle").attr("disabled", "disabled");   
+                $("#nclevel").attr("disabled", "disabled");   
+                $("#validuntil").attr("disabled", "disabled"); 
+            } else {
+                $("#nctitle").removeAttr("disabled");                
+                $("#nclevel").removeAttr("disabled");                
+                $("#validuntil").removeAttr("disabled");                
+                $("#nctitle").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD Major Minor in Employment Info (NO MM) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nomm").click(function () {
+            if ($(this).is(":checked")) {
+                $("#major").attr("disabled", "disabled");   
+                $("#minor").attr("disabled", "disabled");
+            } else {
+                $("#major").removeAttr("disabled");                
+                $("#minor").removeAttr("disabled");
+                $("#major").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD Specialization in Employment Info (NO Special) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nospecial").click(function () {
+            if ($(this).is(":checked")) {
+                $("#track").attr("disabled", "disabled");   
+                $("#strand").attr("disabled", "disabled");
+                $("#titlespecialization").attr("disabled", "disabled");
+            } else {
+                $("#track").removeAttr("disabled");                
+                $("#strand").removeAttr("disabled");
+                $("#titlespecialization").removeAttr("disabled");
+                $("#track").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN ADD AnciliaryWork in Employment Info (NO Anci) ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#noanci").click(function () {
+            if ($(this).is(":checked")) {
+                $("#antitle").attr("disabled", "disabled");   
+                $("#datestart").attr("disabled", "disabled");
+                $("#dateend").attr("disabled", "disabled");
+            } else {
+                $("#antitle").removeAttr("disabled");                
+                $("#datestart").removeAttr("disabled");
+                $("#dateend").removeAttr("disabled");
+                $("#antitle").focus();
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN School Information ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#notteaching").click(function () {
+            if ($(this).is(":checked")) {
+                $("#selectBox").attr("disabled", "disabled");
+                document.getElementById("selectBox").selectedIndex = "0";
+                //document.getElementById("sch_name").selectedIndex = "0";
+                //document.getElementById("district").selectedIndex = "0";
+                //document.getElementById('selectBox').value = "N/A";                           
+                document.getElementById('sch_name').value = "N/A";                           
+                document.getElementById('district').value = "N/A";                           
+            } else {
+                $("#selectBox").removeAttr("disabled");                
+                $("#selectBox").focus();
+                document.getElementById("selectBox").selectedIndex = "0";
+                //document.getElementById("sch_name").selectedIndex = "0";
+                //document.getElementById("district").selectedIndex = "0";
+                //document.getElementById('selectBox').value = "N/A";                           
+                document.getElementById('sch_name').value = "";                           
+                document.getElementById('district').value = ""; 
+            }
+        });
+    });
+</script>
+
+
+<!-- ############### CHECKBOX IN Office Information ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#notnonteaching").click(function () {
+            if ($(this).is(":checked")) {
+                $("#functional_div").attr("disabled", "disabled");
+                $("#office_name").attr("disabled", "disabled");
+                document.getElementById("functional_div").selectedIndex = "0";
+                document.getElementById("office_name").selectedIndex = "0";                
+                //document.getElementById('functional_div').value = "N/A";                           
+                //document.getElementById('office_name').value = "N/A"; 
+            } else {
+                $("#functional_div").removeAttr("disabled");                
+                $("#office_name").removeAttr("disabled");                
+                $("#functional_div").focus();
+                document.getElementById("functional_div").selectedIndex = "0";
+                document.getElementById("office_name").selectedIndex = "0";
+            }
+        });
+    });
+</script>
+
+
+<!-- ############### SELECT OPTIONS FOR POSITION TYPE ##################    -->
+<script type="text/javascript">    
+
+    $(function () {
+        <?php 
+        if(isset($_GET['emp_no'])){
+            $user_id = $_GET['emp_no'];
+            //echo $user_id;
+            $users = "SELECT * FROM employment_record WHERE emp_no='$user_id'";
+            $users_run = mysqli_query($con,$users);
+            
+            if(mysqli_num_rows($users_run) > 0 ){
+                foreach($users_run as $emp_rec){
+        ?>
+        var mList = {
+            Teaching : ['Teacher I', 'Teacher II', 'Teacher III', 'Master Teacher I', 'Master Teacher II', 'Master Teacher III', 'Special Education Teacher I', 'Special Education Teacher II', 'Special Education Teacher III', 'Special Science Teacher I','Head Teacher I', 'Head Teacher II', 'Head Teacher III', 'Head Teacher IV', 'Head Teacher V', 'School Principal I', 'School Principal II', 'School Principal III', 'School Principal IV'],
+
+            Teaching_Related :  ['Public School District Supervisor', 'Chief Education Supervisor', 'Education Program Supervisor', 'Education Program Supervisor II','Senior Education Program Specialist'],
+
+            Non_Teaching :  ['Administrative Aide I', 'Administrative Aide II', 'Administrative Aide III', 'Administrative Aide IV', 'Administrative Aide V', 'Administrative Aide VI', 'Administrative Assistant I', 'Administrative Assistant II', 'Administrative Assistant III', 'Administrative Assistant IV', 'Administrative Assistant V', 'Administrative Assistant VI', 'Schools Division Superintendent', 'Assistant Schools Division Superintendent', 'Information Technolgy Officer I', 'Legal Officer III', 'Administrative Office IV', 'Administrative Office V', 'Security Guard I', 'Accountant III', 'Project Development Officer I', 'Project Development Officer II', 'Engineer III', 'Dentist II', 'Dental Aide', 'Nurse II', 'Auditor III']            
+        };
+
+        el_parent = document.getElementById("parent_select");
+        el_child = document.getElementById("child_select");
+        const $select = document.querySelector('#parent_select');
+        const $sel = document.querySelector('#child_select');
+        for (key in mList) {
+            el_parent.innerHTML = el_parent.innerHTML + '<option>'+ key +'</option>';
+        }
+        $select.value = '<?=$emp_rec['position_type']?>';
+        
+        
+        el_parent.addEventListener('change', function populate_child(e){
+            el_child.innerHTML = '';
+            itm = e.target.value;            
+            if(itm in mList){                
+                    for (i = 0; i < mList[itm].length; i++) {
+                        el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';                        
+                    }                                     
+            }  
+        });
+           
+        $(document).ready(function populate_child(e) {            
+            el_child.innerHTML = '';            
+            itm = '<?=$emp_rec['position_type']?>';
+            if(itm in mList){                
+                    for (i = 0; i < mList[itm].length; i++) {
+                        el_child.innerHTML = el_child.innerHTML + '<option>'+ mList[itm][i] +'</option>';   
+                        $sel.value = '<?=$emp_rec['position_rank']?>';                                            
+                    }     
+                                                    
+            }  
+        });                    
+
+      <?php
+            }
+        }
+    }
+    ?>  
+
+        
+    });
+
+    
+</script>
+
+<!-- ############### SELECT OPTIONS FOR SCHOOL NAME AND DISTRICT ##################    -->
+<script>
+    $(document).ready(function() {
+        $('#selectBox').change(function(){     
+            var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+            //alert (selectedValue); 
+            
+            $.ajax({
+                type: 'post', // the method (could be GET btw)
+                url: 'searchSchool.php', // The file where my php code is
+                dataType: 'JSON',
+                data: {
+                'sch_id': selectedValue // all variables i want to pass. In this case, only one.                
+                 },
+                success: function (data) {
+                    //data[0].name;
+                    //data[0].district;
+                    //alert ("asda");
+                    //alert (data[0].name);
+                    //alert (data[0].district);
+                    document.getElementById('sch_name').value = data[0].name;
+                    document.getElementById('district').value = data[0].district;                   
+                    
+                }                
+            });
+
+        }); 
+    });
+</script>
+
+
+<!-- ############### USER INPUT VALIDATIONS ##################    -->
+<script type="text/javascript">
+    //
+        function validatePersonalInfo() {
+            // let x = document.forms["personalinfo_form"]["fname"].value;
+            // if (x == "") {
+            //     alert("Name must be filled out");
+            //     return false;
+            // }
+
+            //var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+            //var regName = /^[a-z]+$/i;
+            var regName = /[a-z]+$/i;
+            var name = document.getElementById('mname').value;
+            if(!regName.test(name)){
+                alert('Please enter a valid Middle Name.');
+                document.getElementById('mname').focus();
+                return false;
+            }
+
+        }
+
+        // ######## PHILHEALTH ##########
+        $(document).ready(function() {
+            var philnum = document.querySelector('#philnum');
+
+            philnum.addEventListener('keyup', function(e){
+            if (event.key != 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
+                philnum.value += '-';
+            }
+            if (event.key == 'Backspace' && (philnum.value.length === 2 || philnum.value.length === 12)){
+                philnum.value += '-';
+            }
+            });
+        });
+
+        // ######## SSS ##########
+        $(document).ready(function() {
+            var sssnum = document.querySelector('#sssnum');
+
+            sssnum.addEventListener('keyup', function(e){
+            if (event.key != 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
+                sssnum.value += '-';
+            }
+            if (event.key == 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
+                sssnum.value += '-';
+            }
+            });
+        });
+
+        // ######## TIN ##########
+        $(document).ready(function() {
+            var tinnum = document.querySelector('#tinnum');
+
+            tinnum.addEventListener('keyup', function(e){
+            if (event.key != 'Backspace' && (tinnum.value.length === 2 || tinnum.value.length === 10)){
+                tinnum.value += '-';
+            }
+            if (event.key == 'Backspace' && (tinnum.value.length === 2 || tinnum.value.length === 10)){
+                tinnum.value += '-';
+            }
+            });
+        });
+
+
 </script>

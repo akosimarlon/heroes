@@ -11,8 +11,8 @@ if(isset($_POST['btn_logout'])){
 
     $_SESSION['message'] = "Logged Out Successfully.";
     $_SESSION['message_type'] = "primary";
-    header("Location: ".$home_location);
-    //header("Location: login.php"); //mao ni ang daan ug tinuod
+    //header("Location: ".$home_location);
+    header("Location: login.php"); //mao ni ang daan ug tinuod
     //header("Location: http://localhost:53548/"); //Home
     exit(0);
 }
