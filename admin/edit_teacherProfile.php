@@ -415,7 +415,7 @@
                                 <label>Monthly Salary</label>                                
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">P</span>
-                                    <input type="text" id="salary" name="salary" class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
+                                    <input type="number" id="salary" name="salary" class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
                                 </div>
                             </div>
                             <div class="form-group">                                

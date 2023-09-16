@@ -1188,7 +1188,22 @@ class myPDF extends FPDF{
                 $this->Cell(45,6,"COLLEGE",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
-                $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $this->SetFont('Arial','',4);
+                }
+                //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                if($course_name < 35 ){
+                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                }else{
+                    //$this->SetFont('Arial','',5);
+                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 90, $y-6);
+                }
+
 
                 $course_len = strlen($data->e_course);
                 //echo $course_len;
