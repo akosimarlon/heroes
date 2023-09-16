@@ -40,6 +40,8 @@
         background-repeat: no-repeat;
         height: 45vh;
         width: 100%;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
         
     }
 
