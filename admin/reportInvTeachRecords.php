@@ -198,19 +198,19 @@
                              
             </div>
             <div class="flex-child">
-                <h6 class="h6 pn">Senior High School | 
                     <?php                                    
                         $query = "SELECT * FROM employment_record WHERE emp_no='$user_id' ";
                         $query_run = mysqli_query($con,$query);
                         if(mysqli_num_rows($query_run) > 0 ){ 
                             foreach($query_run as $row){                        
-                        ?>  
-                            <span>Grade <?=$row['grade_level'];?></span>                                                
+                    ?>                            
+                            <h6 class="h6 pn"><?=$row['school_name']=='N/A' ? $row['office_name'] : $row['school_name'] ?> -
+                            <span><?=$row['position_rank'];?></span>
+                            </h6>
                         <?php 
                             }
                         }
                     ?>
-                </h6>
                 <h1 class="h1 pn"><?=strtoupper($user['firstname']);?></h1>
                 <h1 class="h1 pn"><?=strtoupper($user['lastname']);?></h1>
             </div>

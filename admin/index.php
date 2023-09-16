@@ -219,45 +219,47 @@
 
                     <!-- Profile Completion -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-info shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Profile Status
-                                        </div>
-                                        <div class="row no-gutters align-items-center">
-                                            <?php
-                                                $user_id = $_SESSION['user_empno'];
-                                                $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
-                                                $query_run = mysqli_query($con,$query);
+                        <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">                    
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Profile Details
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <?php
+                                                    $user_id = $_SESSION['user_empno'];
+                                                    $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                    $query_run = mysqli_query($con,$query);
 
-                                                if(mysqli_num_rows($query_run) > 0 ){ 
-                                                    foreach($query_run as $row){
-                                                ?>                                                      
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$row['completed_percentage']?></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="progress progress-sm mr-2">
-                                                            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
-                                                                style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
-                                                                aria-valuemax="100"></div>
+                                                    if(mysqli_num_rows($query_run) > 0 ){ 
+                                                        foreach($query_run as $row){
+                                                    ?>                                                      
+                                                        <div class="col-auto">
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$row['completed_percentage']?></div>
                                                         </div>
-                                                    </div>
-                                                
-                                            <?php
+                                                        <div class="col">
+                                                            <div class="progress progress-sm mr-2">
+                                                                <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+                                                                    style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                <?php
+                                                        }
                                                     }
-                                                }
-                                            ?> 
-                                            
+                                                ?> 
+                                                
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Account Settings -->

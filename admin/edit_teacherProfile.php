@@ -218,7 +218,7 @@
         ?>
 
         <!-- Add Children Modal -->
-        <div class="modal fade" id="addchildrenModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addchildrenModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -261,7 +261,7 @@
         </div>
 
         <!-- Add Educational Background Modal -->
-        <div class="modal fade" id="addvocModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addvocModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog ">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -322,7 +322,7 @@
         </div>
 
         <!-- Add Civil Service Eligibility Modal -->
-        <div class="modal fade" id="addcivilModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addcivilModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -381,7 +381,7 @@
         </div>
 
         <!-- Add Work Experience Modal -->
-        <div class="modal fade" id="addWorkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addWorkModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -454,7 +454,7 @@
         </div>
 
         <!-- Add Voluntary Work Modal -->
-        <div class="modal fade" id="addVoluntaryWorkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addVoluntaryWorkModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -510,7 +510,7 @@
         </div>
 
         <!-- Add Learning Development Modal -->
-        <div class="modal fade" id="addLearningDevModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addLearningDevModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -579,7 +579,7 @@
         </div>
 
         <!-- Add Special Skills and Hobies Modal -->
-        <div class="modal fade" id="addSpecialSkillsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addSpecialSkillsModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -619,7 +619,7 @@
         </div>
 
         <!-- Add Non-Academic Distinctions Modal -->
-        <div class="modal fade" id="addNonAcademicModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addNonAcademicModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -658,7 +658,7 @@
         </div>
         
         <!-- Add Membership in Association Modal -->
-        <div class="modal fade" id="addMeminAssoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addMeminAssoModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -697,7 +697,7 @@
         </div>
 
         <!-- Add Subject Modal -->
-        <div class="modal fade" id="addsubjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addsubjectModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -753,7 +753,7 @@
         </div>
 
         <!-- Add National Certificates Modal -->
-        <div class="modal fade" id="addNCModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addNCModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -807,7 +807,7 @@
         </div>
 
         <!-- Add Major and Minor Modal -->
-        <div class="modal fade" id="addMajorMinorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addMajorMinorModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -850,7 +850,7 @@
         </div>
 
         <!-- Add Specialization Modal -->
-        <div class="modal fade" id="addSpecializationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addSpecializationModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -915,7 +915,7 @@
         </div>
 
         <!-- Add Anciliary Work Modal -->
-        <div class="modal fade" id="addAnciliaryWorkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addAnciliaryWorkModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
@@ -1016,7 +1016,7 @@
         </div>
         
         <!-- Edit Child Modal -->
-        <div class="modal fade" id="editchildModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editchildModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1051,7 +1051,7 @@
         </div>
 
         <!-- Edit Educational Background Modal -->
-        <div class="modal fade" id="editvocModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editvocModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1103,7 +1103,7 @@
         </div>
         
         <!-- Edit Civil Service Eligibility Modal -->
-        <div class="modal fade" id="editcivildModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editcivildModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1154,7 +1154,7 @@
         </div>
 
         <!-- Edit Work Experience Modal -->
-        <div class="modal fade" id="editworkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editworkModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1220,7 +1220,7 @@
         </div>
 
         <!-- Edit Voluntary Modal -->
-        <div class="modal fade" id="editvoluntaryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editvoluntaryModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1268,7 +1268,7 @@
         </div>
 
         <!-- Edit Learning Development Modal -->
-        <div class="modal fade" id="editlearningdevModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editlearningdevModal" tabindex="-1" data-bs-backdrop="static" ria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1326,7 +1326,7 @@
         </div>
 
         <!-- Edit Special Skills and Hobies Modal -->
-        <div class="modal fade" id="editspecialskillsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editspecialskillsModal" tabindex="-1" data-bs-backdrop="static" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1357,7 +1357,7 @@
         </div>
 
         <!-- Edit Non-Academic Distinctions Modal -->
-        <div class="modal fade" id="editnonacademicModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editnonacademicModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1388,7 +1388,7 @@
         </div>
 
         <!-- Edit Membership in Association/Organization Modal -->
-        <div class="modal fade" id="editmembershipModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editmembershipModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1419,7 +1419,7 @@
         </div>
 
         <!-- Edit Subject Modal -->
-        <div class="modal fade" id="editsubjectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editsubjectModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1466,7 +1466,7 @@
         </div>
 
         <!-- Edit NC Modal -->
-        <div class="modal fade" id="editncModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editncModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1511,7 +1511,7 @@
         </div>
 
         <!-- Edit Major Minor Modal -->
-        <div class="modal fade" id="editmajorminorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editmajorminorModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1546,7 +1546,7 @@
         </div>
 
         <!-- Edit Specialization Modal -->
-        <div class="modal fade" id="editspecializationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editspecializationModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -1602,7 +1602,7 @@
         </div>
 
         <!-- Edit Anciliary Work Modal -->
-        <div class="modal fade" id="editanciliaryworkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editanciliaryworkModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">
@@ -4232,9 +4232,9 @@
 
                                             <h5 class="semi-bold text-primary">Plantilla Position</h5>                                            
                                             <div class="col-auto">
-                                                <label for="">Type of Position</label>                                                
+                                                <label for="">Category</label>                                                
                                                 <select name="position_type" id="parent_select" class="form-control border-success" required  style="width:220px;">
-                                                    <option value="">--Select Type of Position--</option>
+                                                    <option value="">--Select Category--</option>
                                                 </select>
                                             </div>
                                             
