@@ -49,7 +49,7 @@
         <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile Picture</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Password</a>
         </li>
         <li class="nav-item">
@@ -57,7 +57,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-        </li>
+        </li> -->
         </ul>
 
         <!-- Tab panes -->
@@ -129,6 +129,7 @@
             }           
             ?>
             
+            <!-- ############# PASSWORD TAB ####################-->
             <div class="tab-pane" id="password" role="tabpanel" aria-labelledby="password-tab">
                 <div class="container-fluid">                    
                     <!-- ###### CHANGE PASSWORD ######### -->  
@@ -172,6 +173,7 @@
                     </div>  
 
                     <!--#### CONFIRM NEW PASSWORD ####-->
+                    
                     <div class="d-sm-flex align-items-left justify-content-left mb-4 mt-4">                    
                         <div class="row g-3 align-items-left">                            
                             <div class="col" style="width:200px;">
@@ -203,9 +205,12 @@
                 </div>
             </div>
 
-
+            <!-- ############# TAB ####################-->
             <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">C</div>
+            <!-- ############# TAB ####################-->
             <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">D.</div>
+
+
         </div>
 
 
