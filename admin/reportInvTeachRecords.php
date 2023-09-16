@@ -35,7 +35,7 @@
     } 
 
     #banner{
-        background-image: url("assets/img/banner/profilebanner3.jpg");
+        background-image: url("assets/img/banner/profilebanner4.jpg");
         background-size: contain,cover; 
         background-repeat: no-repeat;
         height: 45vh;
