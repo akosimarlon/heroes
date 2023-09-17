@@ -4,7 +4,7 @@
 include('includes/timezone.php');
 $host = "localhost";
 $username = "root";
-$password = "";
+$password = "@DavaosurDB2023";
 $database = "tis";
 
 
