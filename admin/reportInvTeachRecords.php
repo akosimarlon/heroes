@@ -145,6 +145,17 @@
     height: auto;
     }
 
+    /* Style the tab content */
+    .tabcontent2 {
+    float: left;
+    padding: 0px 12px;
+    margin-left: 20px;
+    border-left: 1px solid #ccc;
+    width: 75%;
+    
+    height: auto;
+    }
+
     .info-label{
         border: 0px solid #ccc;
         font-family: Verdana, Geneva, sans-serif;
@@ -202,11 +213,27 @@
                         $query = "SELECT * FROM employment_record WHERE emp_no='$user_id' ";
                         $query_run = mysqli_query($con,$query);
                         if(mysqli_num_rows($query_run) > 0 ){ 
-                            foreach($query_run as $row){                        
+                            foreach($query_run as $row){     
+                                
+                            if($row['position_rank']=='Public School District Supervisor'){
+                            ?>
+                                <h6 class="h6 pn"><?=$row['position_rank']?> -
+                                <span><?=$row['district'];?></span>
+                                </h6>
+                            
+                            <?php
+                            }else{
+                            ?>    
+                                <h6 class="h6 pn"><?=$row['school_name']=='N/A' ? $row['office_name'] : $row['school_name'] ?> -
+                                <span><?=$row['position_rank'];?></span>
+                                </h6>
+                            <?php    
+                            } 
                     ?>                            
-                            <h6 class="h6 pn"><?=$row['school_name']=='N/A' ? $row['office_name'] : $row['school_name'] ?> -
-                            <span><?=$row['position_rank'];?></span>
-                            </h6>
+                            
+                               
+
+                            
                         <?php 
                             }
                         }
@@ -245,21 +272,16 @@
                 <tr>
                     <td>
                         <div class="col-auto">
-                            <label class="label1">Position</label></br>
+                            <label class="label1">Designation</label></br>
                             <?php                                    
                                 $query = "SELECT * FROM employment_record WHERE emp_no='$user_id' ";
                                 $query_run = mysqli_query($con,$query);
                                 if(mysqli_num_rows($query_run) > 0 ){ 
                                     foreach($query_run as $row){                        
                                 ?>  
-                                    <?=$row['position_rank']=='' ? '<span class="data2"></span>':'' ?>
-                                    <?=$row['position_rank']=='teacher1' ? '<span class="data2">Teacher I</span>':'' ?>
-                                    <?=$row['position_rank']=='teacher2' ? '<span class="data2">Teacher II</span>':'' ?>
-                                    <?=$row['position_rank']=='teacher3' ? '<span class="data2">Teacher III</span>':'' ?>
-                                    <?=$row['position_rank']=='mteacher1' ? '<span class="data2">Master Teacher I</span>':'' ?>
-                                    <?=$row['position_rank']=='mteacher2' ? '<span class="data2">Master Teacher II</span>':'' ?>
-                                    <?=$row['position_rank']=='mteacher3' ? '<span class="data2">Master Teacher III</span>':'' ?>
-                                    <?=$row['position_rank']=='ssteacher1' ? '<span class="data2">Special Science Teacher I</span>':'' ?>                                        
+                                    
+                                    <span class="data2"><?=$row['designation']?></span>
+                                                                           
                                 <?php 
                                     }
                                 }
@@ -778,17 +800,17 @@
             </div>
             <div class="card-body">
                 <div class="tab">
-                        <button class="tablinks btn btn-outline-primary" onclick="openCity(event, 'employment')" id="">Employment Records</button>
-                        <button class="tablinks btn btn-outline-primary" onclick="openCity(event, 'teaching')">Teaching Records</button>                        
+                        <button class="tablinks2 btn btn-outline-primary" onclick="openCity2(event, 'employment')" id="defaultOpen2">Employment Records</button>
+                        <button class="tablinks2 btn btn-outline-primary" onclick="openCity2(event, 'teaching')">Teaching Records</button>                        
                     </div>
                     
-                    <div id="employment" class="tabcontent">
+                    <div id="employment" class="tabcontent2">
                         <!-- <div class="vr vr-blurry position-absolute" style="height: 250px;"></div>                                                           -->
                         <h3>Employment Records</h3>
                         <p>Employment Records will be displayed soon.</p>
                     </div>
 
-                    <div id="teaching" class="tabcontent">
+                    <div id="teaching" class="tabcontent2">
                         <h3>Teaching Records</h3>
                         <p>Teaching Records will be displayed soon.</p>
                     </div>
@@ -838,4 +860,29 @@
     }
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
+</script>
+
+<script>
+    function openCity2(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent2");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks2");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen2").click();
 </script>

@@ -38,7 +38,7 @@ class myPDF extends FPDF{
     
     function personalInfo1($db){
 
-        if(isset($_GET['emp_no'])){
+        if(isset($_SESSION['auth_user']['user_empno'])){
             $user_id = $_GET['emp_no'];            
             $stmt = $db->query("SELECT * FROM personal_info WHERE emp_no='$user_id'");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){
@@ -1118,13 +1118,27 @@ class myPDF extends FPDF{
                 $this->Cell(45,6,"ELEMENTARY",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
-                $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $this->SetFont('Arial','',4);
+                }
+                if($course_name < 35 ){
+                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                }else{                    
+                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 90, $y-6);
+                }
+                
+                $this->SetFont('Arial','',5);
                 $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
-                if(strlen($data->e_scholarship) < 10 ){
+                if(strlen($data->e_scholarship) < 12 ){
                     $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
@@ -1141,8 +1155,23 @@ class myPDF extends FPDF{
                 $this->SetTextColor(0,0,0);
                 $this->Cell(45,6,"SECONDARY",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
-                $this->SetFont('Arial','',5);
-                $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                $this->SetFont('Arial','',5);                
+
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $this->SetFont('Arial','',4);
+                }
+                if($course_name < 35 ){
+                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                }else{
+                    //$this->SetFont('Arial','',5);
+                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 90, $y-6);
+                }
+
+                $this->SetFont('Arial','',5); 
                 $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
@@ -1165,8 +1194,40 @@ class myPDF extends FPDF{
                 $this->Cell(45,6,"VOCATIONAL / TRADE COURSE",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
-                $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
-                $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
+                //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $this->SetFont('Arial','',4);
+                }
+                if($course_name < 35 ){
+                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                }else{
+                    //$this->SetFont('Arial','',5);
+                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 90, $y-6);
+                }
+                     
+                
+                $this->SetFont('Arial','',5);
+                $course_len = strlen($data->e_course);
+                if($course_len > 76 ){
+                    $this->SetFont('Arial','',3);
+                }
+                //echo $course_len;
+                if($course_len < 35 ){
+                    $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
+                }else{
+                    $this->SetFont('Arial','',5);
+                    $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 130, $y-6);
+                }
+
+                $this->SetFont('Arial','',5);
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
@@ -1204,18 +1265,23 @@ class myPDF extends FPDF{
                     $this->SetXY($x + 90, $y-6);
                 }
 
-
+                $this->SetFont('Arial','',5);
                 $course_len = strlen($data->e_course);
+                if($course_len > 70 ){
+                    $this->SetFont('Arial','',3);
+                }
                 //echo $course_len;
                 if($course_len < 35 ){
                     $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
                 }else{
-                    $this->SetFont('Arial','',5);
+                    //$this->SetFont('Arial','',5);
                     $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 130, $y-6);
                 }
+
+                $this->SetFont('Arial','',5);
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
@@ -1239,19 +1305,41 @@ class myPDF extends FPDF{
                 $this->Cell(45,6,"GRADUATE STUDIES",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
-                $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
 
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $this->SetFont('Arial','',4);
+                }
+                //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                if($course_name < 35 ){
+                    //$this->SetFont('Arial','',5);
+                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                }else{
+                    //$this->SetFont('Arial','',5);
+                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 90, $y-6);
+                }
+                
+                $this->SetFont('Arial','',5);
                 $course_len = strlen($data->e_course);
                 //echo $course_len;
+                if($course_len > 76 ){
+                    $this->SetFont('Arial','',3);
+                }
                 if($course_len < 35 ){
+                    //$this->SetFont('Arial','',5);
                     $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
-                }else{
-                    $this->SetFont('Arial','',5);
+                }else{                    
                     $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 130, $y-6);
                 }
+
+                $this->SetFont('Arial','',5);
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
@@ -1604,7 +1692,21 @@ class myPDF extends FPDF{
                     
                 }
                 $this->Cell(15,8,strtoupper($step[$y]),'BL',0,'C');
-                $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
+
+
+                
+
+                if(strlen($appointment[$y]) < 11 ){
+                    $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
+                }else{
+                    $this->SetFont('Arial','',4);
+                    $this->MultiCell(15,4,strtoupper($appointment[$y]),1,'C');
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 185, $b-8);
+                }
+
+                $this->SetFont('Arial','',6);
                 //$this->Cell(10,8,substr(strtoupper($govt_service[$y]),0,1),'BLR',1,'C');
                 if($govt_service[$y]=="N/A"){
                     $this->Cell(10,8,$govt_service[$y],'BLR',1,'C');
@@ -1837,16 +1939,20 @@ class myPDF extends FPDF{
 
                 $titleld = strlen($title_of_ld[$y]);
                 //echo $course_len;
+                if($titleld > 90 ){
+                    $this->SetFont('Arial','',5);                    
+                }
                 if($titleld < 60 ){
                     $this->Cell(80,8,strtoupper($title_of_ld[$y]),'BL',0,'C');                    
                 }else{
-                    $this->SetFont('Arial','',6);
+                    //$this->SetFont('Arial','',6);
                     $this->MultiCell(80,4,strtoupper($title_of_ld[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
                     $this->SetXY($a + 80, $b-8);
                 }
-
+                
+                $this->SetFont('Arial','',6);
                 //$this->Cell(80,8,strtoupper($title_of_ld[$y]),'BL',0,'C');
                 if($count<=$y){
                     $this->Cell(15,8,"",'BL',0,'L');

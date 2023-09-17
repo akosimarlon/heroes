@@ -118,8 +118,20 @@ else{
         header("Location: ".$home_location);
         //header("Location: ../login.php");
         exit(0);
-    }    
+    }
+       
+     
 }
+
+// if($_SESSION['user_empno'] != $_GET['emp_no'] ){
+//     $_SESSION['message'] = "This action is Not Authorized" .  $_GET['emp_no'];
+//     $_SESSION['message_type'] = "danger";
+//     //echo "Mali ang role.. dli admin dli pd teacher";
+//     //header("Location: ".$home_location);
+//     //header("Location: 404.html");
+//     //exit(0);
+// }
+
 
 if(!isset($_SESSION['tab_page'])){
     $_SESSION['tab_page'] = "#personal";

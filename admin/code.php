@@ -2637,7 +2637,7 @@ if(isset($_POST['submitImage'])){
                     try {
                         
                         $query = "UPDATE profile_pic SET image='$originalPath' 
-                                     WHERE emp_no='$empno' ";                                    
+                                     WHERE emp_no=$empno ";                                    
                         
                         // $query = "INSERT INTO profile_pic (emp_no,image,status) 
                         //             VALUES ('$empno','$originalPath','1')";                                    

@@ -164,9 +164,9 @@
     <!-- Begin Page Content -->
     <div class="container-fluid bg-gradient-light">
         <?php
-            if(isset($_GET['emp_no'])){
+            if(isset($_SESSION['auth_user']['user_empno'])){
                 //echo $_SESSION['user_empno'];
-                $user_id = $_GET['emp_no'];
+                $user_id = $_SESSION['auth_user']['user_empno'];
          ?>
                 <input type="hidden" id="user_emp_no" value="<?=$user_id?>">                
          <?php       
@@ -2696,7 +2696,7 @@
                                                                 <input type="hidden" id="uv_scholarship<?=$row['id']?>" value="<?=$row['e_scholarship']?>">
                                                                 <input type="hidden" id="utablee<?=$row['id']?>" value="educational">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteCourse" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -2796,7 +2796,7 @@
                                                                 <input type="hidden" id="uv_scholarship<?=$row['id']?>" value="<?=$row['e_scholarship']?>">
                                                                 <input type="hidden" id="utablee<?=$row['id']?>" value="educational">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteCourse" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -2895,7 +2895,7 @@
                                                                 <input type="hidden" id="uv_scholarship<?=$row['id']?>" value="<?=$row['e_scholarship']?>">
                                                                 <input type="hidden" id="utablee<?=$row['id']?>" value="educational">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteCourse" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3039,7 +3039,7 @@
                                                                 <input type="hidden" id="uv_date_of_validity<?=$row['id']?>" value="<?=$row['date_of_validity']?>">                                                                
                                                                 <input type="hidden" id="utablec<?=$row['id']?>" value="civil_service">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editcivilbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editcivilbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteCivilService" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3220,7 +3220,7 @@
                                                                 <input type="hidden" id="uv_govt_service<?=$row['id']?>" value="<?=$row['govt_service']?>">                                                                
                                                                 <input type="hidden" id="utablew<?=$row['id']?>" value="work_experience">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editworkbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editworkbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteWorkEx" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3368,7 +3368,7 @@
                                                                 <input type="hidden" id="u_nature_work<?=$row['id']?>" value="<?=$row['nature_work']?>">
                                                                 <input type="hidden" id="utablev<?=$row['id']?>" value="voluntary_work">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvoluntarybtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvoluntarybtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteVoluntary" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3519,10 +3519,10 @@
                                                                 <input type="hidden" id="u_image<?=$row['id']?>" value="<?=$row['img_cert']?>">
                                                                 <input type="hidden" id="utablel<?=$row['id']?>" value="learning_dev">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editlearningdevbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> 
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editlearningdevbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> 
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteLearning" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button> 
 
-                                                                <button type="button" name="btn_view_cert" value="<?=$row['id']?>" class="btn btn-info btn-sm viewCerti" data-toggle="modal" data-target="#viewCertModal"><i class="fa fa-eye"></i> View</button>
+                                                                <button type="button" name="btn_view_cert" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>" class="btn btn-info btn-sm viewCerti" data-toggle="modal" data-target="#viewCertModal"><i class="fa fa-eye"></i> View</button>
                                                                 </td>
                                                             </tr>
                                                         <?php
@@ -3634,7 +3634,7 @@
                                                                 <input type="hidden" id="u_special_skills<?=$row['id']?>" value="<?=$row['special_skills']?>">                                                                
                                                                 <input type="hidden" id="utabless<?=$row['id']?>" value="special_skills">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editspecialskillsbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editspecialskillsbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteSpecialSkills" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3713,7 +3713,7 @@
                                                                 <input type="hidden" id="u_non_academic<?=$row['id']?>" value="<?=$row['non_academic']?>">                                                                
                                                                 <input type="hidden" id="utablena<?=$row['id']?>" value="non_academic">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editnonacademicbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editnonacademicbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteNonAcademic" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -3791,7 +3791,7 @@
                                                                 <input type="hidden" id="u_mem_in_asso<?=$row['id']?>" value="<?=$row['mem_in_asso']?>">                                                                
                                                                 <input type="hidden" id="utablema<?=$row['id']?>" value="association">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editmembershipbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editmembershipbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteMemAsso" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -4089,7 +4089,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="">TELEPHONE NUMBER</label>
-                                            <input type="text" value="<?=$info['reftel1'];?>" name="reftel1" id="reftel1" class="form-control border-success" autocomplete="off" required autofocus>                                            
+                                            <input type="number" value="<?=$info['reftel1'];?>" name="reftel1" id="reftel1" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
                                         
                                         <div class="col-md-3 mb-3"></div>
@@ -4101,7 +4101,7 @@
                                             <input type="text" value="<?=$info['refadd2'];?>" name="refadd2" id="refadd2" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
                                         <div class="col-md-3 mb-3">                                            
-                                            <input type="text" value="<?=$info['reftel2'];?>" name="reftel2" id="reftel2" class="form-control border-success" autocomplete="off" required autofocus>                                            
+                                            <input type="number" value="<?=$info['reftel2'];?>" name="reftel2" id="reftel2" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
 
                                         <div class="col-md-3 mb-3"></div>
@@ -4113,7 +4113,7 @@
                                             <input type="text" value="<?=$info['refadd3'];?>" name="refadd3" id="refadd3" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
                                         <div class="col-md-3 mb-3">                                            
-                                            <input type="text" value="<?=$info['reftel3'];?>" name="reftel3" id="reftel3" class="form-control border-success" autocomplete="off" required autofocus>                                            
+                                            <input type="number" value="<?=$info['reftel3'];?>" name="reftel3" id="reftel3" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
 
                                         <div class="text-success">
@@ -4397,7 +4397,7 @@
                                                             <input type="hidden" id="uschool_year<?=$row['id']?>" value="<?=$row['school_year']?>">
                                                             <input type="hidden" id="utablesh<?=$row['id']?>" value="subject_handled">
                                                             
-                                                            <td><button type="button" name="btn_subject_edit" class="btn btn-success btn-sm editsubjectbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                            <td><button type="button" name="btn_subject_edit" class="btn btn-success btn-sm editsubjectbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                             <button type="button" name="btn_subject_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteSubjectHandled" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                         </tr>
                                                     <?php
@@ -4484,7 +4484,7 @@
                                                                 <input type="hidden" id="u_valid_until<?=$row['id']?>" value="<?=$row['valid_until']?>">                                                                
                                                                 <input type="hidden" id="utablenc<?=$row['id']?>" value="national_cert">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editnc" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editnc" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteNC" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -4565,7 +4565,7 @@
                                                                 <input type="hidden" id="u_minor<?=$row['id']?>" value="<?=$row['minor']?>">                                                                
                                                                 <input type="hidden" id="utablemm<?=$row['id']?>" value="major_minor">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editmm" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editmm" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteMM" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -4660,7 +4660,7 @@
                                                                 <input type="hidden" id="u_titlename<?=$row['id']?>" value="<?=$row['title']?>">                                                                
                                                                 <input type="hidden" id="utablesp<?=$row['id']?>" value="specialization">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editspecialization" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editspecialization" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteSpecialization" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php
@@ -4744,7 +4744,7 @@
                                                                 <input type="hidden" id="u_end_date<?=$row['id']?>" value="<?=$row['end_date']?>">                                                                
                                                                 <input type="hidden" id="utableaw<?=$row['id']?>" value="anciliary_work">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editanciliaryworkbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editanciliaryworkbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
                                                                 <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteAnciliaryWork" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
                                                             </tr>
                                                         <?php

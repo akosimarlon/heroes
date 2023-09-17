@@ -76,9 +76,12 @@
                     if(mysqli_num_rows($users_run) > 0 ){
                         foreach($users_run as $user){
             ?>
+
+            <!-- ###### PROFILE PICTURE ######### -->
             <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div class="container-fluid">                    
-                    <!-- ###### PROFILE PICTURE ######### -->  
+                <div class="container-fluid">   
+
+                      
                     <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-4">
                         <?php include('message.php'); ?>                  
                     </div>    
