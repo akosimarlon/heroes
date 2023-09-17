@@ -73,6 +73,26 @@
             </div>
         </li>
 
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
+                aria-expanded="true" aria-controls="collapseTables">
+                </i><i class="fa fa-table"></i>
+                <span>Tables</span>
+            </a>
+            <div id="collapseTables" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Data Records:</h6>
+                    <a class="collapse-item" href="user_masterlist.php">User Masterlist</a>
+                    <a class="collapse-item" href="">Schools</a>
+                    <!-- <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                    <a class="collapse-item" href="utilities-other.html">Other</a> -->
+                </div>
+            </div>
+        </li>
+
+
         <!-- Divider -->
         <hr class="sidebar-divider">
 

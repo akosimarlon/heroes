@@ -6,13 +6,35 @@
     unset( $_SESSION['tab_page'] );
 ?>    
     
+<style>
 
+    #timestamp {
+        position: relative;
+        display: inline-block;
+        vertical-align:top;
+        margin: 0;
+        width:auto;
+        height: 10px;
+    }
+
+    .cardbodytext {
+        float:right;
+        font-size: 41.5px;
+    }
+
+</style>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
                 <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-5">
+                    <h1 class="h3 mb-0 text-gray-800"><strong>Dashboard</strong></h1>
+                    <span class="d-none d-sm-inline-block text-dark">                        
+                    <div id="timestamp"></div></span>
+                </div>
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    
                     <h1 class="h3 mb-0 text-gray-800">Welcome to HEROES (Human Eco-Friendly Resource Operating Electronic System)</h1>
                     <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -303,9 +325,25 @@ a:hover {
 }
 </style>
 
+
+
 <?php
     include('includes/scripts.php');
     include('includes/footer.php');
 ?>
 
+<script>
+    $(document).ready(function() {
+        setInterval(timestamp, 1000);
+    });
+    function timestamp() {
+        //alert ("asda");
+        $.ajax({
+            url: 'includes/timestamp.php',
+            success: function(data) {
+                $('#timestamp').html(data);                    
+            },
+        });
+    }
+</script>
    
