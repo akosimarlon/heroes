@@ -556,7 +556,7 @@
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image">
                                                            
                             </div>
                             <div class="form-group">
@@ -2368,7 +2368,7 @@
                                         </div>
                                         <div class="col-md-3 mb-5">
                                             <label for="">Telephone Number</label>
-                                            <input type="text" name="spouseTelno" value="<?=$family['spouse_buss_tel'];?>" class="form-control border-success" autocomplete="off" required autofocus>
+                                            <input type="number" name="spouseTelno" value="<?=$family['spouse_buss_tel'];?>" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
                                         <?php
                                                 }
