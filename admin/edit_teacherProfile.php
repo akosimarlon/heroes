@@ -178,7 +178,12 @@
                 if(mysqli_num_rows($users_run) > 0 ){
                     foreach($users_run as $user){
         ?>
-        <!-- Page Heading -->        
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-5">
+            <h1 class="h3 mb-0 text-gray-800"><strong>Profile Details</strong></h1>
+            <span class="d-none d-sm-inline-block text-dark">                        
+            <div id="timestamp"></div></span>
+        </div>     
         <!-- ###### PROFILE PICTURE ######### -->  
         <div class="d-sm-flex align-items-center justify-content-center mb-4">                    
             <div class="card border-bottom-info shadow h-100 py-2">
@@ -1829,7 +1834,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Height (m):</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="number" name="height" value="<?=$user['height'];?>" onchange="setTwoNumberDecimal" min="0" max="10" step="0.1" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
+                                                    <input type="number" name="height" value="<?=$user['height'];?>" onchange="setTwoNumberDecimal" min="0" max="10" step="0.01" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -6832,4 +6837,22 @@
             alert (this.value);
         }
 
+</script>
+
+
+
+<!-- ######## TIME STAMP FOR DATE AND TIME ########## -->
+<script>
+    $(document).ready(function() {
+        setInterval(timestamp, 1000);
+    });
+    function timestamp() {
+        //alert ("asda");
+        $.ajax({
+            url: 'includes/timestamp.php',
+            success: function(data) {
+                $('#timestamp').html(data);                    
+            },
+        });
+    }
 </script>
