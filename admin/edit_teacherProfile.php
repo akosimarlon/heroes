@@ -164,9 +164,9 @@
     <!-- Begin Page Content -->
     <div class="container-fluid bg-gradient-light">
         <?php
-            if(isset($_SESSION['auth_user']['user_empno'])){
+            if(isset($_GET['emp_no'])){
                 //echo $_SESSION['user_empno'];
-                $user_id = $_SESSION['auth_user']['user_empno'];
+                $user_id = $_GET['emp_no'];
          ?>
                 <input type="hidden" id="user_emp_no" value="<?=$user_id?>">                
          <?php       
