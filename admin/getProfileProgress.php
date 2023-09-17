@@ -1,7 +1,7 @@
 <?php
     include('authentication.php');   
     
-    if(isset($_POST['emp_id'])) { //if i have this post        
+    if(isset($_GET['emp_id'])) { //if i have this post        
         $empid = $_POST['emp_id'];        
         $pi_completed = "";
         $fb_completed = "";
