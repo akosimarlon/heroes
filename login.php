@@ -55,6 +55,7 @@ if(isset($_SESSION['auth'])){
                                     <div class="text-center">                                        
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
+                                    <hr>
                                     <form class="user" action="logincode.php" method="POST">                                    
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user"
@@ -85,10 +86,10 @@ if(isset($_SESSION['auth'])){
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
