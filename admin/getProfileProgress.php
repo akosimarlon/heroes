@@ -46,7 +46,7 @@
             }
         }  
         
-        $total = "" + $pi_completed + $fb_completed + $child_completed + $eb_completed + $sec_completed + $voc_completed + $col_completed + $grad_completed + $cse_completed + $we_completed + $vw_completed + $ld_completed + $skills_completed + $nacad_completed + $mem_completed + $oi_completed + $ei_completed + $tr_completed + $nc_completed + $mm_completed + $spec_completed + $aw_completed;
+        $total = $pi_completed + $fb_completed + $child_completed + $eb_completed + $sec_completed + $voc_completed + $col_completed + $grad_completed + $cse_completed + $we_completed + $vw_completed + $ld_completed + $skills_completed + $nacad_completed + $mem_completed + $oi_completed + $ei_completed + $tr_completed + $nc_completed + $mm_completed + $spec_completed + $aw_completed;
 
         $per = ($total / 153) * 100;
         $percentage =  round($per).'%';
