@@ -4,6 +4,8 @@
     include('includes/header.php');
     include('includes/navbar.php');
     
+    //include('checkID.php');
+
     
 ?>   
 
