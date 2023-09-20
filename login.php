@@ -129,8 +129,9 @@ if(isset($_SESSION['auth'])){
             font-size: 16px;
             padding: 12px 24px;
             border: none;
-            font-weight: 1000;
+            font-weight: 800;
             border-color: #ffffff;
+            font-family: "Lucida Console", "Courier New", monospace;
         }
 
         /* @keyframes gradient {
