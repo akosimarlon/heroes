@@ -168,10 +168,10 @@ if(isset($_SESSION['auth'])){
 
                         //$email = $_POST['email'];
                         //$password = $_POST['password'];
-                        $userID = $_POST['current_user_id'];      // id sa user sa masterlist... auto inc
-                        $user_name = $_POST['current_username'];  //email
-                        $user_role = $_POST['current_user_role']; // teacher, admin... etc..
-                        $user_security = $_POST['security_key'];  // value is 1234
+                        $userID = $_GET['current_user_id'];      // id sa user sa masterlist... auto inc
+                        $user_name = $_GET['current_username'];  //email
+                        $user_role = $_GET['current_user_role']; // teacher, admin... etc..
+                        $user_security = $_GET['security_key'];  // value is 1234
 
                         
 
