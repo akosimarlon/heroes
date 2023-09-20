@@ -168,11 +168,15 @@ if(isset($_SESSION['auth'])){
 
                         //$email = $_POST['email'];
                         //$password = $_POST['password'];
-                        $userID = $_GET['current_user_id'];      // id sa user sa masterlist... auto inc
-                        $user_name = $_GET['current_username'];  //email
-                        $user_role = $_GET['current_user_role']; // teacher, admin... etc..
-                        $user_security = $_GET['security_key'];  // value is 1234
+                        // $userID = $_GET['current_user_id'];      // id sa user sa masterlist... auto inc
+                        // $user_name = $_GET['current_username'];  //email
+                        // $user_role = $_GET['current_user_role']; // teacher, admin... etc..
+                        // $user_security = $_GET['security_key'];  // value is 1234
 
+                        $userID = '1202650';      // id sa user sa masterlist... auto inc
+                        $user_name = 'marlon.diocson@deped.gov.ph';  //email
+                        $user_role = 'teacher'; // teacher, admin... etc..
+                        $user_security = '1234';
                         
 
                     ?>

@@ -175,9 +175,10 @@
 
 
 
-        
-            
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
+        
 
         $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
         $login_query_run = mysqli_query($con,$login_query);
