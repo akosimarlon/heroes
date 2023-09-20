@@ -177,6 +177,8 @@
                 
                 if(mysqli_num_rows($users_run) > 0 ){
                     foreach($users_run as $user){
+                        $first_name = $user['firstname'];
+                        $last_name = $user['lastname'];
         ?>
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-5">
@@ -240,17 +242,17 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nochild" name="nochild" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">                                
                                 <label>NAME of CHILDREN (Write full name and list all)</label>
                                 <input type="text" id="children" name="children" class="form-control border-success" placeholder="Enter Full name" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label>Date of Birth</label>
-                                <input type="date" id="childdob" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
-                            </div> 
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nochild" name="nochild" width="70px" height="70px">
+                                <input type="date" id="childdob" min="0001-01-01" max="9999-12-31" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -283,6 +285,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="novoc" name="novoc" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" id="ed_level" name="educ_level" value="">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>NAME of School (Write full)</label>
@@ -309,10 +315,7 @@
                                 <label>Scholarship / Academic Honors Received</label>
                                 <input type="text" id="e_scholarship" name="e_scholarship" class="form-control border-success" placeholder="" required autofocus>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="novoc" name="novoc" width="70px" height="70px">
-                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -343,6 +346,11 @@
                             }
                         ?>    
                         <div class="modal-body">
+                            
+                            <div class="form-group">
+                                <input type="checkbox" id="nocsc" name="nocsc" width="70px" height="70px">  
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>                                
+                            </div>
                             <div class="form-group">                                
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE/ BARANGAY ELIGIBILITY / DRIVER'S LICENSE</label>
@@ -350,11 +358,11 @@
                             </div>
                             <div class="form-group">                                
                                 <label>Rating (If Applicable)</label>
-                                <input type="text" id="rating" name="rating" class="form-control border-success" placeholder="" required autofocus>
+                                <input type="number" id="rating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
-                                <input type="date" id="date_of_exam" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
+                                <input type="date" id="date_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
                             </div>
                             <div class="form-group">                                
                                 <label>Place of Examination/Conferment</label>
@@ -362,16 +370,18 @@
                             </div>
                             <div class="form-group">                                
                                 <label>License Number</label>
-                                <input type="text" id="license_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
+                                <input type="number" id="license_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Validity</label>
-                                <input type="date" id="date_of_validity" name="date_of_validity" class="form-control border-success" style="width:150px;" placeholder="" required autofocus>
+                                    <div class="form-group">
+                                    <label for="" class="text-danger">NO EXPIRATION</label>
+                                    <input type="checkbox" id="noexpire" name="noexpire" width="70px" height="70px">
+                                    </div>
+                                <input type="date" id="date_of_validity" name="date_of_validity" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="" required autofocus>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nocsc" name="nocsc" width="70px" height="70px">
-                            </div>
+                           
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -402,11 +412,15 @@
                             }
                         ?>    
                         <div class="modal-body">
+                            <div class="form-group">
+                                <input type="checkbox" id="noworkex" name="noworkex" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
                             <div class="form-group">     
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">                           
                                 <label>Inclusive Dates (From - To)</label>
-                                <input type="date" id="w_from" name="w_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="date_to" name="w_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>
+                                <input type="date" id="w_from" name="w_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="date_to" name="w_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>
                                 </br><label for="">Present</label>
                                 <input type="checkbox" id="date_status" name="present_date" width="70px" height="70px">
                             </div>
@@ -440,11 +454,7 @@
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>                                    
                                 </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="noworkex" name="noworkex" width="70px" height="70px">
-                            </div>
+                            </div>                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -476,6 +486,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="novol" name="novol" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Name of Organization	</label>
                                 <input type="text" id="org_name" name="org_name" class="form-control border-success" placeholder="" required autofocus>
@@ -486,8 +500,8 @@
                             </div>
                             <div class="form-group">      
                                 <label>Inclusive Dates (From - To)</label>
-                                <input type="date" id="o_from" name="o_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="o_to" name="o_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
+                                <input type="date" id="o_from" name="o_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="o_to" name="o_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
                             </div>
                             <div class="form-group">                                
                                 <label>No. of Hours</label>
@@ -497,10 +511,7 @@
                                 <label>Position / Nature of Work</label>
                                 <input type="text" id="nature_work" name="nature_work" class="form-control border-success" placeholder="" required autofocus>
                             </div> 
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="novol" name="novol" width="70px" height="70px">
-                            </div>                          
+                                                      
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -532,18 +543,24 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nolearndev" name="nolearndev" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
+                                <input type="hidden" name="firstname" value="<?=$first_name?>"> 
+                                <input type="hidden" name="lastname" value="<?=$last_name?>"> 
                                 <label>Title oF Learning and Development</label>
                                 <input type="text" id="title_of_ld" name="title_of_ld" class="form-control border-success" placeholder="" required autofocus>
                             </div>                            
                             <div class="form-group">      
                                 <label>Inclusive Dates of Attendance (From - To)</label>
-                                <input type="date" id="ld_from" name="ld_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="ld_to" name="ld_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
+                                <input type="date" id="ld_from" name="ld_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="ld_to" name="ld_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
                             </div>
                             <div class="form-group">                                
                                 <label>No. of Hours</label>
-                                <input type="text" id="ld_hours" name="ld_hours" class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>                                
+                                <input type="number" id="ld_hours" name="ld_hours" class="form-control border-success" onchange="setTwoNumberDecimal" min="0" step="0.01" autocomplete="off" style="width:150px;" required autofocus>                                
                             </div>                            
                             <div class="form-group">                                
                                 <label>Type of LD</label>
@@ -561,13 +578,10 @@
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image">
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
                                                            
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nolearndev" name="nolearndev" width="70px" height="70px">
-                            </div>
+                            
                             
                             
                         </div>
@@ -601,14 +615,15 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="noskills" name="noskills" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Special Skills and Hobies</label>
                                 <input type="text" id="special_skills" name="special_skills" class="form-control border-success" placeholder="" required autofocus>
                             </div> 
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="noskills" name="noskills" width="70px" height="70px">
-                            </div>                   
+                                               
                         </div>
                         
                         <div class="modal-footer">
@@ -641,14 +656,14 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nonacad" name="nonacad" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Non-Academic Distinctions / Recognition (Write in full)</label>
                                 <input type="text" id="non_academic" name="non_academic" class="form-control border-success" placeholder="" required autofocus>
-                            </div>  
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nonacad" name="nonacad" width="70px" height="70px">
-                            </div>                   
+                            </div>             
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -680,14 +695,15 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nomem" name="nomem" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div> 
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>"> 
                                 <label>Membership in Association/Organization (Write in full)</label>
                                 <input type="text" id="mem_in_asso" name="mem_in_asso" class="form-control border-success" placeholder="" required autofocus>
                             </div>   
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nomem" name="nomem" width="70px" height="70px">
-                            </div>                 
+                                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -719,6 +735,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nosubj" name="nosubj" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Subject</label>
                                 <input type="text" id="subject" name="subject" class="form-control border-success" placeholder="Enter Subject" required autofocus>
@@ -739,10 +759,7 @@
                                     <option value="2022-2023">2022-2023</option>                                                                                                           
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nosubj" name="nosubj" width="70px" height="70px">
-                            </div>
+                            
                             
                         </div>
                         <div class="modal-footer">
@@ -775,6 +792,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nonc" name="nonc" width="70px" height="70px">
+                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>NC Title</label>
                                 <input type="text" id="nctitle" name="nctitle" class="form-control border-success" placeholder="Enter NC Title" required autofocus>
@@ -791,11 +812,7 @@
                             </div> 
                             <div class="form-group">                                
                                 <label>Valid Until</label>
-                                <input type="date" class="form-control border-success" name="validuntil" id="validuntil" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nonc" name="nonc" width="70px" height="70px">
+                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="validuntil" id="validuntil" required>
                             </div>
                             
                         </div>
@@ -829,6 +846,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nomm" name="nomm" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Major</label>
                                 <input type="text" id="major" name="major" class="form-control border-success" placeholder="Enter Major Expertise" autofocus>
@@ -837,10 +858,7 @@
                                 <label>Minor</label>
                                 <input type="text" id="minor" name="minor" class="form-control border-success" placeholder="Enter Minor Expertise" autofocus>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nomm" name="nomm" width="70px" height="70px">
-                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
@@ -872,6 +890,10 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="nospecial" name="nospecial" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>                                
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Select a Track</label>
                                 <select id="track" name="track" required class="form-control border-success">
@@ -901,10 +923,7 @@
                                 <label>Title / Name</label>
                                 <input type="text" id="titlespecialization" name="titlespecialization" class="form-control border-success" placeholder="Enter Title / Name of Specialization" autofocus>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="nospecial" name="nospecial" width="70px" height="70px">
-                            </div>
+                            
                             
                         </div>
                         <div class="modal-footer">
@@ -937,22 +956,23 @@
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
+                                <input type="checkbox" id="noanci" name="noanci" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>                                
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" name="emp_no" value="<?=$user_id?>">
                                 <label>Name / Title / Designation</label>
                                 <input type="text" id="antitle" name="antitle" class="form-control border-success" placeholder="Enter Name / Title / Designation" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date Started	</label>
-                                <input type="date" class="form-control border-success" name="datestart" id="datestart" required style="width:150px;">
+                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="datestart" id="datestart" required style="width:150px;">
                             </div> 
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
-                                <input type="date" class="form-control border-success" name="dateend" id="dateend" required style="width:150px;">
+                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dateend" id="dateend" required style="width:150px;">
                             </div>
-                            <div class="form-group">
-                                <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
-                                <input type="checkbox" id="noanci" name="noanci" width="70px" height="70px">
-                            </div>
+                            
                             
                         </div>
                         <div class="modal-footer">
@@ -1040,7 +1060,7 @@
                             </div>                            
                             <div class="form-group">
                                 <label>Date of Birth</label>                                
-                                <input type="date" id="Edob" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
+                                <input type="date" id="Edob" name="childdob" min="0001-01-01" max="9999-12-31" value="" class="form-control border-success"  style="width:170px;"   autofocus>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1127,11 +1147,11 @@
                             </div>
                             <div class="form-group">                                
                                 <label>Rating (If Applicable)</label>
-                                <input type="text" id="Erating" name="rating" class="form-control border-success" placeholder="" required autofocus>
+                                <input type="number" id="Erating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
-                                <input type="date" id="Edate_of_exam" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
+                                <input type="date" id="Edate_of_exam" name="date_of_exam" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
                             </div>
                             <div class="form-group">                                
                                 <label>Place of Examination/Conferment</label>
@@ -1139,11 +1159,15 @@
                             </div>
                             <div class="form-group">                                
                                 <label>License Number</label>
-                                <input type="text" id="Elicense_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
+                                <input type="number" id="Elicense_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Validity</label>
-                                <input type="date" id="Edate_of_validity" name="date_of_validity" class="form-control border-success" style="width:150px;" placeholder="" required autofocus>
+                                    <div class="form-group">
+                                        <label for="" class="text-danger">NO EXPIRATION</label>
+                                        <input type="checkbox" id="enoexpire" name="enoexpire" width="70px" height="70px">
+                                    </div>
+                                <input type="date" id="Edate_of_validity" name="date_of_validity" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="" required autofocus>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1174,8 +1198,8 @@
                                 <input type="hidden" id="Eempnowork" name="empno" value="">
                                 <input type="hidden" id="Eworkexpid" name="workexp_id" value="">
                                 <label>Inclusive Dates (From - To)</label>
-                                <input type="date" id="Ew_from" name="w_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="Edate_to" name="w_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>
+                                <input type="date" id="Ew_from" name="w_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="Edate_to" name="w_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>
                                 </br><label for="">Present</label>
                                 <input type="checkbox" id="Edate_status" name="Epresent_date" width="70px" height="70px">
 
@@ -1248,8 +1272,8 @@
                             </div>
                             <div class="form-group">      
                                 <label>Inclusive Dates (From - To)</label>
-                                <input type="date" id="Eo_from" name="o_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="Eo_to" name="o_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
+                                <input type="date" id="Eo_from" name="o_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="Eo_to" name="o_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
                             </div>
                             <div class="form-group">                                
                                 <label>No. of Hours</label>
@@ -1286,14 +1310,16 @@
                         <div class="modal-body">                                                        
                             <div class="form-group">
                                 <input type="hidden" id="Eempnolearn" name="empno" value="">
+                                <input type="hidden" name="firstname" value="<?=$first_name?>"> 
+                                <input type="hidden" name="lastname" value="<?=$last_name?>">
                                 <input type="hidden" id="Elearnid" name="learn_id" value=""> 
                                 <label>Title oF Learning and Development</label>
                                 <input type="text" id="Etitle_of_ld" name="title_of_ld" class="form-control border-success" placeholder="" required autofocus>
                             </div>                            
                             <div class="form-group">      
                                 <label>Inclusive Dates of Attendance (From - To)</label>
-                                <input type="date" id="Eld_from" name="ld_from" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="date" id="Eld_to" name="ld_to" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
+                                <input type="date" id="Eld_from" name="ld_from" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="date" id="Eld_to" name="ld_to" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="To" required autofocus>                                
                             </div>
                             <div class="form-group">                                
                                 <label>No. of Hours</label>
@@ -1500,7 +1526,7 @@
                             </div>
                             <div class="form-group">                                
                                 <label>Valid Until</label>
-                                <input type="date" class="form-control border-success" name="validuntil" id="Evaliduntil" required>
+                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="validuntil" id="Evaliduntil" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -1626,11 +1652,11 @@
                             </div>                            
                             <div class="form-group">                                
                                 <label>Date Started	</label>
-                                    <input type="date" class="form-control border-success" name="datestart" id="Estart_date" required style="width:150px;">
+                                    <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="datestart" id="Estart_date" required style="width:150px;">
                                 </div>
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
-                                <input type="date" class="form-control border-success" name="dateend" id="Eend_date" required style="width:150px;">
+                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dateend" id="Eend_date" required style="width:150px;">
                             </div>                            
                         </div>
                         <div class="modal-footer">
@@ -1753,7 +1779,7 @@
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Pag-Ibig ID No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="number" value="<?=$user['pagibig_no'];?>" name="pagibig" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                    
+                                                    <input type="tel" value="<?=$user['pagibig_no'];?>" id="pagibignum" name="pagibig" onKeyPress="if(this.value.length==14) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                    
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1794,7 +1820,7 @@
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Date of Birth:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="date" class="form-control border-success" name="dob" value="<?=$user['dob'];?>" style="width:170px;" required  >
+                                                    <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dob" value="<?=$user['dob'];?>" style="width:170px;" required  >
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">TIN No.:</label>
                                                 <div class="col-sm-3">                                                    
@@ -1860,8 +1886,12 @@
                                                     <input type="text" name="others" id="in_others" value="<?=$user['others'];?>" <?=$user['others']=='' ? 'readonly':'' ?> class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Telephone No.:</label>
-                                                <div class="col-sm-3">                                                    
-                                                    <input type="text" value="<?=$user['telephone'];?>" name="telephone" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
+                                                <div class="col-sm-3">  
+                                                      
+                                                    <input type="tel" value="<?=$user['telephone'];?>" id="telnump" name="telephone" onKeyPress="if(this.value.length==12) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus <?=$user['telephone']=='N/A' ? 'disabled':'' ?>>
+                                                    
+                                                    <input type="checkbox" id="notel" name="notel" width="70px" height="70px" <?=$user['telephone']=='N/A' ? 'checked':'' ?>>
+                                                    <label for="" class="text-danger">Check if not applicable (N/A)</label>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
@@ -1878,7 +1908,7 @@
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Mobile No.:</label>
                                                 <div class="col-sm-3">                                                    
-                                                    <input type="tel" value="<?=$user['mobile'];?>" name="mobile" class="form-control border-success" autocomplete="off" onKeyPress="if(this.value.length==11) return false;" style="width:190px;" required autofocus>
+                                                    <input type="tel" value="<?=$user['mobile'];?>" id="mobnum" name="mobile" class="form-control border-success" autocomplete="off" onKeyPress="if(this.value.length==13) return false;" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">                                                
@@ -2169,7 +2199,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="">Zip Code</label>
-                                            <input type="text" value="<?=$add['r_zip'];?>" name="r_zipcode" class="form-control border-success" autocomplete="off" required autofocus>
+                                            <input type="number" value="<?=$add['r_zip'];?>" min="0" max="9999" name="r_zipcode" class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
                                     </div>
                                     <h5 class="semi-bold text-primary">PERMANENT ADDRESS</h5>
@@ -2209,7 +2239,7 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="">Zip Code</label>
-                                            <input type="text" value="<?=$add['p_zip'];?>" name="p_zipcode" id="P_zipcode" disabled class="form-control border-success" autocomplete="off" required autofocus>
+                                            <input type="number" value="<?=$add['p_zip'];?>" min="0" max="9999" name="p_zipcode" id="P_zipcode" disabled class="form-control border-success" autocomplete="off" required autofocus>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -2373,7 +2403,9 @@
                                         </div>
                                         <div class="col-md-3 mb-5">
                                             <label for="">Telephone Number</label>
-                                            <input type="number" name="spouseTelno" value="<?=$family['spouse_buss_tel'];?>" class="form-control border-success" autocomplete="off" required autofocus>
+                                            <input type="tel" id="spTelno" name="spouseTelno" value="<?=$family['spouse_buss_tel'];?>" class="form-control border-success" autocomplete="off" required autofocus <?=$family['spouse_buss_tel']=='N/A' ? 'disabled':'' ?>>
+                                            <input type="checkbox" id="nostel" name="nostel" width="70px" height="70px" <?=$family['spouse_buss_tel']=='N/A' ? 'checked':'' ?>>
+                                                    <label for="" class="text-danger">Check if not applicable (N/A)</label>
                                         </div>
                                         <?php
                                                 }
@@ -2501,7 +2533,7 @@
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Highest level / Units Earned</label>
-                                                    <input type="text" name="e_level" title="HIGHEST LEVEL / UNITS EARNED (if not graduated)" value="<?=$row['e_level'];?>" class="form-control border-success" autocomplete="off" style="width:200px;" required autofocus>
+                                                    <input type="text" name="e_level" title="HIGHEST LEVEL / UNITS EARNED (if not graduated)" value="GRADUATED" class="form-control border-success" autocomplete="off" style="width:200px;" readonly autofocus>
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Year graduated</label>
@@ -2571,7 +2603,7 @@
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Highest level / Units Earned</label>
-                                                    <input type="text" name="e_level" title="HIGHEST LEVEL / UNITS EARNED (if not graduated)" value="<?=$row['e_level'];?>" class="form-control border-success" autocomplete="off" style="width:200px;" required autofocus>
+                                                    <input type="text" name="e_level" title="HIGHEST LEVEL / UNITS EARNED (if not graduated)" value="GRADUATED" class="form-control border-success" autocomplete="off" style="width:200px;" readonly autofocus>
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Year graduated</label>
@@ -3043,7 +3075,7 @@
                                                                 <input type="hidden" id="uv_date_of_exam<?=$row['id']?>" value="<?=$row['date_of_exam']?>">
                                                                 <input type="hidden" id="uv_place_of_exam<?=$row['id']?>" value="<?=$row['place_of_exam']?>">
                                                                 <input type="hidden" id="uv_license_no<?=$row['id']?>" value="<?=$row['license_no']?>">
-                                                                <input type="hidden" id="uv_date_of_validity<?=$row['id']?>" value="<?=$row['date_of_validity']?>">                                                                
+                                                                <input type="hidden" id="uv_date_of_validity<?=$row['id']?>" value="<?=$row['date_of_validity']?>">                                                            
                                                                 <input type="hidden" id="utablec<?=$row['id']?>" value="civil_service">
                                                                 
                                                                 <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editcivilbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
@@ -3930,7 +3962,7 @@
                                             <label for="">If YES, give details:</label>
                                             <div class="form-group">
                                             <label>Date Filed:</label>
-                                            <input type="date" value="<?=$info['q35_b_date_filed'];?>" name="datefiled" id="datefiled" class="form-control border-success"  style="width:170px;"   autofocus <?=$info['q35_b_date_filed']=='' ? 'readonly':'' ?> >
+                                            <input type="date" value="<?=$info['q35_b_date_filed'];?>" min="0001-01-01" max="9999-12-31" name="datefiled" id="datefiled" class="form-control border-success"  style="width:170px;"   autofocus <?=$info['q35_b_date_filed']=='' ? 'readonly':'' ?> >
                                             </div> 
                                             <label for="">Status of Case/s:</label>
                                             <input type="text" value="<?=$info['q35_b_status'];?>" name="ans_q35b" id="ans_q35b" <?=$info['q35_b_status']=='' ? 'readonly':'' ?> class="form-control border-success" autocomplete="off" required autofocus>
@@ -4184,7 +4216,7 @@
                                             <h5 class="semi-bold text-primary">Employment Records</h5>
                                             <div class="col-auto">
                                                 <label for="">Date of Appointment</label>
-                                                <input type="date" class="form-control border-success" name="doapp" id="doapp" value="<?=$emp_rec['date_of_emp'];?>"  required  autofocus onchange="ageCalculator()">
+                                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="doapp" id="doapp" value="<?=$emp_rec['date_of_emp'];?>"  required  autofocus onchange="ageCalculator()">
                                             </div>
                                             <div class="col-auto">
                                                 <label for="">Years in Service</label>
@@ -5372,7 +5404,9 @@
             var date_of_exam = $('#uv_date_of_exam'+id).val();
             var place_of_exam = $('#uv_place_of_exam'+id).val();
             var license_no = $('#uv_license_no'+id).val();
-            var date_of_validity = $('#uv_date_of_validity'+id).val();             
+            var date_of_validity = $('#uv_date_of_validity'+id).val(); 
+            var is_noexp =false;
+                        
             
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;
@@ -5381,8 +5415,13 @@
             document.getElementById('Erating').value = rating;            
             document.getElementById('Edate_of_exam').value = date_of_exam;            
             document.getElementById('Eplace_of_exam').value = place_of_exam;            
-            document.getElementById('Elicense_no').value = license_no;            
-            document.getElementById('Edate_of_validity').value = date_of_validity;            
+            document.getElementById('Elicense_no').value = license_no;  
+            document.getElementById('Edate_of_validity').value = date_of_validity;
+            if(date_of_validity=="N/A"){
+                is_noexp = true;
+                document.getElementById('Edate_of_validity').disabled = true;
+            }         
+            document.getElementById('enoexpire').checked = is_noexp;            
         });
     });
 
@@ -6581,7 +6620,71 @@
     });
 </script>
 
-<!-- ############### CHECKBOX IN School Information ##################    -->
+<!-- ############### CHECKBOX IN NO TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#notel").click(function () {
+            if ($(this).is(":checked")) {
+                $("#telnump").attr("disabled", "disabled");                
+                $('#telnump').val('N/A');
+            } else {
+                $("#telnump").removeAttr("disabled");
+                $('#telnump').val('');
+                
+            }
+        });
+    });
+</script>
+
+
+<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nostel").click(function () {
+            if ($(this).is(":checked")) {
+                $("#spTelno").attr("disabled", "disabled");                
+                $('#spTelno').val('N/A');
+            } else {
+                $("#spTelno").removeAttr("disabled");
+                $('#spTelno').val('');
+                
+            }
+        });
+    });
+</script>
+
+
+<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#noexpire").click(function () {
+            if ($(this).is(":checked")) {
+                $("#date_of_validity").attr("disabled", "disabled");
+            } else {
+                $("#date_of_validity").removeAttr("disabled");
+                $('#date_of_validity').val('');
+                
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#enoexpire").click(function () {
+            if ($(this).is(":checked")) {
+                $("#Edate_of_validity").attr("disabled", "disabled");
+            } else {
+                $("#Edate_of_validity").removeAttr("disabled");
+                $('#Edate_of_validity').val('');
+                
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN School Information ##################   !!!! IMPORTANT NI USABA ANG ID SELECTBOX -->
 <script type="text/javascript">
     $(function () {
         $("#notteaching").click(function () {
@@ -6796,6 +6899,24 @@
             });
         });
 
+        // ######## PAG-IBIG NUMBER ##########
+        $(document).ready(function() {
+            var philnum = document.querySelector('#pagibignum');
+
+            philnum.addEventListener('keypress', function(e){
+                if (isNaN(e.key)) e.preventDefault();
+                else{
+                    if (event.key != 'Backspace' && (philnum.value.length === 4 || philnum.value.length === 9)){
+                        pagibignum.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (philnum.value.length === 4 || philnum.value.length === 9)){
+                        pagibignum.value += '-';
+                    }
+                }
+            });
+        });
+
+
         // ######## SSS ##########
         $(document).ready(function() {
             var sssnum = document.querySelector('#sssnum');
@@ -6808,6 +6929,42 @@
                     }
                     if (event.key == 'Backspace' && (sssnum.value.length === 2 || sssnum.value.length === 10)){
                         sssnum.value += '-';
+                    }
+                }
+            
+            });
+        });
+
+        // ######## TELEPHONE ##########
+        $(document).ready(function() {
+            var telnump = document.querySelector('#telnump');
+
+            telnump.addEventListener('keypress', function(e){
+                if (isNaN(e.key)) e.preventDefault();
+                else{
+                    if (event.key != 'Backspace' && (telnump.value.length === 3 || telnump.value.length === 7)){
+                        telnump.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (telnump.value.length === 3 || telnump.value.length === 7)){
+                        telnump.value += '-';
+                    }
+                }
+            
+            });
+        });
+
+        // ######## MOBLE TELEPHONE ##########
+        $(document).ready(function() {
+            var mobnum = document.querySelector('#mobnum');
+
+            mobnum.addEventListener('keypress', function(e){
+                if (isNaN(e.key)) e.preventDefault();
+                else{
+                    if (event.key != 'Backspace' && (mobnum.value.length === 4 || mobnum.value.length === 8)){
+                        mobnum.value += '-';
+                    }
+                    if (event.key == 'Backspace' && (mobnum.value.length === 4 || mobnum.value.length === 8)){
+                        mobnum.value += '-';
                     }
                 }
             

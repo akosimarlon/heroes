@@ -1232,7 +1232,10 @@ class myPDF extends FPDF{
                 $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
-                if(strlen($data->e_scholarship) < 10 ){                
+
+                //$this->SetFont('Arial','',5);
+                if(strlen($data->e_scholarship) < 14 ){                
+                    $this->SetFont('Arial','',4.5);
                     $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     $this->SetFont('Arial','',4);
@@ -1289,7 +1292,10 @@ class myPDF extends FPDF{
                 // $x = $this->GetX();
                 // $y = $this->GetY();                
                 // $this->SetXY($x,$y-5);
-                if(strlen($data->e_scholarship) < 10 ){ 
+                //stripslashes($str);
+                //htmlspecialchars($str);
+                if(strlen($data->e_scholarship) < 14 ){ 
+                    $this->SetFont('Arial','',4.4);
                     $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     $this->SetFont('Arial','',3.5);   

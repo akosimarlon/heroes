@@ -85,7 +85,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Data Records:</h6>
                     <a class="collapse-item" href="user_masterlist.php">User Masterlist</a>
-                    <a class="collapse-item" href="">Schools</a>
+                    <a class="collapse-item" href="schools_masterlist.php">Schools</a>
                     <!-- <a class="collapse-item" href="utilities-animation.html">Animations</a>
                     <a class="collapse-item" href="utilities-other.html">Other</a> -->
                 </div>

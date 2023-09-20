@@ -4,7 +4,10 @@ include('authentication.php');
 include "xlsx.php";
 
 function clean($str){
-    $str = trim($str);	
+    $str = trim($str);
+    $str = addslashes($str);	
+    //$str = stripslashes($str);	
+    //$str = htmlspecialchars($str);	
     return $str;
 }
 
@@ -28,10 +31,10 @@ function updateProgress(){
 if(isset($_POST['registerAdmin'])){
     $fname = ucwords(clean($_POST['fname']));
     $lname = ucwords(clean($_POST['lname']));
-    $username = $_POST['username'];
+    $username = clean($_POST['username']);
     $email = clean($_POST['email']);
-    $password = $_POST['password'];
-    $cpassword = $_POST['confirmpassword'];
+    $password = clean($_POST['password']);
+    $cpassword = clean($_POST['confirmpassword']);
     $status = $_POST['status'] == true ? '1':'0';
     $role_as = '1';
 
@@ -75,13 +78,13 @@ if(isset($_POST['registerAdmin'])){
 
 //########## For Update Admin Account #######################################################
 if(isset($_POST['updateAdmin'])){
-    $user_id = $_POST['userid'];
+    $user_id = clean($_POST['userid']);
     $fname = ucwords(clean($_POST['fname']));
     $lname = ucwords(clean($_POST['lname']));
     $username = clean($_POST['username']);
-    $old_username = $_POST['oldusername'];
+    $old_username = clean($_POST['oldusername']);
     $email = clean($_POST['email']);        
-    $old_email = $_POST['oldemail'];        
+    $old_email = clean($_POST['oldemail']);        
     $status = $_POST['status'] == true ? '1':'0';
 
     $current_admin_id = $_SESSION['auth_user']['user_id'];
@@ -133,15 +136,15 @@ if(isset($_POST['updateAdmin'])){
 
 //########## For Update Teacher Account #######################################################
 if(isset($_POST['updateTeacher'])){
-    $user_id = $_POST['userid'];
-    $empno = $_POST['empno'];
-    $oldempno = $_POST['oldempno'];
+    $user_id = clean($_POST['userid']);
+    $empno = clean($_POST['empno']);
+    $oldempno = clean($_POST['oldempno']);
     $fname = ucwords(clean($_POST['fname']));
     $lname = ucwords(clean($_POST['lname']));
     $username = clean($_POST['username']);
-    $old_username = $_POST['oldusername'];
+    $old_username = clean($_POST['oldusername']);
     $email = clean($_POST['email']);        
-    $old_email = $_POST['oldemail'];        
+    $old_email = clean($_POST['oldemail']);        
     $status = $_POST['status'] == true ? '1':'0';
 
     // $current_admin_id = $_SESSION['auth_user']['user_id'];
@@ -221,7 +224,7 @@ if(isset($_POST['updateTeacher'])){
 
 //########## For Deleting Admin Account #######################################################
 if(isset($_POST['btn_admin_delete'])){
-    $user_id = $_POST['admin_id'];
+    $user_id = clean($_POST['admin_id']);
     $status="1";
     $query1 = "SELECT * FROM users WHERE id ='$user_id'" ;
     $query_run1 = mysqli_query($con,$query1);
@@ -258,8 +261,8 @@ if(isset($_POST['btn_admin_delete'])){
 
 //########## For Deleting Teaching Account #######################################################
 if(isset($_POST['btn_teaching_delete'])){
-    $user_id = $_POST['teacher_id'];
-    $user_empno = $_POST['teacher_empno'];
+    $user_id =clean( $_POST['teacher_id']);
+    $user_empno = clean($_POST['teacher_empno']);
     $status="1";
     $query1 = "SELECT * FROM users WHERE id ='$user_id'" ;
     $query_run1 = mysqli_query($con,$query1);
@@ -352,16 +355,18 @@ if(isset($_POST['btn_teaching_delete'])){
 
 //########## For Creating/Adding Teacher Account ##############################################
 if(isset($_POST['registerTeacher'])){
-    $empno = $_POST['empno'];
+    $empno = clean($_POST['empno']);
     $fname = ucwords(clean($_POST['fname']));
     $lname = ucwords(clean($_POST['lname']));    
     $sex = $_POST['sex'];
-    $username = $_POST['username'];
+    $username = clean($_POST['username']);
     $email = clean($_POST['email']);
-    $password = $_POST['password'];
-    $cpassword = $_POST['confirmpassword'];
+    $password = clean($_POST['password']);
+    $cpassword = clean($_POST['confirmpassword']);
     $status = $_POST['status'] == true ? '1':'0';
     $role_as = '2';
+
+    
 
     $tmp_image = "";
     if($sex=="male"){
@@ -400,11 +405,11 @@ if(isset($_POST['registerTeacher'])){
 
                 $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
                             e_level,e_year,e_scholarship,educational_level,status) 
-                            VALUES ('$empno','','','','','','','','elementary','$status');";
+                            VALUES ('$empno','','','','','Graduated','','','elementary','$status');";
 
                 $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
                             e_level,e_year,e_scholarship,educational_level,status) 
-                            VALUES ('$empno','','','','','','','','secondary','$status');";
+                            VALUES ('$empno','','','','','Graduated','','','secondary','$status');";
 
                 $query .= "INSERT INTO other_info (emp_no,fullname,q34_a,q34_b,q34_b_details,q35_a,q35_a_details,q35_b,q35_b_date_filed,q35_b_status,q36,q36_details,q37,q37_details,q38_a,q38_a_details,q38_b,q38_b_details,q39,q39_details,q40_a,q40_a_details,q40_b,q40_b_details,q40_c,q40_c_details,refname1,refadd1,reftel1,refname2,refadd2,reftel2,refname3,refadd3,reftel3,gov_id,gov_id_no,gov_id_date,status) 
                             VALUES ('$empno','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','$status');";
@@ -468,7 +473,7 @@ if(isset($_POST['registerTeacher'])){
 
 //########## For Adding Child in Personal Info ##############################################
 if(isset($_POST['registerChildren'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
     $nochild = $_POST['nochild'] == true ? '1':'0'; 
     if($nochild == '1'){
         $childname = "N/A";
@@ -521,7 +526,7 @@ if(isset($_POST['registerChildren'])){
 //########## For Adding Courses in Educational Background ##############################################
 if(isset($_POST['registerEducational'])){
     $empno = $_POST['emp_no'];
-    $educ_level = $_POST['educ_level'];     
+    $educ_level = clean($_POST['educ_level']);     
     $novoc = $_POST['novoc'] == true ? '1':'0'; 
     if($novoc == '1'){
         $nameofschool = "N/A";
@@ -561,14 +566,14 @@ if(isset($_POST['registerEducational'])){
     
     try {
         if($educ_level == "elementary" || $educ_level == "secondary"){
-            $query = "UPDATE educational SET e_nameofschool='$nameofschool',e_course='$course',e_from='$from',e_to='$to',
-                    e_level='$level',e_year='$year',e_scholarship='$scholarship'
-                    WHERE emp_no='$empno' AND educational_level='$educ_level' ";
+            $query = "UPDATE educational SET e_nameofschool='".$nameofschool."',e_course='".$course."',e_from='".$from."',e_to='".$to."',
+                    e_level='".$level."',e_year='".$year."',e_scholarship='".$scholarship."'
+                    WHERE emp_no='".$empno."' AND educational_level='".$educ_level."' ";
             $query_run = mysqli_query($con,$query);            
         }        
         else{
             $query = "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,e_level,e_year,e_scholarship,educational_level,n_a,status) 
-                        VALUES ('$empno','$nameofschool','$course','$from','$to','$level','$year','$scholarship','$educ_level','$novoc','1')";
+                        VALUES ('".$empno."','".$nameofschool."','".$course."','".$from."','".$to."','".$level."','".$year."','".$scholarship."','".$educ_level."','".$novoc."','1')";
             $query_run = mysqli_query($con,$query);
         }
             
@@ -609,8 +614,10 @@ if(isset($_POST['registerEducational'])){
 
 //########## For Adding Career Service Data in Civil Service Eligibility ##############################################
 if(isset($_POST['registerCivilService'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
     $nocsc = $_POST['nocsc'] == true ? '1':'0'; 
+    $noexpire = $_POST['noexpire'] == true ? '1':'0'; 
+
     if($nocsc == '1'){
         $career_service = "N/A";
         $rating = "N/A";
@@ -619,12 +626,18 @@ if(isset($_POST['registerCivilService'])){
         $license_no = "N/A";
         $date_of_validity = "N/A";        
     }else{
-        $career_service = $_POST['career_service'];
+        $career_service = clean($_POST['career_service']);
         $rating = ucwords(clean($_POST['rating']));
         $date_of_exam = ucwords(clean($_POST['date_of_exam']));    
         $place_of_exam = ucwords(clean($_POST['place_of_exam']));    
-        $license_no = ucwords(clean($_POST['license_no']));    
-        $date_of_validity = ucwords(clean($_POST['date_of_validity']));    
+        $license_no = ucwords(clean($_POST['license_no'])); 
+        
+        if($noexpire == '1'){
+            $date_of_validity = "N/A";  
+        }else{
+            $date_of_validity = ucwords(clean($_POST['date_of_validity']));    
+        }
+
     }    
     
     try {
@@ -669,7 +682,7 @@ if(isset($_POST['registerCivilService'])){
 
 //########## For Adding Work Experience Data ##############################################
 if(isset($_POST['registerWorkExperience'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
     $noworkex = $_POST['noworkex'] == true ? '1':'0'; 
 
     if($noworkex == '1'){
@@ -683,8 +696,8 @@ if(isset($_POST['registerWorkExperience'])){
         $govt_service = "N/A"; 
         
     }else{
-        $w_from = $_POST['w_from'];
-        $w_to = $_POST['w_to'];
+        $w_from = clean($_POST['w_from']);
+        $w_to = clean($_POST['w_to']);
         $position_title = ucwords(clean($_POST['position_title']));    
         $department = ucwords(clean($_POST['department']));    
         $salary = ucwords(clean($_POST['salary']));    
@@ -741,7 +754,7 @@ if(isset($_POST['registerWorkExperience'])){
 
 //########## For Adding Voluntary Work Data ##############################################
 if(isset($_POST['registerVoluntaryWork'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
 
     $novol = $_POST['novol'] == true ? '1':'0'; 
 
@@ -755,9 +768,9 @@ if(isset($_POST['registerVoluntaryWork'])){
     }else{
         $org_name = ucwords(clean($_POST['org_name']));
         $org_address = ucwords(clean($_POST['org_address']));
-        $o_from = $_POST['o_from'];    
-        $o_to = $_POST['o_to'];
-        $org_hours = $_POST['org_hours'];
+        $o_from = clean($_POST['o_from']);    
+        $o_to = clean($_POST['o_to']);
+        $org_hours = clean($_POST['org_hours']);
         $nature_work = ucwords(clean($_POST['nature_work']));      
     }
     
@@ -802,7 +815,9 @@ if(isset($_POST['registerVoluntaryWork'])){
 
 //########## For Adding Learning Development Data ##############################################
 if(isset($_POST['registerLearningDev'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
+    $fname = ucwords(clean($_POST['firstname']));
+    $lname = ucwords(clean($_POST['lastname']));
 
     $nolearndev = $_POST['nolearndev'] == true ? '1':'0'; 
 
@@ -849,12 +864,20 @@ if(isset($_POST['registerLearningDev'])){
         $type_of_ld = $_POST['type_of_ld'];
         $conducted = ucwords(clean($_POST['conducted']));    
 
-        $uploadTo = "uploads/certificates/"; 
+        $cert_folder = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno;
+        if (!file_exists($cert_folder)) {
+            mkdir($cert_folder, 0755);
+        }
+
+        $uploadTo = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno.'/';
         $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
         $imageName = $_FILES['image']['name'];
         $tempPath=$_FILES['image']['tmp_name'];
+        $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
+        $image_name = $empno . '_' .date('MdYgisA'). '.' . $ext; //New image name
 
-        $basename = basename($imageName);
+        //$basename = basename($imageName);
+        $basename = basename($image_name);
         $originalPath = $uploadTo.$basename; 
         $imageType = pathinfo($originalPath, PATHINFO_EXTENSION); 
         
@@ -942,7 +965,7 @@ if(isset($_POST['registerLearningDev'])){
 
 //########## For Adding Special Skills and Hobies Data ##############################################
 if(isset($_POST['registerSpecialSkills'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
 
     $noskills = $_POST['noskills'] == true ? '1':'0'; 
 
@@ -993,7 +1016,7 @@ if(isset($_POST['registerSpecialSkills'])){
 
 //########## For Adding Non-Academic Distinctions Data ##############################################
 if(isset($_POST['registerNonAcademic'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
 
     $nonacad = $_POST['nonacad'] == true ? '1':'0'; 
 
@@ -1044,7 +1067,7 @@ if(isset($_POST['registerNonAcademic'])){
 
 //########## For Adding Membership in Association / Organization Data ##############################################
 if(isset($_POST['registerMeminAsso'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
     
     $nomem = $_POST['nomem'] == true ? '1':'0'; 
 
@@ -1093,7 +1116,7 @@ if(isset($_POST['registerMeminAsso'])){
 
 //########## For Adding Subject in Employment Information ##############################################
 if(isset($_POST['registerSubject'])){
-    $empno = $_POST['emp_no'];
+    $empno = clean($_POST['emp_no']);
     
     $nosubj = $_POST['nosubj'] == true ? '1':'0'; 
 
@@ -1148,7 +1171,7 @@ if(isset($_POST['registerSubject'])){
 
 //########## For Adding National Certificates in Employment Information ##############################################
 if(isset($_POST['registerNC'])){
-    $empno = $_POST['emp_no'];       
+    $empno = clean($_POST['emp_no']);       
     
     $nonc = $_POST['nonc'] == true ? '1':'0'; 
 
@@ -1203,7 +1226,7 @@ if(isset($_POST['registerNC'])){
 
 //########## For Adding Major and Minor in Employment Information ##############################################
 if(isset($_POST['registerMajorMinor'])){
-    $empno = $_POST['emp_no'];      
+    $empno = clean($_POST['emp_no']);      
     
     $nomm = $_POST['nomm'] == true ? '1':'0'; 
 
@@ -1256,7 +1279,7 @@ if(isset($_POST['registerMajorMinor'])){
 
 //########## For Adding Specialization in Employment Information ##############################################
 if(isset($_POST['registerSpecialization'])){
-    $empno = $_POST['emp_no'];        
+    $empno = clean($_POST['emp_no']);        
     
     $nospecial = $_POST['nospecial'] == true ? '1':'0'; 
 
@@ -1311,7 +1334,7 @@ if(isset($_POST['registerSpecialization'])){
 
 //########## For Adding Anciliary Work in Employment Information ##############################################
 if(isset($_POST['registerAnciliaryWork'])){
-    $empno = $_POST['emp_no'];   
+    $empno = clean($_POST['emp_no']);   
 
     $noanci = $_POST['noanci'] == true ? '1':'0'; 
 
@@ -1321,8 +1344,8 @@ if(isset($_POST['registerAnciliaryWork'])){
         $dateend = "N/A";
     }else{
         $antitle = ucwords(clean($_POST['antitle']));
-        $datestart = $_POST['datestart'];    
-        $dateend = $_POST['dateend'];         
+        $datestart = clean($_POST['datestart']);    
+        $dateend = clean($_POST['dateend']);         
     }
         
     try {
@@ -1366,9 +1389,9 @@ if(isset($_POST['registerAnciliaryWork'])){
 
 //########## For Deleting Items in Table #######################################################
 if(isset($_POST['btn_child_delete'])){
-    $id = $_POST['data_id'];  
-    $empno = $_POST['emp_id'];  
-    $table = $_POST['source_table'];  
+    $id = clean($_POST['data_id']);  
+    $empno = clean($_POST['emp_id']);  
+    $table = clean($_POST['source_table']);  
     $page = "";
     if($table=="children"){
         $page = "#family"; 
@@ -1587,10 +1610,10 @@ if(isset($_POST['btn_child_delete'])){
 
 //########## For Update Child Account #######################################################
 if(isset($_POST['updateChild'])){
-    $empno = $_POST['empno'];
-    $child_id = $_POST['child_id'];
-    $fullname = $_POST['fullname'];
-    $dob = $_POST['childdob'];   
+    $empno = clean($_POST['empno']);
+    $child_id = clean($_POST['child_id']);
+    $fullname = clean($_POST['fullname']);
+    $dob = clean($_POST['childdob']);   
     
     try{
         $query = "UPDATE children SET child_name='$fullname', child_dob='$dob'
@@ -1628,15 +1651,23 @@ if(isset($_POST['updateChild'])){
 
 //########## For Update Civil Service Eligibility #######################################################
 if(isset($_POST['updateCivilService'])){
-    $empno = $_POST['empno'];
-    $civilservice_id = $_POST['civilservice_id'];
-    $career_service = $_POST['career_service'];
-    $rating = $_POST['rating'];
-    $date_of_exam = $_POST['date_of_exam'];
-    $place_of_exam = $_POST['place_of_exam'];   
-    $license_no = $_POST['license_no'];   
-    $date_of_validity = $_POST['date_of_validity'];   
+    $empno = clean($_POST['empno']);
+    $civilservice_id = clean($_POST['civilservice_id']);
+    $career_service = clean($_POST['career_service']);
+    $rating = clean($_POST['rating']);
+    $date_of_exam = clean($_POST['date_of_exam']);
+    $place_of_exam = clean($_POST['place_of_exam']);   
+    $license_no = clean($_POST['license_no']);   
+    $date_of_validity = clean($_POST['date_of_validity']);   
     
+    $enoexpire = $_POST['enoexpire'] == true ? '1':'0'; 
+    if($enoexpire == '1'){
+        $date_of_validity = "N/A";  
+    }else{
+        $date_of_validity = ucwords(clean($_POST['date_of_validity']));    
+    }
+
+
     try{
         $query = "UPDATE civil_service SET career_service='$career_service', rating='$rating', date_of_exam='$date_of_exam', 
                   place_of_exam='$place_of_exam', license_no='$license_no', date_of_validity='$date_of_validity'
@@ -1674,15 +1705,15 @@ if(isset($_POST['updateCivilService'])){
 
 //########## For Update Work Experience #######################################################
 if(isset($_POST['updateWorkExperience'])){
-    $empno = $_POST['empno'];
-    $workexp_id = $_POST['workexp_id'];
-    $w_from = $_POST['w_from'];
-    $w_to = $_POST['w_to'];
-    $position_title = $_POST['position_title'];
-    $department = $_POST['department'];   
-    $salary = $_POST['salary'];   
-    $step = $_POST['step'];   
-    $appointment = $_POST['appointment'];   
+    $empno = clean($_POST['empno']);
+    $workexp_id = clean($_POST['workexp_id']);
+    $w_from = clean($_POST['w_from']);
+    $w_to = clean($_POST['w_to']);
+    $position_title = clean($_POST['position_title']);
+    $department = clean($_POST['department']);
+    $salary = clean($_POST['salary']);   
+    $step = clean($_POST['step']);   
+    $appointment = clean($_POST['appointment']);   
     $govt_service = $_POST['govt_service'];   
     $present_date = $_POST['Epresent_date'] == true ? '1':'0'; 
     if($present_date == '1'){
@@ -1725,14 +1756,14 @@ if(isset($_POST['updateWorkExperience'])){
 
 //########## For Update Voluntary Work #######################################################
 if(isset($_POST['updateVoluntary'])){
-    $empno = $_POST['empno'];
-    $vol_id = $_POST['vol_id'];
-    $org_name = $_POST['org_name'];
-    $org_address = $_POST['org_address'];
-    $o_from = $_POST['o_from'];
-    $o_to = $_POST['o_to'];   
-    $org_hours = $_POST['org_hours'];   
-    $nature_work = $_POST['nature_work'];   
+    $empno = clean($_POST['empno']);
+    $vol_id = clean($_POST['vol_id']);
+    $org_name = clean($_POST['org_name']);
+    $org_address = clean($_POST['org_address']);
+    $o_from = clean($_POST['o_from']);
+    $o_to = clean($_POST['o_to']);   
+    $org_hours = clean($_POST['org_hours']);   
+    $nature_work = clean($_POST['nature_work']);   
 
     try{        
         $query = "UPDATE voluntary_work SET org_name='$org_name', org_address='$org_address', o_from='$o_from', 
@@ -1771,19 +1802,23 @@ if(isset($_POST['updateVoluntary'])){
 
 //########## For Update Learning Development #######################################################
 if(isset($_POST['updateLearningDev'])){
-    $empno = $_POST['empno'];
-    $learn_id = $_POST['learn_id'];
-    $title_of_ld = $_POST['title_of_ld'];
-    $ld_from = $_POST['ld_from'];
-    $ld_to = $_POST['ld_to'];
-    $ld_hours = $_POST['ld_hours'];   
+    $empno = clean($_POST['empno']);
+    $learn_id = clean($_POST['learn_id']);
+    $title_of_ld = clean($_POST['title_of_ld']);
+    $ld_from = clean($_POST['ld_from']);
+    $ld_to = clean($_POST['ld_to']);
+    $ld_hours = clean($_POST['ld_hours']);   
     $type_of_ld = $_POST['type_of_ld'];   
-    $conducted = $_POST['conducted'];   
+    $conducted = clean($_POST['conducted']);   
+    $fname = ucwords(clean($_POST['firstname']));
+    $lname = ucwords(clean($_POST['lastname']));
 
-    $uploadTo = "uploads/certificates/"; 
+    $uploadTo = "uploads/certificates/". $lname.'_'.$fname.'_'.$empno.'/'; 
     $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
     $imageName = $_FILES['image']['name'];
     $tempPath=$_FILES['image']['tmp_name'];
+    $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
+    $image_name = $empno . '_' .date('MdYgisA'). '.' . $ext; //New image name
 
     $basename = basename($imageName);
     $originalPath = $uploadTo.$basename; 
@@ -1864,9 +1899,9 @@ if(isset($_POST['updateLearningDev'])){
 
 //########## For Update Special Skills and Hobies #######################################################
 if(isset($_POST['updateSpecialSkills'])){
-    $empno = $_POST['empno'];
-    $special_id = $_POST['special_id'];
-    $special_skills = $_POST['special_skills'];       
+    $empno = clean($_POST['empno']);
+    $special_id = clean($_POST['special_id']);
+    $special_skills = clean($_POST['special_skills']);       
 
     try{        
         $query = "UPDATE special_skills SET special_skills='$special_skills'
@@ -1904,9 +1939,9 @@ if(isset($_POST['updateSpecialSkills'])){
 
 //########## For Update Non-Academic Distinctions #######################################################
 if(isset($_POST['updateNonAcademic'])){
-    $empno = $_POST['empno'];
-    $nonacad_id = $_POST['nonacad_id'];
-    $non_academic = $_POST['non_academic'];       
+    $empno = clean($_POST['empno']);
+    $nonacad_id = clean($_POST['nonacad_id']);
+    $non_academic = clean($_POST['non_academic']);       
 
     try{        
         $query = "UPDATE non_academic SET non_academic='$non_academic'
@@ -1944,9 +1979,9 @@ if(isset($_POST['updateNonAcademic'])){
 
 //########## For Update Membership in Association / Organization #######################################################
 if(isset($_POST['updateMembership'])){
-    $empno = $_POST['empno'];
-    $membership_id = $_POST['membership_id'];
-    $mem_in_asso = $_POST['mem_in_asso'];       
+    $empno = clean($_POST['empno']);
+    $membership_id = clean($_POST['membership_id']);
+    $mem_in_asso = clean($_POST['mem_in_asso']);       
 
     try{        
         $query = "UPDATE association SET mem_in_asso='$mem_in_asso'
@@ -1984,20 +2019,20 @@ if(isset($_POST['updateMembership'])){
 
 //########## For Update Educational Background #######################################################
 if(isset($_POST['updateEducational'])){
-    $empno = $_POST['empno'];
-    $voc_id = $_POST['voc_id'];
-    $nameofschool = $_POST['nameofschool'];
-    $course = $_POST['course'];
-    $from = $_POST['from'];
-    $to = $_POST['to'];   
-    $level = $_POST['level'];   
-    $year = $_POST['year'];   
-    $scholarship = $_POST['scholarship'];   
+    $empno = clean($_POST['empno']);
+    $voc_id = clean($_POST['voc_id']);
+    $nameofschool = clean($_POST['nameofschool']);
+    $course = clean($_POST['course']);
+    $from = clean($_POST['from']);
+    $to = clean($_POST['to']);   
+    $level = clean($_POST['level']);   
+    $year = clean($_POST['year']);   
+    $scholarship = clean($_POST['scholarship']);   
     
     try{
-        $query = "UPDATE educational SET e_nameofschool='$nameofschool', e_course='$course', e_from='$from', e_to='$to',
-                  e_level='$level', e_year='$year', e_scholarship='$scholarship'
-                  WHERE id='$voc_id' ";
+        $query = "UPDATE educational SET e_nameofschool='".$nameofschool."', e_course='".$course."', e_from='".$from."', e_to='".$to."',
+                  e_level='".$level."', e_year='".$year."', e_scholarship='".$scholarship."'
+                  WHERE id='".$voc_id."' ";
         $query_run = mysqli_query($con,$query);     
         
         if($query_run){
@@ -2031,11 +2066,11 @@ if(isset($_POST['updateEducational'])){
 
 //########## For Update Subject #######################################################
 if(isset($_POST['updateSubject'])){
-    $empno = $_POST['empno'];
-    $subject_id = $_POST['subject_id'];
-    $subject = $_POST['subject'];
-    $semester = $_POST['semester'];
-    $school_year = $_POST['school_year'];   
+    $empno = clean($_POST['empno']);
+    $subject_id = clean($_POST['subject_id']);
+    $subject = clean($_POST['subject']);
+    $semester = clean($_POST['semester']);
+    $school_year = clean($_POST['school_year']);   
     
     try{
         $query = "UPDATE subject_handled SET subject='$subject', semester='$semester', school_year='$school_year'
@@ -2073,11 +2108,11 @@ if(isset($_POST['updateSubject'])){
 
 //########## For Update National Certificate #######################################################
 if(isset($_POST['updateNC'])){
-    $empno = $_POST['empno'];
-    $nc_id = $_POST['nc_id'];
-    $nctitle = $_POST['nctitle'];
-    $nclevel = $_POST['nclevel'];
-    $validuntil = $_POST['validuntil'];   
+    $empno = clean($_POST['empno']);
+    $nc_id = clean($_POST['nc_id']);
+    $nctitle = clean($_POST['nctitle']);
+    $nclevel = clean($_POST['nclevel']);
+    $validuntil = clean($_POST['validuntil']);   
     
     try{
         $query = "UPDATE national_cert SET nc_title='$nctitle', nc_level='$nclevel', valid_until='$validuntil'
@@ -2115,8 +2150,8 @@ if(isset($_POST['updateNC'])){
 
 //########## For Update Specialization #######################################################
 if(isset($_POST['updateSpecialization'])){
-    $empno = $_POST['empno'];
-    $es_id = $_POST['es_id'];
+    $empno = clean($_POST['empno']);
+    $es_id = clean($_POST['es_id']);
     $track = ucwords(clean($_POST['track']));
     $strand = ucwords(clean($_POST['strand']));
     $titlespecialization = ucwords(clean($_POST['titlespecialization']));
@@ -2157,11 +2192,11 @@ if(isset($_POST['updateSpecialization'])){
 
 //########## For Update Anciliary Work #######################################################
 if(isset($_POST['updateAnciliaryWork'])){
-    $empno = $_POST['empno'];
-    $an_id = $_POST['an_id'];
+    $empno = clean($_POST['empno']);
+    $an_id = clean($_POST['an_id']);
     $antitle = ucwords(clean($_POST['antitle']));
-    $datestart = $_POST['datestart'];
-    $dateend = $_POST['dateend'];
+    $datestart = clean($_POST['datestart']);
+    $dateend = clean($_POST['dateend']);
             
     try{
         $query = "UPDATE anciliary_work SET title='$antitle', start_date='$datestart', end_date='$dateend'
@@ -2199,17 +2234,17 @@ if(isset($_POST['updateAnciliaryWork'])){
 
 //########## For Save / Update Personal Information #######################################################
 if(isset($_POST['savePersonal'])){
-    $old_emp_no = $_POST['old_emp_no'];
-    $old_email = $_POST['old_email'];
+    $old_emp_no = clean($_POST['old_emp_no']);
+    $old_email = clean($_POST['old_email']);
     $lname = ucwords(clean($_POST['lname']));    
     $fname = ucwords(clean($_POST['fname']));
     $mname = ucwords(clean($_POST['mname']));
-    $xname = $_POST['xname'];
-    $dob = $_POST['dob'];
+    $xname = clean($_POST['xname']);
+    $dob = clean($_POST['dob']);
     $pob = ucwords(clean($_POST['pob']));   
-    $sex = $_POST['sex'];
-    $civilstatus = $_POST['civilstatus'];
-    $others = $_POST['others'];
+    $sex = clean($_POST['sex']);
+    $civilstatus = clean($_POST['civilstatus']);
+    $others = clean($_POST['others']);
     $height = clean($_POST['height']);
     $weight = clean($_POST['weight']);
     $bloodtype = clean($_POST['bloodtype']);
@@ -2228,6 +2263,10 @@ if(isset($_POST['savePersonal'])){
 
     if($sss == ""){
         $sss = "N/A";
+    }
+
+    if($telephone == ""){
+        $telephone = "N/A";
     }
 
     $radioCitizen = clean($_POST['citizen']);
@@ -2387,6 +2426,12 @@ if(isset($_POST['saveFamily'])){
     // }
     // mother_maidename='$mother_maidename',
     
+    if($spouse_buss_tel == ""){
+        $spouse_buss_tel = "N/A";
+    }
+
+
+
     try{
         $query = "UPDATE family_background SET spouse_lastname='$spouse_lastname', spouse_firstname='$spouse_firstname',
                  spouse_middlename='$spouse_middlename', spouse_exname='$spouse_exname', spouse_occupation='$spouse_occupation', 
@@ -2429,7 +2474,7 @@ if(isset($_POST['saveFamily'])){
 
 //########## For Save / Update Other Info #######################################################
 if(isset($_POST['save_otherInfo'])){
-    $emp_no = $_POST['emp_no'];
+    $emp_no = clean($_POST['emp_no']);
         
     $q34_a = clean($_POST['radio_q34a']);
     $q34_b = clean($_POST['radio_q34b']);
@@ -2518,7 +2563,7 @@ if(isset($_POST['save_otherInfo'])){
 
 //########## For Save / Update Employee Record #######################################################
 if(isset($_POST['saveEmpRecord'])){
-    $emp_no = $_POST['emp_no'];        
+    $emp_no = clean($_POST['emp_no']);        
     $doapp = clean($_POST['doapp']);
     $yearinservice = clean($_POST['yearinservice']);
     $position_rank = clean($_POST['position_rank']);
@@ -2599,11 +2644,17 @@ if(isset($_POST['saveEmpRecord'])){
 
 //########## For Save Image for Profile Picture #######################################################
 if(isset($_POST['submitImage'])){
-    $empno = $_POST['empno'];
-    $pagefrom = $_POST['pagefrom'];
-    $nameofuser = $_POST['nameofuser'];
+    $empno = clean($_POST['empno']);
+    $pagefrom = clean($_POST['pagefrom']);
+    $nameofuser = clean($_POST['nameofuser']);
+    
 
-    $uploadTo = "uploads/teachers/"; 
+    $profile_folder = 'uploads/profilepic/'.$nameofuser;
+    if (!file_exists($profile_folder)) {
+        mkdir($profile_folder, 0755);
+    }
+
+    $uploadTo = 'uploads/profilepic/'.$nameofuser.'/';    
     $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
     //$imageName = $_FILES['image']['name'];
     

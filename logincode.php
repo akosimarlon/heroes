@@ -8,6 +8,8 @@
      include("admin/config/homeconfig.php");
 
     //########### LOG IN USING SERVER #############//
+
+
     // $userID = $_POST['current_user_id'];
     // $user_name = $_POST['current_username'];
     // $user_role = $_POST['current_user_role'];
@@ -170,9 +172,17 @@
 
     // ############ LOG IN USING DUMMY DATA  #####################//
     if(isset($_POST['btn_login'])){
+
+
+
         $email = $_POST['email'];
         $password = $_POST['password'];
-        
+
+        $userID = $_POST['current_user_id'];      // id sa user sa masterlist... auto inc
+        $user_name = $_POST['current_username'];  //email
+        $user_role = $_POST['current_user_role']; // teacher, admin... etc..
+        $user_security = $_POST['security_key'];  // value is 1234
+            
 
 
         $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";

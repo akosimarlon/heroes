@@ -2,40 +2,13 @@
     include('authentication.php');
     include('includes/header.php');
     include('includes/navbar.php');    
-?>    
-<style>
-#loading {
-   width: 100%;
-   height: 100%;
-   top: 0px;
-   left: 0px;
-   position: fixed;
-   display: block;
-   opacity: 0.7;
-   background-color: #fff;
-   z-index: 99;
-   text-align: center;
-}
-
-#loading-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  z-index: 100;
-}
-
-.hide{
-  display: none;
-}
-</style>
-
+?>        
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">User Masterlist</h1>    
+            <h1 class="h3 mb-0 text-gray-800">Schools Masterlist</h1>    
         </div>
 
         <!-- Add Admin Modal -->
@@ -170,7 +143,7 @@
             <?php include('message.php'); ?>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Accounts
+                    <h6 class="m-0 font-weight-bold text-primary">Schools
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary float-right searchbtn">
                         <i class="fa fa-search"></i> Show Duplicates
@@ -182,31 +155,22 @@
                 </div>
                 <div class="card-body">
 
-                    <!-- <div id="loading" class="hide">
-                        <div id="loading-content">
-                            Loading...
-                        </div>
-                    </div> -->
-
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Employee No</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
+                                    <th>School ID</th>
+                                    <th>School Name</th>
+                                    <th>District</th>                                    
                                     <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
-                            </thead>   
-
-                            <tbody id="responsecontainer">
-
+                            </thead>                            
+                            <tbody>
                                 <?php
-                                    $query = "SELECT * FROM masterlist";
+                                    $query = "SELECT * FROM schools";
                                     $query_run = mysqli_query($con,$query);
 
                                     if(mysqli_num_rows($query_run) > 0){
@@ -214,10 +178,9 @@
                                         ?>
                                             <tr>
                                                 <td><?= $row['id'] ?></td>
-                                                <td><?= $row['emp_no'] ?></td>
-                                                <td><?= $row['fname'] ?></td>
-                                                <td><?= $row['lname'] ?></td>
-                                                <td><?= $row['email'] ?></td>                                                
+                                                <td><?= $row['school_id'] ?></td>
+                                                <td><?= $row['school_name'] ?></td>
+                                                <td><?= $row['district'] ?></td>
                                                 <td>
                                                 <?php
                                                     if($row['status']=='1'){
@@ -228,9 +191,9 @@
                                                     }
                                                 ?>
                                                 </td>
-                                                <input type="hidden" id="ufname<?=$row['id']?>" value="<?=$row['fname']?>">
-                                                <input type="hidden" id="ulname<?=$row['id']?>" value="<?=$row['lname']?>">                                                
-                                                <input type="hidden" id="uemail<?=$row['id']?>" value="<?=$row['email']?>">
+                                                <input type="hidden" id="uschid<?=$row['id']?>" value="<?=$row['school_id']?>">
+                                                <input type="hidden" id="uschname<?=$row['id']?>" value="<?=$row['school_name']?>">                                                
+                                                <input type="hidden" id="udistrict<?=$row['id']?>" value="<?=$row['district']?>">
                                                 <input type="hidden" id="ustatus<?=$row['id']?>" value="<?=$row['status']?>">
 
                                                 
@@ -248,9 +211,7 @@
                                         <?php
                                     }
 
-                                ?>                            
-
-                                                      
+                                ?>                      
                             </tbody>
                         </table>
                     </div>
@@ -312,42 +273,9 @@ $(document).ready(function() {
 <script>
 
     $(document).ready(function() {
-        
+        $(document).on('click', '.searchbtn', function(){
             alert ("asda");   
         });
     });
 
-</script>
-
-
-<!-- ######## TIME STAMP FOR DATE AND TIME ########## -->
-<script>
-    $(document).ready(function() {        
-        // $(document).ajaxStart(function(){
-        //     $("#loading").removeClass('hide');
-        // }).ajaxStop(function(){
-        //     $("#loading").addClass('hide');
-        // });
-    });
-</script>
-
-<script>
-    
-    $(document).ready(function() {
-    
-        $(document).on('click', '.searchbtn', function(){                
-    
-          $.ajax({    //create an ajax request to display.php
-                type: "GET",
-                url: "displayMasterlist.php",             
-                dataType: "html",   //expect html to be returned                
-                success: function(response){                    
-                    $("#responsecontainer").html(response); 
-                    //alert(response);
-                }
-    
-            });
-        });
-    });
-    
 </script>

@@ -33,74 +33,124 @@ if(isset($_SESSION['auth'])){
     <link rel="stylesheet" href="assets/css/bootstrap5.min.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     
+    <style>
+         body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
+
+        /* 
+            
+
+            @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        } */
+        html {
+        height:100%;
+        }
+
+        body {
+        margin:0;
+        }
+
+        .bg {
+        animation:slide 3s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, #f91 50%, #f43 50%);
+        /* background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%); */
+        bottom:0;
+        left:-50%;
+        opacity:.5;
+        position:fixed;
+        right:-50%;
+        top:0;
+        z-index:-1;
+        }
+
+        .bg2 {
+        animation-direction:alternate-reverse;
+        animation-duration:4s;
+        }
+
+        .bg3 {
+        animation-duration:5s;
+        }
+
+        .content {
+        /* background-color:rgba(255,255,255,.8); */
+        background-image: url('assets/img/HEROES COVER PAGE.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;       
+        border-radius:.25em;
+        box-shadow:0 0 .25em rgba(0,0,0,.25);
+        box-sizing:border-box;
+        left:50%;
+        right:-30%;
+        padding:47vmin;
+        position:fixed;
+        text-align:center;
+        top:50%;        
+        transform:translate(-50%, -50%);
+        }
+
+        h1 {
+        font-family:monospace;
+        }
+
+        @keyframes slide {
+        0% {
+            transform:translateX(-25%);
+        }
+        100% {
+            transform:translateX(25%);
+        }
+        }
+
+        /* @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        } */
+    </style>
+   
 
 </head>
 
-<body class="bg-gradient-danger">
+<body class="">
 
     <div class="container">
 
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+       
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+           <?php include('message.php'); ?>
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">                                        
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    
-                                    <form class="user" action="logincode.php" method="POST">                                    
-                                        <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Email" autocomplete="off">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" autocomplete="off">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary btn-user btn-block" type="submit" name="btn_login">
-                                            Login
-                                        </button>
-                                        <!-- <hr>
-                                        <a href="" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a> -->
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php include('message.php'); ?>
-            </div>
+        <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div class="content">
+            <h6>Login</h6>
+        </div>
+                
+            
             
 
-        </div>
+        
 
     </div>
 
