@@ -157,7 +157,7 @@ if(isset($_SESSION['auth'])){
         <!-- Outer Row -->
        
 
-           <?php include('message.php'); ?>
+           <?php //include('message.php'); ?>
 
         <div class="bg"></div>
             <div class="bg bg2"></div>
@@ -180,7 +180,7 @@ if(isset($_SESSION['auth'])){
                         
 
                     ?>
-                    
+
                       <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success">                 
                       <input type="hidden" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
                       <input type="hidden" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
