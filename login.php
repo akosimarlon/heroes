@@ -87,7 +87,7 @@ if(isset($_SESSION['auth'])){
 
         .content {
         /* background-color:rgba(255,255,255,.8); */
-        /* background-image: url('assets/img/HEROES COVER PAGE.jpg'); */
+        background-image: url('assets/img/HEROES COVER PAGE.jpg');
         background-repeat: no-repeat;
         background-size: cover;       
         border-radius:.25em;
@@ -180,30 +180,32 @@ if(isset($_SESSION['auth'])){
                         
 
                     ?>
-                                       
-                   
+                      <input type="hidden" value="<?=$userID?>" class="form-control border-success">                 
+                      <input type="hidden" value="<?=$user_name?>" class="form-control border-success">
+                      <input type="hidden" value="<?=$user_role?>" class="form-control border-success">
+                      <input type="hidden" value="<?=$user_security?>" class="form-control border-success">
 
                     <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
 
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-auto">
                             <label for="">User ID</label>
-                            <input type="text" value="<?=$userID?>" class="form-control border-success">
+                            
                         </div>
                         <div class="col-auto">
                             <label for="">User Name</label>
-                            <input type="text" value="<?=$user_name?>" class="form-control border-success">
+                            
                         </div>
                         <div class="col-auto">
                             <label for="">User Role</label>
-                            <input type="text" value="<?=$user_role?>" class="form-control border-success">
+                            
                         </div>
                         <div class="col-auto">
                             <label for="">User Security</label>
-                            <input type="text" value="<?=$user_security?>" class="form-control border-success">
+                            
                         </div>
-                    </div>
+                    </div> -->
                     
 
 
