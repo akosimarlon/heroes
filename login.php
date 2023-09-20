@@ -115,6 +115,24 @@ if(isset($_SESSION['auth'])){
         }
         }
 
+        .container {
+            position: relative;
+        }
+ 
+        .btn {
+            position: absolute;
+            top: 90%;
+            left: 62%;
+            transform: translate(-50%, -50%);
+            background-color: #191e62;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            font-weight: 1000;
+            border-color: #ffffff;
+        }
+
         /* @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -144,6 +162,8 @@ if(isset($_SESSION['auth'])){
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <div class="content">
+                <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
+            </div>
             
         </div>
         
