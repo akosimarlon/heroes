@@ -182,23 +182,25 @@ if(isset($_SESSION['auth'])){
                     <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
 
 
+                    <div class="row">
+                        <div class="col-auto">
+                            <label for="">User ID</label>
+                            <input type="text" value="<?=$userID?>" class="form-control border-success">
+                        </div>
+                        <div class="col-auto">
+                            <label for="">User Name</label>
+                            <input type="text" value="<?=$user_name?>" class="form-control border-success">
+                        </div>
+                        <div class="col-auto">
+                            <label for="">User Role</label>
+                            <input type="text" value="<?=$user_role?>" class="form-control border-success">
+                        </div>
+                        <div class="col-auto">
+                            <label for="">User Security</label>
+                            <input type="text" value="<?=$user_security?>" class="form-control border-success">
+                        </div>
+                    </div>
                     
-                    <div class="col-auto">
-                        <label for="">User ID</label>
-                        <input type="text" value="<?=$userID?>" class="form-control border-success">
-                    </div>
-                    <div class="col-auto">
-                        <label for="">User Name</label>
-                        <input type="text" value="<?=$user_name?>" class="form-control border-success">
-                    </div>
-                    <div class="col-auto">
-                        <label for="">User Role</label>
-                        <input type="text" value="<?=$user_role?>" class="form-control border-success">
-                    </div>
-                    <div class="col-auto">
-                        <label for="">User Security</label>
-                        <input type="text" value="<?=$user_security?>" class="form-control border-success">
-                    </div>
 
 
 
