@@ -157,7 +157,7 @@ if(isset($_SESSION['auth'])){
         <!-- Outer Row -->
        
 
-           <?php include('message.php'); ?>
+           <?php //include('message.php'); ?>
 
         <div class="bg"></div>
             <div class="bg bg2"></div>
