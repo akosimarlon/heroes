@@ -87,7 +87,7 @@ if(isset($_SESSION['auth'])){
 
         .content {
         /* background-color:rgba(255,255,255,.8); */
-        background-image: url('assets/img/HEROES COVER PAGE.jpg');
+        /* background-image: url('assets/img/HEROES COVER PAGE.jpg'); */
         background-repeat: no-repeat;
         background-size: cover;       
         border-radius:.25em;
@@ -163,7 +163,53 @@ if(isset($_SESSION['auth'])){
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <div class="content">
-                <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
+                <form class="user" action="logincode.php" method="POST">
+                    <?php
+
+                        $email = $_POST['email'];
+                        $password = $_POST['password'];
+                        $userID = $_POST['current_user_id'];      // id sa user sa masterlist... auto inc
+                        $user_name = $_POST['current_username'];  //email
+                        $user_role = $_POST['current_user_role']; // teacher, admin... etc..
+                        $user_security = $_POST['security_key'];  // value is 1234
+
+                        
+
+                    ?>
+                                       
+                   
+
+                    <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
+
+
+                    <div class="col-auto">
+                        <label for="">E-mail</label>
+                        <input type="text" value="<?=$email?>" class="form-control border-success">
+                    </div>
+                    <div class="col-auto">
+                        <label for="">Password</label>
+                        <input type="text" value="<?=$password?>" class="form-control border-success">
+                    </div>
+                    <div class="col-auto">
+                        <label for="">User ID</label>
+                        <input type="text" value="<?=$userID?>" class="form-control border-success">
+                    </div>
+                    <div class="col-auto">
+                        <label for="">User Name</label>
+                        <input type="text" value="<?=$user_name?>" class="form-control border-success">
+                    </div>
+                    <div class="col-auto">
+                        <label for="">User Role</label>
+                        <input type="text" value="<?=$user_role?>" class="form-control border-success">
+                    </div>
+                    <div class="col-auto">
+                        <label for="">User Security</label>
+                        <input type="text" value="<?=$user_security?>" class="form-control border-success">
+                    </div>
+
+
+
+                </form>    
             </div>
             
         </div>
