@@ -166,8 +166,8 @@ if(isset($_SESSION['auth'])){
                 <form class="user" action="logincode.php" method="POST">
                     <?php
 
-                        $email = $_POST['email'];
-                        $password = $_POST['password'];
+                        //$email = $_POST['email'];
+                        //$password = $_POST['password'];
                         $userID = $_POST['current_user_id'];      // id sa user sa masterlist... auto inc
                         $user_name = $_POST['current_username'];  //email
                         $user_role = $_POST['current_user_role']; // teacher, admin... etc..
@@ -182,14 +182,7 @@ if(isset($_SESSION['auth'])){
                     <button class="btn btn-primary btn-lg px-5 rounded-pill">Get Started</button> 
 
 
-                    <div class="col-auto">
-                        <label for="">E-mail</label>
-                        <input type="text" value="<?=$email?>" class="form-control border-success">
-                    </div>
-                    <div class="col-auto">
-                        <label for="">Password</label>
-                        <input type="text" value="<?=$password?>" class="form-control border-success">
-                    </div>
+                    
                     <div class="col-auto">
                         <label for="">User ID</label>
                         <input type="text" value="<?=$userID?>" class="form-control border-success">
