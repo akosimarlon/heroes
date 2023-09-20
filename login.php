@@ -146,10 +146,6 @@ if(isset($_SESSION['auth'])){
             <div class="content">
             <h6>Login</h6>
         </div>
-                
-            
-            
-
         
 
     </div>
