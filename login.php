@@ -65,8 +65,8 @@ if(isset($_SESSION['auth'])){
 
         .bg {
         animation:slide 3s ease-in-out infinite alternate;
-        background-image: linear-gradient(-60deg, #f91 50%, #f43 50%);
-        /* background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%); */
+        /* background-image: linear-gradient(-60deg, #f91 50%, #f43 50%); */
+        background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
         bottom:0;
         left:-50%;
         opacity:.5;
