@@ -1,362 +1,190 @@
 <?php
-    session_start();
+session_start();
+if(isset($_SESSION['auth'])){
+    // if(!isset($_SESSION['message'])){
+    //     $_SESSION['message'] = "You are already Logged In.";
+    //     $_SESSION['message_type'] = "primary";
+    // }        
+    header("Location: index.php");
+    exit(0);   
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 
-    //header("Location: admin/authentication.php");
+<head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-     include("admin/config/dbcon.php");
-     include("admin/config/homeconfig.php");
+    <title>Project TIS - Teachers Information System</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
 
-    //########### LOG IN USING SERVER #############//
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-
-    // $userID = $_POST['current_user_id'];
-    // $user_name = $_POST['current_username'];
-    // $user_role = $_POST['current_user_role'];
-    // $user_security = $_POST['security_key'];
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="assets/css/bootstrap5.min.css">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
     
-    //echo ($home_location);w
-    
-    // if(!isset($_POST['current_user_id'])){
-    //     header("Location: ".$home_location);
-    //     echo "Naay sulod mao ni user ID = ".$userID;
-    //     echo "Naay sulod sa security code = ".$user_security;
-    // }
-    // else{
-    //     echo "WALAY sulod mao ni user ID = ".$userID;
-    //     echo "WALAY security code = ".$user_security;
+    <style>
+         body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
 
-    //     $userID = $_POST['current_user_id'];
-    //     $user_name = $_POST['current_username'];
-    //     $user_role = $_POST['current_user_role'];
-    //     $user_security = $_POST['security_key'];
-
-        // if ($user_security=='1234'){            
-
-        //     if ($user_role == 'teacher'){
-        //         $user_id = $data['id'];
-        //         $user_empno = $data['emp_no'];
-        //         $user_name = $data['fname'].' '.$data['lname'];
-        //         $user_email = $data['email'];
-        //         $user_pass = $data['password'];
-        //         $user_role = $data['role_as'];                
-        //         $status = $data['status'];
-
-
-        //         $_SESSION['auth'] = true;
-        //         $_SESSION['auth_role'] = $user_role;  // 1=admin , 2=user
-        //         $_SESSION['user_name'] = $user_name;
-        //         $_SESSION['user_empno'] = $user_empno;                       
-        //         $_SESSION['auth_user'] = [
-        //             'user_id'=>$user_id,
-        //             'user_empno'=>$user_empno,
-        //             'user_name'=>$user_name,
-        //             'user_email'=>$user_email,                
-        //         ];
-
-        //     }
-
+        /* 
             
+
+            @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        } */
+        html {
+        height:100%;
+        }
+
+        body {
+        margin:0;
+        }
+
+        .bg {
+        animation:slide 3s ease-in-out infinite alternate;
+        /* background-image: linear-gradient(-60deg, #f91 50%, #f43 50%); */
+        background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+        bottom:0;
+        left:-50%;
+        opacity:.5;
+        position:fixed;
+        right:-50%;
+        top:0;
+        z-index:-1;
+        }
+
+        .bg2 {
+        animation-direction:alternate-reverse;
+        animation-duration:4s;
+        }
+
+        .bg3 {
+        animation-duration:5s;
+        }
+
+        .content {
+        /* background-color:rgba(255,255,255,.8); */
+        background-image: url('assets/img/maintenance.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;       
+        border-radius:.25em;
+        box-shadow:0 0 .25em rgba(0,0,0,.25);
+        box-sizing:border-box;
+        left:50%;
+        right:-30%;
+        padding:47vmin;
+        position:fixed;
+        text-align:center;
+        top:50%;        
+        transform:translate(-50%, -50%);
+        }
+
+        h1 {
+        font-family:monospace;
+        }
+
+        @keyframes slide {
+        0% {
+            transform:translateX(-25%);
+        }
+        100% {
+            transform:translateX(25%);
+        }
+        }
+
+        .container {
+            position: relative;
+        }
+ 
+        .btn {
+            position: absolute;
+            top: 72%;
+            left: 22%;
+            transform: translate(-50%, -50%);
+            background-color: #191e62;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            font-weight: 800;
+            border-color: #ffffff;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+
+        /* @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        } */
+    </style>
+   
+
+</head>
+
+<body class="">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+       
+
+           <?php include('message.php'); ?>
+
+        <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div class="content">
+                <a class="btn btn-primary btn-lg px-5 rounded-pill" href="http://202.137.126.58" type="submit" name="btn_login">Back to Home</a>
+            </div>
             
-        // } 
-        // else{
-        //     header("Location: ".$home_location);
-        // }
-
-   // }
-
-
-    // ############ LOG IN IN LOCALHOST  #####################//
-    // if(isset($_POST['btn_login'])){
-    //     $email = $_POST['email'];
-    //     $password = $_POST['password'];
+        </div>
         
 
+    </div>
 
-    //     $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
-    //     $login_query_run = mysqli_query($con,$login_query);
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-         
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-    //     if(mysqli_num_rows($login_query_run) > 0){
+</body>
 
-    //         foreach($login_query_run as $data){
-    //             $user_id = $data['id'];
-    //             $user_empno = $data['emp_no'];
-    //             $user_name = $data['fname'].' '.$data['lname'];
-    //             $user_email = $data['email'];
-    //             $user_pass = $data['password'];
-    //             $user_role = $data['role_as'];
-    //             //$section = $data['section'];
-    //             $status = $data['status'];
+</html>
 
-    //         }
-
-    //         if($user_email != $email){
-    //             $_SESSION['message'] = "Username did not match";
-    //             $_SESSION['message_type'] = "danger";
-    //             //header("Location: http://192.168.100.102:8080/");
-    //             header("Location: login.php");
-    //             exit(0);
-    //         }
-
-    //         if($user_pass != $password){
-    //             $_SESSION['message'] = "Invalid Password";
-    //             $_SESSION['message_type'] = "danger";
-    //             //header("Location: http://192.168.100.102:8080/");
-    //             header("Location: login.php");
-    //             exit(0);
-    //         }
-
-    //         if($status != "0"){
-    //             $_SESSION['auth'] = true;
-    //             $_SESSION['auth_role'] = $user_role;  // 1=admin , 2=user
-    //             $_SESSION['user_name'] = $user_name;
-    //             $_SESSION['user_empno'] = $user_empno;
-    //             //$_SESSION['SESS_SECTION'] = $section;           
-    //             $_SESSION['auth_user'] = [
-    //                 'user_id'=>$user_id,
-    //                 'user_empno'=>$user_empno,
-    //                 'user_name'=>$user_name,
-    //                 'user_email'=>$user_email,                
-    //             ];
-
-    //             if($_SESSION['auth_role'] == '1'){
-    //                 $_SESSION['message'] = "Welcome to Admin Dashboard.";
-    //                 $_SESSION['message_type'] = "primary";
-    //                 header("Location: admin/index.php");
-    //                 exit(0); 
-    //             }
-    //             else if($_SESSION['auth_role'] == '2'){
-    //                 $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
-    //                 $_SESSION['message_type'] = "primary";
-    //                 header("Location: admin/index.php");
-    //                 exit(0);
-    //             }
-    //         }else{
-    //             $_SESSION['message'] = "This account is inactive";
-    //             $_SESSION['message_type'] = "warning";
-    //             //header("Location: http://192.168.100.102:8080/");
-    //             header("Location: login.php");
-    //             exit(0);
-    //         }
-
-    //     }
-    //     else{
-    //         $_SESSION['message'] = "Invalid Email or Password.";
-    //         $_SESSION['message_type'] = "warning";
-    //         //header("Location: http://192.168.100.102:8080/");
-    //         header("Location: login.php");
-    //         exit(0); 
-    //     }
-    // }
-    // else{
-    //     $_SESSION['message'] = "Access Denied.";
-    //     $_SESSION['message_type'] = "danger";
-    //     //header("Location: http://192.168.100.102:8080/");
-    //     header("Location: login.php");
-    //     exit(0);        
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-    // ############ LOG IN USING DUMMY DATA  #####################//
-    if(isset($_POST['btn_login'])){
-
-
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        
-
-        $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
-        $login_query_run = mysqli_query($con,$login_query);
-
-         
-
-
-        if(mysqli_num_rows($login_query_run) > 0){
-
-            foreach($login_query_run as $data){
-                $user_id = $data['id'];
-                $user_empno = $data['emp_no'];
-                $user_name = $data['fname'].' '.$data['lname'];
-                $user_email = $data['email'];
-                $user_pass = $data['password'];
-                $user_role = $data['role_as'];
-                //$section = $data['section'];
-                $status = $data['status'];
-
-            }
-
-            if($user_email != $email){
-                $_SESSION['message'] = "Username did not match";
-                $_SESSION['message_type'] = "danger";
-                //header("Location: http://192.168.100.102:8080/");
-                header("Location: login.php");
-                exit(0);
-            }
-
-            if($user_pass != $password){
-                $_SESSION['message'] = "Invalid Password";
-                $_SESSION['message_type'] = "danger";
-                //header("Location: http://192.168.100.102:8080/");
-                header("Location: login.php");
-                exit(0);
-            }
-
-            if($status != "0"){
-                $_SESSION['auth'] = true;
-                $_SESSION['auth_role'] = $user_role;  // 1=admin , 2=user
-                $_SESSION['user_name'] = $user_name;
-                $_SESSION['user_empno'] = $user_empno;
-                //$_SESSION['SESS_SECTION'] = $section;           
-                $_SESSION['auth_user'] = [
-                    'user_id'=>$user_id,
-                    'user_empno'=>$user_empno,
-                    'user_name'=>$user_name,
-                    'user_email'=>$user_email,                
-                ];
-
-                if($_SESSION['auth_role'] == '1'){
-                    $_SESSION['message'] = "Welcome to Admin Dashboard.";
-                    $_SESSION['message_type'] = "primary";
-                    header("Location: admin/index.php");
-                    exit(0); 
-                }
-                else if($_SESSION['auth_role'] == '2'){
-                    $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
-                    $_SESSION['message_type'] = "primary";
-                    header("Location: admin/index.php");
-                    exit(0);
-                }
-            }else{
-                $_SESSION['message'] = "This account is inactive";
-                $_SESSION['message_type'] = "warning";
-                //header("Location: http://192.168.100.102:8080/");
-                header("Location: login.php");
-                exit(0);
-            }
-
-        }
-        else{
-            $_SESSION['message'] = "Invalid Email or Password.";
-            $_SESSION['message_type'] = "warning";
-            //header("Location: http://192.168.100.102:8080/");
-            header("Location: login.php");
-            exit(0); 
-        }
-    }
-    else{
-        $_SESSION['message'] = "Access Denied.";
-        $_SESSION['message_type'] = "danger";
-        //header("Location: http://192.168.100.102:8080/");
-        header("Location: login.php");
-        exit(0);        
-    }
-
-
- ?>   
-
-<!-- if(isset($_POST['btn_login'])){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        
-
-
-        $login_query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
-        $login_query_run = mysqli_query($con,$login_query);
-
-         
-
-
-        if(mysqli_num_rows($login_query_run) > 0){
-
-            foreach($login_query_run as $data){
-                $user_id = $data['id'];
-                $user_empno = $data['emp_no'];
-                $user_name = $data['fname'].' '.$data['lname'];
-                $user_email = $data['email'];
-                $user_pass = $data['password'];
-                $user_role = $data['role_as'];
-                //$section = $data['section'];
-                $status = $data['status'];
-
-            }
-
-            if($user_email != $email){
-                $_SESSION['message'] = "Username did not match";
-                $_SESSION['message_type'] = "danger";
-                header("Location: http://192.168.100.102:8080/");
-                //header("Location: login.php");
-                exit(0);
-            }
-
-            if($user_pass != $password){
-                $_SESSION['message'] = "Invalid Password";
-                $_SESSION['message_type'] = "danger";
-                header("Location: http://192.168.100.102:8080/");
-                //header("Location: login.php");
-                exit(0);
-            }
-
-            if($status != "0"){
-                $_SESSION['auth'] = true;
-                $_SESSION['auth_role'] = $user_role;  // 1=admin , 2=user
-                $_SESSION['user_name'] = $user_name;
-                $_SESSION['user_empno'] = $user_empno;
-                //$_SESSION['SESS_SECTION'] = $section;           
-                $_SESSION['auth_user'] = [
-                    'user_id'=>$user_id,
-                    'user_empno'=>$user_empno,
-                    'user_name'=>$user_name,
-                    'user_email'=>$user_email,                
-                ];
-
-                if($_SESSION['auth_role'] == '1'){
-                    $_SESSION['message'] = "Welcome to Admin Dashboard.";
-                    $_SESSION['message_type'] = "primary";
-                    header("Location: admin/index.php");
-                    exit(0); 
-                }
-                else if($_SESSION['auth_role'] == '2'){
-                    $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
-                    $_SESSION['message_type'] = "primary";
-                    header("Location: admin/index.php");
-                    exit(0);
-                }
-            }else{
-                $_SESSION['message'] = "This account is inactive";
-                $_SESSION['message_type'] = "warning";
-                header("Location: http://192.168.100.102:8080/");
-                //header("Location: login.php");
-                exit(0);
-            }
-
-        }
-        else{
-            $_SESSION['message'] = "Invalid Email or Password.";
-            $_SESSION['message_type'] = "warning";
-            header("Location: http://192.168.100.102:8080/");
-            //header("Location: login.php");
-            exit(0); 
-        }
-    }
-    else{
-        $_SESSION['message'] = "Access Denied.";
-        $_SESSION['message_type'] = "danger";
-        header("Location: http://192.168.100.102:8080/");
-        //header("Location: login.php");
-        exit(0);        
-    } -->
+<?php
+    include('includes/scripts.php');
+?>
