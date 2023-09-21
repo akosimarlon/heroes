@@ -48,8 +48,9 @@
                 }
             }  
         
-        
-        if ($user_security == "12345") {
+        $query1 = "SELECT * FROM users WHERE emp_no='$empno' ";
+        $query_run1 = mysqli_query($con,$query1);
+        if (!$query_run1->num_rows > 0) {
             
             try {
                 $query = "INSERT INTO users (emp_no,fname,lname,username,email,password,role_as,status) 
@@ -150,7 +151,7 @@
                 exit(0);
             } 
         }else{
-            $_SESSION['message'] = "The Security Code does not match.";
+            $_SESSION['message'] = "Woops!, Employee Already Exists.";
             $_SESSION['message_type'] = "danger";            
             header("location: login.php");
             exit();
