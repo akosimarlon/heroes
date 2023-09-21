@@ -164,10 +164,11 @@ else{
         
 
         <div class="bg"></div>
-            <?php include('message.php'); ?>
+            
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <div class="content">
+                <?php include('message.php'); ?>
                 <form class="user" action="logincode.php" method="POST">
                 <?php
                     $userID = $_SESSION['user_id'];
