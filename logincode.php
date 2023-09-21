@@ -37,7 +37,7 @@
                 
             if(mysqli_num_rows($user_run) > 0 ){
                 foreach($user_run as $row){
-                    $empno = $row['empno'];
+                    $empno = $row['emp_no'];
                     $fname = ucwords(clean($row['fname']));
                     $lname = ucwords(clean($row['lname']));
                     $sex = "";
