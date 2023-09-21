@@ -181,29 +181,25 @@ if(isset($_SESSION['auth'])){
 
                     ?>
 
-                                      
-                     
-                      
-                      
-                    
+                        
                     <button class="btn btn-primary btn-lg px-5 rounded-pill" type="submit" name="btn_login">Get Started</button>
 
                     <div class="row">
                         <div class="col-auto">
                             <label for="">User ID</label>
-                            <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success"> 
+                            <input type="text" name="userID" value="<?=$userID?>" class="form-control border-success"> 
                         </div>
                         <div class="col-auto">
                             <label for="">User Name</label>
-                             <input type="hidden" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
+                             <input type="text" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
                         </div>
                         <div class="col-auto">
                             <label for="">User Role</label>
-                            <input type="hidden" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
+                            <input type="text" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
                         </div>
                         <div class="col-auto">
                             <label for="">User Security</label>
-                            <input type="hidden" name="user_security"  value="<?=$user_security?>" class="form-control border-success">
+                            <input type="text" name="user_security"  value="<?=$user_security?>" class="form-control border-success">
                         </div>
                     </div>
                     
