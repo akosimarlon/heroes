@@ -185,7 +185,7 @@
                             exit(0); 
                         }
                         else if($role_as== '2'){
-                            //$_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
+                            $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
                             $_SESSION['message_type'] = "primary";
                             header("Location: admin/index.php");
                             exit(0);

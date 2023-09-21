@@ -96,21 +96,22 @@
                                             if(mysqli_num_rows($query_run) > 0 ){ 
                                                 foreach($query_run as $row){
                                             ?>
-                                                <img class="card-img-top" src="<?=$row['image']?>" width="100" height="200" alt="Employee Image">
+                                                <input type="text" >
+                                                <img class="card-img-top" src="<?=$row['image']?>" width="100" height="200" alt="Employee Image1">
                                             <?php 
                                                 }
                                             }else{
                                                 if($user['sex']=="male"){
                                             ?>
-                                                <img class="card-img-top" src="assets/img/male_avatar.png" width="100" height="200" alt="Employee Image">
+                                                <img class="card-img-top" src="assets/img/male_avatar.png" width="100" height="200" alt="Employee Image2">
                                             <?php
                                                 }else if($user['sex']=="female"){
                                             ?> 
-                                                    <img class="card-img-top" src="assets/img/female_avatar.png" width="100" height="200" alt="Employee Image">   
+                                                    <img class="card-img-top" src="assets/img/female_avatar.png" width="100" height="200" alt="Employee Image3">   
                                             <?php
                                                 }else{
                                             ?>
-                                                    <img class="card-img-top" src="assets/img/unregistered_m.jpg" width="100" height="200" alt="Employee Image">
+                                                    <img class="card-img-top" src="assets/img/unregistered_m.jpg" width="100" height="200" alt="Employee Image4">
                                             <?php
                                                 }
                                             }
