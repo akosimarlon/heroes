@@ -87,7 +87,7 @@ if(isset($_SESSION['auth'])){
 
         .content {
         /* background-color:rgba(255,255,255,.8); */
-        background-image: url('assets/img/HEROES COVER PAGE.jpg');
+        background-image: url('assets/img/maintenance.jpg');
         background-repeat: no-repeat;
         background-size: cover;       
         border-radius:.25em;
@@ -121,8 +121,8 @@ if(isset($_SESSION['auth'])){
  
         .btn {
             position: absolute;
-            top: 90%;
-            left: 62%;
+            top: 72%;
+            left: 22%;
             transform: translate(-50%, -50%);
             background-color: #191e62;
             color: rgb(255, 255, 255);
@@ -163,54 +163,7 @@ if(isset($_SESSION['auth'])){
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <div class="content">
-                <form class="user" action="logincode.php" method="POST">
-                    <?php
-
-                        //$email = $_POST['email'];
-                        //$password = $_POST['password'];
-                        $userID = $_GET['current_user_id'];      // id sa user sa masterlist... auto inc
-                        $user_name = $_GET['current_username'];  //email
-                        $user_role = $_GET['current_user_role']; // teacher, admin... etc..
-                        $user_security = $_GET['security_key'];  // value is 1234
-
-                        // $userID = '1202650';      // id sa user sa masterlist... auto inc
-                        // $user_name = 'marlon.diocson@deped.gov.ph';  //email
-                        // $user_role = 'teacher'; // teacher, admin... etc..
-                        // $user_security = '1234';
-                        
-
-                    ?>
-
-                      <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success">                 
-                      <input type="hidden" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
-                      <input type="hidden" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
-                      <input type="hidden" name="user_security"  value="<?=$user_security?>" class="form-control border-success">
-                    
-                    <button class="btn btn-primary btn-lg px-5 rounded-pill" type="submit" name="btn_login">Get Started</button>
-
-                    <!-- <div class="row">
-                        <div class="col-auto">
-                            <label for="">User ID</label>
-                            
-                        </div>
-                        <div class="col-auto">
-                            <label for="">User Name</label>
-                            
-                        </div>
-                        <div class="col-auto">
-                            <label for="">User Role</label>
-                            
-                        </div>
-                        <div class="col-auto">
-                            <label for="">User Security</label>
-                            
-                        </div>
-                    </div> -->
-                    
-
-
-
-                </form>    
+                <a class="btn btn-primary btn-lg px-5 rounded-pill" href="http://202.137.126.58" type="submit" name="btn_login">Back to Home</a>
             </div>
             
         </div>
