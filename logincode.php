@@ -175,8 +175,9 @@
                             exit(0);
                         }  
                     }else{
-                        header("Location: ".$home_location);
-                        exit();
+                        echo $status;
+                        //header("Location: ".$home_location);
+                        //exit();
                     }
                 }
             }
