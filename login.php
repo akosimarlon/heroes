@@ -172,6 +172,11 @@ if(isset($_SESSION['auth'])){
                     $user_name = $_SESSION['username'];
                     $user_role = $_SESSION['user_role'];
                     $user_security = $_SESSION['security_key'];
+                    if (empty($userID)) {
+                        echo "<p>String is Empty</p>";
+                        header("Location: http://202.137.126.58/");
+                        exit();
+                    }
                 ?>
                     <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success"> 
                     <input type="hidden" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
