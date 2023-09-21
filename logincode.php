@@ -162,6 +162,21 @@
             if(mysqli_num_rows($query_run1) > 0 ){
                 foreach($query_run1 as $row){
                     $status = $row['status'];
+                    $user_id = $userID;
+                    $user_name = $fname.' '.$lname;
+                    $user_email = $email;
+
+                    $_SESSION['auth'] = true;
+                    $_SESSION['auth_role'] = $role_as;  // 1=admin , 2=user
+                    $_SESSION['user_name'] = $user_name;
+                    $_SESSION['user_empno'] = $empno;
+                    //$_SESSION['SESS_SECTION'] = $section;           
+                    $_SESSION['auth_user'] = [
+                        'user_id'=>$user_id,
+                        'user_empno'=>$empno,
+                        'user_name'=>$user_name,
+                        'user_email'=>$user_email,               
+                    ];
                     if($status == 1){
                         if($role_as == '1'){
                             $_SESSION['message'] = "Welcome to Admin Dashboard.";
