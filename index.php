@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     $userID = $_POST['current_user_id'];
     $user = $_POST['current_username']; 
     $role = $_POST['current_user_role'];
@@ -16,7 +16,11 @@
         $_SESSION['user_role'] = $role;
         $_SESSION['security_key'] = $key;
         
-        header("Location: admin/index.php");
+        echo "<p>ID: " . $userID . "</p>";
+        echo "<p>Username: " .  $user . "</p>";
+        echo "<p>User role: " . $role . "</p>";
+        echo "<p>server key: " . $key . "</p>";
+        //header("Location: admin/index.php");
 
     }
 ?>
