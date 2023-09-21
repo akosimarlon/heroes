@@ -53,6 +53,7 @@
         if (!$query_run1->num_rows > 0) {
             
             try {
+                
                 $query = "INSERT INTO users (emp_no,fname,lname,username,email,password,role_as,status) 
                             VALUES ('$empno','$fname','$lname','$username','$email','','$role_as','$status');";
                 //$query_run = mysqli_query($con,$query);
