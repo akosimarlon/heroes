@@ -29,8 +29,13 @@
         $user_role = $_POST['user_role']; // teacher, admin... etc..
         $user_security = $_POST['user_security'];
 
-        if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" )
-        { $role_as = "2"; }
+        if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" ){ 
+            $role_as = "2";
+            $_SESSION['auth'] = true;
+            $_SESSION['auth_role'] = $role_as;  // 1=admin , 2=user
+            $_SESSION['user_name'] = $user_name;
+            $_SESSION['user_empno'] = $empno;
+        }
 
         $user = "SELECT * FROM masterlist WHERE id='$userID'";
                 $user_run = mysqli_query($con,$user);
@@ -110,10 +115,7 @@
                     $user_name = $fname.' '.$lname;
                     $user_email = $email;
 
-                    $_SESSION['auth'] = true;
-                    $_SESSION['auth_role'] = $role_as;  // 1=admin , 2=user
-                    $_SESSION['user_name'] = $user_name;
-                    $_SESSION['user_empno'] = $empno;
+                    
                     //$_SESSION['SESS_SECTION'] = $section;           
                     $_SESSION['auth_user'] = [
                         'user_id'=>$user_id,
@@ -152,10 +154,33 @@
                 exit(0);
             } 
         }else{
-            $_SESSION['message'] = "Woops!, Employee Already Exists.";
-            $_SESSION['message_type'] = "danger";            
-            header("location: login.php");
-            exit();
+            // $_SESSION['message'] = "Woops!, Employee Already Exists.";
+            // $_SESSION['message_type'] = "danger";            
+            // header("location: login.php");
+            // exit();
+            if(mysqli_num_rows($query_run1) > 0 ){
+                foreach($query_run1 as $row){
+                    $status = $row['status'];
+                    if($status == 1){
+                        if($_SESSION['auth_role'] == '1'){
+                            $_SESSION['message'] = "Welcome to Admin Dashboard.";
+                            $_SESSION['message_type'] = "primary";
+                            header("Location: admin/index.php");
+                            exit(0); 
+                        }
+                        else if($_SESSION['auth_role'] == '2'){
+                            $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
+                            $_SESSION['message_type'] = "primary";
+                            header("Location: admin/index.php");
+                            exit(0);
+                        }  
+                    }else{
+                        header("Location: ".$home_location);
+                        exit();
+                    }
+                }
+            }
+
         }
         
 
