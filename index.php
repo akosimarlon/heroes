@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     $userID = $_POST['current_user_id'];
     $user = $_POST['current_username']; 
     $role = $_POST['current_user_role'];
