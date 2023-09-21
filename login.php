@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['auth'])){
     // if(!isset($_SESSION['message'])){
     //     $_SESSION['message'] = "You are already Logged In.";
@@ -7,6 +8,9 @@ if(isset($_SESSION['auth'])){
     // }        
     header("Location: index.php");
     exit(0);   
+}
+else{
+
 }
 ?>
 <!DOCTYPE html>
@@ -180,19 +184,19 @@ if(isset($_SESSION['auth'])){
                     <!-- <div class="row">
                         <div class="col-auto">
                             <label for="">User ID</label>
-                            <input type="text" name="userID" value="<?=$userID?>" class="form-control border-success"> 
+                            <input type="text" name="userID" value="" class="form-control border-success"> 
                         </div>
                         <div class="col-auto">
                             <label for="">User Name</label>
-                             <input type="text" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
+                             <input type="text" name="user_name"  value="" class="form-control border-success">
                         </div>
                         <div class="col-auto">
                             <label for="">User Role</label>
-                            <input type="text" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
+                            <input type="text" name="user_role"  value="" class="form-control border-success">
                         </div>
                         <div class="col-auto">
                             <label for="">User Security</label>
-                            <input type="text" name="user_security"  value="<?=$user_security?>" class="form-control border-success">
+                            <input type="text" name="user_security"  value="" class="form-control border-success">
                         </div>
                     </div> -->
                     

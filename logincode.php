@@ -18,9 +18,9 @@
     if(isset($_POST['btn_login'])){
 
         if(!isset($_POST['userID'])){ echo "User ID has NO DATA = ".$_POST['userID']; exit(0); }
-        if(isset($_POST['user_name'])){ echo "User Name has NO DATA = ".$_POST['user_name']; }
-        if(isset($_POST['user_role'])){ echo "User Role has NO DATA = ".$_POST['user_role']; }
-        if(isset($_POST['user_security'])){ echo "User Security has NO DATA = ".$_POST['user_security']; }
+        if(!isset($_POST['user_name'])){ echo "User Name has NO DATA = ".$_POST['user_name']; }
+        if(!isset($_POST['user_role'])){ echo "User Role has NO DATA = ".$_POST['user_role']; }
+        if(!isset($_POST['user_security'])){ echo "User Security has NO DATA = ".$_POST['user_security']; }
 
         //$userID = $_POST['userID'];    // id sa user sa masterlist... auto inc
         //$user_name = $_POST['user_name'];  //email
