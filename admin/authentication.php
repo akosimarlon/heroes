@@ -102,8 +102,8 @@ include("config/homeconfig.php");
 // ########### ORIGINAL AUTH ###################//
 
 if(!isset($_SESSION['auth'])){
-    $_SESSION['message'] = "Woops!!! Please Login first in order to Access the System :)";
-    $_SESSION['message_type'] = "danger";
+    //$_SESSION['message'] = "Woops!!! Please Login first in order to Access the System :)";
+    //$_SESSION['message_type'] = "danger";
     //echo "walay ang auth";
     //header("Location: ".$home_location);
     header("Location: ../login.php");

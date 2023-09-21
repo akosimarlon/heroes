@@ -3,14 +3,11 @@ session_start();
 
 if(isset($_SESSION['auth'])){
     // if(!isset($_SESSION['message'])){
-    //     $_SESSION['message'] = "You are already Logged In.";
-    //     $_SESSION['message_type'] = "primary";
+        $_SESSION['message'] = "nisulod dre.";
+        $_SESSION['message_type'] = "primary";
     // }        
     header("Location: index.php");
     exit(0);   
-}
-else{
-
 }
 ?>
 <!DOCTYPE html>
