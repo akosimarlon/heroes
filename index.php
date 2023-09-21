@@ -10,7 +10,7 @@
         header("Location: http://202.137.126.58/");
     exit();
     } else {
-        $_SESSION['auth'] = true;
+        //$_SESSION['auth'] = true;
         $_SESSION['user_id'] = $userID;
         $_SESSION['username'] = $user;
         $_SESSION['user_role'] = $role;
