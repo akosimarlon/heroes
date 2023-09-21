@@ -35,10 +35,10 @@ if(isset($_SESSION['auth'])){
     
     <style>
          body {
-            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
-            height: 100vh; */
+            height: 100vh;
         }
 
         /* 
@@ -66,7 +66,7 @@ if(isset($_SESSION['auth'])){
         .bg {
         animation:slide 3s ease-in-out infinite alternate;
         /* background-image: linear-gradient(-60deg, #f91 50%, #f43 50%); */
-        /* background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%); */
+        background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
         bottom:0;
         left:-50%;
         opacity:.5;
@@ -87,7 +87,7 @@ if(isset($_SESSION['auth'])){
 
         .content {
         /* background-color:rgba(255,255,255,.8); */
-        /* background-image: url('assets/img/HEROES COVER PAGE.jpg'); */
+        background-image: url('assets/img/HEROES COVER PAGE.jpg');
         background-repeat: no-repeat;
         background-size: cover;       
         border-radius:.25em;
@@ -165,23 +165,10 @@ if(isset($_SESSION['auth'])){
             <div class="content">
                 <form class="user" action="logincode.php" method="POST">
                 <?php
-                    $userID = $_POST['current_user_id'];
-                    $user = $_POST['current_username']; 
-                    $role = $_POST['current_user_role'];
-                    $key = $_POST['security_key'];
-                        
-                    if (empty($userID)) {
-                        echo "<p>String is Empty</p>";
-                        header("Location: http://202.137.126.58/");
-                    exit();
-                    } else {
-                            echo "<p>ID: " . $userID . "</p>";
-                        echo "<p>Username: " .  $user . "</p>";
-                        echo "<p>User role: " . $role . "</p>";
-                        echo "<p>server key: " . $key . "</p>";
-
-
-                    }
+                    $userID = $_SESSION['user_id'];
+                    $user_name = $_SESSION['username'];
+                    $user_role = $_SESSION['user_role'];
+                    $user_security = $_SESSION['security_key'];
                 ?>
 
                         
