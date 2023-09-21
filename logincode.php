@@ -154,33 +154,12 @@
                 exit(0);
             } 
         }else{
-            // $_SESSION['message'] = "Woops!, Employee Already Exists.";
-            // $_SESSION['message_type'] = "danger";            
-            // header("location: login.php");
-            // exit();
-            if(mysqli_num_rows($query_run1) > 0 ){
-                foreach($query_run1 as $row){
-                    $status = $row['status'];
-                    if($status == 1){
-                        if($_SESSION['auth_role'] == '1'){
-                            $_SESSION['message'] = "Welcome to Admin Dashboard.";
-                            $_SESSION['message_type'] = "primary";
-                            header("Location: admin/index.php");
-                            exit(0); 
-                        }
-                        else if($_SESSION['auth_role'] == '2'){
-                            $_SESSION['message'] = "Welcome, you have successfuly Logged into the Project TIS System.";
-                            $_SESSION['message_type'] = "primary";
-                            header("Location: admin/index.php");
-                            exit(0);
-                        }  
-                    }else{
-                        echo $status;
-                        //header("Location: ".$home_location);
-                        //exit();
-                    }
-                }
-            }
+             $_SESSION['message'] = "Woops!, Employee Already Exists.";
+             $_SESSION['message_type'] = "danger";            
+             header("location: login.php");
+             exit();
+
+            
 
         }
         
