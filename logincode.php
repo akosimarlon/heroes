@@ -46,7 +46,7 @@
                     $username = clean($user_name);
                     $email = clean($user_name);
                     $status = "1";
-                    $tmp_image = "admin/assets/img/unregistered_m.jpg";
+                    $tmp_image = "assets/img/unregistered_m.jpg";
                 }
             }  
         

@@ -95,8 +95,7 @@
 
                                             if(mysqli_num_rows($query_run) > 0 ){ 
                                                 foreach($query_run as $row){
-                                            ?>
-                                                <input type="text" value="<?=$row['image']?>">
+                                            ?>                                                
                                                 <img class="card-img-top" src="<?=$row['image']?>" width="100" height="200" alt="Employee Image1">
                                             <?php 
                                                 }
