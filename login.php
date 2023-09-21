@@ -161,9 +161,10 @@ else{
         <!-- Outer Row -->
        
 
-           <?php include('message.php'); ?>
+        
 
         <div class="bg"></div>
+            <?php include('message.php'); ?>
             <div class="bg bg2"></div>
             <div class="bg bg3"></div>
             <div class="content">
