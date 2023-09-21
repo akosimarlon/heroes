@@ -102,8 +102,8 @@
                 $query_run = mysqli_multi_query($con, $query);   
 
                 if($query_run){
-                    $_SESSION['message'] = "Teacher Added Successfuly.";
-                    $_SESSION['message_type'] = "primary";
+                    //$_SESSION['message'] = "Teacher Added Successfuly.";
+                    //$_SESSION['message_type'] = "primary";
 
                     $user_id = $userID;
                     $user_name = $fname.' '.$lname;
