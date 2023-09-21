@@ -141,7 +141,8 @@
                 else{
                     //$_SESSION['message'] = "Something went wrong.";
                     //$_SESSION['message_type'] = "danger";
-                    header("Location: http://202.137.126.58/");
+                    header("Location: ".$home_location);
+                    //header("Location: http://202.137.126.58/");
                     exit(0);
                 }
             
@@ -150,7 +151,8 @@
                 //echo 'Message: ' .$e->getMessage();
                 //$_SESSION['message'] = "Something went wrong. ".$e->getMessage();
                 //$_SESSION['message_type'] = "danger";
-                header("Location: http://202.137.126.58/");
+                header("Location: ".$home_location);
+                //header("Location: http://202.137.126.58/");
                 exit(0);
             } 
         }else{

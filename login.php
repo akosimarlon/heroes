@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include("admin/config/homeconfig.php");
 if(isset($_SESSION['auth'])){
     // if(!isset($_SESSION['message'])){
         $_SESSION['message'] = "nisulod dre.";
@@ -174,7 +174,8 @@ if(isset($_SESSION['auth'])){
                     $user_security = $_SESSION['security_key'];
                     if (empty($userID)) {
                         echo "<p>String is Empty</p>";
-                        header("Location: http://202.137.126.58/");
+                        header("Location: ".$home_location);
+                        //header("Location: http://202.137.126.58/");
                         exit();
                     }
                 ?>
