@@ -171,7 +171,7 @@ if(isset($_SESSION['auth'])){
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-info text-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Children</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Select Role</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                     <form action="code.php" method="POST">
@@ -182,18 +182,14 @@ if(isset($_SESSION['auth'])){
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
-                                <input type="checkbox" id="nochild" name="nochild" width="70px" height="70px">
-                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                                <input type="checkbox" id="myrole" name="myrole" width="70px" height="70px">
+                                <label for="" class="text-primary">Teacher</label>
                             </div>
                             <div class="form-group">
-                                <input type="hidden" name="emp_no" value="<?=$user_id?>">                                
-                                <label>NAME of CHILDREN (Write full name and list all)</label>
-                                <input type="text" id="children" name="children" class="form-control border-success" placeholder="Enter Full name" required autofocus>
+                                <input type="checkbox" id="myrole" name="myrole" width="70px" height="70px">
+                                <label for="" class="text-primary">Administrator</label>
                             </div>
-                            <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input type="date" id="childdob" min="0001-01-01" max="9999-12-31" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
-                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
