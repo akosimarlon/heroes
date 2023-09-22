@@ -43,11 +43,13 @@ if(isset($_SESSION['message'])){
 //         $(this).remove(); 
 //     });
 // }, 3000);
-
-    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-    var toastList = toastElList.map(function (toastEl) {
-    return new bootstrap.Toast(toastEl, option)
-    })
+    $(document).ready(function(){
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl, option)
+        })
+    });
+    
 
 </script>
 
