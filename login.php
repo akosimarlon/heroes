@@ -166,6 +166,50 @@ if(isset($_SESSION['auth'])){
 
 <body class="">
 
+    <!-- Add Children Modal -->
+    <div class="modal fade" id="myModallogin" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header bg-info text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Children</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <form action="code.php" method="POST">
+                        <?php
+                            if(isset($_GET['emp_no'])){
+                                $user_id = $_GET['emp_no'];
+                            }
+                        ?>    
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input type="checkbox" id="nochild" name="nochild" width="70px" height="70px">
+                                <label for="" class="text-danger">SELECT IF NOT APPLICABLE (N/A)</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="emp_no" value="<?=$user_id?>">                                
+                                <label>NAME of CHILDREN (Write full name and list all)</label>
+                                <input type="text" id="children" name="children" class="form-control border-success" placeholder="Enter Full name" required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" id="childdob" min="0001-01-01" max="9999-12-31" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
+                            <button type="submit" name="registerChildren" class="btn btn-info btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-save"></i>
+                                </span>
+                                <span class="text">Add</span>                                
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
     <div class="container">
 
         <!-- Outer Row -->
@@ -241,3 +285,9 @@ if(isset($_SESSION['auth'])){
 <?php
     include('includes/scripts.php');
 ?>
+
+<script>
+    $(document).ready(function(){
+        $("#myModallogin").modal('show');
+    });
+</script>
