@@ -133,7 +133,7 @@ if(isset($_SESSION['auth'])){
             position: relative;
         }
  
-        .btn_getstarted {
+        #btn_getstarted {
             position: absolute;
             top: 90%;
             left: 62%;
