@@ -1,26 +1,32 @@
 <?php
 if(isset($_SESSION['message'])){
     ?>  
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
         <?php 
             if($_SESSION['message_type'] == "warning"){
-                ?><div class="alert alert-warning alert-dismissible fade show" role="alert"><?php    
+                ?><div class="toast align-items-center text-white bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true"><?php    
             }
             if($_SESSION['message_type'] == "success"){
-                ?><div class="alert alert-success alert-dismissible fade show" role="alert"><?php    
+                ?><div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"><?php    
             }
             if($_SESSION['message_type'] == "primary"){
-                ?><div class="alert alert-primary alert-dismissible fade show" role="alert"><?php    
+                ?><div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true"><?php    
             }
             if($_SESSION['message_type'] == "danger"){
-                ?><div class="alert alert-danger alert-dismissible fade show" role="alert"><?php    
+                ?><div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true"><?php    
             }
             if($_SESSION['message_type'] == "info"){
-                ?><div class="alert alert-info alert-dismissible fade show" role="alert"><?php    
+                ?><div class="toast align-items-center text-white bg-info border-0" role="alert" aria-live="assertive" aria-atomic="true"><?php    
             }
         ?>
-        <strong> <?= $_SESSION['message']; ?> </strong> 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <div class="d-flex">
+                <div class="toast-body">
+                    <strong> <?= $_SESSION['message']; ?> </strong> 
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
         </div>
+    </div>
     <?php
     unset($_SESSION['message']);
     unset($_SESSION['message_type']);
@@ -36,3 +42,7 @@ window.setTimeout(function() {
 }, 3000);
 
 </script>
+
+
+
+
