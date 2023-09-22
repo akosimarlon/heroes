@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <?php
 if(isset($_SESSION['message'])){
     ?>  
@@ -36,6 +37,7 @@ if(isset($_SESSION['message'])){
 }
 ?>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
 // window.setTimeout(function() {
