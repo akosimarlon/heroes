@@ -133,7 +133,7 @@ if(isset($_SESSION['auth'])){
             position: relative;
         }
  
-        .btn {
+        .btn_getstarted {
             position: absolute;
             top: 90%;
             left: 62%;
@@ -232,7 +232,7 @@ if(isset($_SESSION['auth'])){
                     <input type="hidden" name="user_role"  value="<?=$user_role?>" class="form-control border-success">
                     <input type="hidden" name="user_security"  value="<?=$user_security?>" class="form-control border-success">
                         
-                    <button class="btn btn-primary btn-lg px-5 rounded-pill" type="submit" name="btn_login">Get Started</button>
+                    <button class="btn btn-primary btn-lg px-5 rounded-pill" type="submit" id="btn_getstarted" name="btn_login">Get Started</button>
 
                     <!-- <div class="row">
                         <div class="col-auto">
