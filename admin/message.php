@@ -1,32 +1,35 @@
 <?php
 if(isset($_SESSION['message'])){
     ?>  
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            
+            
         <?php 
             if($_SESSION['message_type'] == "warning"){
-                ?><div class="toast align-items-center text-white bg-warning border-0 hide" role="alert" aria-live="assertive" aria-atomic="true"><?php    
+                ?><img src="..." class="rounded me-2" alt="..."><?php    
             }
             if($_SESSION['message_type'] == "success"){
-                ?><div class="toast align-items-center text-white bg-success border-0 hide" role="alert" aria-live="assertive" aria-atomic="true"><?php    
+                ?><img src="..." class="rounded me-2" alt="..."><?php    
             }
             if($_SESSION['message_type'] == "primary"){
-                ?><div class="toast align-items-center text-white bg-primary border-0 hide" role="alert" aria-live="assertive" aria-atomic="true"><?php    
+                ?><img src="..." class="rounded me-2" alt="..."><?php    
             }
             if($_SESSION['message_type'] == "danger"){
-                ?><div class="toast align-items-center text-white bg-danger border-0 hide" role="alert" aria-live="assertive" aria-atomic="true"><?php    
+                ?><img src="..." class="rounded me-2" alt="..."><?php    
             }
             if($_SESSION['message_type'] == "info"){
-                ?><div class="toast align-items-center text-white bg-info border-0 hide" role="alert" aria-live="assertive" aria-atomic="true"><?php    
+                ?><img src="..." class="rounded me-2" alt="..."><?php    
             }
         ?>
-            <div class="d-flex">
-                <div class="toast-body">
-                    <strong> <?= $_SESSION['message']; ?> </strong> 
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+            <div class="toast-body">
+                <strong> <?= $_SESSION['message']; ?> </strong> 
             </div>
         </div>
-    </div>
     <?php
     unset($_SESSION['message']);
     unset($_SESSION['message_type']);
@@ -41,8 +44,10 @@ if(isset($_SESSION['message'])){
 //     });
 // }, 3000);
 
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function (toastEl) {
+    return new bootstrap.Toast(toastEl, option)
+    })
+
 </script>
-
-
-
 
