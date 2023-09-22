@@ -182,11 +182,11 @@ if(isset($_SESSION['auth'])){
                         ?>    
                         <div class="modal-body">
                             <div class="form-group">
-                                <input type="checkbox" id="myrole" name="myrole" width="70px" height="70px">
+                                <input type="radio" id="myrole" name="myrole" width="70px" height="70px">
                                 <label for="" class="text-primary">Teacher</label>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" id="myrole" name="myrole" width="70px" height="70px">
+                                <input type="radio" id="myrole" name="myrole" width="70px" height="70px">
                                 <label for="" class="text-primary">Administrator</label>
                             </div>
                             
