@@ -197,7 +197,7 @@ if(isset($_SESSION['auth'])){
                                 <span class="icon text-white-50">
                                     <i class="fas fa-save"></i>
                                 </span>
-                                <span class="text">Add</span>                                
+                                <span class="text">Save</span>                                
                             </button>
                         </div>
                     </form>
@@ -284,6 +284,6 @@ if(isset($_SESSION['auth'])){
 
 <script>
     $(document).ready(function(){
-        $("#myModallogin").modal('show');
+        //$("#myModallogin").modal('show');
     });
 </script>
