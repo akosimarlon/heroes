@@ -11,7 +11,7 @@ if(isset($_POST['btn_logout'])){
     unset( $_SESSION['tab_page'] );     
     unset( $_SESSION['message'] );     
     unset( $_SESSION['message_type'] );     
-    //session_destroy();
+    session_destroy();
 
     //$_SESSION['message'] = "Logged Out Successfully.";
     //$_SESSION['message_type'] = "primary";
