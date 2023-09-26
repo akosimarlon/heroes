@@ -1267,7 +1267,7 @@
                                     <input type="number" id="Esalary" name="salary" class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
                                 </div>
                             </div>
-                            <div class="form-group">                                
+                            <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
                                 <span class="input-group-text">Salary Grade</span>
                                 <select id="Esal_grade" name="sal_grade"  class="form-control border-success" required>
