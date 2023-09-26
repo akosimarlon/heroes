@@ -441,13 +441,55 @@
                             </div>
                             <div class="form-group">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
-                                <input type="text" id="step" name="step" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Salary Grade</span>
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                <select id="sal_grade" name="sal_grade"  class="form-control border-success" required style="width:150px;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">1</option>
+                                    <option value="4">2</option>
+                                    <option value="5">1</option>
+                                    <option value="6">2</option>
+                                    <option value="7">1</option>
+                                    <option value="8">2</option>
+                                    <option value="9">1</option>
+                                    <option value="10">2</option>
+                                    <option value="11">1</option>
+                                    <option value="12">2</option>
+                                    <option value="13">1</option>
+                                    <option value="14">2</option>
+                                    <option value="15">1</option>
+                                    <option value="16">2</option>
+                                    <option value="17">2</option>
+                                    <option value="18">2</option>
+                                    <option value="19">2</option>
+                                    <option value="20">2</option>
+                                    <option value="21">2</option>
+                                    <option value="22">2</option>
+                                    <option value="23">2</option>
+                                    <option value="24">2</option>
+                                    <option value="25">2</option>
+                                    <option value="26">2</option>
+                                    <option value="27">2</option>
+                                    <option value="28">2</option>
+                                    <option value="29">2</option>
+                                    <option value="30">2</option>
+                                    <option value="31">2</option>
+                                    <option value="32">2</option>
+                                    <option value="33">2</option>
+                                </select>
                                 <span class="input-group-text">Step</span>
-                                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                                <select id="step_grade" name="step_grade"  class="form-control border-success" required style="width:150px;">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">1</option>
+                                    <option value="4">2</option>
+                                    <option value="5">1</option>
+                                    <option value="6">2</option>
+                                    <option value="7">1</option>
+                                    <option value="8">2</option>
+                                </select>
                             </div>
                             <div class="form-group">                                
                                 <label>Status of Appointment</label>
