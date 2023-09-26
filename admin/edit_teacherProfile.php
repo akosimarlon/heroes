@@ -443,6 +443,11 @@
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
                                 <input type="text" id="step" name="step" class="form-control border-success" placeholder="" required autofocus>
                             </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+                            </div>
                             <div class="form-group">                                
                                 <label>Status of Appointment</label>
                                 <input type="text" id="appointment" name="appointment" class="form-control border-success" placeholder="" required autofocus>
