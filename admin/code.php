@@ -1714,7 +1714,9 @@ if(isset($_POST['updateWorkExperience'])){
     $position_title = clean($_POST['position_title']);
     $department = clean($_POST['department']);
     $salary = clean($_POST['salary']);   
-    $step = clean($_POST['step']);   
+    $sal_grade = ucwords(clean($_POST['sal_grade'])); 
+    $step_grade = ucwords(clean($_POST['step_grade'])); 
+    $step = $sal_grade.'-'.$step_grade;     
     $appointment = clean($_POST['appointment']);   
     $govt_service = $_POST['govt_service'];   
     $present_date = $_POST['Epresent_date'] == true ? '1':'0'; 
