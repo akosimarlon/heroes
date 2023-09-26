@@ -149,7 +149,7 @@ if(isset($_SESSION['auth'])){
         }
 
         #btn_getstarted:hover {
-            background: red;
+            background: lightGreen;
         }
 
         /* @keyframes gradient {
