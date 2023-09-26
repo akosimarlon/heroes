@@ -441,6 +441,10 @@
                             </div>
                             <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="nosalgrade" name="nosalgrade" width="70px" height="70px">
+                                        <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                    </div>
                                 <span class="input-group-text">Salary Grade</span>
                                 <select id="sal_grade" name="sal_grade"  class="form-control border-success" required>
                                     <option value="">--Please Select--</option>
@@ -6779,6 +6783,26 @@
             } else {
                 $("#Edate_of_validity").removeAttr("disabled");
                 $('#Edate_of_validity').val('');
+                
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN NO SALARY GRADE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nosalgrade").click(function () {
+            if ($(this).is(":checked")) {
+                $("#sal_grade").attr("disabled", "disabled");
+                $("#step_grade").attr("disabled", "disabled");
+                $('#sal_grade').val('N/A');
+                $('#step_grade').val('N/A');
+            } else {
+                $("#sal_grade").removeAttr("disabled");
+                $("#step_grade").removeAttr("disabled");
+                $('#sal_grade').val('');
+                $('#step_grade').val('');
                 
             }
         });
