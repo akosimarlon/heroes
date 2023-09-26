@@ -1822,7 +1822,7 @@
                     </div> -->
                     
                     <!-- #### PROGRESS BAR #####-->
-                    <div class="progress mb-4" id="progressView" style="height: 30px; border-radius: 10px">
+                    <div class="progress mb-4" id="progressView" style="height: 30px;">
                         
                     </div>   
 
