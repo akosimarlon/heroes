@@ -5538,7 +5538,7 @@
             var appointment = $('#uv_appointment'+id).val();             
             var govt_service = $('#uv_govt_service'+id).val();             
             
-            let index = text.indexOf("-");
+            let index = step.indexOf("-");
             let str = step.substr(0, index);
             let str2 = step.substr(index+1, step.length);   
 
