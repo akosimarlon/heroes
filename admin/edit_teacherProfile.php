@@ -1273,6 +1273,10 @@
                             </div>
                             <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
+                                    <div class="input-group mb-3">
+                                        <input type="checkbox" id="Enosalgrade" name="nosalgrade" width="70px" height="70px">
+                                        <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
+                                    </div>
                                 <span class="input-group-text">Salary Grade</span>
                                 <select id="Esal_grade" name="sal_grade"  class="form-control border-success" required>
                                     <option value="">--Please Select--</option>
@@ -5542,10 +5546,15 @@
             var appointment = $('#uv_appointment'+id).val();             
             var govt_service = $('#uv_govt_service'+id).val();             
             
-            let index = step.indexOf("-");
-            let str = step.substr(0, index);
-            let str2 = step.substr(index+1, step.length);   
-
+            if(step == "N/A"){
+                $('#Esal_grade').attr('disabled', true);
+                $('#Estep_grade').attr('disabled', true);
+                $( "#Enosalgrade" ).prop( "checked", true );                
+            }else{
+                let index = step.indexOf("-");
+                let str = step.substr(0, index);
+                let str2 = step.substr(index+1, step.length); 
+            }
 
             if(w_to == "PRESENT"){
                 $('#Edate_to').attr('disabled', true);
