@@ -148,6 +148,10 @@ if(isset($_SESSION['auth'])){
             font-family: "Lucida Console", "Courier New", monospace;
         }
 
+        #btn_getstarted:hover {
+            background: red;
+        }
+
         /* @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -283,7 +287,7 @@ if(isset($_SESSION['auth'])){
 ?>
 
 <script>
-    $(document).ready(function(){
+    //$(document).ready(function(){
         //$("#myModallogin").modal('show');
-    });
+    //});
 </script>

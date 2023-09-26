@@ -701,15 +701,23 @@ if(isset($_POST['registerWorkExperience'])){
         $position_title = ucwords(clean($_POST['position_title']));    
         $department = ucwords(clean($_POST['department']));    
         $salary = ucwords(clean($_POST['salary']));    
-        $sal_grade = ucwords(clean($_POST['sal_grade'])); 
-        $step_grade = ucwords(clean($_POST['step_grade'])); 
-        $step = $sal_grade.'-'.$step_grade; 
+        
         $appointment = ucwords(clean($_POST['appointment'])); 
         $govt_service = $_POST['govt_service'];
         $present_date = $_POST['present_date'] == true ? '1':'0'; 
+        $nosalgrade = $_POST['nosalgrade'] == true ? '1':'0'; 
+        
         if($present_date == '1'){
             $w_to = "PRESENT";
-        }   
+        } 
+        
+        if($nosalgrade == '1'){
+            $step = "N/A";
+        }else{
+            $sal_grade = ucwords(clean($_POST['sal_grade'])); 
+            $step_grade = ucwords(clean($_POST['step_grade'])); 
+            $step = $sal_grade.'-'.$step_grade; 
+        }
     }
 
     try {
