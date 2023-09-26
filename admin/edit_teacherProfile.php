@@ -444,8 +444,9 @@
                                 <input type="text" id="step" name="step" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="input-group mb-3">
+                                <span class="input-group-text">Salary Grade</span>
                                 <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-                                <span class="input-group-text">@</span>
+                                <span class="input-group-text">Step</span>
                                 <input type="text" class="form-control" placeholder="Server" aria-label="Server">
                             </div>
                             <div class="form-group">                                
