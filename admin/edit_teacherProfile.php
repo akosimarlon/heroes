@@ -442,7 +442,7 @@
                             <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
                                 <span class="input-group-text">Salary Grade</span>
-                                <select id="sal_grade" name="sal_grade"  class="form-control border-success" required style="width:150px;">
+                                <select id="sal_grade" name="sal_grade"  class="form-control border-success" required>
                                     <option value="">--Please Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -479,7 +479,7 @@
                                     <option value="33">33</option>
                                 </select>
                                 <span class="input-group-text">Step</span>
-                                <select id="step_grade" name="step_grade"  class="form-control border-success" required style="width:150px;">
+                                <select id="step_grade" name="step_grade"  class="form-control border-success" required>
                                     <option value="">--Please Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
