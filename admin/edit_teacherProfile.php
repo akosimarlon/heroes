@@ -1269,7 +1269,55 @@
                             </div>
                             <div class="form-group">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
-                                <input type="text" id="Estep" name="step" class="form-control border-success" placeholder="" required autofocus>
+                                <span class="input-group-text">Salary Grade</span>
+                                <select id="Esal_grade" name="sal_grade"  class="form-control border-success" required>
+                                    <option value="">--Please Select--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                </select>
+                                <span class="input-group-text">Step</span>
+                                <select id="Estep_grade" name="step_grade"  class="form-control border-success" required>
+                                    <option value="">--Please Select--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
                             </div>
                             <div class="form-group">                                
                                 <label>Status of Appointment</label>
@@ -5490,7 +5538,11 @@
             var appointment = $('#uv_appointment'+id).val();             
             var govt_service = $('#uv_govt_service'+id).val();             
             
-            
+            let index = text.indexOf("-");
+            let str = step.substr(0, index);
+            let str2 = step.substr(index+1, step.length);   
+
+
             if(w_to == "PRESENT"){
                 $('#Edate_to').attr('disabled', true);
                 $( "#Edate_status" ).prop( "checked", true );
@@ -5504,7 +5556,8 @@
             document.getElementById('Eposition_title').value = position_title;            
             document.getElementById('Edepartment').value = department;            
             document.getElementById('Esalary').value = salary;            
-            document.getElementById('Estep').value = step;            
+            document.getElementById('Esal_grade').value = str;            
+            document.getElementById('Estep_grade').value = str2;            
             document.getElementById('Eappointment').value = appointment;            
             document.getElementById('Egovt_service').value = govt_service;            
         });
