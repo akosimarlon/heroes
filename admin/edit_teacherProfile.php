@@ -441,7 +441,7 @@
                             </div>
                             <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
-                                    <div class="form-group">
+                                    <div class="input-group mb-3">
                                         <input type="checkbox" id="nosalgrade" name="nosalgrade" width="70px" height="70px">
                                         <label for="" class="text-danger">NOT APPLICABLE (N/A)</label>
                                     </div>
