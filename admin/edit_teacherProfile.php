@@ -439,58 +439,58 @@
                                     <input type="number" id="salary" name="salary" class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
                                 </div>
                             </div>
-                            <div class="form-group">                                
+                            <div class="input-group mb-3">                                
                                 <label>SALARY / JOB / PAY GRADE (if applicable) & STEP </br>(Format "00-0") / INCREMENT</label>
-                            </div>
-                            <div class="input-group mb-3">
                                 <span class="input-group-text">Salary Grade</span>
                                 <select id="sal_grade" name="sal_grade"  class="form-control border-success" required style="width:150px;">
+                                    <option value="">--Please Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
-                                    <option value="3">1</option>
-                                    <option value="4">2</option>
-                                    <option value="5">1</option>
-                                    <option value="6">2</option>
-                                    <option value="7">1</option>
-                                    <option value="8">2</option>
-                                    <option value="9">1</option>
-                                    <option value="10">2</option>
-                                    <option value="11">1</option>
-                                    <option value="12">2</option>
-                                    <option value="13">1</option>
-                                    <option value="14">2</option>
-                                    <option value="15">1</option>
-                                    <option value="16">2</option>
-                                    <option value="17">2</option>
-                                    <option value="18">2</option>
-                                    <option value="19">2</option>
-                                    <option value="20">2</option>
-                                    <option value="21">2</option>
-                                    <option value="22">2</option>
-                                    <option value="23">2</option>
-                                    <option value="24">2</option>
-                                    <option value="25">2</option>
-                                    <option value="26">2</option>
-                                    <option value="27">2</option>
-                                    <option value="28">2</option>
-                                    <option value="29">2</option>
-                                    <option value="30">2</option>
-                                    <option value="31">2</option>
-                                    <option value="32">2</option>
-                                    <option value="33">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
                                 </select>
                                 <span class="input-group-text">Step</span>
                                 <select id="step_grade" name="step_grade"  class="form-control border-success" required style="width:150px;">
+                                    <option value="">--Please Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
-                                    <option value="3">1</option>
-                                    <option value="4">2</option>
-                                    <option value="5">1</option>
-                                    <option value="6">2</option>
-                                    <option value="7">1</option>
-                                    <option value="8">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
                                 </select>
-                            </div>
+                            </div>                           
                             <div class="form-group">                                
                                 <label>Status of Appointment</label>
                                 <input type="text" id="appointment" name="appointment" class="form-control border-success" placeholder="" required autofocus>
