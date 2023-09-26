@@ -64,7 +64,7 @@
             echo '<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
         }
         if($per<=99 && $per>90){
-            echo '<div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.'; border-radius: 10px;"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
+            echo '<div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.'; border-radius: 10px"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
         }
         if($per==100){
             echo '<div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: '.$percentage.';"><span style="font-weight:bold;font-size:18px">'.$percentage.'</span></div>';
