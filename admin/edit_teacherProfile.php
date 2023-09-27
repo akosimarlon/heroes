@@ -5547,6 +5547,7 @@
             var govt_service = $('#uv_govt_service'+id).val();             
             
             if(step == "N/A"){
+                alert ("test");
                 $('#Esal_grade').attr('disabled', true);
                 $('#Estep_grade').attr('disabled', true);
                 $( "#Enosalgrade" ).prop( "checked", true );                
