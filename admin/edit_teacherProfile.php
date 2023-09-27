@@ -5547,11 +5547,12 @@
             var govt_service = $('#uv_govt_service'+id).val();             
             
             if(step == "N/A"){
-                alert ("test");
+                
                 $('#Esal_grade').attr('disabled', true);
                 $('#Estep_grade').attr('disabled', true);
                 $( "#Enosalgrade" ).prop( "checked", true );                
             }else{
+                alert ("test");
                 let index = step.indexOf("-");
                 let str = step.substr(0, index);
                 let str2 = step.substr(index+1, step.length); 
