@@ -5546,17 +5546,16 @@
             var appointment = $('#uv_appointment'+id).val();             
             var govt_service = $('#uv_govt_service'+id).val();             
             
-            if(step == "N/A"){
-                
+            if(step == "N/A"){                
                 $('#Esal_grade').attr('disabled', true);
                 $('#Estep_grade').attr('disabled', true);
                 $( "#Enosalgrade" ).prop( "checked", true );                
-            }else{
-                alert ("test");
-                let index = step.indexOf("-");
-                let str = step.substr(0, index);
-                let str2 = step.substr(index+1, step.length); 
             }
+            //alert ("test");
+            let index = step.indexOf("-");
+            let str = step.substr(0, index);
+            let str2 = step.substr(index+1, step.length); 
+            
 
             if(w_to == "PRESENT"){
                 $('#Edate_to').attr('disabled', true);
