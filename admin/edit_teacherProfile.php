@@ -5550,6 +5550,10 @@
                 $('#Esal_grade').attr('disabled', true);
                 $('#Estep_grade').attr('disabled', true);
                 $( "#Enosalgrade" ).prop( "checked", true );                
+            }else{
+                $('#Esal_grade').attr('disabled', false);
+                $('#Estep_grade').attr('disabled', false);
+                $( "#Enosalgrade" ).prop( "checked", false );
             }
             //alert ("test");
             let index = step.indexOf("-");
