@@ -4006,7 +4006,7 @@
                                         <input type="hidden" name="emp_no" value="<?=$user['emp_no'];?>">
                                         
                                         <div class="col-md-12 mb-3">
-                                            <h5>34. Are you related by consanguinity or affinity to the appointing or recommending authority, 
+                                            <h5>Are you related by consanguinity or affinity to the appointing or recommending authority, 
                                                 or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, 
                                                 Bureau or Department where you will be apppointed,</h5>                                          
                                         </div>                                       
@@ -4108,7 +4108,18 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="">If YES, give details:</label>
-                                            <input type="text" value="<?=$info['q37_details'];?>" name="ans_q37a" id="ans_q37a" <?=$info['q37_details']=='' ? 'readonly':'' ?> class="form-control border-success" autocomplete="off" required autofocus>
+                                            <!-- <input type="text" value="<?=$info['q37_details'];?>" name="ans_q37a" id="ans_q37a" <?=$info['q37_details']=='' ? 'readonly':'' ?> class="form-control border-success" autocomplete="off" required autofocus> style="width:150px;" -->
+                                            <select id="ans_q37a" name="ans_q37a"  class="form-control border-success" required <?=$info['q37_details']=='' ? 'readonly':'' ?> >
+                                                <option value="">--Please Select--</option>
+                                                <option value="resignation" <?=$info['q37_details']=='resignation' ? 'selected':'' ?> >Resignation</option>
+                                                <option value="retirement" <?=$info['q37_details']=='retirement' ? 'selected':'' ?> >Retirement</option>                                    
+                                                <option value="dropped from the rolls" <?=$info['q37_details']=='dropped from the rolls' ? 'selected':'' ?> >Dropped from the rolls</option>                                    
+                                                <option value="dismissal" <?=$info['q37_details']=='dismissal' ? 'selected':'' ?> >Dismissal</option>                                    
+                                                <option value="termination" <?=$info['q37_details']=='termination' ? 'selected':'' ?> >Termination</option>                                    
+                                                <option value="end of term" <?=$info['q37_details']=='end of term' ? 'selected':'' ?> >End of term</option>                                    
+                                                <option value="finished contract" <?=$info['q37_details']=='finished contract' ? 'selected':'' ?> >Finished contract</option>                                    
+                                                <option value="phased out" <?=$info['q37_details']=='phased out' ? 'selected':'' ?> >Phased out</option>                                    
+                                            </select>
                                         </div>
 
                                         <div class="text-success">
