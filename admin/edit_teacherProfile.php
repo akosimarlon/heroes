@@ -379,7 +379,7 @@
                                 <input type="number" id="license_no" name="license_no" class="form-control border-success" title="Type 0 if not applicable" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Date of Validity (For LET use Date of Registration)</label>
+                                <label>Date of Validity (For PRC ID use Date of Registration)</label>
                                     <div class="form-group">
                                     <label for="" class="text-danger">NO EXPIRATION</label>
                                     <input type="checkbox" id="noexpire" name="noexpire" width="70px" height="70px">
@@ -1227,7 +1227,7 @@
                                 <input type="number" id="Elicense_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Date of Validity (For LET use Date of Registration)</label>
+                                <label>Date of Validity (For PRC ID use Date of Registration)</label>
                                     <div class="form-group">
                                         <label for="" class="text-danger">NO EXPIRATION</label>
                                         <input type="checkbox" id="enoexpire" name="enoexpire" width="70px" height="70px">
