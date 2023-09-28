@@ -13,6 +13,8 @@
             <!-- <img class="img-profile rounded-circle" src="img/DAVAOSUR LOGO Torch.png" with="50px" height="50px">
             <img class="img-profile rounded-circle" src="img/DAVAOSUR LOGO Texts.png" with="50px" height="40px">  -->
             <img class="img-profile rounded-circle" src="img/topLogo.png" with="50px" height="100px">
+            <img class="img-profile" src="img/topLogo.png" style="width: 100%; max-width: 100%; height: auto;">
+            <!-- <img src="assets/images/davsur1.png" style="width: 100%; max-width: 100%; height: auto;" alt="Project DavSur"> -->
             <!-- <div class="sidebar-brand-text mx-3">Project DavaoSur</div> -->
         </a>
 
