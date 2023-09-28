@@ -379,7 +379,7 @@
                                 <input type="number" id="license_no" name="license_no" class="form-control border-success" title="Type 0 if not applicable" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Date of Validity</label>
+                                <label>Date of Validity (For LET use Date of Registration)</label>
                                     <div class="form-group">
                                     <label for="" class="text-danger">NO EXPIRATION</label>
                                     <input type="checkbox" id="noexpire" name="noexpire" width="70px" height="70px">
@@ -1210,7 +1210,7 @@
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
                                 <div class="form-group">
-                                    <label for="" class="text-danger">SELECT IF MULTIPLES DATES OF EXAMINATION</label>
+                                    <label for="" class="text-danger">SELECT IF MULTIPLE DATES OF EXAMINATION</label>
                                     <input type="checkbox" id="Emultipleexam" name="multipleexam" width="70px" height="70px">
                                     </div>
                                 <input type="date" id="Edate_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
@@ -1227,7 +1227,7 @@
                                 <input type="number" id="Elicense_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Date of Validity</label>
+                                <label>Date of Validity (For LET use Date of Registration)</label>
                                     <div class="form-group">
                                         <label for="" class="text-danger">NO EXPIRATION</label>
                                         <input type="checkbox" id="enoexpire" name="enoexpire" width="70px" height="70px">
