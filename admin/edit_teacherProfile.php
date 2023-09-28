@@ -4283,11 +4283,11 @@
                                             <label for="">ID/License/Passport No.:</label>
                                             <input type="text" value="<?=$info['gov_id_no'];?>" name="gov_id_no" id="gov_id_no" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
-                                        <div class="col-md-3 mb-3">
+                                        <div class="col-auto">
                                             <label for="">Date of Issuance:</label>
                                             <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" id="gov_id_date" name="gov_id_date" value="<?=substr($info['gov_id_date'],0,10);?>" style="width:170px;" required  >
                                         </div>
-                                        <div class="col-md-3 mb-3">
+                                        <div class="col-auto">
                                             <label for="">Place of Issuance:</label>
                                             <input type="text" value="<?=substr($info['gov_id_date'],13,strlen($info['gov_id_date']));?>" name="gov_id_place" id="gov_id_place" class="form-control border-success" style="width:250px;" autocomplete="off" required autofocus>                                            
                                         </div>
