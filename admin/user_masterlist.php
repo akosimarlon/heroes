@@ -39,15 +39,19 @@
         </div>
 
         <!-- Add Admin Modal -->
-        <div class="modal fade" id="addadminprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addusermasterlist" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-primary text-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Admin Account</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add User in Masterlist</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                     <form action="code.php" method="POST">
                         <div class="modal-body">
+                            <div class="form-group">
+                                <label>Employee Number</label>
+                                <input type="text" name="emp_no" class="form-control" placeholder="Enter Employee Number" required autofocus>
+                            </div>
                             <div class="form-group">
                                 <label>First Name</label>
                                 <input type="text" name="fname" class="form-control" placeholder="Enter First Name" required autofocus>
@@ -57,22 +61,6 @@
                                 <input type="text" name="lname" class="form-control" placeholder="Enter Last Name" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Username" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter Email" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" name="password" class="form-control" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" name="confirmpassword" class="form-control" required autofocus>
-                            </div>
-                            <div class="form-group">
                                 <label for="">Status</label>
                                 <input type="checkbox" name="status" width="70px" height="70px" checked>
                             </div>
@@ -80,7 +68,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
-                            <button type="submit" name="registerAdmin" class="btn btn-primary btn-icon-split">
+                            <button type="submit" name="registerUsertoMasterlist" class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-save"></i>
                                 </span>
@@ -172,6 +160,7 @@
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Accounts
                         <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#addusermasterlist">
                         <button type="button" class="btn btn-primary float-right searchbtn">
                         <i class="fa fa-search"></i> Show Duplicates
                         </button>

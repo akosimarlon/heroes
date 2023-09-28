@@ -76,6 +76,43 @@ if(isset($_POST['registerAdmin'])){
 
 }
 
+//########## For Creating/Adding User in MasterList ##############################################
+if(isset($_POST['registerUsertoMasterlist'])){
+    
+    $emp_no = ucwords(clean($_POST['emp_no']));
+    $fname = ucwords(clean($_POST['fname']));
+    $lname = ucwords(clean($_POST['lname']));
+    $status = $_POST['status'] == true ? '1':'0';
+    
+    
+    $query1 = "SELECT * FROM masterlist WHERE emp_no='$emp_no' ";
+    $query_run1 = mysqli_query($con,$query1);
+    if (!$query_run1->num_rows > 0) {
+        $query = "INSERT INTO users (emp_no,fname,lname,school_id,email,status) 
+                VALUES ('$emp_no','$fname','$lname','','','$status')";
+        $query_run = mysqli_query($con,$query);
+
+        if($query_run){
+            $_SESSION['message'] = "User Added Successfuly.";
+            $_SESSION['message_type'] = "primary";
+            header("Location: user_masterlist.php");
+            exit(0);
+        }
+        else{
+            $_SESSION['message'] = "Something went wrong.";
+            $_SESSION['message_type'] = "danger";
+            header("Location: user_masterlist.php");
+            exit(0);
+        }
+    }else{
+        $_SESSION['message'] = "Woops!, Employee Number Already Exists.";
+        $_SESSION['message_type'] = "danger";            
+        header("location: user_masterlist.php");
+        exit();
+    }    
+
+}
+
 //########## For Update Admin Account #######################################################
 if(isset($_POST['updateAdmin'])){
     $user_id = clean($_POST['userid']);
