@@ -6874,6 +6874,24 @@
     });
 </script>
 
+<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#Emultipleexam").click(function () {
+            if ($(this).is(":checked")) {
+                $("#Edate_of_exam").attr("disabled", "disabled");
+                $("#Emult_exam").removeAttr("disabled");
+            } else {
+                $("#Edate_of_exam").removeAttr("disabled");
+                $("#Emult_exam").attr("disabled", "disabled");
+                $('#Edate_of_exam').val('');
+                $('#Emult_exam').val('');
+                
+            }
+        });
+    });
+</script>
+
 <!-- ############### CHECKBOX IN NO SALARY GRADE ##################    -->
 <script type="text/javascript">
     $(function () {
