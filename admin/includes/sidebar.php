@@ -12,7 +12,7 @@
             </div>
             <!-- <img class="img-profile rounded-circle" src="img/DAVAOSUR LOGO Torch.png" with="50px" height="50px">
             <img class="img-profile rounded-circle" src="img/DAVAOSUR LOGO Texts.png" with="50px" height="40px">  -->
-            <img class="img-profile rounded-circle" src="img/DAVAOSUR LOGO Landscape.png" with="50px" height="100px">
+            <img class="img-profile rounded-circle" src="img/topLogo.png" with="50px" height="100px">
             <!-- <div class="sidebar-brand-text mx-3">Project DavaoSur</div> -->
         </a>
 
