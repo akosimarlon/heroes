@@ -2524,6 +2524,9 @@ if(isset($_POST['save_otherInfo'])){
     $gov_id = clean($_POST['gov_id']);
     $gov_id_no = clean($_POST['gov_id_no']);
     $gov_id_date = clean($_POST['gov_id_date']);
+    $gov_id_place = clean($_POST['gov_id_place']);
+
+    $gov_id_date_place =  $gov_id_date.' - '.$gov_id_place;
 
 
     try{
@@ -2536,7 +2539,7 @@ if(isset($_POST['save_otherInfo'])){
                   refname1='$refname1', refadd1='$refadd1', reftel1='$reftel1',
                   refname2='$refname2', refadd2='$refadd2', reftel2='$reftel2',
                   refname3='$refname3', refadd3='$refadd3', reftel3='$reftel3',
-                  gov_id='$gov_id', gov_id_no='$gov_id_no', gov_id_date='$gov_id_date' WHERE emp_no='$emp_no' ";
+                  gov_id='$gov_id', gov_id_no='$gov_id_no', gov_id_date='$gov_id_date_place' WHERE emp_no='$emp_no' ";
 
         $query_run = mysqli_query($con,$query);  
     }

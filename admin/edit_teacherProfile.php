@@ -4285,7 +4285,8 @@
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="">Date/Place of Issuance:</label>
-                                            <input type="text" value="<?=$info['gov_id_date'];?>" name="gov_id_date" id="gov_id_date" class="form-control border-success" autocomplete="off" required autofocus>                                            
+                                            <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" id="gov_id_date" name="gov_id_date" value="<?=substr($info['gov_id_date'],0,10);?>" style="width:170px;" required  >
+                                            <input type="text" value="<?=substr($info['gov_id_date'],13,strlen($info['gov_id_date']));?>" name="gov_id_place" id="gov_id_place" class="form-control border-success" autocomplete="off" required autofocus>                                            
                                         </div>
 
 
