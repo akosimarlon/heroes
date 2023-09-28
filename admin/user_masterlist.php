@@ -161,6 +161,8 @@
                     <h6 class="m-0 font-weight-bold text-primary">Accounts
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#addusermasterlist">
+                        <i class="fa fa-user-plus"></i> Add User in Masterlist
+                        </button>
                         <button type="button" class="btn btn-primary float-right searchbtn">
                         <i class="fa fa-search"></i> Show Duplicates
                         </button>
