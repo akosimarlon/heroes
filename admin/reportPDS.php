@@ -2824,7 +2824,8 @@ class myPDF extends FPDF{
                 $this->SetTextColor(0,0,255);   
                 
                 $date_only = substr($data->gov_id_date,0,10);
-                $display_date = date_format($date_only,"m/d/Y");
+                $date_final=date_create($date_only);
+                $display_date = date_format($date_final,"m/d/Y");
 
                 $place_only = substr($data->gov_id_date,13,strlen($data->gov_id_date));
 
