@@ -5548,13 +5548,14 @@
             }
                         
             date_length = date_of_exam.length;
-            alert (date_length);
+            
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;
             document.getElementById('Ecivilservice').value = id;
             document.getElementById('Ecareer_service').value = career_service;
             document.getElementById('Erating').value = rating;            
             if(date_length>10){
+                alert (date_length);
                 is_mult_date = true;                
                 document.getElementById('Emult_exam').disabled = false;
                 document.getElementById('Emult_exam').value = date_of_exam; 
