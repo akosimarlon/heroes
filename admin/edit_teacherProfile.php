@@ -5554,8 +5554,7 @@
             document.getElementById('Ecivilservice').value = id;
             document.getElementById('Ecareer_service').value = career_service;
             document.getElementById('Erating').value = rating;            
-            if(date_length>10){
-                alert (date_length);
+            if(date_length>10){                
                 is_mult_date = true;                
                 document.getElementById('Emult_exam').disabled = false;
                 document.getElementById('Emult_exam').value = date_of_exam; 
@@ -5563,6 +5562,7 @@
                 document.getElementById('Edate_of_exam').value = "";            
             }else{
                 document.getElementById('Edate_of_exam').value = date_of_exam;
+                document.getElementById('Edate_of_exam').disabled = false;
                 document.getElementById('Emult_exam').value = "";      
                 document.getElementById('Emult_exam').disabled = true;      
             }
