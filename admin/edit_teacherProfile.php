@@ -5525,7 +5525,10 @@
             var license_no = $('#uv_license_no'+id).val();
             var date_of_validity = $('#uv_date_of_validity'+id).val(); 
             var is_noexp =false;
-                        
+            
+            if(rating == "N/A" ){
+                rating = 0;
+            }
             
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;

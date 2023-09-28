@@ -632,6 +632,10 @@ if(isset($_POST['registerCivilService'])){
         $place_of_exam = ucwords(clean($_POST['place_of_exam']));    
         $license_no = ucwords(clean($_POST['license_no'])); 
         
+        if($rating == '0'){
+            $rating = "N/A";
+        }
+
         if($noexpire == '1'){
             $date_of_validity = "N/A";  
         }else{
