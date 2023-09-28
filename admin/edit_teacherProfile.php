@@ -367,7 +367,8 @@
                                     <input type="checkbox" id="multipleexam" name="multipleexam" width="70px" height="70px">
                                     </div>
                                 <input type="date" id="date_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
-                                <input type="text" id="mult_exam" name="mult_exam" class="form-control border-success" placeholder="For Multiple Dates of Exam" required autofocus disabled>                             
+                                <label>For Multiple Dates of Exam</label>
+                                <input type="text" id="mult_exam" name="mult_exam" class="form-control border-success" placeholder="Format (mm/dd-dd/yyyy or mm/dd,dd/yyyy)" required autofocus disabled>                             
                             </div>
                             <div class="form-group">                                
                                 <label>Place of Examination/Conferment</label>
