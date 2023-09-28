@@ -5529,6 +5529,9 @@
             if(rating == "N/A" ){
                 rating = 0;
             }
+            if(license_no == "N/A" ){
+                license_no = 0;
+            }
             
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;

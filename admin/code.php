@@ -635,6 +635,9 @@ if(isset($_POST['registerCivilService'])){
         if($rating == '0'){
             $rating = "N/A";
         }
+        if($license_no == '0'){
+            $license_no = "N/A";
+        }
 
         if($noexpire == '1'){
             $date_of_validity = "N/A";  
