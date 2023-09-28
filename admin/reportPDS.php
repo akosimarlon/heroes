@@ -2821,8 +2821,14 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);           
                 $this->SetTextColor(0,0,0);          
                 $this->Cell(30,2,"Date/Place of Issuance:",'L',0,'L'); 
-                $this->SetTextColor(0,0,255);            
-                $this->Cell(40,2,strtoupper($data->gov_id_date),'R',0,'L'); 
+                $this->SetTextColor(0,0,255);   
+                
+                $date_only = substr($data->gov_id_date,0,10);
+                $display_date = date_format($date_only,"m/d/Y");
+
+                $place_only = substr($data->gov_id_date,13,strlen($data->gov_id_date));
+
+                $this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L'); 
                 $this->Cell(4,2,"",0,0,'L');   
                 $this->Cell(68,2,strtoupper(date("F d, Y")),'L',0,'C');
                 $this->Cell(4,2,"",'L',0,'C');
