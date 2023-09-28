@@ -357,7 +357,7 @@
                                 <input type="text" id="career_service" name="career_service" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Rating (If Applicable or Type 0 if not applicable)</label>
+                                <label>Rating <span style="color:red">(If Applicable or Type 0 if not applicable)</span></label>
                                 <input type="number" id="rating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" title="Type 0 if not applicable" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
@@ -369,8 +369,8 @@
                                 <input type="text" id="place_of_exam" name="place_of_exam" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>License Number</label>
-                                <input type="number" id="license_no" name="license_no" class="form-control border-success" placeholder="" required autofocus>
+                                <label>License Number <span style="color:red">(If Applicable or Type 0 if not applicable)</span></label>
+                                <input type="number" id="license_no" name="license_no" class="form-control border-success" title="Type 0 if not applicable" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Validity</label>
