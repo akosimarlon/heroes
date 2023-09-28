@@ -357,8 +357,8 @@
                                 <input type="text" id="career_service" name="career_service" class="form-control border-success" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
-                                <label>Rating (If Applicable)</label>
-                                <input type="number" id="rating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
+                                <label>Rating (If Applicable or Type 0 if not applicable)</label>
+                                <input type="number" id="rating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" title="Type 0 if not applicable" placeholder="" required autofocus>
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
