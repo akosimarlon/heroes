@@ -1465,7 +1465,7 @@ class myPDF extends FPDF{
                     }else{
                         $date=date_create($date_of_exam[$y]); 
                         if(strlen($date_of_exam[$y]) > 10 ){
-                            $this->Cell(20,8,$date,'BL',0,'C');
+                            $this->Cell(20,8,$date_of_exam[$y],'BL',0,'C');
                         }else{               
                             $this->Cell(20,8,date_format($date,"m/d/Y"),'BL',0,'C');
                         }    
