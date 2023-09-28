@@ -88,8 +88,8 @@ if(isset($_POST['registerUsertoMasterlist'])){
     $query1 = "SELECT * FROM masterlist WHERE emp_no='$emp_no' ";
     $query_run1 = mysqli_query($con,$query1);
     if (!$query_run1->num_rows > 0) {
-        $query = "INSERT INTO users (emp_no,fname,lname,school_id,email,status) 
-                VALUES ('$emp_no','$fname','$lname','','','$status')";
+        $query = "INSERT INTO masterlist (id,emp_no,fname,lname,school_id,email,status) 
+                VALUES ('','$emp_no','$fname','$lname','','','$status')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
