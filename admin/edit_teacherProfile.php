@@ -362,7 +362,12 @@
                             </div>
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
-                                <input type="date" id="date_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
+                                <div class="form-group">
+                                    <label for="" class="text-danger">SELECT IF MULTIPLES DATES OF EXAMINATION</label>
+                                    <input type="checkbox" id="multipleexam" name="multipleexam" width="70px" height="70px">
+                                    </div>
+                                <input type="date" id="date_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <input type="text" id="mult_exam" name="mult_exam" class="form-control border-success" placeholder="For Multiple Dates of Exam" required autofocus disabled>                             
                             </div>
                             <div class="form-group">                                
                                 <label>Place of Examination/Conferment</label>
@@ -6818,6 +6823,27 @@
             } else {
                 $("#Edate_of_validity").removeAttr("disabled");
                 $('#Edate_of_validity').val('');
+                
+            }
+        });
+    });
+</script>
+
+
+
+
+<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#multipleexam").click(function () {
+            if ($(this).is(":checked")) {
+                $("#date_of_exam").attr("disabled", "disabled");
+                $("#mult_exam").removeAttr("disabled");
+            } else {
+                $("#date_of_exam").removeAttr("disabled");
+                $("#mult_exam").attr("disabled", "disabled");
+                $('#date_of_exam').val('');
+                $('#mult_exam').val('');
                 
             }
         });
