@@ -4006,7 +4006,7 @@
                                         <input type="hidden" name="emp_no" value="<?=$user['emp_no'];?>">
                                         
                                         <div class="col-md-12 mb-3">
-                                            <h5>Are you related by consanguinity or affinity to the appointing or recommending authority, 
+                                            <h5>34. Are you related by consanguinity or affinity to the appointing or recommending authority, 
                                                 or to the chief of bureau or office or to the person who has immediate supervision over you in the Office, 
                                                 Bureau or Department where you will be apppointed,</h5>                                          
                                         </div>                                       
