@@ -1206,11 +1206,18 @@
                             <div class="form-group">                                
                                 <label>Rating (If Applicable)</label>
                                 <input type="number" id="Erating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
-                            </div>
+                            </div>                            
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
-                                <input type="date" id="Edate_of_exam" name="date_of_exam" min="0001-01-01" max="9999-12-31" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>                                
+                                <div class="form-group">
+                                    <label for="" class="text-danger">SELECT IF MULTIPLES DATES OF EXAMINATION</label>
+                                    <input type="checkbox" id="Emultipleexam" name="multipleexam" width="70px" height="70px">
+                                    </div>
+                                <input type="date" id="Edate_of_exam" min="0001-01-01" max="9999-12-31" name="date_of_exam" class="form-control border-success" style="width:150px;" placeholder="From" required autofocus></br>
+                                <label>For Multiple Dates of Exam</label>
+                                <input type="text" id="Emult_exam" name="mult_exam" class="form-control border-success" placeholder="Format (mm/dd-dd/yyyy or mm/dd,dd/yyyy)" required autofocus disabled>                             
                             </div>
+
                             <div class="form-group">                                
                                 <label>Place of Examination/Conferment</label>
                                 <input type="text" id="Eplace_of_exam" name="place_of_exam" class="form-control border-success" placeholder="" required autofocus>
@@ -5531,6 +5538,7 @@
             var license_no = $('#uv_license_no'+id).val();
             var date_of_validity = $('#uv_date_of_validity'+id).val(); 
             var is_noexp =false;
+            var is_mult_date =false;
             
             if(rating == "N/A" ){
                 rating = 0;
@@ -5538,13 +5546,23 @@
             if(license_no == "N/A" ){
                 license_no = 0;
             }
-            
+                        
+            date_length = date_of_exam.length;
+
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;
             document.getElementById('Ecivilservice').value = id;
             document.getElementById('Ecareer_service').value = career_service;
             document.getElementById('Erating').value = rating;            
-            document.getElementById('Edate_of_exam').value = date_of_exam;            
+            if(date_length>10){
+                is_mult_date = true;                
+                document.getElementById('Emult_exam').disabled = false;
+                document.getElementById('Emult_exam').value = date_of_exam; 
+                document.getElementById('Edate_of_exam').disabled = true;
+            }else{
+                document.getElementById('Edate_of_exam').value = date_of_exam;            
+            }
+            
             document.getElementById('Eplace_of_exam').value = place_of_exam;            
             document.getElementById('Elicense_no').value = license_no;  
             document.getElementById('Edate_of_validity').value = date_of_validity;
@@ -5553,6 +5571,7 @@
                 document.getElementById('Edate_of_validity').disabled = true;
             }         
             document.getElementById('enoexpire').checked = is_noexp;            
+            document.getElementById('Emultipleexam').checked = is_mult_date;            
         });
     });
 
