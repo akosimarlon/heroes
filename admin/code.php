@@ -654,6 +654,8 @@ if(isset($_POST['registerCivilService'])){
     $empno = clean($_POST['emp_no']);
     $nocsc = $_POST['nocsc'] == true ? '1':'0'; 
     $noexpire = $_POST['noexpire'] == true ? '1':'0'; 
+    $multipleexam = $_POST['multipleexam'] == true ? '1':'0'; 
+    
 
     if($nocsc == '1'){
         $career_service = "N/A";
@@ -669,9 +671,15 @@ if(isset($_POST['registerCivilService'])){
         $place_of_exam = ucwords(clean($_POST['place_of_exam']));    
         $license_no = ucwords(clean($_POST['license_no'])); 
         
+        if($multipleexam == '1'){
+            $mult_exam = clean($_POST['mult_exam']);   
+            $date_of_exam = $mult_exam;
+        }
+
         if($rating == '0'){
             $rating = "N/A";
         }
+        
         if($license_no == '0'){
             $license_no = "N/A";
         }
