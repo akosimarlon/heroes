@@ -5548,7 +5548,7 @@
             }
                         
             date_length = date_of_exam.length;
-
+            alert (date_length);
             $('#editcivildModal').modal('show');            
             document.getElementById('Eempnocivil').value = empno;
             document.getElementById('Ecivilservice').value = id;
