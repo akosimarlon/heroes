@@ -5560,8 +5560,11 @@
                 document.getElementById('Emult_exam').disabled = false;
                 document.getElementById('Emult_exam').value = date_of_exam; 
                 document.getElementById('Edate_of_exam').disabled = true;
+                document.getElementById('Edate_of_exam').value = "";            
             }else{
-                document.getElementById('Edate_of_exam').value = date_of_exam;            
+                document.getElementById('Edate_of_exam').value = date_of_exam;
+                document.getElementById('Emult_exam').value = "";      
+                document.getElementById('Emult_exam').disabled = true;      
             }
             
             document.getElementById('Eplace_of_exam').value = place_of_exam;            
