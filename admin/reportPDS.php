@@ -1365,7 +1365,7 @@ class myPDF extends FPDF{
        
     }
 
-    function civilservice($db){
+    function civilservice($db){ 
 
         if(isset($_GET['emp_no'])){
             $user_id = $_GET['emp_no']; 
@@ -1706,7 +1706,7 @@ class myPDF extends FPDF{
 
                 
 
-                if(strlen($appointment[$y]) < 11 ){
+                if(strlen($appointment[$y]) < 12 ){
                     $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
                 }else{
                     $this->SetFont('Arial','',4);
