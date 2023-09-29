@@ -1198,7 +1198,7 @@
                     <form action="code.php" method="POST">
                         <div class="modal-body">
                             
-                            <div class="form-group border-primary">                                
+                            <div class="form-group border-bottom border-danger">                                
                                 <input type="hidden" id="Eempnocivil" name="empno" value="">
                                 <input type="hidden" id="Ecivilservice" name="civilservice_id" value="">
                                 <label>CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE/ BARANGAY ELIGIBILITY / DRIVER'S LICENSE</label>
