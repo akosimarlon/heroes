@@ -1197,7 +1197,7 @@
                 </div>
                     <form action="code.php" method="POST">
                         <div class="modal-body">
-                            <div class="border border-primary rounded-3 border-bottom">
+                            <div class="border border-primary border-bottom">
                                 <div class="form-group">                                
                                     <input type="hidden" id="Eempnocivil" name="empno" value="">
                                     <input type="hidden" id="Ecivilservice" name="civilservice_id" value="">
