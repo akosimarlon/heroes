@@ -6986,7 +6986,7 @@
         var desList = {
             Teaching : ['Teacher', 'District Principal In-Charge', 'School Head / School In-Charge'],
 
-            Teaching_Related :  ['CID', 'SGOD', 'District Supervisor', 'District Principal In-Charge', 'School Head', 'Teacher In-Charge', 'Head Teacher','Guidance Counselor'],
+            Teaching_Related :  ['CID', 'SGOD', 'District Supervisor', 'District Principal In-Charge', 'School Head', 'School In-Charge', 'Head Teacher','Guidance Counselor'],
 
             Non_Teaching :  ['School','District','Division']   
         };
