@@ -1197,6 +1197,7 @@
                 </div>
                     <form action="code.php" method="POST">
                         <div class="modal-body">
+                            <div class="form-group">
                             <div class="form-group">                                
                                 <input type="hidden" id="Eempnocivil" name="empno" value="">
                                 <input type="hidden" id="Ecivilservice" name="civilservice_id" value="">
@@ -1206,6 +1207,7 @@
                             <div class="form-group">                                
                                 <label>Rating (If Applicable)</label>
                                 <input type="number" id="Erating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
+                            </div>
                             </div>                            
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
