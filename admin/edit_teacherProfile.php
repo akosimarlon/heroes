@@ -4391,7 +4391,7 @@
                                                 </select>
                                             </div> -->
 
-                                            <div class="col-auto">
+                                            <div class="col-auto mb-5">
                                                 <label for="">Item Number</label>
                                                 <input type="text" name="item_no" value="<?=$emp_rec['item_no'];?>" class="form-control border-success" style="width:320px;" autocomplete="off" required autofocus>
                                             </div> 
