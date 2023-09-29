@@ -1197,18 +1197,18 @@
                 </div>
                     <form action="code.php" method="POST">
                         <div class="modal-body">
-                            
-                            <div class="form-group border-bottom border-danger">                                
-                                <input type="hidden" id="Eempnocivil" name="empno" value="">
-                                <input type="hidden" id="Ecivilservice" name="civilservice_id" value="">
-                                <label>CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE/ BARANGAY ELIGIBILITY / DRIVER'S LICENSE</label>
-                                <input type="text" id="Ecareer_service" name="career_service" class="form-control border-success" placeholder="" required autofocus>
-                            </div>
-                            <div class="form-group">                                
-                                <label>Rating (If Applicable)</label>
-                                <input type="number" id="Erating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
-                            </div>
-                                                      
+                            <div class="border-bottom border-danger">
+                                <div class="form-group">                                
+                                    <input type="hidden" id="Eempnocivil" name="empno" value="">
+                                    <input type="hidden" id="Ecivilservice" name="civilservice_id" value="">
+                                    <label>CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE/ BARANGAY ELIGIBILITY / DRIVER'S LICENSE</label>
+                                    <input type="text" id="Ecareer_service" name="career_service" class="form-control border-success" placeholder="" required autofocus>
+                                </div>
+                                <div class="form-group">                                
+                                    <label>Rating (If Applicable)</label>
+                                    <input type="number" id="Erating" name="rating" step="0.01" onchange="setTwoNumberDecimal" min="0" max="100" class="form-control border-success" placeholder="" required autofocus>
+                                </div>
+                            </div>                            
                             <div class="form-group">                                
                                 <label>Date of Examination/Conferment</label>
                                 <div class="form-group">
