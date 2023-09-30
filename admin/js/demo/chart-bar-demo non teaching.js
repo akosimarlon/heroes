@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 
 $(document).ready(function() {
-  fetchchartdata();
+  fetchchartdata1();
   setInterval(fetchchartdata , 10000);  
 });
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
 /* #### Bar Chart Example ##### */
-function fetchchartdata() { 
+function fetchchartdata1() { 
 
 $.ajax({      
   url: 'dataNonTeacherPosition.php',
@@ -45,7 +45,7 @@ $.ajax({
   success: function (data) {
     var position = [];
     var positionlabel = [];
-    var data_array = [];
+    var data_array1 = [];
     var p,p2;
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
@@ -69,10 +69,10 @@ $.ajax({
       data_array.push(data[count].vals);
     }
     
-    data_array.max = function() { return  Math.max.apply(Math, this); };
+    data_array1.max = function() { return  Math.max.apply(Math, this); };
 
     var ctx = document.getElementById("myBarChart2");
-    var myBarChart = new Chart(ctx, {
+    var myBarChart2 = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: position,
@@ -81,7 +81,7 @@ $.ajax({
           backgroundColor: "#4e73df",
           hoverBackgroundColor: "#2e59d9",
           borderColor: "#4e73df",
-          data: data_array, //[12, 17, 4, 2, 1, 4, 0],
+          data: data_array1, //[12, 17, 4, 2, 1, 4, 0],
         }],
       },
       options: {
