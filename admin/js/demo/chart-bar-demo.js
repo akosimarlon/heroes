@@ -50,18 +50,21 @@ $.ajax({
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
             
-      // if(data[count].poss == "1" ) {p = "Teacher-I";p2 = "T-I";}
-      // if(data[count].poss == "2" ) {p = "Teacher-II";p2 = "T-II";}
-      // if(data[count].poss == "3" ) {p = "Teacher-III";p2 = "T-III";}
-      // if(data[count].poss == "4" ) {p = "Speacial Science Teacher-I";p2 = "SST-I";}
-      // if(data[count].poss == "5" ) {p = "Master Teacher-I";p2 = "MT-I";}
-      // if(data[count].poss == "6" ) {p = "Master Teacher-II";p2 = "MT-II";}
-      // if(data[count].poss == "7" ) {p = "Master Teacher-III";p2 = "MT-III";};
+      if(data[count].poss == "Teacher I" ) {p = "Teacher-I";p2 = "T-I";}
+      if(data[count].poss == "Teacher II" ) {p = "Teacher-II";p2 = "T-II";}
+      if(data[count].poss == "Teacher III" ) {p = "Teacher-III";p2 = "T-III";}
+      if(data[count].poss == "Master Teacher I" ) {p = "Master Teacher-I";p2 = "MT-I";}
+      if(data[count].poss == "Master Teacher II" ) {p = "Master Teacher-II";p2 = "MT-II";}
+      if(data[count].poss == "Master Teacher III" ) {p = "Master Teacher-III";p2 = "MT-III";}
+      if(data[count].poss == "Special Education Teacher I" ) {p = "Special Education Teacher-I";p2 = "SET-I";};
+      if(data[count].poss == "Special Education Teacher II" ) {p = "Special Education Teacher-II";p2 = "SET-II";};
+      if(data[count].poss == "Special Education Teacher III" ) {p = "Special Education Teacher-III";p2 = "SET-III";};
+      if(data[count].poss == "Special Science Teacher I" ) {p = "Special Science Teacher-I";p2 = "SST-I";};
       
-      //positionlabel.push(p);
-      positionlabel.push(data[count].poss);
-      //position.push(p2);
-      position.push((data[count].poss).toString());
+      positionlabel.push(p);
+      //positionlabel.push(data[count].poss);
+      position.push(p2);
+      //position.push(data[count].poss);
       data_array.push(data[count].vals);
     }
     
