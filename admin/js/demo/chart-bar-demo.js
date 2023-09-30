@@ -62,10 +62,10 @@ $.ajax({
       if(data[count].poss == "Special Science Teacher I" ) {p = "Special Science Teacher-I";p2 = "SST-I";};
       
       
-      //positionlabel.push(p);
-      positionlabel.push(data[count].poss);
-      //position.push(p2);
-      position.push("test");
+      positionlabel.push(p);
+      //positionlabel.push(data[count].poss);
+      position.push(p2);
+      //position.push(data[count].poss);
       data_array.push(data[count].vals);
     }
     
@@ -75,8 +75,7 @@ $.ajax({
     var myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        //labels: position,
-        labels: ["Jan", "Feb", "Mar", "Apr"],
+        labels: position,
         datasets: [{
           label: "Total",
           backgroundColor: "#4e73df",
