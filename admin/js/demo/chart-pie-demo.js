@@ -3,13 +3,13 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 $(document).ready(function() {  
-  fetchchartdata1();
+  fetchchartdata2();
   setInterval(fetchchartdata1 , 10000);
   //fetchchartdata();
 });
 
 /* #### Bar Chart Example ##### */
-function fetchchartdata1() {
+function fetchchartdata2() {
   
 $.ajax({      
   url: 'dataTeacherGender.php',
