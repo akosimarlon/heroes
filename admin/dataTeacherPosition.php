@@ -3,7 +3,7 @@
     include('authentication.php'); 
 
     
-    $query_run = $con -> query("SELECT DISTINCT position_rank as p, COUNT(id) as c FROM employment_record WHERE position_rank !='' AND position_type == 'Teaching' ");
+    $query_run = $con -> query("SELECT DISTINCT position_rank as p, COUNT(id) as c FROM employment_record WHERE position_rank !='' GROUP BY position_rank ASC");
     $data = array();
     
     if($query_run->num_rows > 0){
