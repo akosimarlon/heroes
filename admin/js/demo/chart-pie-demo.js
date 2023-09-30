@@ -4,7 +4,7 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 $(document).ready(function() {  
   fetchchartdata2();
-  setInterval(fetchchartdata1 , 10000);
+  setInterval(fetchchartdata2 , 10000);
   //fetchchartdata();
 });
 
