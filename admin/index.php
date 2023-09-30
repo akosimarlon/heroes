@@ -56,7 +56,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Teaching Personnel</div>
                                             <?php                                             
-                                                $users = "SELECT COUNT(id) AS total FROM users WHERE role_as='2'";
+                                                $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
                                                 $users_run = mysqli_query($con,$users);                                                
                                                 if(mysqli_num_rows($users_run) > 0 ){
                                                     foreach($users_run as $user){
@@ -85,7 +85,7 @@
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Non-Teaching Personnel</div>
                                             <?php                                             
-                                                $users = "SELECT COUNT(id) AS total FROM users WHERE role_as='1'";
+                                                $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
                                                 $users_run = mysqli_query($con,$users);                                                
                                                 if(mysqli_num_rows($users_run) > 0 ){
                                                     foreach($users_run as $user){
