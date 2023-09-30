@@ -14,7 +14,7 @@
             //    $formateddate = date_format($date,"F d");
                 $pos = $row['p'];
                 $value = $row['c'];
-                echo $pos;
+                //echo $pos;
                 $data[] = array(
                     //'day' => $formateddate,
                     'poss' => $pos,
