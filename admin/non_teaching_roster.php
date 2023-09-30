@@ -48,6 +48,7 @@
                                     <th><b>Name of Employee</b></th>                                    
                                     <th><b>Position</b></th>
                                     <th><b>Gender</b></th>
+                                    <th><b>Designation</b></th>
                                     <th><b>Station</b></th>                                    
                                     <th><b>Email</b></th>
                                     <th><b>Contact Number</b></th>                                    
@@ -78,6 +79,7 @@
                                                 
                                                 
                                                 <td><?= strtoupper($row['sex']) ?></td>
+                                                <td><?= $row1['designation'] ?></td>
                                                 <td>
                                                 <?php
                                                     if($row1['designation']=="School") echo $row1['school_name']; 
