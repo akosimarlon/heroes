@@ -61,20 +61,24 @@
 
                                     if(mysqli_num_rows($query_run) > 0){
                                         foreach($query_run as $row){
-                                            $empno = $row['emp_no'];
-                                            $query1 = "SELECT * FROM employment_record where emp_no='$empno' and position_type ='Teaching' ";
-                                            $query_run1 = mysqli_query($con,$query1);
-        
-                                            if(mysqli_num_rows($query_run1) > 0){
-                                                foreach($query_run1 as $row1){
                                         ?>
                                             <tr>   
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
-                                                
+                                                <?php
+                                                    $empno = $row['emp_no'];
+                                                    $query1 = "SELECT * FROM employment_record where emp_no='$empno' ";
+                                                    $query_run1 = mysqli_query($con,$query1);
+                
+                                                    if(mysqli_num_rows($query_run1) > 0){
+                                                        foreach($query_run1 as $row1){
+                                                ?>
                                                         <td><?= $row1['position_rank'] ?></td>                      
-                                                
+                                                <?php
+                                                        }
+                                                    }                                                
+                                                ?>
                                                 
                                                 <td><?= strtoupper($row['sex']) ?></td>
                                                 <td><?= $row['email'] ?></td>
@@ -92,10 +96,6 @@
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 
                                             </tr>
-                                            <?php
-                                                    }
-                                                }                                                
-                                            ?>
                                         <?php
                                         }
                                     }
