@@ -40,7 +40,7 @@
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr class="table-info">                                    
                                     <th><b>#</b></th>
