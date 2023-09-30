@@ -64,7 +64,7 @@ $.ajax({
       
       positionlabel.push(p);
       //positionlabel.push(data[count].poss);
-      position.push(p2);
+      position.push(p);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
     }
