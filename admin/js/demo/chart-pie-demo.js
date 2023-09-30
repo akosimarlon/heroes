@@ -22,7 +22,7 @@ $.ajax({
     //date = JSON.parse(data);
     
     for(var count=0; count<data.length; count++){
-      if(data[count].sex == "male" ) {p = "Male";}else{p = "Female";}            
+      if(data[count].sex == "male" ) {p = "male";}else{p = "female";}            
       gend.push(p);
       data_array.push(data[count].vals);   
          
