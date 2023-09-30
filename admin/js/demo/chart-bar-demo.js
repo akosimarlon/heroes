@@ -62,10 +62,10 @@ $.ajax({
       if(data[count].poss == "Special Science Teacher I" ) {p = "Special Science Teacher-I";p2 = "SST-I";};
       
       
-      positionlabel.push(p);
-      //positionlabel.push(data[count].poss);
-      position.push(p2);
-      //position.push(data[count].poss);
+      //positionlabel.push(p);
+      positionlabel.push(data[count].poss);
+      //position.push(p2);
+      position.push(""+data[count].poss);
       data_array.push(data[count].vals);
     }
     
