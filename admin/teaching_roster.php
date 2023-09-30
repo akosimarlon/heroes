@@ -3,7 +3,12 @@
     include('includes/header.php');
     include('includes/navbar.php');  
     unset( $_SESSION['tab_page'] );  
-?>        
+?>  
+<style>
+    .table-condensed{
+        font-size: 12px;
+    }
+</style>      
     <!-- Begin Page Content -->
     <div class="container-fluid">
         
@@ -40,7 +45,7 @@
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered table-hover table-sm table-condensed" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr class="table-primary">                                    
                                     <th><b>#</b></th>
