@@ -68,7 +68,7 @@
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
                                                 <?php
                                                     $empno = $row['emp_no'];
-                                                    $query1 = "SELECT * FROM employment_record where emp_no='$empno' ";
+                                                    $query1 = "SELECT * FROM employment_record where emp_no='$empno' and position_type ='Teaching' ";
                                                     $query_run1 = mysqli_query($con,$query1);
                 
                                                     if(mysqli_num_rows($query_run1) > 0){
