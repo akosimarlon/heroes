@@ -239,7 +239,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel by Teaching Position</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Non Teaching Personnel by Teaching Position</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -248,7 +248,7 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Options:</div>
-                                            <a class="dropdown-item" href="reportEmployeePositions.php"><i class="fa fa-table"></i> Switch Tabular Data</a>
+                                            <a class="dropdown-item" href="#"><i class="fa fa-table"></i> Switch Tabular Data</a>
                                             <a class="dropdown-item" href="#"><i class="fa fa-bolt"></i> Another action</a>
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#"><i class="fa fa-print"></i> Print Report</a>
@@ -258,7 +258,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
+                                        <canvas id="myBarChart2"></canvas>
                                     </div>
                                 </div>
                             </div>
