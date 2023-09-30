@@ -12,7 +12,7 @@
             <h3 class="h3 mb-0 text-gray-800">Teaching Roster </h3><br>                
         </div>
         <div class="d-sm-flex align-items-center justify-content-between mb-4">            
-            <h6 class="h6 mb-0 text-gray-800">School Year: 2022 - 2023</h6>    
+            <h6 class="h6 mb-0 text-gray-800">School Year: 2023 - 2024</h6>    
         </div>
         
 
@@ -21,7 +21,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     
-                        <h6 class="m-0 font-weight-bold text-primary">Matanao National High School - Senior High School 
+                        <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel 
                         <!-- <select name="nclevel" required class="form-control border-success" style="width:150px;">
                             <option value="">--Please Select--</option>
                             <option value="1">Employment Records</option>
