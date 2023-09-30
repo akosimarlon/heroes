@@ -78,9 +78,9 @@ $.ajax({
         labels: position,
         datasets: [{
           label: "Total",
-          backgroundColor: "#4e73df",
+          backgroundColor: "#ffff66",
           hoverBackgroundColor: "#2e59d9",
-          borderColor: "#4e73df",
+          borderColor: "#ffff66",
           data: data_array1, //[12, 17, 4, 2, 1, 4, 0],
         }],
       },
