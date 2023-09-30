@@ -32,8 +32,8 @@ $.ajax({
 
 
     // Pie Chart Example
-    var ctx = document.getElementById("myPieChart");
-    var myPieChart = new Chart(ctx, {
+    var ctx1 = document.getElementById("myPieChart");
+    var myPieChart = new Chart(ctx1, {
       type: 'doughnut',
       data: {
         labels: gend,
