@@ -42,7 +42,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
                             <thead>
-                                <tr class="table-info">                                    
+                                <tr class="table-primary">                                    
                                     <th><b>#</b></th>
                                     <th><b>Employee ID</b></th>
                                     <th><b>Name of Employee</b></th>                                    
