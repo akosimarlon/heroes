@@ -17,18 +17,18 @@ $.ajax({
   dataType: 'JSON',
   success: function (data) {
     var gend = [];    
-    var data_array2 = [];
+    var data_array3 = [];
     var p;    
     //date = JSON.parse(data);
     
     for(var count=0; count<data.length; count++){
       if(data[count].sex == "male" ) {p = "male";}else{p = "female";}            
       gend.push(p);
-      data_array2.push(data[count].vals);   
+      data_array3.push(data[count].vals);   
          
     }
     
-    data_array2.max = function() { return  Math.max.apply(Math, this); };
+    data_array3.max = function() { return  Math.max.apply(Math, this); };
 
 
     // Pie Chart Example
@@ -38,7 +38,7 @@ $.ajax({
       data: {
         labels: gend,
         datasets: [{
-          data: data_array2,
+          data: data_array3,
           backgroundColor: ['#4e73df', '#1cc88a'], //, '#36b9cc'
           hoverBackgroundColor: ['#2e59d9', '#17a673'], //, '#2c9faf'
           hoverBorderColor: "rgba(234, 236, 244, 1)",
