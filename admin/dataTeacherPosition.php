@@ -14,6 +14,7 @@
             //    $formateddate = date_format($date,"F d");
                 $pos = $row['p'];
                 $value = $row['c'];
+                echo $pos;
                 $data[] = array(
                     //'day' => $formateddate,
                     'poss' => $pos,
@@ -23,7 +24,7 @@
             
     
         }            
-        echo json_encode($data);
+        //echo json_encode($data);
     
         
     }
