@@ -79,7 +79,7 @@ $.ajax({
         datasets: [{
           label: "Total",
           backgroundColor: "#ffff66",
-          hoverBackgroundColor: "#2e59d9",
+          hoverBackgroundColor: "#e6e600",
           borderColor: "#ffff66",
           data: data_array1, //[12, 17, 4, 2, 1, 4, 0],
         }],
