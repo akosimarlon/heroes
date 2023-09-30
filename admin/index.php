@@ -49,59 +49,61 @@
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_roster.php">
-                        <div class="card border-left-primary shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Teaching Personnel</div>
-                                            <?php                                             
-                                                $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
-                                                $users_run = mysqli_query($con,$users);                                                
-                                                if(mysqli_num_rows($users_run) > 0 ){
-                                                    foreach($users_run as $user){
-                                            ?>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
-                                        <?php
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Teaching Personnel</div>
+                                                <?php                                             
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
+                                                    $users_run = mysqli_query($con,$users);                                                
+                                                    if(mysqli_num_rows($users_run) > 0 ){
+                                                        foreach($users_run as $user){
+                                                ?>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
+                                            <?php
+                                                        }
                                                     }
-                                                }
-                                        ?>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fa fa-laptop fa-2x text-gray-300"></i>
+                                            ?>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-laptop fa-2x text-gray-300"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         </a>
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-success shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Non-Teaching Personnel</div>
-                                            <?php                                             
-                                                $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
-                                                $users_run = mysqli_query($con,$users);                                                
-                                                if(mysqli_num_rows($users_run) > 0 ){
-                                                    foreach($users_run as $user){
-                                            ?>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
-                                            <?php
+                        <a href="non_teaching_roster.php">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Non-Teaching Personnel</div>
+                                                <?php                                             
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
+                                                    $users_run = mysqli_query($con,$users);                                                
+                                                    if(mysqli_num_rows($users_run) > 0 ){
+                                                        foreach($users_run as $user){
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
+                                                <?php
+                                                        }
                                                     }
-                                                }
-                                            ?>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fa fa-keyboard fa-2x text-gray-300"></i>
+                                                ?>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-keyboard fa-2x text-gray-300"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
