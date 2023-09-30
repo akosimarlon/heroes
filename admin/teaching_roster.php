@@ -74,16 +74,7 @@
                                                     if(mysqli_num_rows($query_run1) > 0){
                                                         foreach($query_run1 as $row1){
                                                 ?>
-                                                        <?=$row1['position_rank']=='' ? '<td></td>':'' ?>
-                                                        <?=$row1['position_rank']=='teacher1' ? '<td>Teacher I</td>':'' ?>
-                                                        <?=$row1['position_rank']=='teacher2' ? '<td>Teacher II</td>':'' ?>
-                                                        <?=$row1['position_rank']=='teacher3' ? '<td>Teacher III</td>':'' ?>
-                                                        <?=$row1['position_rank']=='mteacher1' ? '<td>Master Teacher I</td>':'' ?>
-                                                        <?=$row1['position_rank']=='mteacher2' ? '<td>Master Teacher II</td>':'' ?>
-                                                        <?=$row1['position_rank']=='mteacher3' ? '<td>Master Teacher III</td>':'' ?>
-                                                        <?=$row1['position_rank']=='ssteacher1' ? '<td>Special Science Teacher I</td>':'' ?>
-                                                        
-                                                                                                                    
+                                                        <td><?= $row1['position_rank'] ?></td>                      
                                                 <?php
                                                         }
                                                     }                                                
