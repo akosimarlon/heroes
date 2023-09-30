@@ -7,7 +7,7 @@
 
 <style>
     .table-condensed{
-        font-size: 10px;
+        font-size: 12px;
     }
 </style>
     <!-- Begin Page Content -->
