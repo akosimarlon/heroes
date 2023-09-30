@@ -3,7 +3,8 @@
     include('authentication.php'); 
 
     //SELECT DISTINCT SupplierID, COUNT(ProductID) FROM Products GROUP BY SupplierID;
-    $query_run = $con -> query("SELECT DISTINCT sex as s, COUNT(id) as c FROM personal_info WHERE sex !='' GROUP BY sex DESC");
+    $query_run = $con -> query("SELECT DISTINCT personal_info.sex as s, COUNT(personal_info.id) as c FROM personal_info INNER JOIN employment_record ON 
+    personal_info.emp_no=employment_record.emp_no WHERE personal_info.sex !='' AND employment_record.position_type = 'Teaching' GROUP BY personal_info.sex DESC");
     $data = array();
     
     if($query_run->num_rows > 0){
