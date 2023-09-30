@@ -75,7 +75,8 @@ $.ajax({
     var myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: position,
+        //labels: position,
+        labels: ["Jan", "Feb", "Mar", "Apr"],
         datasets: [{
           label: "Total",
           backgroundColor: "#4e73df",
