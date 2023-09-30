@@ -56,13 +56,13 @@
                             <tbody>
                                 <?php
                                     $count = 1;
-                                    $query = "SELECT * FROM employment_record where emp_no='$empno' and position_type ='Teaching' ";
+                                    $query = "SELECT * FROM employment_record where position_type ='Teaching' ";
                                     $query_run = mysqli_query($con,$query);
 
                                     if(mysqli_num_rows($query_run) > 0){
                                         foreach($query_run as $row1){
-                                            $empno = $row['emp_no'];
-                                            $query1 = "SELECT * FROM personal_info";
+                                            $empno = $row1['emp_no'];
+                                            $query1 = "SELECT * FROM personal_info where emp_no='$empno' ";
                                             $query_run1 = mysqli_query($con,$query1);
         
                                             if(mysqli_num_rows($query_run1) > 0){
@@ -70,7 +70,7 @@
                                         ?>
                                             <tr>   
                                                 <td><?= $count++ ?></td>                                    
-                                                <td><?= $row['emp_no'] ?></td>
+                                                <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
                                                 
                                                         <td><?= $row1['position_rank'] ?></td>                      
