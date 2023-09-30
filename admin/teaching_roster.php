@@ -49,6 +49,7 @@
                                     <th><b>Position</b></th>
                                     <th><b>Gender</b></th>
                                     <th><b>Station</b></th>
+                                    <th><b>District</b></th>
                                     <th><b>Email</b></th>
                                     <th><b>Contact Number</b></th>                                    
                                     <th><b>Status</b></th>                                    
