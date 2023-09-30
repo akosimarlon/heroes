@@ -48,6 +48,7 @@
                                     <th><b>Name of Employee</b></th>                                    
                                     <th><b>Position</b></th>
                                     <th><b>Gender</b></th>
+                                    <th><b>Station</b></th>
                                     <th><b>Email</b></th>
                                     <th><b>Contact Number</b></th>                                    
                                     <th><b>Status</b></th>                                    
@@ -77,6 +78,8 @@
                                                 
                                                 
                                                 <td><?= strtoupper($row['sex']) ?></td>
+                                                <td><?= $row1['school_name'] ?></td>
+                                                <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
                                                 <td>                                                
