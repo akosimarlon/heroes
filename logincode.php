@@ -35,9 +35,7 @@
         if( $user_name == "marlon.diocson@deped.gov.ph"){
             $role_as = "1";
         }
-        if( $user_name == "roy.abueva@deped.gov.ph"){
-            $role_as = "1";
-        }
+        
         // if( $user_role == "SDS"){
         //     $role_as = "1";
         // }
