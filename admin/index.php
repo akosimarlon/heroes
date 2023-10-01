@@ -194,8 +194,8 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel by Teaching Position</h6>
+                                    class="card-header py-3 d-flex flex-row align-items-center bg-primary justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-light">Teaching Personnel by Teaching Position</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
