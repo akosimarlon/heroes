@@ -130,7 +130,7 @@
                                                 ?>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fa fa-keyboard fa-2x text-gray-300"></i>
+                                            <i class="fa fa-briefcase fa-2x text-gray-300"></i>                                            
                                         </div>
                                     </div>
                                 </div>
