@@ -19,6 +19,7 @@
     <script src="js/demo/chart-pie-demo non teaching.js"></script>
     <script src="js/demo/chart-bar-demo.js"></script>
     <script src="js/demo/chart-bar-demo non teaching.js"></script>
+    <script src="js/demo/chart-bar-demo teaching_related.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
