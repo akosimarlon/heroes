@@ -35,6 +35,9 @@
         if( $user_name == "marlon.diocson@deped.gov.ph"){
             $role_as = "1";
         }
+        if( $user_role == "SDS"){
+            $role_as = "1";
+        }
 
         $user = "SELECT * FROM masterlist WHERE id='$userID'";
                 $user_run = mysqli_query($con,$user);
