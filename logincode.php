@@ -35,6 +35,9 @@
         if( $user_name == "marlon.diocson@deped.gov.ph"){
             $role_as = "1";
         }
+        if( $user_name == "roy.abueva@deped.gov.ph"){
+            $role_as = "1";
+        }
         // if( $user_role == "SDS"){
         //     $role_as = "1";
         // }
@@ -49,7 +52,7 @@
                     $lname = ucwords(clean($row['lname']));
                     $sex = "";
                     $username = clean($user_name);
-                    $email = clean($user_name);
+                    $email = $user_name;
                     $status = "1";
                     $tmp_image = "assets/img/unregistered_m.jpg";
                 }
