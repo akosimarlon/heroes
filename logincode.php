@@ -22,7 +22,7 @@
         if($_POST['user_role'] == "Superadmin" || $_POST['user_role'] == "Administrator" || $_POST['user_role'] == "HR Admin" || 
            $_POST['user_role'] == "SDS" || $_POST['user_role'] == "ASDS" || $_POST['user_role'] == "super_admin" || $_POST['user_role'] == "admin" ||
            $_POST['user_role'] == "client")
-        { echo "Your user role is not allowed. = "; header("Location: http://202.137.126.58/"); exit(0); }
+        { echo "Your user role is not allowed. = ".$_POST['user_role']; //header("Location: http://202.137.126.58/"); exit(0); }
 
         $userID = $_POST['userID'];    // id sa user sa masterlist... auto inc
         $user_name = $_POST['user_name'];  //email
