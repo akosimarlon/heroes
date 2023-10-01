@@ -46,7 +46,8 @@
                 <!-- Content Row -->
                 <div class="row">
                     <?php include('message.php'); ?>
-                    <!-- Earnings (Monthly) Card Example -->
+
+                    <!-- Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_roster.php">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -76,7 +77,7 @@
                         </a>
                     </div>
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Non - Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="non_teaching_roster.php">
                             <div class="card border-left-success shadow h-100 py-2">
@@ -87,6 +88,36 @@
                                                 Non-Teaching Personnel</div>
                                                 <?php                                             
                                                     $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
+                                                    $users_run = mysqli_query($con,$users);                                                
+                                                    if(mysqli_num_rows($users_run) > 0 ){
+                                                        foreach($users_run as $user){
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
+                                                <?php
+                                                        }
+                                                    }
+                                                ?>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fa fa-keyboard fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Teaching Related Personnel -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <a href="">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                               Teaching Related Personnel</div>
+                                                <?php                                             
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
                                                     $users_run = mysqli_query($con,$users);                                                
                                                     if(mysqli_num_rows($users_run) > 0 ){
                                                         foreach($users_run as $user){
@@ -151,23 +182,9 @@
                         </a>
                     </div>
 
-                    <!-- Pending Requests Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Pending Records</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+
+
                 </div>
                 
                 <!-- Content Row Teaching Personnel-->
