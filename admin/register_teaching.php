@@ -10,7 +10,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Teacher Account </h1>    
+            <h1 class="h3 mb-0 text-gray-800">User Accounts </h1>    
         </div>
 
         <!-- Add Teacher Modal -->
@@ -193,7 +193,7 @@
             <?php include('message.php'); ?>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Teacher Accounts
+                    <h6 class="m-0 font-weight-bold text-primary">User Accounts
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#addadminprofile">
                         <i class="fa fa-user-plus"></i> Register
