@@ -29,15 +29,15 @@
         $user_role = $_POST['user_role']; // teacher, admin... etc..
         $user_security = $_POST['user_security'];
 
-        if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" ){ 
+        if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" || $user_role == "SDS" ){ 
             $role_as = "2";            
         }
         if( $user_name == "marlon.diocson@deped.gov.ph"){
             $role_as = "1";
         }
-        if( $user_role == "SDS"){
-            $role_as = "1";
-        }
+        // if( $user_role == "SDS"){
+        //     $role_as = "1";
+        // }
 
         $user = "SELECT * FROM masterlist WHERE id='$userID'";
                 $user_run = mysqli_query($con,$user);
