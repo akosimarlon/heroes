@@ -68,8 +68,8 @@
                                                     }
                                             ?>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fa-solid fa-chalkboard-user fa-2x text-gray-300"></i>
+                                        <div class="col-auto">                                            
+                                            <i class="fa fa-users fa-2x text-gray-300" ></i>
                                             <!-- <i class="fa fa-laptop fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
