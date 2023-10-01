@@ -34,7 +34,7 @@ if(isset($_SESSION['auth'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Project TIS - Teachers Information System</title>
+    <title>Project DavaoSur - HEROES</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico">
 
     <!-- Custom fonts for this template-->
