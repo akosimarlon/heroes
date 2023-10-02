@@ -8,7 +8,8 @@
 
     
 ?>   
-
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <style>
     .design-process-section .text-align-center {
         line-height: 25px;
@@ -641,7 +642,7 @@
                             </div>
                             <div class="form-group"> 
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" data-on="Enabled" data-off="Disabled">
+                                    <input type="checkbox" checked data-toggle="toggle">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training?</label>
                                 </div>
                             </div>
