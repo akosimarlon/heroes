@@ -641,7 +641,7 @@
                             </div>
                             <div class="form-group"> 
                                 <div class="form-check form-switch">
-                                    <input type="checkbox" checked data-toggle="toggle">
+                                    <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training?</label>
                                 </div>
                             </div>
