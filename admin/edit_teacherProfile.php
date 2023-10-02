@@ -1029,6 +1029,8 @@
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
                                 <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dateend" id="dateend" required style="width:150px;">
+                                </br><label for="">Present</label>
+                                <input type="checkbox" id="date_status_anci" name="present_date_anci" width="70px" height="70px">
                             </div>
                             
                             
@@ -1776,6 +1778,7 @@
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
                                 <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dateend" id="Eend_date" required style="width:150px;">
+                                
                             </div>                            
                         </div>
                         <div class="modal-footer">
@@ -6041,7 +6044,21 @@
   });
 </script>
 
-
+<!-- ############### CHECKBOX IN Anciliary Work select PRESENT DATE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#date_status_anci").click(function () {
+            if ($(this).is(":checked")) {
+                $("#dateend").attr("disabled", "disabled");
+                $('#dateend').val('PRESENT');
+            } else {
+                $("#dateend").removeAttr("disabled");
+                $('#dateend').val('');
+                
+            }
+        });
+    });
+</script>
 
 
 <!-- ############### ENABLE AND DISABLE TEXT INPUT USING CHECKBOX IN WORK EXPERIENCE ##################    -->
