@@ -4397,6 +4397,10 @@
                                                 <label for="">Item Number</label>
                                                 <input type="text" name="item_no" value="<?=$emp_rec['item_no'];?>" class="form-control border-success" style="width:320px;" autocomplete="off" required autofocus>
                                             </div> 
+                                            <div class="col-auto">
+                                                <label for="">Date of Assumption (First Day of Service) </label>
+                                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="doass" id="doass" value=""  required  autofocus>
+                                            </div>
                                             <!-- <div class="col-auto mb-5">
                                                 <label for="">Plantilla Number</label>
                                                 <input type="text" name="plantilla_no" value="<?=$emp_rec['plantilla_no'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
