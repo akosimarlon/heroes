@@ -639,7 +639,7 @@
                                 <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
                                                            
                             </div>
-                            <div class="form-check form-switch">
+                            <div class="form-group">
                                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training?</label>
                             </div>
