@@ -6045,7 +6045,7 @@
   });
 </script>
 
-<!-- ############### CHECKBOX IN Anciliary Work select PRESENT DATE ##################    -->
+<!-- ############### CHECKBOX IN ADD Anciliary Work select PRESENT DATE ##################    -->
 <script type="text/javascript">
     $(function () {
         $("#date_status_anci").click(function () {
@@ -6055,6 +6055,22 @@
             } else {
                 $("#dateend").removeAttr("disabled");
                 $('#dateend').val('');
+                
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX IN EDIT Anciliary Work select PRESENT DATE ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#Edate_status_anci").click(function () {
+            if ($(this).is(":checked")) {
+                $("#Eend_date").attr("disabled", "disabled");
+                $('#Eend_date').val('PRESENT');
+            } else {
+                $("#Eend_date").removeAttr("disabled");
+                $('#Eend_date').val('');
                 
             }
         });
