@@ -4399,7 +4399,7 @@
                                             </div> 
                                             <div class="col-auto">
                                                 <label for="">Date of Assumption (First Day of Service) </label>
-                                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="doass" id="doass" value=""  required  autofocus>
+                                                <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="doass" id="doass" value="<?=$emp_rec['date_of_ass'];?>"  required  autofocus >
                                             </div>
                                             <!-- <div class="col-auto mb-5">
                                                 <label for="">Plantilla Number</label>

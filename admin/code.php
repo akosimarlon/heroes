@@ -2632,6 +2632,7 @@ if(isset($_POST['save_otherInfo'])){
 if(isset($_POST['saveEmpRecord'])){
     $emp_no = clean($_POST['emp_no']);        
     $doapp = clean($_POST['doapp']);
+    $doass = clean($_POST['doass']);
     $yearinservice = clean($_POST['yearinservice']);
     $position_rank = clean($_POST['position_rank']);
     $grade_level = clean($_POST['grade_level']);
@@ -2669,10 +2670,10 @@ if(isset($_POST['saveEmpRecord'])){
     if($position_rank == "mteacher3" ) $p = "7";
 
     try{
-        $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', position_type='$position_type',
-                        position_rank='$position_rank', position_id='$p', designation='$designation', item_no='$item_no', plantilla_no='$plantilla_no', 
-                        notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district', notnonteaching='$notnonteaching', 
-                        functional_div='$functional_div', office_name='$office_name' WHERE emp_no='$emp_no' ";
+        $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', date_of_ass='$doass', 
+                position_type='$position_type', position_rank='$position_rank', position_id='$p', designation='$designation', item_no='$item_no',
+                plantilla_no='$plantilla_no', notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district',
+                notnonteaching='$notnonteaching', functional_div='$functional_div', office_name='$office_name' WHERE emp_no='$emp_no' ";
 
         $query_run = mysqli_query($con,$query);         
 
