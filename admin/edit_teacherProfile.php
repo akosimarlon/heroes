@@ -641,8 +641,8 @@
                             </div>
                             <div class="form-group"> 
                                 <div class="form-check form-switch">
-                                    <input type="checkbox" checked data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training?</label>
+                                    <input type="checkbox" checked name="addtraining" id="addtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
                                 </div>
                             </div>
                             
@@ -6835,6 +6835,23 @@
                 $("#sssnum").removeAttr("disabled");
                 $('#sssnum').val('');
                 
+            }
+        });
+    });
+</script>
+
+<!-- ############### CHECKBOX / TOGGLE TO ASK IF TRAINING WILL BE ADDED  ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#addtraining").click(function () {
+            if ($(this).is(":checked")) {
+                alert ($('#addtraining').val());
+                //$("#sssnum").attr("disabled", "disabled");
+                //$('#sssnum').val('N/A');
+            } else {
+                //$("#sssnum").removeAttr("disabled");
+                //$('#sssnum').val('');
+                alert ($('#addtraining').val());
             }
         });
     });
