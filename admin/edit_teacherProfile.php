@@ -6845,13 +6845,13 @@
     $(function () {
         $("#addtraining").click(function () {
             if ($(this).is(":checked")) {
-                alert ($('#addtraining').val());
+                alert ("sulod sa yes");
                 //$("#sssnum").attr("disabled", "disabled");
                 //$('#sssnum').val('N/A');
             } else {
                 //$("#sssnum").removeAttr("disabled");
                 //$('#sssnum').val('');
-                alert ($('#addtraining').val());
+                alert ("sulod sa no");
             }
         });
     });
