@@ -1399,6 +1399,7 @@ if(isset($_POST['registerAnciliaryWork'])){
     $empno = clean($_POST['emp_no']);   
 
     $noanci = $_POST['noanci'] == true ? '1':'0'; 
+    
 
     if($noanci == '1'){
         $antitle = "N/A";        
@@ -1407,7 +1408,12 @@ if(isset($_POST['registerAnciliaryWork'])){
     }else{
         $antitle = ucwords(clean($_POST['antitle']));
         $datestart = clean($_POST['datestart']);    
-        $dateend = clean($_POST['dateend']);         
+        $dateend = clean($_POST['dateend']); 
+        $present_date_anci = $_POST['present_date_anci'] == true ? '1':'0';
+        if($present_date_anci == '1'){
+            $dateend = "PRESENT";
+        } 
+                
     }
         
     try {
