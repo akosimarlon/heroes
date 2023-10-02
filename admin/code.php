@@ -2267,7 +2267,12 @@ if(isset($_POST['updateAnciliaryWork'])){
     $antitle = ucwords(clean($_POST['antitle']));
     $datestart = clean($_POST['datestart']);
     $dateend = clean($_POST['dateend']);
-            
+    
+    $Epresent_date_anci = $_POST['Epresent_date_anci'] == true ? '1':'0';
+    if($Epresent_date_anci == '1'){
+        $dateend = "PRESENT";
+    } 
+
     try{
         $query = "UPDATE anciliary_work SET title='$antitle', start_date='$datestart', end_date='$dateend'
                 WHERE id='$an_id' ";

@@ -1778,7 +1778,8 @@
                             <div class="form-group">                                
                                 <label>Date Ended	</label>
                                 <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dateend" id="Eend_date" required style="width:150px;">
-                                
+                                </br><label for="">Present</label>
+                                <input type="checkbox" id="Edate_status_anci" name="Epresent_date_anci" width="70px" height="70px">
                             </div>                            
                         </div>
                         <div class="modal-footer">
@@ -6414,6 +6415,11 @@
             var antitle = $('#u_antitle'+id).val();
             var start_date = $('#u_start_date'+id).val();            
             var end_date = $('#u_end_date'+id).val();           
+
+            if(end_date == "PRESENT"){
+                $('#Eend_date').attr('disabled', true);
+                $( "#Edate_status_anci" ).prop( "checked", true );
+            }
 
             $('#editanciliaryworkModal').modal('show');
             document.getElementById('Ean_id').value = id;
