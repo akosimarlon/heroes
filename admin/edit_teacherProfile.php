@@ -641,7 +641,7 @@
                             </div>
                             <div class="form-group"> 
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" data-on="Enabled" data-off="Disabled">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training?</label>
                                 </div>
                             </div>
