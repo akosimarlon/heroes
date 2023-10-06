@@ -882,6 +882,7 @@ if(isset($_POST['registerLearningDev'])){
     $lname = ucwords(clean($_POST['lastname']));
 
     $nolearndev = $_POST['nolearndev'] == true ? '1':'0'; 
+    $addtraining = $_POST['addtraining'] == true ? '1':'0'; 
 
     if($nolearndev == '1'){
         $title_of_ld = "N/A";
@@ -892,7 +893,7 @@ if(isset($_POST['registerLearningDev'])){
         $conducted = "N/A";
         $originalPath = "N/A";
 
-        $query = "INSERT INTO learning_dev (emp_no , title_of_ld , ld_from , ld_to , ld_hours , type_of_ld , conducted , img_cert, n_a , status) 
+        $query = "INSERT INTO learning_dev (emp_no , title_of_ld , ld_from , ld_to , ld_hours , type_of_ld , conducted , is_added, img_cert, n_a , status) 
                 VALUES ('$empno','$title_of_ld','$ld_from','$ld_to','$ld_hours','$type_of_ld','$conducted','$originalPath','$nolearndev','1')";
         $query_run = mysqli_query($con,$query);
 
