@@ -5714,7 +5714,7 @@
             if(addtrain == "1"){                
                 $( "#Eaddtraining" ).prop( "checked", true );
             }     
-            alert (addtrain);
+            //alert (addtrain);
             $('#editlearningdevModal').modal('show');            
             document.getElementById('Eempnolearn').value = empno;
             document.getElementById('Elearnid').value = id;
