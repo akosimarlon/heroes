@@ -3651,13 +3651,13 @@
                                     <div class="col-md-12 mb-3">                                        
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
-                                                <tr> 
-                                                    <th>Status</th> 
+                                                <tr>                                                     
                                                     <th>Title oF Learning and Development Interventions/Training Programs</th> 
                                                     <th colspan="2">Inclusive Dates of Attendance</br> (From - To)</th>                                                      
                                                     <th>No. of Hours</th>
                                                     <th>Type of LD</th>
                                                     <th>Conducted/Sponsored By</th>
+                                                    <th>Status</th> 
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>                            
@@ -3670,6 +3670,13 @@
                                                                 foreach($result_run as $row){
                                                         ?>
                                                             <tr>
+                                                                                                                                
+                                                                <td><?= $row['title_of_ld'] ?></td>                                                                
+                                                                <td><?= $row['ld_from'] ?></td>
+                                                                <td><?= $row['ld_to'] ?></td>
+                                                                <td><?= $row['ld_hours'] ?></td>
+                                                                <td><?= $row['type_of_ld'] ?></td>                           
+                                                                <td><?= $row['conducted'] ?></td> 
                                                                 <td>
                                                                 <?php
                                                                     if($row['is_added']=='1'){
@@ -3679,13 +3686,7 @@
                                                                         echo '<span class="badge bg-danger text-light">Removed</span>';
                                                                     }
                                                                 ?>
-                                                                </td>                                                                
-                                                                <td><?= $row['title_of_ld'] ?></td>                                                                
-                                                                <td><?= $row['ld_from'] ?></td>
-                                                                <td><?= $row['ld_to'] ?></td>
-                                                                <td><?= $row['ld_hours'] ?></td>
-                                                                <td><?= $row['type_of_ld'] ?></td>                           
-                                                                <td><?= $row['conducted'] ?></td>                           
+                                                                </td>                          
 
                                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                                 
