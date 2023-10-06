@@ -3686,10 +3686,10 @@
                                                                 <td>
                                                                 <?php
                                                                     if($row['is_added']=='1'){
-                                                                        echo '<span class="badge bg-primary">&#10003; Added</span>';
+                                                                        echo '<span class="badge bg-primary">&#10003; Displayed</span>';
                                                                     }
                                                                     elseif($row['is_added']=='0'){
-                                                                        echo '<span class="badge bg-danger text-light">Removed</span>';
+                                                                        echo '<span class="badge bg-danger text-light">&#10008; Hidden</span>';
                                                                     }
                                                                 ?>
                                                                 </td>                          
