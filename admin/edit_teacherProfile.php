@@ -3686,7 +3686,7 @@
                                                                 <td>
                                                                 <?php
                                                                     if($row['is_added']=='1'){
-                                                                        echo '<span class="badge bg-primary">&#10003;</span>';
+                                                                        echo '<span class="badge bg-primary">&#10003; Added</span>';
                                                                     }
                                                                     elseif($row['is_added']=='0'){
                                                                         echo '<span class="badge bg-danger text-light">Removed</span>';
