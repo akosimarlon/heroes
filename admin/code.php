@@ -1881,6 +1881,7 @@ if(isset($_POST['updateLearningDev'])){
     $ld_hours = clean($_POST['ld_hours']);   
     $type_of_ld = $_POST['type_of_ld'];   
     $conducted = clean($_POST['conducted']);   
+    $addtraining = clean($_POST['addtraining']);   
     $fname = ucwords(clean($_POST['firstname']));
     $lname = ucwords(clean($_POST['lastname']));
 
@@ -1915,7 +1916,7 @@ if(isset($_POST['updateLearningDev'])){
                     try {
                         
                         $query = "UPDATE learning_dev SET title_of_ld='$title_of_ld', ld_from='$ld_from', ld_to='$ld_to', 
-                                ld_hours='$ld_hours', type_of_ld='$type_of_ld', conducted='$conducted', img_cert='$originalPath'
+                                ld_hours='$ld_hours', type_of_ld='$type_of_ld', conducted='$conducted', is_added='$addtraining' ,img_cert='$originalPath'
                                 WHERE id='$learn_id' ";
                         $query_run = mysqli_query($con,$query);
 

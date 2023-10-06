@@ -1471,6 +1471,12 @@
                                 <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
                             </div>
                         </div>
+                        <div class="form-group"> 
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training in your PDS?</label>
+                                    <input type="checkbox" checked name="addtraining" id="Eaddtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
+                                </div>
+                            </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
                             <button type="submit" name="updateLearningDev" class="btn btn-success btn-icon-split">
@@ -3696,6 +3702,7 @@
                                                                 <input type="hidden" id="u_ld_hours<?=$row['id']?>" value="<?=$row['ld_hours']?>">
                                                                 <input type="hidden" id="u_type_of_ld<?=$row['id']?>" value="<?=$row['type_of_ld']?>">
                                                                 <input type="hidden" id="u_conducted<?=$row['id']?>" value="<?=$row['conducted']?>">
+                                                                <input type="hidden" id="u_addtrain<?=$row['id']?>" value="<?=$row['is_added']?>">
                                                                 <input type="hidden" id="u_image<?=$row['id']?>" value="<?=$row['img_cert']?>">
                                                                 <input type="hidden" id="utablel<?=$row['id']?>" value="learning_dev">
                                                                 
@@ -5700,6 +5707,7 @@
             var ld_hours = $('#u_ld_hours'+id).val();
             var type_of_ld = $('#u_type_of_ld'+id).val();
             var conducted = $('#u_conducted'+id).val();         
+            var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();         
             //alert (image);
             $('#editlearningdevModal').modal('show');            
@@ -5711,6 +5719,7 @@
             document.getElementById('Eld_hours').value = ld_hours;            
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
+            document.getElementById('Eaddtraining').value = addtrain;                               
             //document.getElementById('Eimage').value = image;                               
         });
     });
