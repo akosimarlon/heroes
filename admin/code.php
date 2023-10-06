@@ -1881,7 +1881,7 @@ if(isset($_POST['updateLearningDev'])){
     $ld_hours = clean($_POST['ld_hours']);   
     $type_of_ld = $_POST['type_of_ld'];   
     $conducted = clean($_POST['conducted']);   
-    $addtraining = clean($_POST['addtraining']);   
+    $addtraining = $_POST['addtraining'] == true ? '1':'0';  
     $fname = ucwords(clean($_POST['firstname']));
     $lname = ucwords(clean($_POST['lastname']));
 
