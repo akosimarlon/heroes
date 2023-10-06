@@ -3669,6 +3669,16 @@
                                                                 foreach($result_run as $row){
                                                         ?>
                                                             <tr>
+                                                                <td>
+                                                                <?php
+                                                                    if($row['is_added']=='1'){
+                                                                        echo '<span class="badge bg-primary">Added</span>';
+                                                                    }
+                                                                    elseif($row['is_added']=='0'){
+                                                                        echo '<span class="badge bg-danger text-light">Removed</span>';
+                                                                    }
+                                                                ?>
+                                                                </td>                                                                
                                                                 <td><?= $row['title_of_ld'] ?></td>                                                                
                                                                 <td><?= $row['ld_from'] ?></td>
                                                                 <td><?= $row['ld_to'] ?></td>

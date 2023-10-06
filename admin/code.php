@@ -894,7 +894,7 @@ if(isset($_POST['registerLearningDev'])){
         $originalPath = "N/A";
 
         $query = "INSERT INTO learning_dev (emp_no , title_of_ld , ld_from , ld_to , ld_hours , type_of_ld , conducted , is_added, img_cert, n_a , status) 
-                VALUES ('$empno','$title_of_ld','$ld_from','$ld_to','$ld_hours','$type_of_ld','$conducted','$originalPath','$nolearndev','1')";
+                VALUES ('$empno','$title_of_ld','$ld_from','$ld_to','$ld_hours','$type_of_ld','$conducted','$addtraining','$originalPath','$nolearndev','1')";
         $query_run = mysqli_query($con,$query);
 
         if($query_run){
@@ -963,8 +963,8 @@ if(isset($_POST['registerLearningDev'])){
                         
                         try {
     
-                            $query = "INSERT INTO learning_dev (emp_no , title_of_ld , ld_from , ld_to , ld_hours , type_of_ld , conducted , img_cert, n_a , status) 
-                                    VALUES ('$empno','$title_of_ld','$ld_from','$ld_to','$ld_hours','$type_of_ld','$conducted','$originalPath','$nolearndev','1')";
+                            $query = "INSERT INTO learning_dev (emp_no , title_of_ld , ld_from , ld_to , ld_hours , type_of_ld , conducted , is_added, img_cert, n_a , status) 
+                                    VALUES ('$empno','$title_of_ld','$ld_from','$ld_to','$ld_hours','$type_of_ld','$conducted','$addtraining','$originalPath','$nolearndev','1')";
                             $query_run = mysqli_query($con,$query);
     
     
