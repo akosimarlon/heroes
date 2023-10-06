@@ -5725,7 +5725,8 @@
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
             document.getElementById('Eaddtraining').value = addtrain;                               
-            document.getElementById('Eimage').value = image;                               
+            //document.getElementById('Eimage').value = image;   
+            $('#preview').html('<img src="'+image+'" width="300" height="auto"/>');                            
         });
     });
 
