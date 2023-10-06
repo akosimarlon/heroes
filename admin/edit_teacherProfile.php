@@ -5710,8 +5710,11 @@
             var type_of_ld = $('#u_type_of_ld'+id).val();
             var conducted = $('#u_conducted'+id).val();         
             var addtrain = $('#u_addtrain'+id).val();         
-            //var image = $('#u_image'+id).val();         
-            //alert (image);
+            //var image = $('#u_image'+id).val();    
+            if(addtrain == "1"){                
+                $( "#Eaddtraining" ).prop( "checked", true );
+            }     
+            alert (addtrain);
             $('#editlearningdevModal').modal('show');            
             document.getElementById('Eempnolearn').value = empno;
             document.getElementById('Elearnid').value = id;
@@ -5721,7 +5724,7 @@
             document.getElementById('Eld_hours').value = ld_hours;            
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
-            document.getElementById('Eaddtraining').value = addtrain;                               
+            //document.getElementById('Eaddtraining').value = addtrain;                               
             //document.getElementById('Eimage').value = image;                               
         });
     });
