@@ -3652,6 +3652,7 @@
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr> 
+                                                    <th>Status</th> 
                                                     <th>Title oF Learning and Development Interventions/Training Programs</th> 
                                                     <th colspan="2">Inclusive Dates of Attendance</br> (From - To)</th>                                                      
                                                     <th>No. of Hours</th>
