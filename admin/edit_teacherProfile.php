@@ -1468,7 +1468,7 @@
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="Eimage" required>
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
                             </div>
                         </div>
                         <div class="form-group"> 
