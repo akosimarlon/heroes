@@ -1468,7 +1468,7 @@
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="Eimage" required>
                             </div>
                         </div>
                         <div class="form-group"> 
@@ -5710,7 +5710,7 @@
             var type_of_ld = $('#u_type_of_ld'+id).val();
             var conducted = $('#u_conducted'+id).val();         
             var addtrain = $('#u_addtrain'+id).val();         
-            //var image = $('#u_image'+id).val();    
+            var image = $('#u_image'+id).val();    
             if(addtrain == "1"){                
                 $( "#Eaddtraining" ).prop( "checked", true );
             }     
@@ -5725,7 +5725,7 @@
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
             document.getElementById('Eaddtraining').value = addtrain;                               
-            //document.getElementById('Eimage').value = image;                               
+            document.getElementById('Eimage').value = image;                               
         });
     });
 
