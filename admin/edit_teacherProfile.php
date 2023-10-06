@@ -1474,7 +1474,7 @@
                         <div class="form-group"> 
                                 <div class="form-check form-switch">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training in your PDS?</label>
-                                    <input type="checkbox" checked name="addtraining" id="Eaddtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
+                                    <input type="checkbox" name="addtraining" id="Eaddtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
                                 </div>
                             </div>
                         <div class="modal-footer">
@@ -5724,7 +5724,7 @@
             document.getElementById('Eld_hours').value = ld_hours;            
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
-            //document.getElementById('Eaddtraining').value = addtrain;                               
+            document.getElementById('Eaddtraining').value = addtrain;                               
             //document.getElementById('Eimage').value = image;                               
         });
     });
