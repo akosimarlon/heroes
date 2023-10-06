@@ -3684,7 +3684,9 @@
                                                                 <td><?= $row['type_of_ld'] ?></td>                           
                                                                 <td><?= $row['conducted'] ?></td> 
                                                                 <td>
+                                                                    
                                                                 <?php
+                                                                    echo $row['is_added'];
                                                                     if($row['is_added']=='1'){
                                                                         echo '<span class="badge bg-primary">&#10003; Displayed</span>';
                                                                     }
