@@ -1468,7 +1468,7 @@
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="Eimage" required>
                             </div>
                         </div>
                         <div class="form-group"> 
@@ -6490,6 +6490,8 @@
             var fileReader = new FileReader();
             fileReader.onload = function (event) {
                 $('#preview').html('<img src="'+event.target.result+'" width="300" height="auto"/>');
+                var s = " "+event.target.result;
+                alert (s);
             };
             fileReader.readAsDataURL(fileInput.files[0]);
         }
