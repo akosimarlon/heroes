@@ -6486,6 +6486,7 @@
 <!-- ############### Preview Image using jQuery ##################    -->
 <script>
     function imagePreview(fileInput) {
+        alert ("s");
         if (fileInput.files && fileInput.files[0]) {
             var fileReader = new FileReader();
             fileReader.onload = function (event) {
