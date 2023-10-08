@@ -5711,9 +5711,9 @@
             var conducted = $('#u_conducted'+id).val();         
             var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();    
-            if(addtrain == "1"){                
-                //$( "#Eaddtraining" ).prop( "checked", true );
-                $('#Eaddtraining').attr('Checked','Checked');                 
+            if(addtrain == "1"){  
+                alert("test");              
+                ( "#Eaddtraining" ).prop( "checked", true );                            
             }     
             alert (addtrain);
             $('#editlearningdevModal').modal('show');            
