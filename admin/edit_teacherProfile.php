@@ -5712,10 +5712,12 @@
             var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){  
-                alert ("test");              
+                alert (addtrain);              
                 ( "#Eaddtraining" ).prop( "checked", true );                            
-            }     
-            alert (addtrain);
+            }else{
+                alert (addtrain);
+            }    
+            
             $('#editlearningdevModal').modal('show');            
             document.getElementById('Eempnolearn').value = empno;
             document.getElementById('Elearnid').value = id;
