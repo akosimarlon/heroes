@@ -5713,7 +5713,7 @@
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){                
                 //$( "#Eaddtraining" ).prop( "checked", true );
-                $('#Eaddtraining').attr('Checked','Checked');                
+                $('#Eaddtraining').attr('Checked','Checked');                 
             }     
             alert (addtrain);
             $('#editlearningdevModal').modal('show');            
