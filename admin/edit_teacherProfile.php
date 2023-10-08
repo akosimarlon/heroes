@@ -5712,7 +5712,7 @@
             var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){  
-                alert("test");              
+                alert ("test");              
                 ( "#Eaddtraining" ).prop( "checked", true );                            
             }     
             alert (addtrain);
