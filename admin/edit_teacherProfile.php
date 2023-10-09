@@ -5929,7 +5929,9 @@
                     document.getElementById('img_src').src = "assets/img/noimage.jpg";
                  }else{
                     document.getElementById('img_src').src = data;
-                    $('#disp_img_name').html(data);
+                    let index = data.lastIndexOf("/");
+                    let result = data.substring(index+1, data.length-1);
+                    $('#disp_img_name').html(result);
                     //document.getElementById('disp_img_name').src = data;
                  }                 
             }
