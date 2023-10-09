@@ -1474,7 +1474,7 @@
                         <div class="form-group"> 
                                 <div class="form-check form-switch">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Add this Training in your PDS?</label>
-                                    <input type="checkbox" name="addtraining" id="Eaddtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
+                                    <input type="checkbox" name="Eaddtraining" id="Eaddtraining" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger">
                                 </div>
                             </div>
                         <div class="modal-footer">
