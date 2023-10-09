@@ -5714,10 +5714,10 @@
             if(addtrain == "1"){  
                 //alert (addtrain);  
                 //$( "#Enosalgrade" ).prop( "checked", false );            
-                $( "#Eaddtraining" ).attr( "checked", true );                            
+                $( "#Eaddtraining" ).prop( "checked", true ).change();                            
             }else{
                 //alert (addtrain);
-                $( "#Eaddtraining" ).attr( "checked", false );
+                $( "#Eaddtraining" ).prop( "checked", false ).change();
             }    
             
             $('#editlearningdevModal').modal('show');            
