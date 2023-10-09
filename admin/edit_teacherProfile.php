@@ -5713,7 +5713,7 @@
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){  
                 alert (addtrain);              
-                ( "#Eaddtraining" ).prop( "checked", true );                            
+                ("#Eaddtraining" ).prop( "checked", true );                            
             }else{
                 alert (addtrain);
             }    
