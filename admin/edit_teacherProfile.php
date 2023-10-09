@@ -5728,7 +5728,7 @@
             document.getElementById('Eld_hours').value = ld_hours;            
             document.getElementById('Etype_of_ld').value = type_of_ld;            
             document.getElementById('Econducted').value = conducted;                               
-            document.getElementById('Eaddtraining').value = addtrain;                               
+            //document.getElementById('Eaddtraining').value = addtrain;                               
             //document.getElementById('Eimage').value = image;                               
         });
     });
