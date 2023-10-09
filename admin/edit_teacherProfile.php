@@ -5717,6 +5717,7 @@
                 $( "#Eaddtraining" ).prop( "checked", true );                            
             }else{
                 alert (addtrain);
+                $( "#Eaddtraining" ).prop( "checked", false );
             }    
             
             $('#editlearningdevModal').modal('show');            
