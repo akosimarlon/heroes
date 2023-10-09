@@ -1916,7 +1916,7 @@ class myPDF extends FPDF{
             $type_of_ld = array();
             $conducted = array();
 
-            $stmt = $db->query("SELECT * FROM learning_dev WHERE emp_no='$user_id' ORDER BY ld_from DESC");            
+            $stmt = $db->query("SELECT * FROM learning_dev WHERE emp_no='$user_id' AND is_added='1' ORDER BY ld_from DESC");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){
                 $title = $data->title_of_ld;
                 $ldfrom = $data->ld_from;
