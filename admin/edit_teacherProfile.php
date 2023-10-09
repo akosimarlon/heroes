@@ -5712,8 +5712,9 @@
             var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){  
-                alert (addtrain);              
-                ("#Eaddtraining" ).prop( "checked", true );                            
+                alert (addtrain);  
+                //$( "#Enosalgrade" ).prop( "checked", false );            
+                $( "#Eaddtraining" ).prop( "checked", true );                            
             }else{
                 alert (addtrain);
             }    
