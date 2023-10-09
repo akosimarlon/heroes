@@ -1097,6 +1097,7 @@
                         </div>
                         <div class="modal-body">    
                             
+                            <div id="disp_img_name"></div>
                             <img class="card-img-top" id="img_src" alt="No Image">
 
                         </div>
@@ -5928,6 +5929,7 @@
                     document.getElementById('img_src').src = "assets/img/noimage.jpg";
                  }else{
                     document.getElementById('img_src').src = data;
+                    document.getElementById('disp_img_name').src = data;
                  }                 
             }
         });
