@@ -5712,12 +5712,12 @@
             var addtrain = $('#u_addtrain'+id).val();         
             //var image = $('#u_image'+id).val();    
             if(addtrain == "1"){  
-                alert (addtrain);  
+                //alert (addtrain);  
                 //$( "#Enosalgrade" ).prop( "checked", false );            
-                $("#Eaddtraining").attr('checked', true );                            
+                $( "#Eaddtraining" ).attr( "checked", true );                            
             }else{
-                alert (addtrain);
-                $("#Eaddtraining").attr('checked', false );
+                //alert (addtrain);
+                $( "#Eaddtraining" ).attr( "checked", false );
             }    
             
             $('#editlearningdevModal').modal('show');            
