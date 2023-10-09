@@ -1892,7 +1892,7 @@ if(isset($_POST['updateLearningDev'])){
     $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
     $image_name = $empno . '_' .date('MdYgisA'). '.' . $ext; //New image name
 
-    $basename = basename($imageName);
+    $basename = basename($image_name);
     $originalPath = $uploadTo.$basename; 
     $imageType = pathinfo($originalPath, PATHINFO_EXTENSION); 
 
