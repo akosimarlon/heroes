@@ -1097,7 +1097,7 @@
                         </div>
                         <div class="modal-body">    
                             
-                            <div id="disp_img_name"></div>
+                            <span id="disp_img_name"></span>
                             <img class="card-img-top" id="img_src" alt="No Image">
 
                         </div>
