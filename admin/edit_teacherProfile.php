@@ -1468,8 +1468,12 @@
                             </div>
                             <div class="form-group">                               
                                 <label>Scaned Image of your certificate</label>
+                                <div class="form-group">
+                                    <label for="" class="text-danger">NO CHANGES IN SCANNED IMAGE</label>
+                                    <input type="checkbox" id="nochange" name="nochange" width="70px" height="70px">
+                                </div>
                                 <div id="preview"></div>
-                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="image" required>
+                                <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="Eimage" required>
                             </div>
                         </div>
                         <div class="form-group"> 
@@ -6924,7 +6928,7 @@
 </script>
 
 
-<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<!-- ############### CHECKBOX NO EXPIRATION IN VALIDITY ##################    -->
 <script type="text/javascript">
     $(function () {
         $("#noexpire").click(function () {
@@ -6939,7 +6943,7 @@
     });
 </script>
 
-<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<!-- ############### CHECKBOX EDIT NO EXPIRATION IN VALIDITY ##################    -->
 <script type="text/javascript">
     $(function () {
         $("#enoexpire").click(function () {
@@ -6957,7 +6961,7 @@
 
 
 
-<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<!-- ############### CHECKBOX MULTIPLE EXAM DATE ##################    -->
 <script type="text/javascript">
     $(function () {
         $("#multipleexam").click(function () {
@@ -6975,7 +6979,7 @@
     });
 </script>
 
-<!-- ############### CHECKBOX IN NO SPOUSE TELEPHONE ##################    -->
+<!-- ############### CHECKBOX EDIT MULTIPLE EXAM DATE  ##################    -->
 <script type="text/javascript">
     $(function () {
         $("#Emultipleexam").click(function () {
@@ -7012,6 +7016,23 @@
         });
     });
 </script>
+
+<!-- ############### CHECKBOX NO CHANGES IN IMAGE CERTIFICATE IN EDIT LEARNING ##################    -->
+<script type="text/javascript">
+    $(function () {
+        $("#nochange").click(function () {
+            if ($(this).is(":checked")) {
+                $("#Eimage").attr("disabled", "disabled");
+            } else {
+                $("#Eimage").removeAttr("disabled");
+                $('#Eimage').val('');
+                
+            }
+        });
+    });
+</script>
+
+
 
 <!-- ############### CHECKBOX IN School Information ##################   !!!! IMPORTANT NI USABA ANG ID SELECTBOX -->
 <script type="text/javascript">
