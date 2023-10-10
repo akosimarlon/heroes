@@ -1431,7 +1431,7 @@
         </div>
 
         <!-- Edit Learning Development Modal -->
-        <div class="modal fade" id="editlearningdevModal" tabindex="-1" data-bs-backdrop="static" ria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editlearningdevModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header bg-success text-light">

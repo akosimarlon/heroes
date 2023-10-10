@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <?php
-    if($_SESSION['auth_role'] == "1"){
+    if($_SESSION['auth_role'] == "1"){ //FOR ADMIN
 ?>
     <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
