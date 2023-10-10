@@ -1882,90 +1882,129 @@ if(isset($_POST['updateLearningDev'])){
     $type_of_ld = $_POST['type_of_ld'];   
     $conducted = clean($_POST['conducted']);   
     $addtraining = $_POST['Eaddtraining'] == true ? '1':'0';  
+    $nochange = $_POST['nochange'] == true ? '1':'0';  
     $fname = ucwords(clean($_POST['firstname']));
     $lname = ucwords(clean($_POST['lastname']));
 
-    $uploadTo = "uploads/certificates/". $lname.'_'.$fname.'_'.$empno.'/'; 
-    $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
-    $imageName = $_FILES['image']['name'];
-    $tempPath=$_FILES['image']['tmp_name'];
-    $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
-    $image_name = $empno . '_' .date('MdYgisA'). '.' . $ext; //New image name
+    if($nochange != 1){
+        $uploadTo = "uploads/certificates/". $lname.'_'.$fname.'_'.$empno.'/'; 
+        $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
+        $imageName = $_FILES['image']['name'];
+        $tempPath=$_FILES['image']['tmp_name'];
+        $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
+        $image_name = $empno . '_' .date('MdYgisA'). '.' . $ext; //New image name
 
-    $basename = basename($image_name);
-    $originalPath = $uploadTo.$basename; 
-    $imageType = pathinfo($originalPath, PATHINFO_EXTENSION); 
+        $basename = basename($image_name);
+        $originalPath = $uploadTo.$basename; 
+        $imageType = pathinfo($originalPath, PATHINFO_EXTENSION); 
 
-    if(!empty($imageName)){ 
-        
-        // Check if image file is a actual image or fake image
-        $check = getimagesize($_FILES["image"]["tmp_name"]);
-        if($check !== false) {
+        if(!empty($imageName)){ 
             
-            // Check if file already exists
-            if (file_exists($originalPath)) {
-                $_SESSION['message'] = "Sorry, file already exists."; 
-                $_SESSION['message_type'] = "danger";
-                header("Window-target: _top"); 
-                header("Location: edit_teacherProfile.php?emp_no=$empno");
-                exit(0);
-            }else{
-                if(in_array($imageType, $allowedImageType)){ 
-                    // Upload file to server 
-                    
-                    try {
-                        
-                        $query = "UPDATE learning_dev SET title_of_ld='$title_of_ld', ld_from='$ld_from', ld_to='$ld_to', 
-                                ld_hours='$ld_hours', type_of_ld='$type_of_ld', conducted='$conducted', is_added='$addtraining' ,img_cert='$originalPath'
-                                WHERE id='$learn_id' ";
-                        $query_run = mysqli_query($con,$query);
-
-                        // $query = "INSERT INTO profile_pic (emp_no,image,status) 
-                        //             VALUES ('$empno','$originalPath','1')";                                    
-                        // $query_run = mysqli_query($con,$query);
-
-                        if(move_uploaded_file($tempPath,$originalPath) && $query_run){   
-                            $_SESSION['message'] = "Learning Development  and ".$basename." was updated successfully";
-                            $_SESSION['message_type'] = "primary";
-                            $_SESSION['tab_page'] = "#learning";
-                            header("Window-target: _top");
-                            header("Location: edit_teacherProfile.php?emp_no=$empno");
-                            exit(0);   
-                        }else{ 
-                            $_SESSION['message'] = "image Not uploaded ! try again";
-                            $_SESSION['message_type'] = "danger";
-                            $_SESSION['tab_page'] = "#learning";
-                            header("Window-target: _top"); 
-                            header("Location: register_teaching.php");
-                            exit(0);
-                        // echo 'image Not uploaded ! try again';
-                        }
-                    }
-                    catch(Exception $e) {                                    
-                        $_SESSION['message'] = "Something went wrong. ".$e->getMessage();
-                        $_SESSION['message_type'] = "danger";
-                        $_SESSION['tab_page'] = "#learning";
-                        header("Window-target: _top");
-                        header("Location: edit_teacherProfile.php?emp_no=$empno");
-                        exit(0);
-                    } 
-                }else{
-                    $_SESSION['message'] = $imageType." image type not allowed";
+            // Check if image file is a actual image or fake image
+            $check = getimagesize($_FILES["image"]["tmp_name"]);
+            if($check !== false) {
+                
+                // Check if file already exists
+                if (file_exists($originalPath)) {
+                    $_SESSION['message'] = "Sorry, file already exists."; 
                     $_SESSION['message_type'] = "danger";
                     header("Window-target: _top"); 
                     header("Location: edit_teacherProfile.php?emp_no=$empno");
                     exit(0);
-                    //echo $imageType." image type not allowed";
+                }else{
+                    if(in_array($imageType, $allowedImageType)){ 
+                        // Upload file to server 
+                        
+                        try {
+                            
+                            $query = "UPDATE learning_dev SET title_of_ld='$title_of_ld', ld_from='$ld_from', ld_to='$ld_to', 
+                                    ld_hours='$ld_hours', type_of_ld='$type_of_ld', conducted='$conducted', is_added='$addtraining' ,img_cert='$originalPath'
+                                    WHERE id='$learn_id' ";
+                            $query_run = mysqli_query($con,$query);
+
+                            // $query = "INSERT INTO profile_pic (emp_no,image,status) 
+                            //             VALUES ('$empno','$originalPath','1')";                                    
+                            // $query_run = mysqli_query($con,$query);
+
+                            if(move_uploaded_file($tempPath,$originalPath) && $query_run){   
+                                $_SESSION['message'] = "Learning Development  and ".$basename." was updated successfully";
+                                $_SESSION['message_type'] = "primary";
+                                $_SESSION['tab_page'] = "#learning";
+                                header("Window-target: _top");
+                                header("Location: edit_teacherProfile.php?emp_no=$empno");
+                                exit(0);   
+                            }else{ 
+                                $_SESSION['message'] = "image Not uploaded ! try again";
+                                $_SESSION['message_type'] = "danger";
+                                $_SESSION['tab_page'] = "#learning";
+                                header("Window-target: _top"); 
+                                header("Location: register_teaching.php");
+                                exit(0);
+                            // echo 'image Not uploaded ! try again';
+                            }
+                        }
+                        catch(Exception $e) {                                    
+                            $_SESSION['message'] = "Something went wrong. ".$e->getMessage();
+                            $_SESSION['message_type'] = "danger";
+                            $_SESSION['tab_page'] = "#learning";
+                            header("Window-target: _top");
+                            header("Location: edit_teacherProfile.php?emp_no=$empno");
+                            exit(0);
+                        } 
+                    }else{
+                        $_SESSION['message'] = $imageType." image type not allowed";
+                        $_SESSION['message_type'] = "danger";
+                        header("Window-target: _top"); 
+                        header("Location: edit_teacherProfile.php?emp_no=$empno");
+                        exit(0);
+                        //echo $imageType." image type not allowed";
+                    }
                 }
+            } else {
+                $_SESSION['message'] = "Woops!, File is not an image."; 
+                $_SESSION['message_type'] = "danger";
+                header("Window-target: _top"); 
+                header("Location: edit_teacherProfile.php?emp_no=$empno");
+                exit(0);
+            }                    
+        }
+    }else{
+        try {
+                            
+            $query = "UPDATE learning_dev SET title_of_ld='$title_of_ld', ld_from='$ld_from', ld_to='$ld_to', 
+                    ld_hours='$ld_hours', type_of_ld='$type_of_ld', conducted='$conducted', is_added='$addtraining'
+                    WHERE id='$learn_id' ";
+            $query_run = mysqli_query($con,$query);
+
+            if($query_run){   
+                $_SESSION['message'] = "Learning Development was updated successfully";
+                $_SESSION['message_type'] = "primary";
+                $_SESSION['tab_page'] = "#learning";
+                header("Window-target: _top");
+                header("Location: edit_teacherProfile.php?emp_no=$empno");
+                exit(0);   
+            }else{ 
+                $_SESSION['message'] = "There was an error in updating the selection.";
+                $_SESSION['message_type'] = "danger";
+                $_SESSION['tab_page'] = "#learning";
+                header("Window-target: _top"); 
+                header("Location: register_teaching.php");
+                exit(0);
+            // echo 'image Not uploaded ! try again';
             }
-        } else {
-            $_SESSION['message'] = "Woops!, File is not an image."; 
+        }
+        catch(Exception $e) {                                    
+            $_SESSION['message'] = "Something went wrong. ".$e->getMessage();
             $_SESSION['message_type'] = "danger";
-            header("Window-target: _top"); 
+            $_SESSION['tab_page'] = "#learning";
+            header("Window-target: _top");
             header("Location: edit_teacherProfile.php?emp_no=$empno");
             exit(0);
-        }                    
+        }
+
     }
+
+
     
 }
 
