@@ -3712,10 +3712,10 @@
                                                                 <input type="hidden" id="u_image<?=$row['id']?>" value="<?=$row['img_cert']?>">
                                                                 <input type="hidden" id="utablel<?=$row['id']?>" value="learning_dev">
                                                                 
-                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editlearningdevbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> 
-                                                                <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteLearning" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button> 
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editlearningdevbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i></button> 
+                                                                <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteLearning" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i></button> 
 
-                                                                <button type="button" name="btn_view_cert" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>" class="btn btn-info btn-sm viewCerti" data-toggle="modal" data-target="#viewCertModal"><i class="fa fa-eye"></i> View</button>
+                                                                <button type="button" name="btn_view_cert" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>" class="btn btn-info btn-sm viewCerti" data-toggle="modal" data-target="#viewCertModal"><i class="fa fa-eye"></i></button>
                                                                 </td>
                                                             </tr>
                                                         <?php
