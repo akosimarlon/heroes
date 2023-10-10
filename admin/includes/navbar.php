@@ -36,7 +36,7 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
 <!-- Main Content -->
-<div id="content bg-gradient-primary">
+<div id="content" class="bg-gradient-primary">
 
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
