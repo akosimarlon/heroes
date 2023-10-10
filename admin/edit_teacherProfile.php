@@ -3660,7 +3660,7 @@
                                 
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>                                                     
                                                     <th>Title oF Learning and Development Interventions/Training Programs</th> 
