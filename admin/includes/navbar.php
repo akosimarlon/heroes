@@ -39,7 +39,7 @@
 <div id="content">
 
     <!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-gradient-light topbar mb-4 static-top shadow">
+    <nav class="navbar navbar-expand navbar-light bg-gradient-primary topbar mb-4 static-top shadow">
 
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
