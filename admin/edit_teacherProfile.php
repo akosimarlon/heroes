@@ -3664,7 +3664,7 @@
                                 
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
-                                        <table class="table table-bordered table-hover table-sm table-condensed" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered table-hover table-sm" id="dataTable" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                     
                                                     <th>Title oF Learning and Development Interventions/Training Programs</th> 
