@@ -1470,7 +1470,7 @@
                                 <label>Scaned Image of your certificate</label>
                                 <div class="form-group">
                                     <label for="" class="text-danger">NO CHANGES IN SCANNED IMAGE</label>
-                                    <input type="checkbox" id="nochange" name="nochange" width="70px" height="70px">
+                                    <input type="checkbox" checked id="nochange" name="nochange" width="70px" height="70px">
                                 </div>
                                 <div id="preview"></div>
                                 <input class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" type="file" name ="image" id="Eimage" required>
