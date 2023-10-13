@@ -69,6 +69,7 @@
                     <h6 class="collapse-header">Employment Information:</h6>
                     <a class="collapse-item" href="reportEmpRecords.php">Employment Records</a>
                     <a class="collapse-item" href="reportTeachRecords.php">Teaching Records</a>
+                    <a class="collapse-item"href="reportPDS.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>" target="_blank">Personal Data Sheet</a>
                     <!-- <a class="collapse-item" href="utilities-animation.html">Animations</a>
                     <a class="collapse-item" href="utilities-other.html">Other</a> -->
                 </div>
