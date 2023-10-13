@@ -1860,10 +1860,10 @@
                     </ul>                                            
                     
                     
-                    <!-- <div class="d-sm-flex align-items-end justify-content-end mb-4">                    
+                 <div class="d-sm-flex align-items-end justify-content-end mb-4">                    
                         <a href="reportPDS.php?emp_no=<?=$_GET['emp_no']?>" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Personal Data Sheet</a>                        
-                    </div> -->
+                    </div>
                     
                     <!-- #### PROGRESS BAR #####-->
                     <div class="progress mb-4" id="progressView" style="height: 30px;">
