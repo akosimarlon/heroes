@@ -53,11 +53,11 @@ $.ajax({
           borderWidth: 1,
           xPadding: 15,
           yPadding: 15,
-          displayColors: true,
+          displayColors: false,
           caretPadding: 10,
         },
         legend: {
-          display: false
+          display: true
         },
         cutoutPercentage: 80,
       },
