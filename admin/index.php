@@ -249,13 +249,13 @@
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
-                                        <!-- <span class="mr-2">
+                                        <span class="mr-2">
                                             <i class="fas fa-circle text-primary"></i> Male
                                         </span>
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-success"></i> Female
                                         </span>
-                                        <span class="mr-2">
+                                        <!-- <span class="mr-2">
                                             <i class="fas fa-circle text-info"></i> Referral
                                         </span> -->
                                     </div>

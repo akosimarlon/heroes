@@ -57,7 +57,7 @@ $.ajax({
           caretPadding: 10,
         },
         legend: {
-          display: true
+          display: false
         },
         cutoutPercentage: 80,
       },
