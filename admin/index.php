@@ -214,7 +214,7 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-bar">
+                                    <div class="chart-bar pt-4 pb-2">
                                         <canvas id="myBarChart"></canvas>
                                     </div>
                                 </div>
