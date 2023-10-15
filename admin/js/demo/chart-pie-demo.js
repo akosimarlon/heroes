@@ -47,13 +47,13 @@ $.ajax({
       options: {
         maintainAspectRatio: false,
         tooltips: {
-          //backgroundColor: "rgb(255,255,255)",
+          backgroundColor: "rgb(255,255,255)",
           bodyFontColor: "#858796",
           borderColor: '#dddfeb',
           borderWidth: 1,
           xPadding: 15,
           yPadding: 15,
-          displayColors: false,
+          displayColors: true,
           caretPadding: 10,
         },
         legend: {
