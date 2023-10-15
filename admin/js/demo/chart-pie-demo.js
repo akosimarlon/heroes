@@ -45,6 +45,7 @@ $.ajax({
         }],
       },
       options: {
+        responsive: true,
         maintainAspectRatio: false,
         tooltips: {
           backgroundColor: "rgb(255,255,255)",
@@ -53,7 +54,7 @@ $.ajax({
           borderWidth: 1,
           xPadding: 15,
           yPadding: 15,
-          displayColors: true,
+          displayColors: false,
           caretPadding: 10,
         },
         legend: {
