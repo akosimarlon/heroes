@@ -47,7 +47,7 @@ $.ajax({
       options: {
         maintainAspectRatio: false,
         tooltips: {
-          backgroundColor: "rgb(255,255,255)",
+          //backgroundColor: "rgb(255,255,255)",
           bodyFontColor: "#858796",
           borderColor: '#dddfeb',
           borderWidth: 1,
