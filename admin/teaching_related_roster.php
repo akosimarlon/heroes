@@ -185,10 +185,10 @@
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i> Male
+                                <i class="fas fa-circle" style="color:#00CED1"></i> Male
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i> Female
+                                <i class="fas fa-circle" style="color:#FF69B4"></i> Female
                             </span>
                             <!-- <span class="mr-2">
                                 <i class="fas fa-circle text-info"></i> Referral

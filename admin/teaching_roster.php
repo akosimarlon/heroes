@@ -126,7 +126,7 @@
         <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-8 col-lg-7">
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div
@@ -185,10 +185,10 @@
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
-                                <i class="fas fa-circle text-primary"></i> Male
+                                <i class="fas fa-circle" style="color:#00CED1"></i> Male
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-success"></i> Female
+                                <i class="fas fa-circle" style="color:#FF69B4"></i> Female
                             </span>
                             <!-- <span class="mr-2">
                                 <i class="fas fa-circle text-info"></i> Referral
