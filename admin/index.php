@@ -214,7 +214,7 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-bar pt-4 pb-2">
+                                    <div class="chart-bar">
                                         <canvas id="myBarChart"></canvas>
                                     </div>
                                 </div>
@@ -248,8 +248,8 @@
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
-                                    <!-- <div class="mt-4 text-center small">
-                                        <span class="mr-2">
+                                    <div class="mt-4 text-center small">
+                                        <!-- <span class="mr-2">
                                             <i class="fas fa-circle text-primary"></i> Male
                                         </span>
                                         <span class="mr-2">
@@ -257,8 +257,8 @@
                                         </span>
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div> -->
+                                        </span> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
