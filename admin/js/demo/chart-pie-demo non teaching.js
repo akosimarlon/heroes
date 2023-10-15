@@ -39,8 +39,8 @@ $.ajax({
         labels: gend,
         datasets: [{
           data: data_array3,
-          backgroundColor: ['#4e73df', '#1cc88a'], //, '#36b9cc'
-          hoverBackgroundColor: ['#2e59d9', '#17a673'], //, '#2c9faf'
+          backgroundColor: ['#00CED1', '#FF69B4'], //, '#36b9cc'
+          hoverBackgroundColor: ['#40E0D0', '#FF1493'], //, '#2c9faf'
           hoverBorderColor: "rgba(234, 236, 244, 1)",
         }],
       },
