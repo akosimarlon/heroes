@@ -129,7 +129,7 @@ $.ajax({
           }],
         },
         legend: {
-          display: false
+          display: true
         },
         tooltips: {
           titleMarginBottom: 10,
