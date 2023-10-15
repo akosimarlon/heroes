@@ -22,7 +22,7 @@ $.ajax({
     //date = JSON.parse(data);
     
     for(var count=0; count<data.length; count++){
-      if(data[count].sex == "male" ) {p = "male";}else{p = "female";}            
+      if(data[count].sex == "male" ) {p = "Male";}else{p = "Female";}            
       gend.push(p);
       data_array2.push(data[count].vals);   
          
@@ -45,7 +45,6 @@ $.ajax({
         }],
       },
       options: {
-        responsive: true,
         maintainAspectRatio: false,
         tooltips: {
           backgroundColor: "rgb(255,255,255)",
