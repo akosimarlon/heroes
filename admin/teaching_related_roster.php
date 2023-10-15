@@ -131,7 +131,7 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel by Teaching Position</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Teaching Related Personnel by Position</h6>
                         <div class="dropdown no-arrow">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -150,7 +150,7 @@
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-bar">
-                            <canvas id="myBarChart"></canvas>
+                            <canvas id="myBarChart3"></canvas>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel by Gender</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Teaching Related Personnel by Gender</h6>
                         <div class="dropdown no-arrow">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -181,7 +181,7 @@
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
-                            <canvas id="myPieChart"></canvas>
+                            <canvas id="myPieChart3"></canvas>
                         </div>
                         <div class="mt-4 text-center small">
                             <span class="mr-2">
