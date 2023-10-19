@@ -79,10 +79,10 @@
                                 VALUES ('$empno','$fname','$lname','$username','$email','','$role_as','$status');";
                     //$query_run = mysqli_query($con,$query);
 
-                    $query .= "INSERT INTO personal_info (emp_no,lastname,firstname,middlename,exname,dob,pob,sex,civilstatus,
+                    $query .= "INSERT INTO personal_info (emp_no,lastname,firstname,middlename,exname,fullname,dob,pob,sex,civilstatus,
                                 height,weight,bloodtype,gsis_no,pagibig_no,philhealth_no,sss_no,tin_no,is_filipino,dual_birth,
                                 dual_naturalization,country,telephone,mobile,email,status) 
-                                VALUES ('$empno','$lname','$fname','','','','','$sex','','','','','','','','','','','','','','','','$email','$status');";
+                                VALUES ('$empno','$lname','$fname','','','','','','$sex','','','','','','','','','','','','','','','','$email','$status');";
                     //$query_run2 = mysqli_query($con,$query2);
                     
                     $query .= "INSERT INTO address (emp_no,r_hbl_no,r_st_pur,r_sub_vil,r_brgy,r_city_mun,r_prov,r_zip,p_hbl_no,
