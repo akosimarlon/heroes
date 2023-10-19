@@ -2,18 +2,18 @@
 
 //include("config/dbcon.php");
 include('includes/timezone.php');
-$host = "localhost";
+$host = "123.123.123.4";
 $username = "root";
-$password = "@DavaosurDB2023";
-$database = "tis";
+$password = "@Davsur2023";
+$database = "db_masterusers";
 
 
 //$con = mysqli_connect("$host","$username","$password","$database");
-$con = new mysqli($host,$username,$password,$database);
+$con_masterusers = new mysqli($host,$username,$password,$database);
 
 
 
-if($con -> connect_errno){
+if($con_masterusers -> connect_errno){
     //header("Location: ../errors/dberror.php");
     echo "Failed to connect database " . $mysqli -> connect_error;
     die();
