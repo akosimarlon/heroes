@@ -188,6 +188,7 @@
                         $user_email = $email;
 
                         $_SESSION['auth'] = true;
+                        $_SESSION['user_role'] = $user_role;  // 1=admin , 2=user
                         $_SESSION['auth_role'] = $role_as;  // 1=admin , 2=user
                         $_SESSION['user_name'] = $user_name;
                         $_SESSION['user_empno'] = $empno;
