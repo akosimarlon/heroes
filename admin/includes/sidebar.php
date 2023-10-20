@@ -1,8 +1,8 @@
 <!-- Sidebar -->
 <style>
     .blink {
-        animation: blink 1s steps(1, end) infinite;
-        color: green;
+        animation:  blink 1s infinite;
+        color: #7CFC00;
     }
 
     @keyframes blink {
@@ -187,7 +187,7 @@
         <!-- Sidebar Message -->
         <div class="sidebar-card">
             <!-- <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt=""> -->
-            <p class="text-center mb-2">Logged in as: </br><strong><?=$_SESSION['user_role']?></strong><span class="blink"> <i class="fa fa-power-off"></i>
+            <p class="text-center mb-2">Logged in as: </br><strong><?=$_SESSION['user_role']?></strong><span class="blink">  <i class="fa fa-circle"></i>
 </span></p>
             <!-- <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a> -->
         </div>
