@@ -2319,9 +2319,6 @@
 
 
                                     <h5 class="semi-bold text-primary">RESIDENTIAL ADDRESS</h5>
-                                    <div class="col-sm-3">
-                                                    <input type="text" value="<?=$user['pob'];?>" name="pob" class="form-control border-success" required autocomplete="off" autofocus>
-                                                </div>
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <label for="">House/Block/Lot No.</label>
