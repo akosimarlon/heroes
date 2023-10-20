@@ -1920,7 +1920,7 @@
 
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Middle Name:</label>
-                                                <div class="col-sm-3 mb-3">
+                                                <div class="col-sm-3">
                                                     <input type="text" id="mname" name="mname" value="<?=$user['middlename'];?>" class="form-control border-success" autocomplete="off" required >
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Pag-Ibig ID No.:</label>
