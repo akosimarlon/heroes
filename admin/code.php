@@ -2356,7 +2356,7 @@ if(isset($_POST['savePersonal'])){
     $fname = ucwords(clean($_POST['fname']));
     $mname = ucwords(clean($_POST['mname']));
     $xname = clean($_POST['xname']);
-    $fullname = $fname.' '.($mname=='N/A' ? '': $mname).' '.$lname.', '.($xname=='N/A' ? '': $xname);
+    $fullname = $fname.' '.($mname=='N/A' ? '': $mname).' '.$lname.' '.($xname=='N/A' ? '': ', '.$xname);
     $dob = clean($_POST['dob']);
     $pob = ucwords(clean($_POST['pob']));   
     $sex = clean($_POST['sex']);
