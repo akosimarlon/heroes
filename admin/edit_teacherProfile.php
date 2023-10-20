@@ -1894,7 +1894,7 @@
                                     
                                         <input type="hidden" name="old_emp_no" value="<?=$user['emp_no'];?>">
                                         <input type="hidden" name="old_email" value="<?=$user['email'];?>">
-                                        <div class="row">
+                                        
                                                             
                                             <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Last Name:</label>
@@ -2298,7 +2298,7 @@
 
                                             
                                            
-                                        </div>
+                                        
                                            
                                     <?php
                                         }
