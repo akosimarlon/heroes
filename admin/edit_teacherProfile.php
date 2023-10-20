@@ -218,7 +218,7 @@
         </div>
         
         <div class="d-sm-flex align-items-center justify-content-center mb-0">
-            <h3 class="h3 mb-0 text-gray-800"><b><?=strtoupper($user['firstname']);?> <?=$user['middlename']=='N/A' ? '': strtoupper($user['middlename']) ?> <?=strtoupper($user['lastname']);?> <?=$user['exname']=='N/A' ? '': ', '.strtoupper($user['exname']) ?></b></h3>
+            <h3 class="h3 mb-0 text-gray-800"><b><?=strtoupper($user['firstname']);?> <?=$user['middlename']=='N/A' ? '': strtoupper($user['middlename']) ?> <?=strtoupper($user['lastname']);?><?=$user['exname']=='N/A' ? '': ', '.strtoupper($user['exname']) ?></b></h3>
         </div>
         <div class="d-sm-flex align-items-center justify-content-center mb-0">                                     
             <h5 class="h5 mb-0 text-gray-800">Employee No: <?=strtoupper($user['emp_no']);?> </h5>             
