@@ -1896,7 +1896,7 @@
                                         <input type="hidden" name="old_email" value="<?=$user['email'];?>">
                                         <div class="row">
                                                             
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Last Name:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" name="lname" value="<?=$user['lastname'];?>" class="form-control border-success" autocomplete="off" required readonly autofocus>                                                
@@ -1907,7 +1907,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">First Name:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" name="fname" value="<?=$user['firstname'];?>" class="form-control border-success" autocomplete="off" readonly required >
@@ -1918,7 +1918,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Middle Name:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" id="mname" name="mname" value="<?=$user['middlename'];?>" class="form-control border-success" autocomplete="off" required >
@@ -1928,7 +1928,7 @@
                                                     <input type="tel" value="<?=$user['pagibig_no'];?>" id="pagibignum" name="pagibig" onKeyPress="if(this.value.length==14) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                    
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Extension Name:</label>
                                                 <div class="col-sm-3">
                                                     <!-- <input type="text" name="xname" value="<?=$user['exname'];?>" class="form-control border-success" autocomplete="off" required style="width:90px;" > -->
@@ -1951,7 +1951,7 @@
                                                     <input type="tel" value="<?=$user['philhealth_no'];?>" id="philnum" name="philhealth" onKeyPress="if(this.value.length==14) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Email Address:</label>
                                                 <div class="col-sm-3">
                                                     <input type="email" value="<?=$user['email'];?>" name="email" class="form-control border-success" readonly autocomplete="off" required autofocus>
@@ -1963,7 +1963,7 @@
                                                     <label for="" class="text-danger">Check if not applicable (N/A)</label>
                                                 </div>                                      
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Date of Birth:</label>
                                                 <div class="col-sm-3">
                                                     <input type="date" class="form-control border-success" min="0001-01-01" max="9999-12-31" name="dob" value="<?=$user['dob'];?>" style="width:170px;" required  >
@@ -1974,7 +1974,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Place of Birth:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" value="<?=$user['pob'];?>" name="pob" class="form-control border-success" required autocomplete="off" autofocus>
@@ -1996,7 +1996,7 @@
                                                     <!-- <input type="text" name="bloodtype" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus> -->
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Sex:</label>
                                                 <div class="col-sm-3">
                                                     <select name="sex"  class="form-control border-success" required style="width:150px;">
@@ -2010,7 +2010,7 @@
                                                     <input type="number" name="height" value="<?=$user['height'];?>" onchange="setTwoNumberDecimal" min="0" max="10" step="0.01" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Civil Status:</label>
                                                 <div class="col-sm-3">
                                                     <select name="civilstatus"  id="cstatus" class="form-control border-success" required style="width:150px;">
@@ -2027,7 +2027,7 @@
                                                     <input type="number" name="weight" value="<?=$user['weight'];?>" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Others:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" name="others" id="in_others" value="<?=$user['others'];?>" <?=$user['others']=='' ? 'readonly':'' ?> class="form-control border-success" autocomplete="off" style="width:150px;" required autofocus>
@@ -2041,7 +2041,7 @@
                                                     <label for="" class="text-danger">Check if not applicable (N/A)</label>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">
+                                            <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Citizenship:</label>
                                                 <div class="col-sm-3">
                                                     <input type="checkbox" class="checkoption" value="filipino" name="citizen" id="country_disable" <?=$user['is_filipino']=='yes' ? 'checked':'' ?>>
@@ -2058,7 +2058,7 @@
                                                     <input type="tel" value="<?=$user['mobile'];?>" id="mobnum" name="mobile" class="form-control border-success" autocomplete="off" onKeyPress="if(this.value.length==13) return false;" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 row">                                                
+                                            <div class="row mb-3">                                                
                                             <input type="hidden" name="hidden_country" id="hidden_country" class="form-control border-success" autocomplete="off" style="width:190px;">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Country:</label>
                                                 <div class="col-sm-3">
