@@ -1,4 +1,22 @@
 <!-- Sidebar -->
+<style>
+    .blink {
+    animation: blink 1s steps(1, end) infinite;
+    }
+
+    @keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+</style>
+
 <?php
     if($_SESSION['auth_role'] == "1"){ //FOR ADMIN
 ?>
@@ -168,7 +186,7 @@
         <!-- Sidebar Message -->
         <div class="sidebar-card">
             <!-- <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt=""> -->
-            <p class="text-center mb-2">Logged in as: </br><strong><?=$_SESSION['user_role']?></strong></p>
+            <p class="text-center mb-2">Logged in as: </br><strong><?=$_SESSION['user_role']?></strong><span class="blink">blink</span></p>
             <!-- <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a> -->
         </div>
 
