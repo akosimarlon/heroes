@@ -1918,7 +1918,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row mb-3">
+                                            <div class="row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Middle Name:</label>
                                                 <div class="col-sm-3">
                                                     <input type="text" id="mname" name="mname" value="<?=$user['middlename'];?>" class="form-control border-success" autocomplete="off" required >
