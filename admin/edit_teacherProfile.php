@@ -1898,7 +1898,7 @@
                                                             
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Last Name:</label>
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-3 mb-3">
                                                     <input type="text" name="lname" value="<?=$user['lastname'];?>" class="form-control border-success" autocomplete="off" required readonly autofocus>                                                
                                                 </div>                                            
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Employee ID Number:</label>
@@ -1906,6 +1906,7 @@
                                                     <input type="text" value="<?=$user['emp_no'];?>" name="emp_no" class="form-control border-success" autocomplete="off" required readonly autofocus>
                                                 </div>
                                             </div>
+
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">First Name:</label>
                                                 <div class="col-sm-3">
@@ -1916,6 +1917,7 @@
                                                     <input type="number" value="<?=$user['gsis_no'];?>" name="gsis" onKeyPress="if(this.value.length==11) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>                                                
                                                 </div>
                                             </div>
+
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Middle Name:</label>
                                                 <div class="col-sm-3">
