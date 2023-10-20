@@ -2356,6 +2356,7 @@ if(isset($_POST['savePersonal'])){
     $fname = ucwords(clean($_POST['fname']));
     $mname = ucwords(clean($_POST['mname']));
     $xname = clean($_POST['xname']);
+    $fullname = $fname.' '.($mname=='N/A' ? '': $mname).' '.$lname.', '.($xname=='N/A' ? '': $xname);
     $dob = clean($_POST['dob']);
     $pob = ucwords(clean($_POST['pob']));   
     $sex = clean($_POST['sex']);
@@ -2468,7 +2469,7 @@ if(isset($_POST['savePersonal'])){
 
     try{
         $query = "UPDATE personal_info SET emp_no='$emp_no', lastname='$lname', firstname='$fname', middlename='$mname', 
-                exname='$xname', dob='$dob', pob='$pob', sex='$sex', civilstatus='$civilstatus', others='$others', height='$height',
+                exname='$xname', fullname='$fullname', dob='$dob', pob='$pob', sex='$sex', civilstatus='$civilstatus', others='$others', height='$height',
                 weight='$weight', bloodtype='$bloodtype', gsis_no='$gsis', pagibig_no='$pagibig', philhealth_no='$philhealth',
                 sss_no='$sss', tin_no='$tin', is_filipino='$is_filipino', dual_birth='$dual_birth', dual_naturalization='$dual_natural', 
                 country='$country', country_name='$hcountry', telephone='$telephone', mobile='$mobile', email='$email'
