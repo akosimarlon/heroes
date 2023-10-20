@@ -1973,10 +1973,11 @@
                                                     <input type="tel" value="<?=$user['tin_no'];?>" id="tinnum" name="tin" onKeyPress="if(this.value.length==15) return false;" class="form-control border-success" autocomplete="off" style="width:190px;" required autofocus>
                                                 </div>
                                             </div>
+
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Place of Birth:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" value="<?=$user['pob'];?>" name="pob" class="form-control border-success" required autocomplete="off"  >
+                                                    <input type="text" value="<?=$user['pob'];?>" name="pob" class="form-control border-success" required autocomplete="off" autofocus>
                                                 </div>                                                
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Blood Type:</label>
                                                 <div class="col-sm-3">  
