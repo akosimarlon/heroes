@@ -1895,7 +1895,10 @@
                                         <input type="hidden" name="old_emp_no" value="<?=$user['emp_no'];?>">
                                         <input type="hidden" name="old_email" value="<?=$user['email'];?>">
                                         <div class="row">
-                                                            
+                                            <div class="col-md-3 mb-3">
+                                                <label for="">House/Block/Lot No.</label>
+                                                <input type="text" value="<?=$add['r_hbl_no'];?>" name="r_housenoxxx" class="form-control border-success" autocomplete="off" required autofocus>
+                                            </div>                    
                                             <div class="mb-3 row">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Last Name:</label>
                                                 <div class="col-sm-3">
