@@ -47,10 +47,9 @@
                 $role_as = "1";
             }
             else if( $user_role == "client") {
-                $role_as = "0";
-                echo "sulod sa if role = client";                
-                $_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
-                $_SESSION['message_type'] = "warning";
+                $role_as = "0";                               
+                //$_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
+                //$_SESSION['message_type'] = "warning";
                 header("Location: logincode_access.php");
                 exit(0);
                 
