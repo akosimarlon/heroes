@@ -48,7 +48,12 @@
             }
             else if( $user_role == "client") {
                 $role_as = "0";
-                echo "sulod sa if role = client";
+                echo "sulod sa if role = client";                
+                $_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
+                $_SESSION['message_type'] = "warning";
+                header("Location: logincode_contruction.php");
+                exit(0);
+                
             }else{
                 $role_as = "2";
             }
