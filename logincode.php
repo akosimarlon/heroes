@@ -161,7 +161,7 @@
                         else if($_SESSION['auth_role'] == '0'){
                             $_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
                             $_SESSION['message_type'] = "warning";
-                            header("Location: login.php");
+                            header("Location: logincode_contruction.php");
                             exit(0);
                         }
                     
