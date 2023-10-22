@@ -48,6 +48,7 @@
             }
             else if( $user_role == "client") {
                 $role_as = "0";
+                echo "sulod sa if role = client";
             }else{
                 $role_as = "2";
             }
