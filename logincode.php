@@ -51,7 +51,7 @@
                 echo "sulod sa if role = client";                
                 $_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
                 $_SESSION['message_type'] = "warning";
-                header("Location: logincode_contruction.php");
+                header("Location: logincode_access.php");
                 exit(0);
                 
             }else{
