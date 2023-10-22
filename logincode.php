@@ -158,6 +158,12 @@
                             header("Location: admin/index.php");
                             exit(0);
                         }
+                        else if($_SESSION['auth_role'] == '2'){
+                            $_SESSION['message'] = "Sorry, You have a limited user privileges, acces to this service is not allowed.";
+                            $_SESSION['message_type'] = "warning";
+                            header("Location: login.php");
+                            exit(0);
+                        }
                     
                     }
                     else{
