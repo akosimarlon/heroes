@@ -7,7 +7,7 @@
         
     if (empty($userID)) {
         echo "<p>String is Empty</p>";
-        header("Location: http://202.137.126.58/");
+        //header("Location: http://202.137.126.58/");
     exit();
     } else {
         //$_SESSION['auth'] = true;
