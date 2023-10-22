@@ -43,8 +43,11 @@
             //if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" || $user_role == "SDS" ){ 
             //    $role_as = "2";            
             //}
-            if( $user_name == "marlon.diocson@deped.gov.ph"){
+            if( $user_role == "HR-Admin" || $user_role == "Administrator" || $user_role == "Superadmin" || $user_role == "super_admin"){
                 $role_as = "1";
+            }
+            else if( $user_role == "client") {
+                $role_as = "0";
             }else{
                 $role_as = "2";
             }
