@@ -3,9 +3,9 @@
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <!-- <img class="card-img-top" src="img/footer.png" width="50" height="50" alt="Employee Image"> -->
-                <span>Copyright &copy; 2023 | Project DavaoSur (Division Automated Value Added Services and Unified Resources) </span></br>
-                <span>Division of Davao del Sur </span></br>
-                <span>System Developed by: Marlon Diocson</span>
+                <span>Copyright &copy; 2023 Project DavaoSur</span></br>
+                <span>Division Automated Value Added Services and Unified Resources</span></br>
+                <span>All Rights Reserved</span>
             </div>
         </div>
     </footer>
