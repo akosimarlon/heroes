@@ -3,7 +3,7 @@
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
                 <!-- <img class="card-img-top" src="img/footer.png" width="50" height="50" alt="Employee Image"> -->
-                <span>Copyright &copy; 2023 Project DavaoSur</span></br>
+                <span>Copyright &copy; Project DavaoSur 2023 </span></br>
                 <span>Division Automated Value Added Services and Unified Resources</span></br>
                 <span>All Rights Reserved</span>
             </div>
