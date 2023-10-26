@@ -47,7 +47,7 @@
                 <div class="row">
                     <?php include('message.php'); ?>
                     
-                    <div class="col-lg-6 mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-primary text-white shadow">
                             <div class="card-body">
                                 Primary
