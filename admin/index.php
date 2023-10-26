@@ -50,8 +50,30 @@
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-primary text-white shadow">
                             <div class="card-body">
-                                Primary
-                                <div class="text-white-50 small">#4e73df</div>
+
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                Teaching Personnel</div>
+                                                <?php                                             
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
+                                                    $users_run = mysqli_query($con,$users);                                                
+                                                    if(mysqli_num_rows($users_run) > 0 ){
+                                                        foreach($users_run as $user){
+                                                ?>
+                                            <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?></div>
+                                            <?php
+                                                        }
+                                                    }
+                                            ?>
+                                        </div>
+                                        <div class="col-auto">                                            
+                                            <i class="fa fa-users fa-2x text-gray-300" ></i>
+                                            <!-- <i class="fa fa-laptop fa-2x text-gray-300"></i> -->
+                                        </div>
+                                    </div>
+
+                                
                             </div>
                         </div>
                     </div>
