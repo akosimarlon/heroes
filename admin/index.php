@@ -46,7 +46,9 @@
                 <!-- Content Row -->
                 <div class="row">
                     <?php include('message.php'); ?>
-                    
+
+
+                    <!-- Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-primary text-white shadow">
                             <div class="card-body">
@@ -74,7 +76,8 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <!-- Non - Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-success text-white shadow">
                             <div class="card-body">
@@ -101,7 +104,8 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <!-- Teaching Related Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-warning text-white shadow">
                             <div class="card-body">
@@ -128,7 +132,8 @@
                             </div>
                         </div>
                     </div>
-
+                                                
+                    <!-- Profile Completion -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card bg-info text-white shadow">
                             <div class="card-body">
@@ -164,7 +169,8 @@
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
+                                        <i class="fa fa-laptop fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +200,6 @@
                                         </div>
                                         <div class="col-auto">                                            
                                             <i class="fa fa-users fa-2x text-gray-300" ></i>
-                                            <!-- <i class="fa fa-laptop fa-2x text-gray-300"></i> -->
                                         </div>
                                     </div>
                                 </div>
