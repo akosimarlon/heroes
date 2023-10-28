@@ -578,7 +578,7 @@
                     <!-- Profile Completion -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
-                            <div class="card bg-info text-white shadow">
+                            <div class="card bg-primary text-white shadow">
                                 <div class="card-body" id="cardTabs">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
@@ -669,7 +669,7 @@
                     <!-- Account Settings -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="account_settings.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
-                            <div class="card bg-primary text-white shadow">
+                            <div class="card bg-success text-white shadow">
                                 <div class="card-body" id="cardTabs">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
