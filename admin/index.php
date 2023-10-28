@@ -22,6 +22,10 @@
         font-size: 41.5px;
     }
 
+    #cardTabs:Hover{
+        box-shadow: 0px 0px 0px grey;
+    }
+
 </style>
 
             <!-- Begin Page Content -->
@@ -49,7 +53,7 @@
 
 
                     <!-- Teaching Personnel -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4" id="cardTabs">
                         <a href="teaching_roster.php">
                             <div class="card bg-primary text-white shadow">
                                 <div class="card-body">
