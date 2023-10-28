@@ -23,7 +23,7 @@
     }
 
     #cardTabs:Hover{
-        box-shadow: 1px 1px 5px grey;
+        box-shadow: 1px 8px 20px grey;
     }
 
 </style>
@@ -56,7 +56,7 @@
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_roster.php">
                             <div class="card bg-primary text-white shadow" id="cardTabs">
-                                <div class="card-body" \>
+                                <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">
