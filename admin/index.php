@@ -208,7 +208,7 @@
                     </div> -->
 
                     <!-- Non - Teaching Personnel -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!-- <div class="col-xl-3 col-md-6 mb-4">
                         <a href="non_teaching_roster.php">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -217,15 +217,15 @@
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Non-Teaching Personnel</div>
                                                 <?php                                             
-                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
-                                                    $users_run = mysqli_query($con,$users);                                                
-                                                    if(mysqli_num_rows($users_run) > 0 ){
-                                                        foreach($users_run as $user){
+                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
+                                                    // $users_run = mysqli_query($con,$users);                                                
+                                                    // if(mysqli_num_rows($users_run) > 0 ){
+                                                    //     foreach($users_run as $user){
                                                 ?>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
                                                 <?php
-                                                        }
-                                                    }
+                                                    //     }
+                                                    // }
                                                 ?>
                                         </div>
                                         <div class="col-auto">
@@ -235,10 +235,10 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!-- Teaching Related Personnel -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!-- <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_related_roster.php">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
@@ -247,15 +247,15 @@
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                Teaching Related Personnel</div>
                                                 <?php                                             
-                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
-                                                    $users_run = mysqli_query($con,$users);                                                
-                                                    if(mysqli_num_rows($users_run) > 0 ){
-                                                        foreach($users_run as $user){
+                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
+                                                    // $users_run = mysqli_query($con,$users);                                                
+                                                    // if(mysqli_num_rows($users_run) > 0 ){
+                                                    //     foreach($users_run as $user){
                                                 ?>
                                                 <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
                                                 <?php
-                                                        }
-                                                    }
+                                                    //     }
+                                                    // }
                                                 ?>
                                         </div>
                                         <div class="col-auto">
@@ -265,10 +265,10 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!-- Profile Completion -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!-- <div class="col-xl-3 col-md-6 mb-4">
                         <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">                    
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
@@ -278,12 +278,12 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <?php
-                                                    $user_id = $_SESSION['user_empno'];
-                                                    $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
-                                                    $query_run = mysqli_query($con,$query);
+                                                    // $user_id = $_SESSION['user_empno'];
+                                                    // $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                    // $query_run = mysqli_query($con,$query);
 
-                                                    if(mysqli_num_rows($query_run) > 0 ){ 
-                                                        foreach($query_run as $row){
+                                                    // if(mysqli_num_rows($query_run) > 0 ){ 
+                                                    //     foreach($query_run as $row){
                                                     ?>                                                      
                                                         <div class="col-auto">
                                                             <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$row['completed_percentage']?></div>
@@ -297,8 +297,8 @@
                                                         </div>
                                                     
                                                 <?php
-                                                        }
-                                                    }
+                                                    //     }
+                                                    // }
                                                 ?> 
                                                 
                                             </div>
@@ -310,7 +310,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     
 
