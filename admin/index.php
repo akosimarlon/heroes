@@ -178,7 +178,7 @@
                     </div>
                     
                     <!-- Teaching Personnel -->
-                    <div class="col-xl-3 col-md-6 mb-4">
+                    <!-- <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_roster.php">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -187,15 +187,15 @@
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Teaching Personnel</div>
                                                 <?php                                             
-                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
-                                                    $users_run = mysqli_query($con,$users);                                                
-                                                    if(mysqli_num_rows($users_run) > 0 ){
-                                                        foreach($users_run as $user){
+                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
+                                                    // $users_run = mysqli_query($con,$users);                                                
+                                                    // if(mysqli_num_rows($users_run) > 0 ){
+                                                    //     foreach($users_run as $user){
                                                 ?>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
                                             <?php
-                                                        }
-                                                    }
+                                                    //     }
+                                                    // }
                                             ?>
                                         </div>
                                         <div class="col-auto">                                            
@@ -205,7 +205,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!-- Non - Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
