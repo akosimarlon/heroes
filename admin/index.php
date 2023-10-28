@@ -23,7 +23,7 @@
     }
 
     #cardTabs:Hover{
-        box-shadow: 1px 8px 20px grey;
+        box-shadow: 1px 1px 20px grey;
     }
 
 </style>
