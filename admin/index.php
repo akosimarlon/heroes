@@ -677,7 +677,7 @@
                                                 Account Settings</div>
                                             <div class="h5 mb-0 font-weight-bold"></div>
                                         </div>
-                                        <div class="col-auto">
+                                        <div class="col-auto mb-2">
                                             <i class="fas fa-cogs fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
