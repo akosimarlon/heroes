@@ -594,11 +594,11 @@
                                                         foreach($query_run as $row){
                                                     ?>                                                      
                                                         <div class="col-auto">
-                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$row['completed_percentage']?></div>
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="progress progress-sm mr-2">
-                                                                <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+                                                                <div class="progress-bar progress-bar-striped bg-gray-800 progress-bar-animated" role="progressbar"
                                                                     style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
                                                                     aria-valuemax="100"></div>
                                                             </div>
