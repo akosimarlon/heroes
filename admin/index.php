@@ -678,7 +678,7 @@
                                             <div class="h5 mb-0 font-weight-bold"><i class="fa fa-wrench"></i></div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-cogs fa-2x text-gray-300"></i>
+                                            <i class="fas fa-cogs fa-2x text-gray-100"></i>
                                         </div>
                                     </div>
                                 </div>
