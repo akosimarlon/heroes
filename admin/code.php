@@ -2775,6 +2775,13 @@ if(isset($_POST['submitImage'])){
         mkdir($profile_folder, 0755);
     }
 
+    $files = glob($profile_folder.'*'); // get all file names
+        foreach($files as $file){ // iterate files
+            if(is_file($file)) {
+                unlink($file); // delete file
+        }
+    }
+
     $uploadTo = 'uploads/profilepic/'.$nameofuser.'/';    
     $allowedImageType = array('jpg','png','jpeg','gif','pdf','doc');
     //$imageName = $_FILES['image']['name'];
