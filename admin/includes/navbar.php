@@ -213,7 +213,7 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['auth_user']['user_name']; ?></span>
                     <?php
-                            
+                        $user_id = $_SESSION['auth_user']['user_empno'];    
                         $query = "SELECT * FROM profile_pic WHERE emp_no='$user_id' ";
                         $query_run = mysqli_query($con,$query);
 
