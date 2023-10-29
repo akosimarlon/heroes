@@ -212,8 +212,26 @@
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['auth_user']['user_name']; ?></span>
-                    <img class="img-profile rounded-circle"
-                        src="img/undraw_profile.svg">
+                    <?php
+                            
+                        $query = "SELECT * FROM profile_pic WHERE emp_no='$user_id' ";
+                        $query_run = mysqli_query($con,$query);
+
+                        if(mysqli_num_rows($query_run) > 0 ){ 
+                            foreach($query_run as $row){
+                                if($row['image']=="assets/img/unregistered_m.jpg"){
+                    ?>
+                                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                    <?php
+                                }else{                               
+                        ?>
+                                    <img class="img-profile rounded-circle" src="<?=$row['image']?>">
+                    <?php
+                                }
+                            }
+                    }
+                    ?>
+                    
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
