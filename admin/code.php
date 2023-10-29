@@ -2788,7 +2788,7 @@ if(isset($_POST['submitImage'])){
     
     $imageName = $_FILES['image']['name'];
     $ext = strtolower(substr(strrchr($imageName, '.'), 1)); //Get extension
-    $image_name = $nameofuser . '.' . $ext; //New image name
+    $image_name = $nameofuser .'_'.date('MdYgisA').'.' . $ext; //New image name
 
     $tempPath=$_FILES["image"]["tmp_name"];
 
