@@ -4481,7 +4481,7 @@
                                             <div class="col-auto">
                                                 
                                                 <label for="">School ID</label>                                                
-                                                <select id="selectBox" name="school_id" class="form-control border-success" required  style="width:220px;" <?=$emp_rec['notteaching']=='yes' ? 'disabled':'' ?>>
+                                                <select id="selectBox" name="school_id" class="form-control selectpicker border-success" data-live-search="true" required  style="width:220px;" <?=$emp_rec['notteaching']=='yes' ? 'disabled':'' ?>>
                                                     <option value="">--Select School ID--</option>
                                                     <?php
                                                         $address = "SELECT * FROM schools ";
@@ -4490,7 +4490,7 @@
                                                         if(mysqli_num_rows($address_run) > 0 ){
                                                             foreach($address_run as $row){
                                                     ?>
-                                                            <option value="<?=$row['school_id']?>" <?=$row['school_id']==$emp_rec['school_id'] ? 'selected':'' ?> ><?=$row['school_id']?></option>
+                                                            <option data-tokens="<?=$row['school_id']?>" value="<?=$row['school_id']?>" <?=$row['school_id']==$emp_rec['school_id'] ? 'selected':'' ?> ><?=$row['school_id']?></option>
                                                     <?php
                                                             }
                                                         }
