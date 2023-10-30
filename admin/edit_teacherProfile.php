@@ -7369,3 +7369,10 @@
         });
     }
 </script>
+
+<script>
+    $(function() {
+    $('.selectpicker').selectpicker();
+    });
+</script>
+
