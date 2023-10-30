@@ -8,9 +8,9 @@
 
     
 ?>   
-
+<!-- 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" /> -->
@@ -262,7 +262,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Date of Birth</label>
-                                <input type="date" id="childdob" min="0001-01-01" max="9999-12-31" name="childdob" value="" class="form-control border-success"  style="width:170px;"   autofocus>
+                                <input type="date" id="childdob" min="0001-01-01" max="9999-12-31" name="childdob" value="" class="form-control border-success"  style="width:170px;" required autofocus>
                             </div>
                         </div>
                         <div class="modal-footer">
