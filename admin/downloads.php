@@ -26,7 +26,7 @@
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
                     </select>
-
+                    <button type="button" class="btn btn-primary"><i class="fa fa-download"></i> Go</button>
                 </div>
             </div>
 
