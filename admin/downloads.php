@@ -25,7 +25,9 @@
                         <option value="all">All</option>
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
-                    </select></br>
+                    </select></br>                    
+                </div>
+                <div class="card-footer">
                     <button type="button" class="btn btn-sm btn-success"><i class="fa fa-download"></i> Go</button>
                 </div>
             </div>
