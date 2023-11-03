@@ -19,17 +19,19 @@
                     <h6 class="m-0 font-weight-bold text-primary">Download Training Certificates</h6>
                 </div>
                 <div class="card-body">
-                    <input type="hidden" name="firstname" value="<?=$_SESSION['user_firstname']?>">
-                    <input type="hidden" name="lastname" value="<?=$_SESSION['user_lastname']?>">
-                    <input type="hidden" name="emp_no" value="<?=$_SESSION['auth_user']['user_empno']?>">
-                    <label>Select download options</label>
-                    <select class="custom-select custom-select-sm">
-                        <option selected>----- Select an option -----</option>
-                        <option value="all">All</option>
-                        <option value="displayed">Displayed</option>
-                        <option value="hidden">Hidden</option>
-                    </select><hr>                    
-                    <button type="submit" class="btn btn-sm btn-success" name="downloadCerts"><i class="fa fa-download"></i> Go</button>
+                    <form action="code.php" method="POST">
+                        <input type="hidden" name="firstname" value="<?=$_SESSION['user_firstname']?>">
+                        <input type="hidden" name="lastname" value="<?=$_SESSION['user_lastname']?>">
+                        <input type="hidden" name="emp_no" value="<?=$_SESSION['auth_user']['user_empno']?>">
+                        <label>Select download options</label>
+                        <select class="custom-select custom-select-sm">
+                            <option selected>----- Select an option -----</option>
+                            <option value="all">All</option>
+                            <option value="displayed">Displayed</option>
+                            <option value="hidden">Hidden</option>
+                        </select><hr>                    
+                        <button type="submit" class="btn btn-sm btn-success" name="downloadCerts"><i class="fa fa-download"></i> Go</button>
+                    </form>
                 </div>
                 
             </div>
