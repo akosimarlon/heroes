@@ -3022,12 +3022,7 @@ if(isset($_POST['downloadCerts'])){
     echo $folder;
     echo 'Zip file created.';
 
-    
-    
-}
-
-function createZip($zipArchive, $folder)
-    {
+    function createZip($zipArchive, $folder){    
         if (is_dir($folder)) {
             if ($f = opendir($folder)) {
                 while (($file = readdir($f)) !== false) {
@@ -3053,6 +3048,10 @@ function createZip($zipArchive, $folder)
             exit($folder . " is not a directory.");
         }
     }
+    
+}
+
+
 
 
 
