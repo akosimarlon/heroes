@@ -245,7 +245,8 @@
                         <a class="collapse-item"href="reportPDS.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>" target="_blank">Personal Data Sheet</a>                                 
                     <hr class="sidebar-divider bg-dark">
                     <h6 class="collapse-header">CUSTOMIZE DETAILS:</h6>
-                        <a class="collapse-item" href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">Profile Details</a>                         
+                        <a class="collapse-item" href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">Profile Details</a> 
+                        <a class="collapse-item" href="downloads.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">Downloads</a>                         
                 </div>
             </div>
 
