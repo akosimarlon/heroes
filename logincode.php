@@ -208,6 +208,8 @@
                         $_SESSION['auth_role'] = $role_as;  // 1=admin , 2=user
                         $_SESSION['user_name'] = $user_name;
                         $_SESSION['user_empno'] = $empno;
+                        $_SESSION['user_firstname'] = $fname;
+                        $_SESSION['user_lastname'] = $lname;
                         //$_SESSION['SESS_SECTION'] = $section;           
                         $_SESSION['auth_user'] = [
                             'user_id'=>$user_id,
