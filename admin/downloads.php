@@ -26,7 +26,7 @@
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
                     </select></br>
-                    <button type="button" class="btn btn-success"><i class="fa fa-download"></i> Go</button>
+                    <button type="button" class="btn btn-sm btn-success"><i class="fa fa-download"></i> Go</button>
                 </div>
             </div>
 
