@@ -3006,7 +3006,7 @@ if(isset($_POST['downloadCerts'])){
     $empno = clean($_POST['emp_no']);
     $fname = ucwords(clean($_POST['firstname']));
     $lname = ucwords(clean($_POST['lastname']));
-    $uploadTo = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno.'/';
+    //$uploadTo = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno.'/';
     
     // Important: You should have read and write permissions to read
     // the folder and write the zip file
@@ -3015,7 +3015,7 @@ if(isset($_POST['downloadCerts'])){
     if ($zipArchive->open($zipFile, ZipArchive::CREATE) !== TRUE) {
         exit("Unable to open file.");
     }
-    $folder = 'uploads/certificates/';
+    $folder = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno.'/';
     createZip($zipArchive, $folder);
     $zipArchive->close();
     echo 'Zip file created.';
