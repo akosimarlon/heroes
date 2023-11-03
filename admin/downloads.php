@@ -27,7 +27,7 @@
                         <option value="hidden">Hidden</option>
                     </select></br>                    
                 </div>
-                <div class="card-footer">
+                <div>
                     <button type="button" class="btn btn-sm btn-success"><i class="fa fa-download"></i> Go</button>
                 </div>
             </div>
