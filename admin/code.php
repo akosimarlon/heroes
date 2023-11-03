@@ -3019,11 +3019,9 @@ if(isset($_POST['downloadCerts'])){
     createZip($zipArchive, $folder);
     $zipArchive->close();
 
-    echo $folder;
-    echo 'Zip file created.';
-
-    
-    
+    //echo $folder;
+    //echo 'Zip file created.';
+   
 }
 
 function createZip($zipArchive, $folder){    
