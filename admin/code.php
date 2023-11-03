@@ -3011,7 +3011,7 @@ if(isset($_POST['downloadCerts'])){
     // Important: You should have read and write permissions to read
     // the folder and write the zip file
     $zipArchive = new ZipArchive();
-    $zipFile = "./example-zip-file.zip";
+    $zipFile = "example-zip-file.zip";
     if ($zipArchive->open($zipFile, ZipArchive::CREATE) !== TRUE) {
         exit("Unable to open file.");
     }
