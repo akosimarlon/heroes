@@ -43,7 +43,7 @@
             //if( $user_role == "Teacher" || $user_role == "Head Teacher" || $user_role == "Principal" || $user_role == "Staff" || $user_role == "SDS" ){ 
             //    $role_as = "2";            
             //}
-            if( $user_role == "HR-Admin" || $user_role == "Administrator" || $user_role == "Superadmin" || $user_role == "super_admin"){
+            if( $user_role == "HR-Admin" || $user_role == "Administrator" || $user_role == "Superadmin" || $user_role == "super_admin" || $user_role == "SDS" || $user_role == "ASDS"){
                 $role_as = "1";
             }
             else if( $user_role == "client") {
