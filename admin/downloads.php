@@ -25,11 +25,10 @@
                         <option value="all">All</option>
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
-                    </select></br>                    
-                </div>
-                <div>
+                    </select><hr>                    
                     <button type="button" class="btn btn-sm btn-success"><i class="fa fa-download"></i> Go</button>
                 </div>
+                
             </div>
 
             
