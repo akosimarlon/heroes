@@ -1807,10 +1807,24 @@ class myPDF extends FPDF{
             for($y = 0; $y < 7; $y++){
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);
+                
                 if($org_name[$y]=="N/A"){
                     $this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');
                 }else if($org_name[$y]!=""){
-                    $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');
+                    $orgnameadd = strlen($org_name[$y]." / ".$org_address[$y]);
+                    
+                    if($orgnameadd > 90 ){
+                        $this->SetFont('Arial','',5);                    
+                    }
+                    if($orgnameadd < 60 ){
+                        $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');                    
+                    }else{
+                        //$this->SetFont('Arial','',6);
+                        $this->MultiCell(80,4,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL','C');
+                        $a = $this->GetX();
+                        $b = $this->GetY();
+                        $this->SetXY($a + 80, $b-8);
+                    }
                 }
                 else{
                     //$this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');
