@@ -19,9 +19,9 @@
                     <h6 class="m-0 font-weight-bold text-primary">Download Training Certificates</h6>
                 </div>
                 <div class="card-body">
-                    <label class="custom-control-label">Select download options</label>
+                    <label>Select download options</label>
                     <select class="custom-select custom-select-sm">
-                        <option selected>Open this select menu</option>
+                        <option selected>----- Select an option -----</option>
                         <option value="all">All</option>
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
