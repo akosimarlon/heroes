@@ -832,7 +832,8 @@
                                 <select id="school_year" name="school_year" required class="form-control border-success" style="width:150px;" autofocus>
                                     <option value="">--Please Select--</option>
                                     <option value="2021-2022">2021-2022</option>
-                                    <option value="2022-2023">2022-2023</option>                                                                                                           
+                                    <option value="2022-2023">2022-2023</option>                
+                                    <option value="2022-2023">2023-2024</option>
                                 </select>
                             </div>
                             
