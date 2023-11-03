@@ -19,8 +19,8 @@
                     <h6 class="m-0 font-weight-bold text-primary">Download Training Certificates</h6>
                 </div>
                 <div class="card-body">
-                    <input type="hidden" name="" value="<?=$_SESSION['auth_user']['user_firstname']?>">
-                    <input type="hidden" name="" value="<?=$_SESSION['auth_user']['user_lastname']?>">
+                    <input type="hidden" name="" value="<?=$_SESSION['auth_user']['user_name']?>">
+                    <input type="hidden" name="" value="<?=$_SESSION['auth_user']['user_name']?>">
                     <label>Select download options</label>
                     <select class="custom-select custom-select-sm">
                         <option selected>----- Select an option -----</option>
