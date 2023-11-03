@@ -147,6 +147,8 @@
                         $_SESSION['auth_user'] = [
                             'user_id'=>$user_id,
                             'user_empno'=>$empno,
+                            'user_firstname'=>$fname,
+                            'user_lastname'=>$lname,
                             'user_name'=>$user_name,
                             'user_email'=>$user_email,               
                         ];

@@ -19,6 +19,8 @@
                     <h6 class="m-0 font-weight-bold text-primary">Download Training Certificates</h6>
                 </div>
                 <div class="card-body">
+                    <input type="text" name="" value="<?= $_SESSION['auth_user']['user_firstname']; ?>">
+                    <input type="text" name="" value="<?= $_SESSION['auth_user']['user_lastname']; ?>">
                     <label>Select download options</label>
                     <select class="custom-select custom-select-sm">
                         <option selected>----- Select an option -----</option>
@@ -26,7 +28,7 @@
                         <option value="displayed">Displayed</option>
                         <option value="hidden">Hidden</option>
                     </select><hr>                    
-                    <button type="button" class="btn btn-sm btn-success"><i class="fa fa-download"></i> Go</button>
+                    <button type="submit" class="btn btn-sm btn-success" name="downloadCerts"><i class="fa fa-download"></i> Go</button>
                 </div>
                 
             </div>
