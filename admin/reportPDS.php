@@ -1813,7 +1813,24 @@ class myPDF extends FPDF{
                     $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');
                 }
                 else{
-                    $this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');
+                    //$this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');
+
+                    $orgname = strlen($org_name[$y]);
+                    
+                    //echo $course_len;
+                    if($orgname > 90 ){
+                        $this->SetFont('Arial','',5);                    
+                    }
+                    if($orgname < 60 ){
+                        $this->Cell(80,8,strtoupper($org_name[$y]),'BL',0,'C');                    
+                    }else{
+                        //$this->SetFont('Arial','',6);
+                        $this->MultiCell(80,4,strtoupper($org_name[$y]),'BL','C');
+                        $a = $this->GetX();
+                        $b = $this->GetY();
+                        $this->SetXY($a + 80, $b-8);
+                    }
+
                 }
                 
                 if($o_from[$y]!=""){
