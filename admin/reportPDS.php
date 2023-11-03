@@ -1820,10 +1820,10 @@ class myPDF extends FPDF{
                         $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');                    
                     }else{
                         //$this->SetFont('Arial','',6);
-                        $this->MultiCell(80,4,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL','C');
+                        $this->MultiCell(80,3,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL','C');
                         $a = $this->GetX();
                         $b = $this->GetY();
-                        $this->SetXY($a + 80, $b-8);
+                        $this->SetXY($a + 80, $b-6);
                     }
                 }
                 else{
@@ -1836,13 +1836,13 @@ class myPDF extends FPDF{
                         $this->SetFont('Arial','',5);                    
                     }
                     if($orgname < 60 ){
-                        $this->Cell(80,8,strtoupper($org_name[$y]),'BL',0,'C');                    
+                        $this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');                    
                     }else{
                         //$this->SetFont('Arial','',6);
-                        $this->MultiCell(80,4,strtoupper($org_name[$y]),'BL','C');
+                        $this->MultiCell(80,3,strtoupper($org_name[$y]),'BL','C');
                         $a = $this->GetX();
                         $b = $this->GetY();
-                        $this->SetXY($a + 80, $b-8);
+                        $this->SetXY($a + 80, $b-6);
                     }
 
                 }
