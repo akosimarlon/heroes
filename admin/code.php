@@ -3018,6 +3018,8 @@ if(isset($_POST['downloadCerts'])){
     $folder = 'uploads/certificates/'. $lname.'_'.$fname.'_'.$empno.'/';
     createZip($zipArchive, $folder);
     $zipArchive->close();
+
+    echo $folder;
     echo 'Zip file created.';
 
     
