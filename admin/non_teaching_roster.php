@@ -46,8 +46,8 @@
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-sm table-condensed" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
+                        <table class="table table-bordered table-hover table-lg table-condensed" id="dataTable" width="100%" cellspacing="0">
+                            <thead class="bg-primary text-light">
                                 <tr class="table-primary">                                    
                                     <th><b>#</b></th>
                                     <th><b>Employee ID</b></th>
