@@ -26,19 +26,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     
-                        <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel 
-                        <!-- <select name="nclevel" required class="form-control border-success" style="width:150px;">
-                            <option value="">--Please Select--</option>
-                            <option value="1">Employment Records</option>
-                            <option value="2">Teaching Records</option>                                                                                                           
-                            <option value="3">III</option>                                                                                                           
-                            <option value="4">IV</option>                                                                                                           
-                        </select> -->
-                            <!-- Button trigger modal -->
-                            <!-- <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#addadminprofile">
-                            <i class="fa fa-user-plus"></i> Add Teacher
-                            </button> -->
-                        </h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel</h6>
                     
                     
                 </div>
