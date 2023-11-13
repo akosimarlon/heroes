@@ -2654,8 +2654,10 @@
 
                         <div role="tabpanel" class="tab-pane" id="education">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
-                                <h3 class="semi-bold text-primary">Educational Background</h3>                                
-                                <form action="code.php" method="POST">
+
+                                <h3 class="semi-bold text-primary">Educational Background</h3> 
+
+                                <!-- <form action="code.php" method="POST">
                                 <div class="row">                                    
                                         <?php
                                             if(isset($_GET['emp_no'])){
@@ -2724,8 +2726,9 @@
                                         ?>
                                      
                                 </div>
-                                </form>
-                                <form action="code.php" method="POST">
+                                </form> -->
+
+                                <!-- <form action="code.php" method="POST">
                                 <div class="row">
                                     <?php
                                             if(isset($_GET['emp_no'])){
@@ -2791,7 +2794,9 @@
                                             }
                                         ?>
                                 </div>
-                                </form>
+                                </form> -->
+
+
                                 <div class="row">
                                     <!-- <h5 class="semi-bold text-primary">VOCATIONAL / TRADE COURSE</h5>
                                         <div class="col-auto">
