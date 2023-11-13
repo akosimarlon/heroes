@@ -2657,7 +2657,7 @@
 
                                 <h3 class="semi-bold text-primary">Educational Background</h3> 
 
-                                <form action="code.php" method="POST">
+                                <!-- <form action="code.php" method="POST">
                                 <div class="row">                                    
                                         <?php
                                             if(isset($_GET['emp_no'])){
@@ -2726,7 +2726,7 @@
                                         ?>
                                      
                                 </div>
-                                </form>
+                                </form> -->
 
                                 <!-- <form action="code.php" method="POST">
                                 <div class="row">
@@ -2866,25 +2866,25 @@
                                             
 
                                             <?php
-                                                    $na = "SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='vocational' LIMIT 1";
+                                                    $na = "SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='elementary' LIMIT 1";
                                                     $na_run = mysqli_query($con,$na);
                                                     
                                                     if(mysqli_num_rows($na_run) > 0 ){
                                                         foreach($na_run as $row){
                                                             if($row['n_a']=="1"){
                                                             ?>  
-                                                                <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal" disabled><i class="fa fa-plus"></i> Add Vocational Course</button>
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal" disabled><i class="fa fa-plus"></i> Add Elementary</button>
                                                                 
                                                             <?php
                                                             }else{
                                                             ?>
-                                                                <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Vocational Course</button>
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
                                                             <?php
                                                             }
                                                         }
                                                     }else{
                                                         ?>
-                                                            <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Vocational Course</button>
+                                                            <button type="button" id="addVocCourse" class="btn btn-info addVoc" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
                                                         <?php
                                                     }        
                                                 ?>
