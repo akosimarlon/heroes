@@ -1494,7 +1494,7 @@ if(isset($_POST['btn_child_delete'])){
                 $query_run = mysqli_query($con,$query);
             }
             if($level == "secondary"){
-                $query = "UPDATE profile_completion SET elem_completed_fileds='0' WHERE emp_no='$empno' ";
+                $query = "UPDATE profile_completion SET sec_completed_fileds='0' WHERE emp_no='$empno' ";
                 $query_run = mysqli_query($con,$query);
             }
             if($level == "vocational"){
