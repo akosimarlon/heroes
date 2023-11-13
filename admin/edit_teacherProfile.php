@@ -2814,7 +2814,7 @@
                                             </thead>                            
                                             <tbody>
                                                         <?php
-                                                            $result = "SELECT * FROM educational WHERE emp_no='$user_id' and educational_level='vocational' ";
+                                                            $result = "SELECT * FROM educational WHERE emp_no='$user_id' and educational_level='elementary' ";
                                                             $result_run = mysqli_query($con,$result);
                                                             
                                                             if(mysqli_num_rows($result_run) > 0 ){
