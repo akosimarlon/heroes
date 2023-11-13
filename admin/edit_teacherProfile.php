@@ -2862,7 +2862,7 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="elementary">
+                                            <input type="hidden" id="uv_educ_levelElem" value="elementary">
                                             
 
                                             <?php
@@ -5860,7 +5860,7 @@
 <script>
     $(document).ready(function(){
     $(document).on('click', '.addElem', function(){ 
-      var educ_level = $('#uv_educ_level').val();                     
+      var educ_level = $('#uv_educ_levelElem').val();                     
       document.getElementById('ed_level').value = educ_level;            
       $("#educ_level_title").text("Add Elementary");
     });
