@@ -2795,7 +2795,8 @@
                                         ?>
                                 </div>
                                 </form> -->
-
+                                
+                                <!--############# ELEMENTARY ##############-->
                                 <div class="row">                                    
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">ELEMENTARY</h5>
@@ -2896,8 +2897,111 @@
                                             <hr class="border border-success border-2 opacity-50">
                                     </div>
                                 </div>
+                                
+                                <!--############# SECONDARY ##############-->
+                                <div class="row">                                    
+                                    <div class="col-md-12 mb-3">
+                                        <h5 class="semi-bold text-primary">SECONDARY</h5>
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>                                                        
+                                                    <th>Name of School (Write in full)</th>
+                                                    <th>Basic Education/Degree/Course</th>                                                                                                            
+                                                    <th colspan="2">Period of Attendance</th>                                                        
+                                                    <th>Highest level / Units Earned</th>
+                                                    <th>Year graduated</th>
+                                                    <th>Scholarship / Academic Honors Received</th>
+                                                    <th>Actions</th>
+                                                    
+                                                </tr>
+                                            </thead>                            
+                                            <tbody>
+                                                        <?php
+                                                            $result = "SELECT * FROM educational WHERE emp_no='$user_id' and educational_level='secondary' ";
+                                                            $result_run = mysqli_query($con,$result);
+                                                            
+                                                            if(mysqli_num_rows($result_run) > 0 ){
+                                                                foreach($result_run as $row){
+                                                        ?>
+                                                            <tr>
+                                                                <td><?= $row['e_nameofschool'] ?></td>
+                                                                <td><?= $row['e_course'] ?></td>
+                                                                <td><?= $row['e_from'] ?></td>
+                                                                <td><?= $row['e_to'] ?></td>
+                                                                <td><?= $row['e_level'] ?></td>
+                                                                <td><?= $row['e_year'] ?></td>
+                                                                <td><?= $row['e_scholarship'] ?></td>
+
+                                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
+                                                                
+                                                                <input type="hidden" id="uv_nameofschool<?=$row['id']?>" value="<?=$row['e_nameofschool']?>">
+                                                                <input type="hidden" id="uv_course<?=$row['id']?>" value="<?=$row['e_course']?>">
+                                                                <input type="hidden" id="uv_from<?=$row['id']?>" value="<?=$row['e_from']?>">
+                                                                <input type="hidden" id="uv_to<?=$row['id']?>" value="<?=$row['e_to']?>">
+                                                                <input type="hidden" id="uv_level<?=$row['id']?>" value="<?=$row['e_level']?>">
+                                                                <input type="hidden" id="uv_year<?=$row['id']?>" value="<?=$row['e_year']?>">
+                                                                <input type="hidden" id="uv_scholarship<?=$row['id']?>" value="<?=$row['e_scholarship']?>">
+                                                                <input type="hidden" id="utablee<?=$row['id']?>" value="educational">
+                                                                
+                                                                <td><button type="button" name="btn_child_edit" class="btn btn-success btn-sm editvocationalbtn" <?=$row['n_a']=='1' ? 'disabled':'' ?> value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button> |
+                                                                <button type="button" name="btn_child_delete" value="<?=$row['id']?>" class="btn btn-danger btn-sm deleteCourse" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash"></i> Delete</button></td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                    }
+                                                    else{
+                                                        ?>
+                                                            <tr>
+                                                                <td colspan="6">No Records Found.</td>
+                                                            </tr>
+                                                        <?php
+                                                    }
+
+                                                ?>                      
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
+                                            <input type="hidden" id="uv_educ_levelSecond" value="secondary">
+                                            
+
+                                            <?php
+                                                    $na = "SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='elementary' LIMIT 1";
+                                                    $na_run = mysqli_query($con,$na);
+                                                    
+                                                    if(mysqli_num_rows($na_run) > 0 ){
+                                                        foreach($na_run as $row){
+                                                            if($row['n_a']=="1"){
+                                                            ?>  
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addElem" data-bs-toggle="modal" data-bs-target="#addvocModal" disabled><i class="fa fa-plus"></i> Add Elementary</button>
+                                                                
+                                                            <?php
+                                                            }else{
+                                                            ?>
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addElem" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
+                                                            <?php
+                                                            }
+                                                        }
+                                                    }else{
+                                                        ?>
+                                                            <button type="button" id="addVocCourse" class="btn btn-info addSecond" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
+                                                        <?php
+                                                    }        
+                                                ?>
+
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="text-success">
+                                            <hr class="border border-success border-2 opacity-50">
+                                    </div>
+                                </div>
 
 
+                                <!--############# VOCATIONAL ##############-->
                                 <div class="row">                                    
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">VOCATIONAL / TRADE COURSE</h5>
@@ -5863,6 +5967,17 @@
       var educ_level = $('#uv_educ_levelElem').val();                     
       document.getElementById('ed_level').value = educ_level;            
       $("#educ_level_title").text("Add Elementary");
+    });
+  });
+</script>
+
+<!-- ############### PASS SECONDARY VALUES DURING ADD ##################    -->
+<script>
+    $(document).ready(function(){
+    $(document).on('click', '.addSecond', function(){ 
+      var educ_level = $('#uv_educ_levelSecond').val();                     
+      document.getElementById('ed_level').value = educ_level;            
+      $("#educ_level_title").text("Add Secondary");
     });
   });
 </script>
