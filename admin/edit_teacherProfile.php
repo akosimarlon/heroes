@@ -5856,6 +5856,17 @@
 
 </script>
 
+<!-- ############### PASS ELEMENTARY VALUES DURING ADD ##################    -->
+<script>
+    $(document).ready(function(){
+    $(document).on('click', '.addElem', function(){ 
+      var educ_level = $('#uv_educ_level').val();                     
+      document.getElementById('ed_level').value = educ_level;            
+      $("#educ_level_title").text("Add Elementary");
+    });
+  });
+</script>
+
 <!-- ############### PASS VOCATIONAL VALUES DURING ADD ##################    -->
 <script>
     $(document).ready(function(){
