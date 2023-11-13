@@ -1489,6 +1489,10 @@ if(isset($_POST['btn_child_delete'])){
         $data1=mysqli_fetch_assoc($query_run3);
         if($data1['total'] == 1){
 
+            if($level == "elementary"){
+                $query = "UPDATE profile_completion SET elem_completed_fileds='0' WHERE emp_no='$empno' ";
+                $query_run = mysqli_query($con,$query);
+            }
             if($level == "vocational"){
                 $query = "UPDATE profile_completion SET voc_completed_fileds='0' WHERE emp_no='$empno' ";
                 $query_run = mysqli_query($con,$query);
