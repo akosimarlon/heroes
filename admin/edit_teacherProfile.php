@@ -2969,7 +2969,7 @@
                                             
 
                                             <?php
-                                                    $na = "SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='elementary' LIMIT 1";
+                                                    $na = "SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='secondary' LIMIT 1";
                                                     $na_run = mysqli_query($con,$na);
                                                     
                                                     if(mysqli_num_rows($na_run) > 0 ){
