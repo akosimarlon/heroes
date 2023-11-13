@@ -2862,7 +2862,7 @@
                                     <div class="row">
                                         <div class="col-md-3 mb-3">
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="vocational">
+                                            <input type="hidden" id="uv_educ_level" value="elementary">
                                             
 
                                             <?php

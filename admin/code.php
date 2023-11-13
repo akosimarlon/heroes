@@ -602,17 +602,17 @@ if(isset($_POST['registerEducational'])){
 
     
     try {
-        if($educ_level == "elementary" || $educ_level == "secondary"){
-            $query = "UPDATE educational SET e_nameofschool='".$nameofschool."',e_course='".$course."',e_from='".$from."',e_to='".$to."',
-                    e_level='".$level."',e_year='".$year."',e_scholarship='".$scholarship."'
-                    WHERE emp_no='".$empno."' AND educational_level='".$educ_level."' ";
-            $query_run = mysqli_query($con,$query);            
-        }        
-        else{
+        // if($educ_level == "elementary" || $educ_level == "secondary"){
+        //     $query = "UPDATE educational SET e_nameofschool='".$nameofschool."',e_course='".$course."',e_from='".$from."',e_to='".$to."',
+        //             e_level='".$level."',e_year='".$year."',e_scholarship='".$scholarship."'
+        //             WHERE emp_no='".$empno."' AND educational_level='".$educ_level."' ";
+        //     $query_run = mysqli_query($con,$query);            
+        // }        
+        // else{
             $query = "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,e_level,e_year,e_scholarship,educational_level,n_a,status) 
                         VALUES ('".$empno."','".$nameofschool."','".$course."','".$from."','".$to."','".$level."','".$year."','".$scholarship."','".$educ_level."','".$novoc."','1')";
             $query_run = mysqli_query($con,$query);
-        }
+        //}
             
 
         if($query_run){
