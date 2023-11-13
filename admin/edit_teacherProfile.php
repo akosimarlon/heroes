@@ -2976,18 +2976,18 @@
                                                         foreach($na_run as $row){
                                                             if($row['n_a']=="1"){
                                                             ?>  
-                                                                <button type="button" id="addVocCourse" class="btn btn-info addElem" data-bs-toggle="modal" data-bs-target="#addvocModal" disabled><i class="fa fa-plus"></i> Add Elementary</button>
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addSecond" data-bs-toggle="modal" data-bs-target="#addvocModal" disabled><i class="fa fa-plus"></i> Add Secondary</button>
                                                                 
                                                             <?php
                                                             }else{
                                                             ?>
-                                                                <button type="button" id="addVocCourse" class="btn btn-info addElem" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
+                                                                <button type="button" id="addVocCourse" class="btn btn-info addSecond" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Secondary</button>
                                                             <?php
                                                             }
                                                         }
                                                     }else{
                                                         ?>
-                                                            <button type="button" id="addVocCourse" class="btn btn-info addSecond" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Elementary</button>
+                                                            <button type="button" id="addVocCourse" class="btn btn-info addSecond" data-bs-toggle="modal" data-bs-target="#addvocModal"><i class="fa fa-plus"></i> Add Secondary</button>
                                                         <?php
                                                     }        
                                                 ?>
