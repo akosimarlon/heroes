@@ -2801,7 +2801,7 @@
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">ELEMENTARY</h5>
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead class="bg-dark text-light">
+                                            <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
                                                     <th>Basic Education/Degree/Course</th>                                                                                                            
