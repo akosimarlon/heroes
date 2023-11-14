@@ -1607,7 +1607,7 @@ class myPDF extends FPDF{
             $appointment = array();
             $govt_service = array();
 
-            $stmt = $db->query("SELECT * FROM work_experience WHERE emp_no='$user_id' ORDER BY id DESC");            
+            $stmt = $db->query("SELECT * FROM work_experience WHERE emp_no='$user_id' ORDER BY w_from DESC");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){
                 $wf = $data->w_from;
                 $wt = $data->w_to;
