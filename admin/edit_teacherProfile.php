@@ -3539,7 +3539,8 @@
                                             </thead>                            
                                             <tbody>
                                                         <?php
-                                                            $result = "SELECT * FROM work_experience WHERE emp_no='$user_id' Order by id DESC ";
+                                                            $result = "SELECT * FROM work_experience WHERE emp_no='$user_id' Order by w_from DESC ";
+                                            
                                                             $result_run = mysqli_query($con,$result);
                                                             
                                                             if(mysqli_num_rows($result_run) > 0 ){
