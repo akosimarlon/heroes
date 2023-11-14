@@ -3539,7 +3539,7 @@
                                             </thead>                            
                                             <tbody>
                                                         <?php
-                                                            $result = "SELECT * FROM work_experience WHERE emp_no='$user_id' Order by w_from DESC ";
+                                                            $result = "SELECT * FROM work_experience WHERE emp_no='$user_id' Order by w_from ASC ";
                                             
                                                             $result_run = mysqli_query($con,$result);
                                                             
