@@ -1465,7 +1465,7 @@ if(isset($_POST['btn_child_delete'])){
     if($table=="children"){
         $page = "#family"; 
         
-        $query1 = "SELECT count($empno) as total FROM children WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM children WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1517,7 +1517,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="civil_service"){
         $page = "#civilservice";
 
-        $query1 = "SELECT count($empno) as total FROM civil_service WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM civil_service WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1529,7 +1529,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="work_experience"){
         $page = "#work";
 
-        $query1 = "SELECT count($empno) as total FROM work_experience WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM work_experience WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1541,7 +1541,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="voluntary_work"){
         $page = "#voluntary";
 
-        $query1 = "SELECT count($empno) as total FROM voluntary_work WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM voluntary_work WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1553,7 +1553,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="learning_dev"){
         $page = "#learning";
 
-        $query1 = "SELECT count($empno) as total FROM learning_dev WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM learning_dev WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1566,7 +1566,7 @@ if(isset($_POST['btn_child_delete'])){
     else if( $table=="special_skills"){
         $page = "#other";
 
-        $query1 = "SELECT count($empno) as total FROM special_skills WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM special_skills WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1579,7 +1579,7 @@ if(isset($_POST['btn_child_delete'])){
     else if( $table=="non_academic"){
         $page = "#other";
 
-        $query1 = "SELECT count($empno) as total FROM non_academic WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM non_academic WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1592,7 +1592,7 @@ if(isset($_POST['btn_child_delete'])){
     else if( $table=="association"){
         $page = "#other";
 
-        $query1 = "SELECT count($empno) as total FROM association WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM association WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1605,7 +1605,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="subject_handled"){
         $page = "#employment";
 
-        $query1 = "SELECT count($empno) as total FROM subject_handled WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM subject_handled WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1617,7 +1617,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="national_cert"){
         $page = "#employment";
 
-        $query1 = "SELECT count($empno) as total FROM national_cert WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM national_cert WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1629,7 +1629,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="major_minor"){
         $page = "#employment";
 
-        $query1 = "SELECT count($empno) as total FROM major_minor WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM major_minor WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1641,7 +1641,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="specialization"){
         $page = "#employment";
 
-        $query1 = "SELECT count($empno) as total FROM specialization WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM specialization WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);
@@ -1653,7 +1653,7 @@ if(isset($_POST['btn_child_delete'])){
     else if($table=="anciliary_work" ){
         $page = "#employment";
 
-        $query1 = "SELECT count($empno) as total FROM anciliary_work WHERE emp_no='$empno'";
+        $query1 = "SELECT count('$empno') as total FROM anciliary_work WHERE emp_no='$empno'";
         $query_run1 = mysqli_query($con,$query1);
 
         $data=mysqli_fetch_assoc($query_run1);

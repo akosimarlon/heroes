@@ -4678,7 +4678,7 @@
                                                 <input type="text" id="district" name="district" value="<?=$emp_rec['district'];?>" style="width:320px;" class="form-control border-success" readonly autocomplete="off" required autofocus>
                                             </div>
 
-                                            <h5 class="semi-bold text-primary">Office Information</h5> 
+                                            <h5 class="semi-bold text-primary">Office Information (For Division Personnel)</h5> 
                                             <!-- <h5 class="semi-bold text-primary">Office Information <br>(For Non Teaching Position)</h5>  -->
                                             <div class="form-group">
                                                 <label for="" class="text-danger">PLEASE TICK IF NOT APPLICABLE (N/A)</label>
