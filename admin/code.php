@@ -1483,7 +1483,7 @@ if(isset($_POST['btn_child_delete'])){
 
         $level = $data['educational_level'];
 
-        $query3 = "SELECT count($empno) as total FROM educational WHERE emp_no='$empno' AND educational_level='$level' ";
+        $query3 = "SELECT count('$empno') as total FROM educational WHERE emp_no='$empno' AND educational_level='$level' ";
         $query_run3 = mysqli_query($con,$query3);
 
         $data1=mysqli_fetch_assoc($query_run3);
