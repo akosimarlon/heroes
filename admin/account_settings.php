@@ -85,9 +85,11 @@
                     <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-4">
                         <?php include('message.php'); ?>                  
                     </div>    
-                    <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-4">   
-                        <h3>Recommended Size: Passport Size Picture</h3>                 
+                    <div class="d-sm-flex align-items-center justify-content-center mb-4 mt-4">
                         <div class="card border-bottom-info shadow h-100 py-2">
+                            <div class="card-header">
+                                <h4>Recommended Size: Passport Size Picture</h4>
+                            </div>
                             <div class="card-body p-0">
                                 <div class="row no-gutters align-items-center">
                                         <?php                                    
