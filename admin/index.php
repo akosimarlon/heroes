@@ -574,7 +574,7 @@
                 <!-- Content Row -->
                 <div class="row">
                     <?php include('message.php'); ?>
-                    
+                    <?=$_SESSION['user_role']?>
                     <!-- Profile Completion -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
@@ -641,8 +641,7 @@
                         </a>
                     </div>
 
-                </div>
-                
+                </div>                
                 
                 <?php 
                     }
