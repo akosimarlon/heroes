@@ -45,7 +45,7 @@
                 </div>
                 
                 <?php
-                    if($_SESSION['auth_role'] == "1"){
+                    if($_SESSION['auth_role'] == "1"){  // ADMIN or School Heads
                 ?>
                 <!-- Content Row -->
                 <div class="row">
@@ -569,7 +569,7 @@
                     }
                 ?>
                 <?php
-                    if($_SESSION['auth_role'] == "2"){
+                    if($_SESSION['auth_role'] == "2"){ //User Only
                 ?>
                 <!-- Content Row -->
                 <div class="row">
@@ -685,27 +685,6 @@
                             </div>
                         </a>
                     </div>
-
-
-                    <!-- Account Settings -->
-                    <!-- <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="account_settings.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Account Settings</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-cogs fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>    
-                    </div> -->
 
                 </div>
                 
