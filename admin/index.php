@@ -51,7 +51,6 @@
                 <div class="row">
                     <?php include('message.php'); ?>
 
-
                     <!-- Teaching Personnel -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <a href="teaching_roster.php">
@@ -188,145 +187,7 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <!-- Teaching Personnel -->
-                    <!-- <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="teaching_roster.php">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Teaching Personnel</div>
-                                                <?php                                             
-                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
-                                                    // $users_run = mysqli_query($con,$users);                                                
-                                                    // if(mysqli_num_rows($users_run) > 0 ){
-                                                    //     foreach($users_run as $user){
-                                                ?>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
-                                            <?php
-                                                    //     }
-                                                    // }
-                                            ?>
-                                        </div>
-                                        <div class="col-auto">                                            
-                                            <i class="fa fa-users fa-2x text-gray-300" ></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
-
-                    <!-- Non - Teaching Personnel -->
-                    <!-- <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="non_teaching_roster.php">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Non-Teaching Personnel</div>
-                                                <?php                                             
-                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
-                                                    // $users_run = mysqli_query($con,$users);                                                
-                                                    // if(mysqli_num_rows($users_run) > 0 ){
-                                                    //     foreach($users_run as $user){
-                                                ?>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
-                                                <?php
-                                                    //     }
-                                                    // }
-                                                ?>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-keyboard fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
-
-                    <!-- Teaching Related Personnel -->
-                    <!-- <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="teaching_related_roster.php">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                               Teaching Related Personnel</div>
-                                                <?php                                             
-                                                    // $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
-                                                    // $users_run = mysqli_query($con,$users);                                                
-                                                    // if(mysqli_num_rows($users_run) > 0 ){
-                                                    //     foreach($users_run as $user){
-                                                ?>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?=$user['total']?></div>
-                                                <?php
-                                                    //     }
-                                                    // }
-                                                ?>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fa fa-briefcase fa-2x text-gray-300"></i>                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
-
-                    <!-- Profile Completion -->
-                    <!-- <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">                    
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Profile Details
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <?php
-                                                    // $user_id = $_SESSION['user_empno'];
-                                                    // $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
-                                                    // $query_run = mysqli_query($con,$query);
-
-                                                    // if(mysqli_num_rows($query_run) > 0 ){ 
-                                                    //     foreach($query_run as $row){
-                                                    ?>                                                      
-                                                        <div class="col-auto">
-                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?=$row['completed_percentage']?></div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="progress progress-sm mr-2">
-                                                                <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
-                                                                    style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
-                                                                    aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    
-                                                <?php
-                                                    //     }
-                                                    // }
-                                                ?> 
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
-
-                    
-
-
+            
                 </div>
                 
                 <!-- Content Row Teaching Personnel-->
@@ -574,72 +435,220 @@
                 <!-- Content Row -->
                 <div class="row">
                     <?php include('message.php'); ?>
-                    <?=$_SESSION['user_role']?>
-                    <!-- Profile Completion -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
-                            <div class="card bg-primary text-white shadow">
-                                <div class="card-body" id="cardTabs">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">Profile Details
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
+                    <?php
+                        if($_SESSION['user_role'] == "Principal"){
+                    ?>
+                        <!-- Teaching Personnel -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="teaching_roster.php">
+                                <div class="card bg-primary text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                    Teaching Personnel</div>
+                                                    <?php                                             
+                                                        $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching'";
+                                                        $users_run = mysqli_query($con,$users);                                                
+                                                        if(mysqli_num_rows($users_run) > 0 ){
+                                                            foreach($users_run as $user){
+                                                    ?>
+                                                <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?></div>
                                                 <?php
-                                                    $user_id = $_SESSION['user_empno'];
-                                                    $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
-                                                    $query_run = mysqli_query($con,$query);
-
-                                                    if(mysqli_num_rows($query_run) > 0 ){ 
-                                                        foreach($query_run as $row){
-                                                    ?>                                                      
-                                                        <div class="col-auto">
-                                                            <div class="h5 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="progress progress-sm mr-2">
-                                                                <div class="progress-bar progress-bar-striped bg-gray-600 progress-bar-animated" role="progressbar"
-                                                                    style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
-                                                                    aria-valuemax="100"></div>
-                                                            </div>
-                                                        </div>
-                                                    
-                                                <?php
+                                                            }
                                                         }
-                                                    }
-                                                ?> 
-                                                
+                                                ?>
+                                            </div>
+                                            <div class="col-auto">                                            
+                                                <i class="fa fa-users fa-2x text-gray-300" ></i>
+                                                <!-- <i class="fa fa-laptop fa-2x text-gray-300"></i> -->
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
-                                            <i class="fa fa-laptop fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Non - Teaching Personnel -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="non_teaching_roster.php">
+                                <div class="card bg-success text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                    Non-Teaching Personnel</div>
+                                                    <?php                                             
+                                                        $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
+                                                        $users_run = mysqli_query($con,$users);                                                
+                                                        if(mysqli_num_rows($users_run) > 0 ){
+                                                            foreach($users_run as $user){
+                                                    ?>
+                                                    <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?></div>
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-keyboard fa-2x text-gray-300"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Teaching Related Personnel -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="teaching_related_roster.php">
+                                <div class="card bg-warning text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                    Teaching Related Personnel</div>
+                                                    <?php                                             
+                                                        $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
+                                                        $users_run = mysqli_query($con,$users);                                                
+                                                        if(mysqli_num_rows($users_run) > 0 ){
+                                                            foreach($users_run as $user){
+                                                    ?>
+                                                    <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?></div>
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fa fa-briefcase fa-2x text-gray-300"></i>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                                                    
+                        <!-- Profile Completion -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
+                                <div class="card bg-info text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Profile Details
+                                                </div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <?php
+                                                        $user_id = $_SESSION['user_empno'];
+                                                        $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                        $query_run = mysqli_query($con,$query);
+
+                                                        if(mysqli_num_rows($query_run) > 0 ){ 
+                                                            foreach($query_run as $row){
+                                                        ?>                                                      
+                                                            <div class="col-auto">
+                                                                <div class="h5 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-gray-600 progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?> 
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
+                                                <i class="fa fa-laptop fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                    <?php
+                        }else{
+                    ?>
+                        <!-- Profile Completion -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="edit_teacherProfile.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
+                                <div class="card bg-primary text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">Profile Details
+                                                </div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <?php
+                                                        $user_id = $_SESSION['user_empno'];
+                                                        $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                        $query_run = mysqli_query($con,$query);
+
+                                                        if(mysqli_num_rows($query_run) > 0 ){ 
+                                                            foreach($query_run as $row){
+                                                        ?>                                                      
+                                                            <div class="col-auto">
+                                                                <div class="h5 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-gray-600 progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100"></div>
+                                                                </div>
+                                                            </div>
+                                                        
+                                                    <?php
+                                                            }
+                                                        }
+                                                    ?> 
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <!-- <i class="fas fa-clipboard-list fa-2x text-gray-300"></i> -->
+                                                <i class="fa fa-laptop fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Account Settings -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <a href="account_settings.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
+                                <div class="card bg-warning text-white shadow">
+                                    <div class="card-body" id="cardTabs">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                                    Account Settings</div>
+                                                <div class="h5 mb-0 font-weight-bold"><i class="fa fa-wrench"></i></div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-cogs fa-2x text-gray-100"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php
+                        }
+                    ?>
                     
-                    <!-- Account Settings -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="account_settings.php?emp_no=<?=$_SESSION['auth_user']['user_empno']?>">
-                            <div class="card bg-warning text-white shadow">
-                                <div class="card-body" id="cardTabs">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-uppercase mb-1">
-                                                Account Settings</div>
-                                            <div class="h5 mb-0 font-weight-bold"><i class="fa fa-wrench"></i></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-cogs fa-2x text-gray-100"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+
+
 
                 </div>                
                 
