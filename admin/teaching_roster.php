@@ -78,12 +78,37 @@
                                                 <td><?= $row['mobile'] ?></td>
                                                 <td>                                                
                                                 <?php
-                                                    if($row['status']=='1'){
-                                                        echo '<span class="badge bg-primary">Active</span>';
+                                                    //if($row['status']=='1'){
+                                                    //    echo '<span class="badge bg-primary">Active</span>';
+                                                    //}
+                                                    //elseif($row['status']=='0'){
+                                                    //    echo '<span class="badge bg-danger text-light">Inactive</span>';
+                                                    //}
+
+                                                    $user_id = $row1['emp_no'];
+                                                    $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                    $query_run = mysqli_query($con,$query);
+
+                                                    if(mysqli_num_rows($query_run) > 0 ){ 
+                                                        foreach($query_run as $row){
+                                                    ?>                                                      
+                                                        <div class="col-auto">
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="progress progress-sm mr-2">
+                                                                <div class="progress-bar progress-bar-striped bg-gray-600 progress-bar-animated" role="progressbar"
+                                                                    style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                <?php
+                                                        }
                                                     }
-                                                    elseif($row['status']=='0'){
-                                                        echo '<span class="badge bg-danger text-light">Inactive</span>';
-                                                    }
+                                                
+
+                                                
                                                 ?>
                                                 </td>
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
