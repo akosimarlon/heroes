@@ -93,7 +93,7 @@
                                                         foreach($query_run as $row){
                                                     ?>                                                      
                                                         <div class="col-auto">
-                                                            <div class="h1 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
+                                                            <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
                                                         </div>
                                                         <div class="col">
                                                             <div class="progress progress-sm mr-2">
