@@ -2660,32 +2660,32 @@
                                 <!-- <form action="code.php" method="POST">
                                 <div class="row">                                    
                                         <?php
-                                            if(isset($_GET['emp_no'])){
-                                                $user_id = $_GET['emp_no'];
-                                                //echo $user_id;
-                                                $result = "SELECT * FROM educational WHERE emp_no='$user_id' and educational_level='elementary' ";
-                                                $result_run = mysqli_query($con,$result);
+                                            //if(isset($_GET['emp_no'])){
+                                            //    $user_id = $_GET['emp_no'];
+                                                ////echo $user_id;
+                                            //    $result = "SELECT * FROM educational WHERE emp_no='$user_id' and educational_level='elementary' ";
+                                            //    $result_run = mysqli_query($con,$result);
                                                 
-                                                if(mysqli_num_rows($result_run) > 0 ){
-                                                    foreach($result_run as $row){
+                                            //    if(mysqli_num_rows($result_run) > 0 ){
+                                            //        foreach($result_run as $row){
                                                 ?>
                                                 <h5 class="semi-bold text-primary">ELEMENTARY</h5>
                                                 <div class="col-auto">
                                                     <label for="">Name of School (Write in full)</label>
-                                                    <input type="text" name="e_nameofschool" value="<?=$row['e_nameofschool'];?>" class="form-control border-success" autocomplete="off" style="width:300px;" required autofocus>
+                                                    <input type="text" name="e_nameofschool" value="<?//=$row['e_nameofschool'];?>" class="form-control border-success" autocomplete="off" style="width:300px;" required autofocus>
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Basic Education/Degree/Course</label>
-                                                    <input type="text" name="e_course" value="<?=$row['e_course'];?>" class="form-control border-success" autocomplete="off" style="width:300px;" required autofocus>
+                                                    <input type="text" name="e_course" value="<?//=$row['e_course'];?>" class="form-control border-success" autocomplete="off" style="width:300px;" required autofocus>
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Period of Attendance</label>
                                                     <div class="row">
                                                         <div class="col">                                       
-                                                            <input type="text" name="e_from" value="<?=$row['e_from'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="From">                                                                                
+                                                            <input type="text" name="e_from" value="<?//=$row['e_from'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="From">                                                                                
                                                         </div> 
                                                         <div class="col">                                       
-                                                            <input type="text" name="e_to" value="<?=$row['e_to'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="To">                                        
+                                                            <input type="text" name="e_to" value="<?//=$row['e_to'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="To">                                        
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2695,17 +2695,17 @@
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Year graduated</label>
-                                                    <input type="text" name="e_year" value="<?=$row['e_year'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="">
+                                                    <input type="text" name="e_year" value="<?//=$row['e_year'];?>" class="form-control border-success" autocomplete="off" style="width:80px;" required autofocus placeholder="">
                                                 </div>
                                                 <div class="col-auto">
                                                     <label for="">Scholarship / Academic Honors Received</label>
-                                                    <input type="text" name="e_scholarship" value="<?=$row['e_scholarship'];?>" class="form-control border-success" autocomplete="off" style="width:250px;" required autofocus>
+                                                    <input type="text" name="e_scholarship" value="<?//=$row['e_scholarship'];?>" class="form-control border-success" autocomplete="off" style="width:250px;" required autofocus>
                                                 </div>
                                                 
                                                 
                                                 <div class="col-auto">
                                                     <label for="">Action</label></br>
-                                                    <input type="hidden" name="emp_no" value="<?=$user_id?>">
+                                                    <input type="hidden" name="emp_no" value="<?//=$user_id?>">
                                                     <input type="hidden" id="ed_level" name="educ_level" value="elementary">
                                                     <button type="submit" name="registerEducational"  class="btn btn-md btn-info"><i class="fa fa-save"></i> Save </button>
                                                 </div>                                               
@@ -2715,14 +2715,14 @@
                                                     <hr class="border border-success border-2 opacity-50">
                                                 </div>
                                                 <?php
-                                                    }
-                                                }
-                                                else{
+                                                //    }
+                                                //}
+                                                //else{
                                                     ?>
                                                     <h4>NO ELEMENTARY RECORDS FOUND.</h4>
                                                     <?php
-                                                }
-                                            }
+                                                //}
+                                            //}
                                         ?>
                                      
                                 </div>
@@ -2800,7 +2800,7 @@
                                 <div class="row">                                    
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">ELEMENTARY</h5>
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
@@ -2902,7 +2902,7 @@
                                 <div class="row">                                    
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">SECONDARY</h5>
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
@@ -3005,7 +3005,7 @@
                                 <div class="row">                                    
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">VOCATIONAL / TRADE COURSE</h5>
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
@@ -3107,7 +3107,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">COLLEGE</h5>
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
@@ -3208,7 +3208,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <h5 class="semi-bold text-primary">GRADUATE STUDIES</h5>
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" id="" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Name of School (Write in full)</th>
