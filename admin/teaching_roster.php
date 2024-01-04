@@ -34,7 +34,7 @@
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
-                    <input type="text" name="PER" id="Epersonal" value="Com">
+                    <input type="text" name="PER" value="Com">
                 <ul style="list-style-type:none;">
                     <li>Personal Information - <div data-show-if="PER:Com"><input type="text" style="color:red" class="no-outline" id="Epersonal" readonly></div>
                     </li>
