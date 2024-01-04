@@ -98,7 +98,7 @@
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
-                                                <td data-toggle="modal" data-target="#progressmodal">                                                
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal">                                                
                                                 <?php
                                                     //if($row['status']=='1'){
                                                     //    echo '<span class="badge bg-primary">Active</span>';
@@ -337,26 +337,8 @@
 <script>
 
     $(document).ready(function() {
-        $(document).on('click', '.editbtn', function(){
-            var id=$(this).val(); 
-            var empno = $('#uempno'+id).val();
-            var fname = $('#ufname'+id).val();
-            var lname = $('#ulname'+id).val();
-            var username = $('#uusername'+id).val();
-            var email = $('#uemail'+id).val();
-            var status = $('#ustatus'+id).val();
-            //alert(empno);
-            $('#edit_teacherAccount').modal('show');
-            document.getElementById('EuserID').value = id;
-            document.getElementById('Eempno').value = empno;
-            document.getElementById('Eoldempno').value = empno;
-            document.getElementById('Efirstname').value = fname;
-            document.getElementById('Elastname').value = lname;
-            document.getElementById('Eusername').value = username;
-            document.getElementById('Eusername_old').value = username;
-            document.getElementById('Eemail').value = email;
-            document.getElementById('Eemail_old').value = email;
-            status=="1" ? document.getElementById('Estatus').checked = true : document.getElementById('Estatus').checked = false;   
+        $(document).on('click', '.forModal', function(){
+            alert ("test");   
         });
     });
 
@@ -386,6 +368,24 @@
 
     $("#image").change(function () {
         imagePreview(this);
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.editbtn', function(){
+            var id=$(this).val(); 
+            var empno = $('#uempno'+id).val();
+            var fullname = $('#ufullname'+id).val();
+            var dob = $('#udob'+id).val();
+                       
+            $('#editchildModal').modal('show');
+            document.getElementById('Echildren_id').value = id;
+            document.getElementById('Eempno').value = empno;
+            document.getElementById('Efullname').value = fullname;
+            document.getElementById('Edob').value = dob;            
+        });
     });
 </script>
 
