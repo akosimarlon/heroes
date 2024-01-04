@@ -101,8 +101,8 @@
                                                 
                                                 <!-- <td data-toggle="modal" data-target="#progressmodal" class="forModal"> -->
                                                 <td>
-                                                <button type="button" class="btn btn-success btn-sm forModal" >
-                                                </button>    
+                                                <a href="#" data-target="" data-toggle="modal" class="forModal" >
+
                                                 <?php
                                                     //if($row['status']=='1'){
                                                     //    echo '<span class="badge bg-primary">Active</span>';
@@ -222,7 +222,7 @@
 
                                                 
                                                 ?>
-                                                
+                                                </a>
                                                 </td>
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 
@@ -335,14 +335,7 @@
 <!-- End of Main Content -->
 
 
-    
-
-
-
-
-
-
-
+  
 
 <?php    
     include('includes/footer.php');
@@ -359,9 +352,6 @@
     
 
 </script>
-
-
-
 
 <script>
     $(document).ready(function(){
@@ -387,5 +377,23 @@
 
     $("#image").change(function () {
         imagePreview(this);
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.editbtn', function(){
+            var id=$(this).val(); 
+            var empno = $('#uempno'+id).val();
+            var fullname = $('#ufullname'+id).val();
+            var dob = $('#udob'+id).val();
+                       
+            $('#editchildModal').modal('show');
+            document.getElementById('Echildren_id').value = id;
+            document.getElementById('Eempno').value = empno;
+            document.getElementById('Efullname').value = fullname;
+            document.getElementById('Edob').value = dob;            
+        });
     });
 </script>
