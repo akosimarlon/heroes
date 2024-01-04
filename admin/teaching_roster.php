@@ -101,7 +101,7 @@
                                                 
                                                 <!-- <td data-toggle="modal" data-target="#progressmodal" class="forModal"> -->
                                                 <td>
-                                                <a href="#" data-target="#progressmodal" data-toggle="modal" class="forModal" >
+                                                <a href="#" data-target="" data-toggle="modal" class="forModal" >
 
                                                 <?php
                                                     //if($row['status']=='1'){
