@@ -24,7 +24,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <input type="text" id="Eempno" name="empno" value="">
+                <input type="text" id="Echildren_id" name="child_id" value="">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -99,8 +100,9 @@
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
                                                 
-                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal">
-
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" value="<?=$row['id']?>">
+                                                
+                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <?php
                                                     //if($row['status']=='1'){
                                                     //    echo '<span class="badge bg-primary">Active</span>';
@@ -343,7 +345,10 @@
     
     $(document).ready(function() {
         $(document).on('click', '.forModal', function(){
-            alert ("test");               
+            var id=$(this).val(); 
+            var empno = $('#uempno'+id).val();     
+            document.getElementById('Echildren_id').value = id;
+            document.getElementById('Eempno').value = empno;             
         });
     });
     
