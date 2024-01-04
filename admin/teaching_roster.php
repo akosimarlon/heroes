@@ -161,7 +161,7 @@
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
-                                                                    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+                                                                    <div class="progress-bar progress-bar-striped bg-dark progress-bar-animated" role="progressbar"
                                                                         style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
                                                                         aria-valuemax="100">
                                                                     </div>
@@ -180,7 +180,7 @@
                                                         <!-- <div class="col">
                                                             <div class="progress progress-sm mr-2">
                                                                 <div class="progress-bar progress-bar-striped bg-primary progress-bar-animated" role="progressbar"
-                                                                    style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                    style="width: <?//=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
                                                                     aria-valuemax="100">
                                                                 </div>
                                                             </div>
