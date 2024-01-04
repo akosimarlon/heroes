@@ -34,8 +34,8 @@
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">-->                    
-                <ul style="list-style-type:none;">
-                    <li>Personal Information - <div id="Epersonal">Personal Information</div></li>
+                
+                    <div class="row">Personal Information - <div class="col" id="Epersonal"></div></div>
                     <li>Family Background - <div id="Efamily"></div></li>                    
                     <li>Children's Information - <div id="Echild"></div></li>                    
                     <li>Elementary Education - <div id="Eelem"></div></li>                    
@@ -57,7 +57,7 @@
                     <li>Major and Minor - <div id="Emajorminor"></div></li>                    
                     <li>Specialization - <div id="Especial"></div></li>                    
                     <li>Anciliary Work - <div id="Eanciliary"></div></li>                    
-                </ul>
+                
                    
             </div>
             <div class="modal-footer">
