@@ -120,7 +120,8 @@
                                             if(mysqli_num_rows($query_run1) > 0){
                                                 foreach($query_run1 as $row){
                                         ?>
-                                            <tr>   
+                                            <tr>
+                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['lastname'])?>">   
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
@@ -153,7 +154,7 @@
                                                         foreach($query_run as $row){ 
                                                     ?>   
                                                     
-                                                        <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['lastname'])?>">
+                                                        
                                                         <input type="hidden" id="personalinfo<?=$row['id']?>" value="<?=$row['pi_completed_fileds']?>">
                                                         <input type="hidden" id="familybackground<?=$row['id']?>" value="<?=$row['fb_completed_fileds']?>">
                                                         <input type="hidden" id="childreninfo<?=$row['id']?>" value="<?=$row['child_completed_fileds']?>">
