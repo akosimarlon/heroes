@@ -100,7 +100,7 @@
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
                                                 
-                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" value="<?=$row['id']?>">
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
                                                 
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <?php
@@ -344,8 +344,8 @@
 <script>
     
     $(document).ready(function() {
-        $(document).on('click', '.forModal', function(){
-            var id=$(this).val(); 
+        $(document).on('click', '.forModal', function(){            
+            var id = $(this).data('id');
             var empno = $('#uempno'+id).val();     
             document.getElementById('Echildren_id').value = id;
             document.getElementById('Eempno').value = empno;             
