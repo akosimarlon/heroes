@@ -23,7 +23,9 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">                  
+            <div class="modal-body">    
+                    <input type="hidden" id="Eempno" name="empno" value="">
+                    <input type="hidden" id="Echildren_id" name="child_id" value="">             
                 <ul style="list-style-type:none;">
                     <li>Personal Information - <input type="text" id="Epersonal" readonly></li>
                     <li>Family Backgorund - <input type="text" id="Efamily" readonly></li>                    
@@ -527,8 +529,8 @@
                 document.getElementById('Eanciliary').value = "Complete";
             }            
 
-            //document.getElementById('Echildren_id').value = id;
-            //document.getElementById('Eempno').value = empno;             
+            document.getElementById('Echildren_id').value = id;
+            document.getElementById('Eempno').value = empno;             
         });
     });
     
