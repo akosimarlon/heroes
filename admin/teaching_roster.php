@@ -24,8 +24,8 @@
                 </button>
             </div>
             <div class="modal-body">    
-                    <input type="hidden" id="Eempno" name="empno" value="">
-                    <input type="hidden" id="Echildren_id" name="child_id" value="">             
+                    <input type="text" id="Eempno" name="empno" value="">
+                    <input type="text" id="Echildren_id" name="child_id" value="">             
                 <ul style="list-style-type:none;">
                     <li>Personal Information - <input type="text" id="Epersonal" readonly></li>
                     <li>Family Backgorund - <input type="text" id="Efamily" readonly></li>                    
