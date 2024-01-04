@@ -36,27 +36,27 @@
                     <input type="text" id="Echildren_id" name="child_id" value="">-->                    
                 <ul style="list-style-type:none">
                     <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
-                    <li>Family Background - <div id="Efamily"></div></li>                    
-                    <li>Children's Information - <div id="Echild"></div></li>                    
-                    <li>Elementary Education - <div id="Eelem"></div></li>                    
-                    <li>Secondary Education - <div id="Esecond"></div></li>                    
-                    <li>Vocational Education - <div id="Evoc"></div></li>                    
-                    <li>College Education - <div id="Ecol"></div></li>                    
-                    <li>Graduate Education - <div id="Egrad"></div></li>                    
-                    <li>Civil Service Eligibility - <div id="Ecivil"></div></li>                    
-                    <li>Work Experience - <div id="Eworkex"></div></li>                    
-                    <li>Voluntary Work - <div id="Evolun"></div></li>                    
-                    <li>Learning Development - <div id="Elearn"></div></li>                    
-                    <li>Special Skills and Hobies - <div id="Eskills"></div></li>                    
-                    <li>Non-Academic Distinctions - <div id="Enonacad"></div></li>                    
-                    <li>Membership in Association - <div id="Emember"></div></li>                    
-                    <li>Other Information - <div id="Eotherinfo"></div></li>                    
-                    <li>Employment Information - <div id="Eemployment"></div></li>                    
-                    <li>Subjects Handled - <div id="Esubject"></div></li>                    
-                    <li>national Certificates - <div id="Enationalcert"></div></li>                    
-                    <li>Major and Minor - <div id="Emajorminor"></div></li>                    
-                    <li>Specialization - <div id="Especial"></div></li>                    
-                    <li>Anciliary Work - <div id="Eanciliary"></div></li>                    
+                    <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
+                    <li><div class="row">Children's Information - <div class="col" id="Echild"></div></div></li>                    
+                    <li><div class="row">Elementary Education - <div class="col" id="Eelem"></div></div></li>                    
+                    <li><div class="row">Secondary Education - <div class="col" id="Esecond"></div></div></li>                    
+                    <li><div class="row">Vocational Education - <div class="col" id="Evoc"></div></div></li>                    
+                    <li><div class="row">College Education - <div class="col" id="Ecol"></div></div></li>                    
+                    <li><div class="row">Graduate Education - <div class="col" id="Egrad"></div></div></li>                    
+                    <li><div class="row">Civil Service Eligibility - <div class="col" id="Ecivil"></div></div></li>                    
+                    <li><div class="row">Work Experience - <div class="col" id="Eworkex"></div></div></li>                    
+                    <li><div class="row">Voluntary Work - <div class="col" id="Evolun"></div></div></li>                    
+                    <li><div class="row">Learning Development - <div class="col" id="Elearn"></div></div></li>                    
+                    <li><div class="row">Special Skills and Hobies - <div class="col" id="Eskills"></div></div></li>                    
+                    <li><div class="row">Non-Academic Distinctions - <div class="col" id="Enonacad"></div></div></li>                    
+                    <li><div class="row">Membership in Association - <div class="col" id="Emember"></div></div></li>                    
+                    <li><div class="row">Other Information - <div class="col" id="Eotherinfo"></div></div></li>                    
+                    <li><div class="row">Employment Information - <div class="col" id="Eemployment"></div></div></li>                    
+                    <li><div class="row">Subjects Handled - <div class="col" id="Esubject"></div></div></li>                    
+                    <li><div class="row">national Certificates - <div class="col" id="Enationalcert"></div></div></li>                    
+                    <li><div class="row">Major and Minor - <div class="col" id="Emajorminor"></div></div></li>                    
+                    <li><div class="row">Specialization - <div class="col" id="Especial"></div></div></li>                    
+                    <li><div class="row">Anciliary Work - <div class="col" id="Eanciliary"></div></div></li>                    
                 </ul>
                    
             </div>
