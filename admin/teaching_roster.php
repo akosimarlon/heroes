@@ -144,28 +144,28 @@
                                                         foreach($query_run as $row){ 
                                                     ?>   
                                                     
-                                                        <input type="hidden" id="personalinfo<?=$row['pi_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="familybackground<?=$row['fb_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="childreninfo<?=$row['child_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="elementary<?=$row['elem_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="secondary<?=$row['sec_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="vocational<?=$row['voc_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="college<?=$row['col_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="graduate<?=$row['grad_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="civilservice<?=$row['cse_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="workexperience<?=$row['we_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="voluntarywork<?=$row['vw_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="learningdev<?=$row['ld_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="skills<?=$row['skills_completed_fields']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="nonacademic<?=$row['nacad_completed_fields']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="membership<?=$row['mem_completed_fields']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="otherinfo<?=$row['oi_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="employment<?=$row['ei_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="subject<?=$row['tr_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="nationalcert<?=$row['nc_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="majorminor<?=$row['mm_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="specialization<?=$row['spec_completed_fileds']?>" value="<?=$row['emp_no']?>">
-                                                        <input type="hidden" id="anciliary<?=$row['aw_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="personalinfo<?=$row['id']?>" value="<?=$row['pi_completed_fileds']?>">
+                                                        <input type="hidden" id="familybackground<?=$row['id']?>" value="<?=$row['fb_completed_fileds']?>">
+                                                        <input type="hidden" id="childreninfo<?=$row['id']?>" value="<?=$row['child_completed_fileds']?>">
+                                                        <input type="hidden" id="elementary<?=$row['id']?>" value="<?=$row['elem_completed_fileds']?>">
+                                                        <input type="hidden" id="secondary<?=$row['id']?>" value="<?=$row['sec_completed_fileds']?>">
+                                                        <input type="hidden" id="vocational<?=$row['id']?>" value="<?=$row['voc_completed_fileds']?>">
+                                                        <input type="hidden" id="college<?=$row['id']?>" value="<?=$row['col_completed_fileds']?>">
+                                                        <input type="hidden" id="graduate<?=$row['id']?>" value="<?=$row['grad_completed_fileds']?>">
+                                                        <input type="hidden" id="civilservice<?=$row['id']?>" value="<?=$row['cse_completed_fileds']?>">
+                                                        <input type="hidden" id="workexperience<?=$row['id']?>" value="<?=$row['we_completed_fileds']?>">
+                                                        <input type="hidden" id="voluntarywork<?=$row['id']?>" value="<?=$row['vw_completed_fileds']?>">
+                                                        <input type="hidden" id="learningdev<?=$row['id']?>" value="<?=$row['ld_completed_fileds']?>">
+                                                        <input type="hidden" id="skills<?=$row['id']?>" value="<?=$row['skills_completed_fields']?>">
+                                                        <input type="hidden" id="nonacademic<?=$row['id']?>" value="<?=$row['nacad_completed_fields']?>">
+                                                        <input type="hidden" id="membership<?=$row['id']?>" value="<?=$row['mem_completed_fields']?>">
+                                                        <input type="hidden" id="otherinfo<?=$row['id']?>" value="<?=$row['oi_completed_fileds']?>">
+                                                        <input type="hidden" id="employment<?=$row['id']?>" value="<?=$row['ei_completed_fileds']?>">
+                                                        <input type="hidden" id="subject<?=$row['id']?>" value="<?=$row['tr_completed_fileds']?>">
+                                                        <input type="hidden" id="nationalcert<?=$row['id']?>" value="<?=$row['nc_completed_fileds']?>">
+                                                        <input type="hidden" id="majorminor<?=$row['id']?>" value="<?=$row['mm_completed_fileds']?>">
+                                                        <input type="hidden" id="specialization<?=$row['id']?>" value="<?=$row['spec_completed_fileds']?>">
+                                                        <input type="hidden" id="anciliary<?=$row['id']?>" value="<?=$row['aw_completed_fileds']?>">
 
                                                         <div class="col-auto">
                                                             <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
@@ -396,8 +396,8 @@
         $(document).on('click', '.forModal', function(){            
             var id = $(this).data('id');
             var empno = $('#uempno'+id).val(); 
-            var nc = $('#nationalcert'+id).val()
-
+            //var nc = $('#nationalcert'+id).val()
+            //alert (nc);
             if($('#personalinfo'+id).val() == 0 ){
                 document.getElementById('Epersonal').value = "Incomplete";
             }else{
@@ -505,7 +505,7 @@
             }else{
                 document.getElementById('Esubject').value = "Complete";
             }
-            alert (nc);
+            
             if($('#nationalcert'+id).val() == 0 ){
                 document.getElementById('Enationalcert').value = "Incomplete";
             }else{
