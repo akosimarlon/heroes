@@ -219,8 +219,7 @@
                                                 
 
                                                 
-                                                ?>
-                                                
+                                                ?>                                                
                                                 </td>
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 
