@@ -14,7 +14,7 @@
     {
     border: none;
     outline: none;
-    border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
+    /*border-bottom: 1px solid #ccc;  You can adjust the color and thickness of the outline */
     }
     </style>      
     <!-- Begin Page Content -->
