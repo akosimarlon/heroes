@@ -36,11 +36,11 @@
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
                 <ul style="list-style-type:none;">
                     <li>Personal Information - 
-                        <div data-show-if="pi:Complete">
+                        
                             <span style="color:red">
                                 <input type="text" name="pi" class="no-outline" id="Epersonal" readonly>
                             </span>
-                        </div>
+                       
                     </li>
                     <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
                     <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
