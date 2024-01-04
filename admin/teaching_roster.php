@@ -98,7 +98,8 @@
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
-                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal">                                                
+
+                                                <td data-toggle="modal" data-target="" class="forModal">                                                
                                                 <?php
                                                     //if($row['status']=='1'){
                                                     //    echo '<span class="badge bg-primary">Active</span>';
