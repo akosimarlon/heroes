@@ -99,9 +99,7 @@
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
                                                 
-                                                <!-- <td data-toggle="modal" data-target="#progressmodal" class="forModal"> -->
-                                                <td>
-                                                <a href="#" data-target="" data-toggle="modal" class="forModal" >
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal">
 
                                                 <?php
                                                     //if($row['status']=='1'){
@@ -222,7 +220,7 @@
 
                                                 
                                                 ?>
-                                                </a>
+                                                
                                                 </td>
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 
