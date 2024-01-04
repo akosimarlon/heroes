@@ -34,9 +34,9 @@
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
-                    <input type="text" name="PER" id="Epersonal" value="">
+                    <input type="text" name="PER" id="Epersonal" value="Com">
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <div data-show-if="PER:Complete"><input type="text" style="color:red" class="no-outline" id="Epersonal" readonly></div>
+                    <li>Personal Information - <div data-show-if="PER:Com"><input type="text" style="color:red" class="no-outline" id="Epersonal" readonly></div>
                     </li>
                     <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
                     <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
