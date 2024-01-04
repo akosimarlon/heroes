@@ -34,7 +34,7 @@
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">-->   
-                <h5><div id="Eemp_name"></div></h5>                 
+                <div class="row"><h5><div class="col" id="Eemp_name"></div><div class="col" id="Epercentage"></div></h5></div>
                 <ul style="list-style-type:none">
                     <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
                     <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
@@ -177,6 +177,7 @@
                                                         <input type="hidden" id="majorminor<?=$row['id']?>" value="<?=$row['mm_completed_fileds']?>">
                                                         <input type="hidden" id="specialization<?=$row['id']?>" value="<?=$row['spec_completed_fileds']?>">
                                                         <input type="hidden" id="anciliary<?=$row['id']?>" value="<?=$row['aw_completed_fileds']?>">
+                                                        <input type="hidden" id="percentage<?=$row['id']?>" value="<?=$row['completed_percentage']?>">
 
                                                         <div class="col-auto">
                                                             <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
@@ -408,6 +409,7 @@
             var id = $(this).data('id');
             var empno = $('#uempno'+id).val(); 
             var empname = $('#emp_name'+id).val(); 
+            var percent = $('#percentage'+id).val(); 
             //var nc = $('#nationalcert'+id).val()
             //alert (nc);
             if($('#personalinfo'+id).val() == 0 ){                
@@ -543,6 +545,7 @@
             }           
 
             $('#Eemp_name').html(empname);
+            $('#Epercentage').html(percent);
             //document.getElementById('Eemp_name').value = id;
             //document.getElementById('Echildren_id').value = id;
             //document.getElementById('Eempno').value = empno;             
