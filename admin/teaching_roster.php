@@ -340,12 +340,12 @@
 
 
 <script>
-    $(function () {
-        $(".forModal").click(function () {
-            alert ("test");   
-        })
+    
+    $(document).ready(function() {
+        $(document).on('click', '.forModal', function(){
+            alert ("test");               
+        });
     });
-
     
 
 </script>
