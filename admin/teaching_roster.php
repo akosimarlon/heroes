@@ -335,12 +335,13 @@
 
 
 <script>
-
-    $(document).ready(function() {
-        $(document).on('click', '.forModal', function(){
+    $(function () {
+        $(".forModal").click(function () {
             alert ("test");   
-        });
+        })
     });
+
+    
 
 </script>
 
