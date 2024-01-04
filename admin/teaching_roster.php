@@ -36,27 +36,27 @@
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
                 <ul style="list-style-type:none;">
                     <li>Personal Information - <input type="text" class="no-outline" id="Epersonal" readonly></li>
-                    <li>Family Backgorund - <input type="text" id="Efamily" readonly></li>                    
-                    <li>Children's Information - <input type="text" id="Echild" readonly></li>                    
-                    <li>Elementary Education - <input type="text" id="Eelem" readonly></li>                    
-                    <li>Secondary Education - <input type="text" id="Esecond" readonly></li>                    
-                    <li>Vocational Education - <input type="text" id="Evoc" readonly></li>                    
-                    <li>College Education - <input type="text" id="Ecol" readonly></li>                    
-                    <li>Graduate Education - <input type="text" id="Egrad" readonly></li>                    
-                    <li>Civil Service Eligibility - <input type="text" id="Ecivil" readonly></li>                    
-                    <li>Work Experience - <input type="text" id="Eworkex" readonly></li>                    
-                    <li>Voluntary Work - <input type="text" id="Evolun" readonly></li>                    
-                    <li>Learning Development - <input type="text" id="Elearn" readonly></li>                    
-                    <li>Special Skills and Hobies - <input type="text" id="Eskills" readonly></li>                    
-                    <li>Non-Academic Distinctions - <input type="text" id="Enonacad" readonly></li>                    
-                    <li>Membership in Association - <input type="text" id="Emember" readonly></li>                    
-                    <li>Other Information - <input type="text" id="Eotherinfo" readonly></li>                    
-                    <li>Employment Information - <input type="text" id="Eemployment" readonly></li>                    
-                    <li>Subjects Handled - <input type="text" id="Esubject" readonly></li>                    
-                    <li>national Certificates - <input type="text" id="Enationalcert" readonly></li>                    
-                    <li>Major and Minor - <input type="text" id="Emajorminor" readonly></li>                    
-                    <li>Specialization - <input type="text" id="Especial" readonly></li>                    
-                    <li>Anciliary Work - <input type="text" id="Eanciliary" readonly></li>                    
+                    <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
+                    <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
+                    <li>Elementary Education - <input type="text" class="no-outline" id="Eelem" readonly></li>                    
+                    <li>Secondary Education - <input type="text" class="no-outline" id="Esecond" readonly></li>                    
+                    <li>Vocational Education - <input type="text" class="no-outline" id="Evoc" readonly></li>                    
+                    <li>College Education - <input type="text" class="no-outline" id="Ecol" readonly></li>                    
+                    <li>Graduate Education - <input type="text" class="no-outline" id="Egrad" readonly></li>                    
+                    <li>Civil Service Eligibility - <input type="text" class="no-outline" id="Ecivil" readonly></li>                    
+                    <li>Work Experience - <input type="text" class="no-outline" id="Eworkex" readonly></li>                    
+                    <li>Voluntary Work - <input type="text" class="no-outline" id="Evolun" readonly></li>                    
+                    <li>Learning Development - <input type="text" class="no-outline" id="Elearn" readonly></li>                    
+                    <li>Special Skills and Hobies - <input type="text" class="no-outline" id="Eskills" readonly></li>                    
+                    <li>Non-Academic Distinctions - <input type="text" class="no-outline" id="Enonacad" readonly></li>                    
+                    <li>Membership in Association - <input type="text" class="no-outline" id="Emember" readonly></li>                    
+                    <li>Other Information - <input type="text" class="no-outline" id="Eotherinfo" readonly></li>                    
+                    <li>Employment Information - <input type="text" class="no-outline" id="Eemployment" readonly></li>                    
+                    <li>Subjects Handled - <input type="text" class="no-outline" id="Esubject" readonly></li>                    
+                    <li>national Certificates - <input type="text" class="no-outline" id="Enationalcert" readonly></li>                    
+                    <li>Major and Minor - <input type="text" class="no-outline" id="Emajorminor" readonly></li>                    
+                    <li>Specialization - <input type="text" class="no-outline" id="Especial" readonly></li>                    
+                    <li>Anciliary Work - <input type="text" class="no-outline" id="Eanciliary" readonly></li>                    
                 </ul>
                    
             </div>
