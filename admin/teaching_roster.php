@@ -34,7 +34,7 @@
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">-->   
-                <h3><div id="Eemp_name"></div></h3>                 
+                <h5><div id="Eemp_name"></div></h5>                 
                 <ul style="list-style-type:none">
                     <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
                     <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
