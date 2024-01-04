@@ -95,13 +95,96 @@
                                                         <div class="col-auto">
                                                             <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
                                                         </div>
-                                                        <div class="col">
+
+                                                        <?php
+                                                            if($row['completed_percentage']<=20){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($row['completed_percentage']<=60 && $row['completed_percentage']>20){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($row['completed_percentage']<=90 && $row['completed_percentage']>60){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($row['completed_percentage']<=99 && $row['completed_percentage']>90){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-primary progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($row['completed_percentage']==100){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+
+
+
+
+
+
+                                                        <!-- <div class="col">
                                                             <div class="progress progress-sm mr-2">
                                                                 <div class="progress-bar progress-bar-striped bg-primary progress-bar-animated" role="progressbar"
                                                                     style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
-                                                                    aria-valuemax="100"></div>
+                                                                    aria-valuemax="100">
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                     
                                                 <?php
                                                         }
