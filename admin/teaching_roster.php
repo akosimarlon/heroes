@@ -33,7 +33,8 @@
             </div>
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
-                    <input type="text" id="Echildren_id" name="child_id" value="">-->                    
+                    <input type="text" id="Echildren_id" name="child_id" value="">-->   
+                <div id="Eemp_name"></div>                 
                 <ul style="list-style-type:none">
                     <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
                     <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
@@ -152,6 +153,7 @@
                                                         foreach($query_run as $row){ 
                                                     ?>   
                                                     
+                                                        <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['lastname'])?>">
                                                         <input type="hidden" id="personalinfo<?=$row['id']?>" value="<?=$row['pi_completed_fileds']?>">
                                                         <input type="hidden" id="familybackground<?=$row['id']?>" value="<?=$row['fb_completed_fileds']?>">
                                                         <input type="hidden" id="childreninfo<?=$row['id']?>" value="<?=$row['child_completed_fileds']?>">
@@ -404,6 +406,7 @@
         $(document).on('click', '.forModal', function(){            
             var id = $(this).data('id');
             var empno = $('#uempno'+id).val(); 
+            var empname = $('#emp_name'+id).val(); 
             //var nc = $('#nationalcert'+id).val()
             //alert (nc);
             if($('#personalinfo'+id).val() == 0 ){                
@@ -538,6 +541,8 @@
                 $('#Eanciliary').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }           
 
+            $('#Eemp_name').html(empname);
+            //document.getElementById('Eemp_name').value = id;
             //document.getElementById('Echildren_id').value = id;
             //document.getElementById('Eempno').value = empno;             
         });
