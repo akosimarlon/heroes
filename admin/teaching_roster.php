@@ -98,7 +98,7 @@
 
                                                         <?php
                                                             
-                                                            $comp = $row['completed_percentage'] * 100;
+                                                            $comp = intval(substr($row['completed_percentage'],0,-1));
 
                                                             if($comp<=20){
                                                         ?>    
@@ -115,7 +115,7 @@
                                                         ?>
 
                                                         <?php
-                                                            if($row['completed_percentage']<=60 && $row['completed_percentage']>20){
+                                                            if($comp<=60 && $comp>20){
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
@@ -130,7 +130,7 @@
                                                         ?>
 
                                                         <?php
-                                                            if($row['completed_percentage']<=90 && $row['completed_percentage']>60){
+                                                            if($comp<=90 && $comp>60){
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
@@ -145,7 +145,7 @@
                                                         ?>
 
                                                         <?php
-                                                            if($row['completed_percentage']<=99 && $row['completed_percentage']>90){
+                                                            if($comp<=99 && $comp>90){
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
@@ -160,7 +160,7 @@
                                                         ?>
 
                                                         <?php
-                                                            if($row['completed_percentage']=='100%'){
+                                                            if($comp==100){
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
