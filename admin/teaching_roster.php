@@ -11,6 +11,28 @@
 </style>      
     <!-- Begin Page Content -->
     <div class="container-fluid">
+
+
+        <!-- Progress Modal -->
+        <div class="modal fade" id="progressmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+        </div>
         
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-2">
@@ -76,7 +98,7 @@
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['mobile'] ?></td>
-                                                <td>                                                
+                                                <td data-toggle="modal" data-target="#progressmodal">                                                
                                                 <?php
                                                     //if($row['status']=='1'){
                                                     //    echo '<span class="badge bg-primary">Active</span>';
