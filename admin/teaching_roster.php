@@ -23,39 +23,32 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <input type="text" id="Eempno" name="empno" value="">
-                <input type="text" id="Echildren_id" name="child_id" value="">   
+            <div class="modal-body">                  
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <span style="color:blue"><input type="text" id="Epersonal" name="child_id" readonly></span></li>
-                    <li>Tea</li>
-                    <li>Milk</li>
+                    <li>Personal Information - <input type="text" id="Epersonal" readonly></li>
+                    <li>Family Backgorund - <input type="text" id="Efamily" readonly></li>                    
+                    <li>Children's Information - <input type="text" id="Echild" readonly></li>                    
+                    <li>Elementary Education - <input type="text" id="Eelem" readonly></li>                    
+                    <li>Secondary Education - <input type="text" id="Esecond" readonly></li>                    
+                    <li>Vocational Education - <input type="text" id="Evoc" readonly></li>                    
+                    <li>College Education - <input type="text" id="Ecol" readonly></li>                    
+                    <li>Graduate Education - <input type="text" id="Egrad" readonly></li>                    
+                    <li>Civil Service Eligibility - <input type="text" id="Ecivil" readonly></li>                    
+                    <li>Work Experience - <input type="text" id="Eworkex" readonly></li>                    
+                    <li>Voluntary Work - <input type="text" id="Evolun" readonly></li>                    
+                    <li>Learning Development - <input type="text" id="Elearn" readonly></li>                    
+                    <li>Special Skills and Hobies - <input type="text" id="Eskills" readonly></li>                    
+                    <li>Non-Academic Distinctions - <input type="text" id="Enonacad" readonly></li>                    
+                    <li>Membership in Association - <input type="text" id="Emember" readonly></li>                    
+                    <li>Other Information - <input type="text" id="Eotherinfo" readonly></li>                    
+                    <li>Employment Information - <input type="text" id="Eemployment" readonly></li>                    
+                    <li>Subjects Handled - <input type="text" id="Esubject" readonly></li>                    
+                    <li>national Certificates - <input type="text" id="Enationalcert" readonly></li>                    
+                    <li>Major and Minor - <input type="text" id="Emajorminor" readonly></li>                    
+                    <li>Specialization - <input type="text" id="Especial" readonly></li>                    
+                    <li>Anciliary Work - <input type="text" id="Eanciliary" readonly></li>                    
                 </ul>
-
-<!-- Efamily
-Echild
-Eelem
-Esecond
-Evoc
-Ecol
-Egrad
-Ecivil
-Eworkex
-Evolun
-Elearn
-Eskills
-Enonacad
-Emember
-Eotherinfo
-Eemployment
-Esubject
-Enationalcert
-Emajorminor
-Especial
-Eanciliary              -->
-                <?php
-                    
-                ?>    
+                   
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
