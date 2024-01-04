@@ -35,7 +35,7 @@
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">-->                    
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <div id="Epersonal"></div></li>
+                    <li>Personal Information - <div id="Epersonal">Personal Information</div></li>
                     <li>Family Background - <div id="Efamily"></div></li>                    
                     <li>Children's Information - <div id="Echild"></div></li>                    
                     <li>Elementary Education - <div id="Eelem"></div></li>                    
