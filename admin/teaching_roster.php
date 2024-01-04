@@ -25,10 +25,36 @@
             </div>
             <div class="modal-body">
                 <input type="text" id="Eempno" name="empno" value="">
-                <input type="text" id="Echildren_id" name="child_id" value="">
-                <div id="Eempno"></div>
+                <input type="text" id="Echildren_id" name="child_id" value="">   
+                <ul style="list-style-type:none;">
+                    <li>Personal Information - <span style="color:blue"><input type="text" id="Epersonal" name="child_id" readonly></span></li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ul>
+
+<!-- Efamily
+Echild
+Eelem
+Esecond
+Evoc
+Ecol
+Egrad
+Ecivil
+Eworkex
+Evolun
+Elearn
+Eskills
+Enonacad
+Emember
+Eotherinfo
+Eemployment
+Esubject
+Enationalcert
+Emajorminor
+Especial
+Eanciliary              -->
                 <?php
-                    echo "<div id='Eempno'></div>";
+                    
                 ?>    
             </div>
             <div class="modal-footer">
@@ -120,8 +146,32 @@
                                                     $query_run = mysqli_query($con,$query);
 
                                                     if(mysqli_num_rows($query_run) > 0 ){ 
-                                                        foreach($query_run as $row){
-                                                    ?>                                                      
+                                                        foreach($query_run as $row){ 
+                                                    ?>   
+                                                    
+                                                        <input type="hidden" id="personalinfo<?=$row['pi_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="familybackground<?=$row['fb_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="childreninfo<?=$row['child_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="elementary<?=$row['elem_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="secondary<?=$row['sec_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="vocational<?=$row['voc_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="college<?=$row['col_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="graduate<?=$row['grad_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="civilservice<?=$row['cse_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="workexperience<?=$row['we_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="voluntarywork<?=$row['vw_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="learningdev<?=$row['ld_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="skills<?=$row['skills_completed_fields']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="nonacademic<?=$row['nacad_completed_fields']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="membership<?=$row['mem_completed_fields']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="otherinfo<?=$row['oi_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="employment<?=$row['ei_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="subject<?=$row['tr_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="nationalcert<?=$row['nc_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="majorminor<?=$row['mm_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="specialization<?=$row['spec_completed_fileds']?>" value="<?=$row['emp_no']?>">
+                                                        <input type="hidden" id="anciliary<?=$row['aw_completed_fileds']?>" value="<?=$row['emp_no']?>">
+
                                                         <div class="col-auto">
                                                             <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
                                                         </div>
@@ -350,9 +400,142 @@
     $(document).ready(function() {
         $(document).on('click', '.forModal', function(){            
             var id = $(this).data('id');
-            var empno = $('#uempno'+id).val();     
-            document.getElementById('Echildren_id').value = id;
-            document.getElementById('Eempno').value = empno;             
+            var empno = $('#uempno'+id).val(); 
+
+            if($('#personalinfo'+id).val() == 0 ){
+                document.getElementById('Epersonal').value = "Incomplete";
+            }else{
+                document.getElementById('Epersonal').value = "Complete";
+            }
+            
+            if($('#familybackground'+id).val() == 0 ){
+                document.getElementById('Efamily').value = "Incomplete";
+            }else{
+                document.getElementById('Efamily').value = "Complete";
+            }
+            
+            if($('#childreninfo'+id).val() == 0 ){
+                document.getElementById('Echild').value = "Incomplete";
+            }else{
+                document.getElementById('Echild').value = "Complete";
+            }
+
+            if($('#elementary'+id).val() == 0 ){
+                document.getElementById('Eelem').value = "Incomplete";
+            }else{
+                document.getElementById('Eelem').value = "Complete";
+            }
+
+            if($('#secondary'+id).val() == 0 ){
+                document.getElementById('Esecond').value = "Incomplete";
+            }else{
+                document.getElementById('Esecond').value = "Complete";
+            }
+
+            if($('#vocational'+id).val() == 0 ){
+                document.getElementById('Evoc').value = "Incomplete";
+            }else{
+                document.getElementById('Evoc').value = "Complete";
+            }
+
+            if($('#college'+id).val() == 0 ){
+                document.getElementById('Ecol').value = "Incomplete";
+            }else{
+                document.getElementById('Ecol').value = "Complete";
+            }
+
+            if($('#graduate'+id).val() == 0 ){
+                document.getElementById('Egrad').value = "Incomplete";
+            }else{
+                document.getElementById('Egrad').value = "Complete";
+            }
+
+            if($('#civilservice'+id).val() == 0 ){
+                document.getElementById('Ecivil').value = "Incomplete";
+            }else{
+                document.getElementById('Ecivil').value = "Complete";
+            }
+
+            if($('#workexperience'+id).val() == 0 ){
+                document.getElementById('Eworkex').value = "Incomplete";
+            }else{
+                document.getElementById('Eworkex').value = "Complete";
+            }
+
+            if($('#voluntarywork'+id).val() == 0 ){
+                document.getElementById('Evolun').value = "Incomplete";
+            }else{
+                document.getElementById('Evolun').value = "Complete";
+            }
+
+            if($('#learningdev'+id).val() == 0 ){
+                document.getElementById('Elearn').value = "Incomplete";
+            }else{
+                document.getElementById('Elearn').value = "Complete";
+            }
+
+            if($('#skills'+id).val() == 0 ){
+                document.getElementById('Eskills').value = "Incomplete";
+            }else{
+                document.getElementById('Eskills').value = "Complete";
+            }
+
+            if($('#nonacademic'+id).val() == 0 ){
+                document.getElementById('Enonacad').value = "Incomplete";
+            }else{
+                document.getElementById('Enonacad').value = "Complete";
+            }
+
+            if($('#membership'+id).val() == 0 ){
+                document.getElementById('Emember').value = "Incomplete";
+            }else{
+                document.getElementById('Emember').value = "Complete";
+            }
+
+            if($('#otherinfo'+id).val() == 0 ){
+                document.getElementById('Eotherinfo').value = "Incomplete";
+            }else{
+                document.getElementById('Eotherinfo').value = "Complete";
+            }
+
+            if($('#employment'+id).val() == 0 ){
+                document.getElementById('Eemployment').value = "Incomplete";
+            }else{
+                document.getElementById('Eemployment').value = "Complete";
+            }
+
+            if($('#subject'+id).val() == 0 ){
+                document.getElementById('Esubject').value = "Incomplete";
+            }else{
+                document.getElementById('Esubject').value = "Complete";
+            }
+
+            if($('#nationalcert'+id).val() == 0 ){
+                document.getElementById('Enationalcert').value = "Incomplete";
+            }else{
+                document.getElementById('Enationalcert').value = "Complete";
+            }
+
+            if($('#majorminor'+id).val() == 0 ){
+                document.getElementById('Emajorminor').value = "Incomplete";
+            }else{
+                document.getElementById('Emajorminor').value = "Complete";
+            }
+
+            if($('#specialization'+id).val() == 0 ){
+                document.getElementById('Especial').value = "Incomplete";
+            }else{
+                document.getElementById('Especial').value = "Complete";
+            }
+
+            if($('#anciliary'+id).val() == 0 ){
+                document.getElementById('Eanciliary').value = "Incomplete";
+            }else{
+                document.getElementById('Eanciliary').value = "Complete";
+            }            
+
+            //document.getElementById('Echildren_id').value = id;
+            //document.getElementById('Eempno').value = empno;             
         });
     });
     
