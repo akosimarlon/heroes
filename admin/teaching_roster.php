@@ -36,7 +36,7 @@
                     <input type="text" id="Echildren_id" name="child_id" value="">-->                    
                 <ul style="list-style-type:none;">
                     <li>Personal Information - <div id="Epersonal"></div></li>
-                    <li>Family Backgorund - <div id="Efamily"></div></li>                    
+                    <li>Family Background - <div id="Efamily"></div></li>                    
                     <li>Children's Information - <div id="Echild"></div></li>                    
                     <li>Elementary Education - <div id="Eelem"></div></li>                    
                     <li>Secondary Education - <div id="Esecond"></div></li>                    
@@ -407,133 +407,133 @@
             //var nc = $('#nationalcert'+id).val()
             //alert (nc);
             if($('#personalinfo'+id).val() == 0 ){                
-                $('#Epersonal').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Epersonal').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Epersonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
             if($('#familybackground'+id).val() == 0 ){                
-                $('#Efamily').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Efamily').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
-                $('#EperEfamilysonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+                $('#Efamily').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
             if($('#childreninfo'+id).val() == 0 ){                
-                $('#Echild').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Echild').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Echild').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#elementary'+id).val() == 0 ){                
-                $('#Eelem').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eelem').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eelem').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#secondary'+id).val() == 0 ){                
-                $('#Esecond').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Esecond').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Esecond').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#vocational'+id).val() == 0 ){                
-                $('#Evoc').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Evoc').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Evoc').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#college'+id).val() == 0 ){                
-                $('#Ecol').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Ecol').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Ecol').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#graduate'+id).val() == 0 ){                
-                $('#Egrad').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Egrad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Egrad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#civilservice'+id).val() == 0 ){                
-                $('#Ecivil').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Ecivil').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Ecivil').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#workexperience'+id).val() == 0 ){                
-                $('#Eworkex').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eworkex').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eworkex').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#voluntarywork'+id).val() == 0 ){                
-                $('#Evolun').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Evolun').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Evolun').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#learningdev'+id).val() == 0 ){                
-                $('#Elearn').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Elearn').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Elearn').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#skills'+id).val() == 0 ){                
-                $('#Eskills').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eskills').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eskills').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#nonacademic'+id).val() == 0 ){                
-                $('#Enonacad').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Enonacad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Enonacad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#membership'+id).val() == 0 ){                
-                $('#Emember').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Emember').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Emember').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#otherinfo'+id).val() == 0 ){                
-                $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eotherinfo').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#employment'+id).val() == 0 ){                
-                $('#Eemployment').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eemployment').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eemployment').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#subject'+id).val() == 0 ){                
-                $('#Esubject').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Esubject').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Esubject').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
             if($('#nationalcert'+id).val() == 0 ){                
-                $('#Enationalcert').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Enationalcert').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Enationalcert').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#majorminor'+id).val() == 0 ){                
-                $('#Emajorminor').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Emajorminor').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Emajorminor').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#specialization'+id).val() == 0 ){                
-                $('#Especial').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Especial').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Especial').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
             if($('#anciliary'+id).val() == 0 ){                
-                $('#Eanciliary').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
+                $('#Eanciliary').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
             }else{
                 $('#Eanciliary').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }           
