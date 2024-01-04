@@ -35,7 +35,13 @@
                     <!-- <input type="text" id="Eempno" name="empno" value="">
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <input type="text" class="no-outline" id="Epersonal" readonly></li>
+                    <li>Personal Information - 
+                        <div data-show-if="pi:Complete">
+                            <span style="color:red">
+                                <input type="text" name="pi" class="no-outline" id="Epersonal" readonly>
+                            </span>
+                        </div>
+                    </li>
                     <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
                     <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
                     <li>Elementary Education - <input type="text" class="no-outline" id="Eelem" readonly></li>                    
@@ -62,7 +68,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
             </div>
         </div>
