@@ -545,7 +545,7 @@
             }           
 
             $('#Eemp_name').html(empname);
-            $('#Epercentage').html(percent);
+            $('#Epercentage').html('('+percent+')');
             //document.getElementById('Eemp_name').value = id;
             //document.getElementById('Echildren_id').value = id;
             //document.getElementById('Eempno').value = empno;             
