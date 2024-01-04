@@ -8,7 +8,15 @@
     .table-condensed{
         font-size: 12px;
     }
-</style>      
+
+
+    .no-outline
+    {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
+    }
+    </style>      
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
@@ -17,17 +25,17 @@
         <div class="modal fade" id="progressmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-primary">
                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">    
-                    <input type="text" id="Eempno" name="empno" value="">
-                    <input type="text" id="Echildren_id" name="child_id" value="">             
+                    <!-- <input type="text" id="Eempno" name="empno" value="">
+                    <input type="text" id="Echildren_id" name="child_id" value="">              -->
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <input type="text" id="Epersonal" readonly></li>
+                    <li>Personal Information - <input type="text" class="no-outline" id="Epersonal" readonly></li>
                     <li>Family Backgorund - <input type="text" id="Efamily" readonly></li>                    
                     <li>Children's Information - <input type="text" id="Echild" readonly></li>                    
                     <li>Elementary Education - <input type="text" id="Eelem" readonly></li>                    
@@ -530,8 +538,8 @@
                 document.getElementById('Eanciliary').value = "Complete";
             }            
 
-            document.getElementById('Echildren_id').value = id;
-            document.getElementById('Eempno').value = empno;             
+            //document.getElementById('Echildren_id').value = id;
+            //document.getElementById('Eempno').value = empno;             
         });
     });
     
