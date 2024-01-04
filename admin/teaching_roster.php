@@ -504,7 +504,7 @@
             }else{
                 document.getElementById('Esubject').value = "Complete";
             }
-
+            alert ($('#nationalcert'+id).val());
             if($('#nationalcert'+id).val() == 0 ){
                 document.getElementById('Enationalcert').value = "Incomplete";
             }else{
