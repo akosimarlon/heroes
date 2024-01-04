@@ -36,8 +36,7 @@
                     <input type="text" id="Echildren_id" name="child_id" value="">              -->
                     <input type="text" name="PER" value="Com">
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <div data-show-if="PER:Com"><input type="text" style="color:red" class="no-outline" id="Epersonal" readonly></div>
-                    </li>
+                    <li>Personal Information - <input type="text" class="no-outline" id="Epersonal" readonly> <div id="Epersonals"></div></li>
                     <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
                     <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
                     <li>Elementary Education - <input type="text" class="no-outline" id="Eelem" readonly></li>                    
@@ -411,6 +410,7 @@
             if($('#personalinfo'+id).val() == 0 ){
                 document.getElementById('Epersonal').value = "Incomplete";
             }else{
+                $('#Epersonals').html("<span style='color:green'><i class='fa fa-check'></i></span>");  
                 document.getElementById('Epersonal').value = "Complete";
             }
             
