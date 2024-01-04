@@ -27,7 +27,7 @@
                 <input type="text" id="Eempno" name="empno" value="">
                 <input type="text" id="Echildren_id" name="child_id" value="">
                 <?php
-                    echo "<script>document.writeln(empno);</script>";
+                    echo "what - <script>document.writeln(empno);</script> - where?";
                 ?>    
             </div>
             <div class="modal-footer">
