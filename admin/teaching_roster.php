@@ -26,6 +26,9 @@
             <div class="modal-body">
                 <input type="text" id="Eempno" name="empno" value="">
                 <input type="text" id="Echildren_id" name="child_id" value="">
+                <?php
+                    echo "<script>document.writeln(empno);</script>";
+                ?>    
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
