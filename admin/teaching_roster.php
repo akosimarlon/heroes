@@ -33,31 +33,30 @@
             </div>
             <div class="modal-body">    
                     <!-- <input type="text" id="Eempno" name="empno" value="">
-                    <input type="text" id="Echildren_id" name="child_id" value="">              -->
-                    <input type="text" name="PER" value="Com">
+                    <input type="text" id="Echildren_id" name="child_id" value="">-->                    
                 <ul style="list-style-type:none;">
-                    <li>Personal Information - <input type="text" class="no-outline" id="Epersonal" readonly> <div id="Epersonals"></div></li>
-                    <li>Family Backgorund - <input type="text" class="no-outline" id="Efamily" readonly></li>                    
-                    <li>Children's Information - <input type="text" class="no-outline" id="Echild" readonly></li>                    
-                    <li>Elementary Education - <input type="text" class="no-outline" id="Eelem" readonly></li>                    
-                    <li>Secondary Education - <input type="text" class="no-outline" id="Esecond" readonly></li>                    
-                    <li>Vocational Education - <input type="text" class="no-outline" id="Evoc" readonly></li>                    
-                    <li>College Education - <input type="text" class="no-outline" id="Ecol" readonly></li>                    
-                    <li>Graduate Education - <input type="text" class="no-outline" id="Egrad" readonly></li>                    
-                    <li>Civil Service Eligibility - <input type="text" class="no-outline" id="Ecivil" readonly></li>                    
-                    <li>Work Experience - <input type="text" class="no-outline" id="Eworkex" readonly></li>                    
-                    <li>Voluntary Work - <input type="text" class="no-outline" id="Evolun" readonly></li>                    
-                    <li>Learning Development - <input type="text" class="no-outline" id="Elearn" readonly></li>                    
-                    <li>Special Skills and Hobies - <input type="text" class="no-outline" id="Eskills" readonly></li>                    
-                    <li>Non-Academic Distinctions - <input type="text" class="no-outline" id="Enonacad" readonly></li>                    
-                    <li>Membership in Association - <input type="text" class="no-outline" id="Emember" readonly></li>                    
-                    <li>Other Information - <input type="text" class="no-outline" id="Eotherinfo" readonly></li>                    
-                    <li>Employment Information - <input type="text" class="no-outline" id="Eemployment" readonly></li>                    
-                    <li>Subjects Handled - <input type="text" class="no-outline" id="Esubject" readonly></li>                    
-                    <li>national Certificates - <input type="text" class="no-outline" id="Enationalcert" readonly></li>                    
-                    <li>Major and Minor - <input type="text" class="no-outline" id="Emajorminor" readonly></li>                    
-                    <li>Specialization - <input type="text" class="no-outline" id="Especial" readonly></li>                    
-                    <li>Anciliary Work - <input type="text" class="no-outline" id="Eanciliary" readonly></li>                    
+                    <li>Personal Information - <div id="Epersonal"></div></li>
+                    <li>Family Backgorund - <div id="Efamily"></div></li>                    
+                    <li>Children's Information - <div id="Echild"></div></li>                    
+                    <li>Elementary Education - <div id="Eelem"></div></li>                    
+                    <li>Secondary Education - <div id="Esecond"></div></li>                    
+                    <li>Vocational Education - <div id="Evoc"></div></li>                    
+                    <li>College Education - <div id="Ecol"></div></li>                    
+                    <li>Graduate Education - <div id="Egrad"></div></li>                    
+                    <li>Civil Service Eligibility - <div id="Ecivil"></div></li>                    
+                    <li>Work Experience - <div id="Eworkex"></div></li>                    
+                    <li>Voluntary Work - <div id="Evolun"></div></li>                    
+                    <li>Learning Development - <div id="Elearn"></div></li>                    
+                    <li>Special Skills and Hobies - <div id="Eskills"></div></li>                    
+                    <li>Non-Academic Distinctions - <div id="Enonacad"></div></li>                    
+                    <li>Membership in Association - <div id="Emember"></div></li>                    
+                    <li>Other Information - <div id="Eotherinfo"></div></li>                    
+                    <li>Employment Information - <div id="Eemployment"></div></li>                    
+                    <li>Subjects Handled - <div id="Esubject"></div></li>                    
+                    <li>national Certificates - <div id="Enationalcert"></div></li>                    
+                    <li>Major and Minor - <div id="Emajorminor"></div></li>                    
+                    <li>Specialization - <div id="Especial"></div></li>                    
+                    <li>Anciliary Work - <div id="Eanciliary"></div></li>                    
                 </ul>
                    
             </div>
@@ -407,138 +406,137 @@
             var empno = $('#uempno'+id).val(); 
             //var nc = $('#nationalcert'+id).val()
             //alert (nc);
-            if($('#personalinfo'+id).val() == 0 ){
-                document.getElementById('Epersonal').value = "Incomplete";
+            if($('#personalinfo'+id).val() == 0 ){                
+                $('#Epersonal').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                $('#Epersonals').html("<span style='color:green'><i class='fa fa-check'></i></span>");  
-                document.getElementById('Epersonal').value = "Complete";
+                $('#Epersonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
-            if($('#familybackground'+id).val() == 0 ){
-                document.getElementById('Efamily').value = "Incomplete";
+            if($('#familybackground'+id).val() == 0 ){                
+                $('#Efamily').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Efamily').value = "Complete";
+                $('#EperEfamilysonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
-            if($('#childreninfo'+id).val() == 0 ){
-                document.getElementById('Echild').value = "Incomplete";
+            if($('#childreninfo'+id).val() == 0 ){                
+                $('#Echild').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Echild').value = "Complete";
+                $('#Echild').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#elementary'+id).val() == 0 ){
-                document.getElementById('Eelem').value = "Incomplete";
+            if($('#elementary'+id).val() == 0 ){                
+                $('#Eelem').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eelem').value = "Complete";
+                $('#Eelem').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#secondary'+id).val() == 0 ){
-                document.getElementById('Esecond').value = "Incomplete";
+            if($('#secondary'+id).val() == 0 ){                
+                $('#Esecond').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Esecond').value = "Complete";
+                $('#Esecond').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#vocational'+id).val() == 0 ){
-                document.getElementById('Evoc').value = "Incomplete";
+            if($('#vocational'+id).val() == 0 ){                
+                $('#Evoc').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Evoc').value = "Complete";
+                $('#Evoc').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#college'+id).val() == 0 ){
-                document.getElementById('Ecol').value = "Incomplete";
+            if($('#college'+id).val() == 0 ){                
+                $('#Ecol').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Ecol').value = "Complete";
+                $('#Ecol').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#graduate'+id).val() == 0 ){
-                document.getElementById('Egrad').value = "Incomplete";
+            if($('#graduate'+id).val() == 0 ){                
+                $('#Egrad').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Egrad').value = "Complete";
+                $('#Egrad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#civilservice'+id).val() == 0 ){
-                document.getElementById('Ecivil').value = "Incomplete";
+            if($('#civilservice'+id).val() == 0 ){                
+                $('#Ecivil').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Ecivil').value = "Complete";
+                $('#Ecivil').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#workexperience'+id).val() == 0 ){
-                document.getElementById('Eworkex').value = "Incomplete";
+            if($('#workexperience'+id).val() == 0 ){                
+                $('#Eworkex').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eworkex').value = "Complete";
+                $('#Eworkex').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#voluntarywork'+id).val() == 0 ){
-                document.getElementById('Evolun').value = "Incomplete";
+            if($('#voluntarywork'+id).val() == 0 ){                
+                $('#Evolun').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Evolun').value = "Complete";
+                $('#Evolun').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#learningdev'+id).val() == 0 ){
-                document.getElementById('Elearn').value = "Incomplete";
+            if($('#learningdev'+id).val() == 0 ){                
+                $('#Elearn').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Elearn').value = "Complete";
+                $('#Elearn').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#skills'+id).val() == 0 ){
-                document.getElementById('Eskills').value = "Incomplete";
+            if($('#skills'+id).val() == 0 ){                
+                $('#Eskills').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eskills').value = "Complete";
+                $('#Eskills').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#nonacademic'+id).val() == 0 ){
-                document.getElementById('Enonacad').value = "Incomplete";
+            if($('#nonacademic'+id).val() == 0 ){                
+                $('#Enonacad').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Enonacad').value = "Complete";
+                $('#Enonacad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#membership'+id).val() == 0 ){
-                document.getElementById('Emember').value = "Incomplete";
+            if($('#membership'+id).val() == 0 ){                
+                $('#Emember').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Emember').value = "Complete";
+                $('#Emember').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#otherinfo'+id).val() == 0 ){
-                document.getElementById('Eotherinfo').value = "Incomplete";
+            if($('#otherinfo'+id).val() == 0 ){                
+                $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eotherinfo').value = "Complete";
+                $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#employment'+id).val() == 0 ){
-                document.getElementById('Eemployment').value = "Incomplete";
+            if($('#employment'+id).val() == 0 ){                
+                $('#Eemployment').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eemployment').value = "Complete";
+                $('#Eemployment').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#subject'+id).val() == 0 ){
-                document.getElementById('Esubject').value = "Incomplete";
+            if($('#subject'+id).val() == 0 ){                
+                $('#Esubject').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Esubject').value = "Complete";
+                $('#Esubject').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
             
-            if($('#nationalcert'+id).val() == 0 ){
-                document.getElementById('Enationalcert').value = "Incomplete";
+            if($('#nationalcert'+id).val() == 0 ){                
+                $('#Enationalcert').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Enationalcert').value = "Complete";
+                $('#Enationalcert').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#majorminor'+id).val() == 0 ){
-                document.getElementById('Emajorminor').value = "Incomplete";
+            if($('#majorminor'+id).val() == 0 ){                
+                $('#Emajorminor').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Emajorminor').value = "Complete";
+                $('#Emajorminor').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#specialization'+id).val() == 0 ){
-                document.getElementById('Especial').value = "Incomplete";
+            if($('#specialization'+id).val() == 0 ){                
+                $('#Especial').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Especial').value = "Complete";
+                $('#Especial').html("<span style='color:green'><i class='fa fa-check'></i></span>");
             }
 
-            if($('#anciliary'+id).val() == 0 ){
-                document.getElementById('Eanciliary').value = "Incomplete";
+            if($('#anciliary'+id).val() == 0 ){                
+                $('#Eanciliary').html("<span style='color:green'><i class='fa fa-times'></i></span>");                
             }else{
-                document.getElementById('Eanciliary').value = "Complete";
-            }            
+                $('#Eanciliary').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }           
 
             //document.getElementById('Echildren_id').value = id;
             //document.getElementById('Eempno').value = empno;             
