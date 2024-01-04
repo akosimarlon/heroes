@@ -396,6 +396,7 @@
         $(document).on('click', '.forModal', function(){            
             var id = $(this).data('id');
             var empno = $('#uempno'+id).val(); 
+            var nc = $('#nationalcert'+id).val()
 
             if($('#personalinfo'+id).val() == 0 ){
                 document.getElementById('Epersonal').value = "Incomplete";
@@ -504,7 +505,7 @@
             }else{
                 document.getElementById('Esubject').value = "Complete";
             }
-            alert ($('#nationalcert'+id).val());
+            alert (nc);
             if($('#nationalcert'+id).val() == 0 ){
                 document.getElementById('Enationalcert').value = "Incomplete";
             }else{
