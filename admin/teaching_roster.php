@@ -157,7 +157,7 @@
                                                         ?>
 
                                                         <?php
-                                                            if($row['completed_percentage']==100){
+                                                            if($row['completed_percentage']=='100%'){
                                                         ?>    
                                                             <div class="col">
                                                                 <div class="progress progress-sm mr-2">
