@@ -1355,7 +1355,7 @@ class myPDF extends FPDF{
                     $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 }else{
                     $this->SetFont('Arial','',4); 
-                    $this->MultiCell(15,3,strtoupper($data->e_level),1,0,'C');                    
+                    $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');                    
                 }
 
                 $this->SetFont('Arial','',5);
