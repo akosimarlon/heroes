@@ -80,7 +80,7 @@ class myPDF extends FPDF{
                 $this->Cell(45,5,'3. DATE OF BIRTH','LT',0,'L',true);
                 $this->SetTextColor(0,0,255);
                 $date=date_create($data->dob);
-                $this->Cell(40,5,date_format($date,"m/d/Y"),'LRT',0,'C');
+                $this->Cell(40,5,date_format($date,"m/d/Y"),'LRT',0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
