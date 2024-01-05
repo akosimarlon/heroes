@@ -3688,7 +3688,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th>Name of Organization</th>                                                                                                            
                                                     <th>Address of Organization</th>  
