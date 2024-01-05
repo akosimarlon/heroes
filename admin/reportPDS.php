@@ -733,10 +733,10 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[$count],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[$count]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }                
