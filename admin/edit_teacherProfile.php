@@ -3982,7 +3982,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th width="80%">Special Skills and Hobies</th>                                                                                                         
                                                     <th width="20%">Actions</th>
@@ -4061,7 +4061,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th width="80%">Non-Academic Distinctions / Recognition (Write in full)</th>                                                                                                         
                                                     <th width="20%">Actions</th>
@@ -4139,7 +4139,7 @@
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th width="80%">Membership in Association/Organization (Write in full)</th>                                                                                                         
                                                     <th width="20%">Actions</th>
@@ -4758,7 +4758,7 @@
                                 <div class="col-md-9 mb-3">
                                     <label for="">Subject Handled</label>
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
+                                        <thead class="bg-primary text-light">
                                             <tr>                                                        
                                                 <th>SUBJECT</th>
                                                 <th>SEMESTER</th>                                                        
@@ -4840,7 +4840,7 @@
                                 <div class="col-md-9 mb-3">
                                     <label for="">National Certificates</label>                                    
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th>NC Title</th>                                                                                                         
                                                     <th>NC Level</th>                                                                                                         
@@ -4929,7 +4929,7 @@
                                 <div class="col-md-9 mb-3">
                                     <label for="">Major and Minor</label>                                    
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th>Major</th>                                                                                                         
                                                     <th>Minor</th>                                                                                                         
@@ -5010,7 +5010,7 @@
                                 <div class="col-md-9 mb-3">
                                     <label for="">Specialization</label>                                    
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th>Track</th>                                                                                                         
                                                     <th>Strand</th>                                                                                                         
@@ -5105,7 +5105,7 @@
                                 <div class="col-md-9 mb-3">
                                     <label for="">Anciliary Work</label>                                    
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                            <thead class="bg-primary text-light">
                                                 <tr> 
                                                     <th>Name / Title / Designation</th>                                                                                                         
                                                     <th>Date Started</th>                                                                                                         
