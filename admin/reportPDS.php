@@ -1358,7 +1358,7 @@ class myPDF extends FPDF{
                     $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 130, $y-6);                 
+                    $this->SetXY($x + 230, $y-6);                 
                 }
 
                 $this->SetFont('Arial','',5);
