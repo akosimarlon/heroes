@@ -677,12 +677,12 @@ class myPDF extends FPDF{
             }
 
             $count = count($child);
-            echo $count;
+            //echo $count;
             for($x = $count; $x < 12; $x++){
                 $child[$x]="";
                 $dob[$x]=null;
             }
-
+            $counter=0;
             $stmt = $db->query("SELECT * FROM family_background WHERE emp_no='$user_id'");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){                
     
@@ -736,11 +736,11 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[$counter]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
-                $count++;               
+                $counter++;               
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
