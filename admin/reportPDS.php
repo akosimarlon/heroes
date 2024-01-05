@@ -682,7 +682,7 @@ class myPDF extends FPDF{
                 $child[$x]="";
                 $dob[$x]=null;
             }
-            $counter=0;
+            
             $stmt = $db->query("SELECT * FROM family_background WHERE emp_no='$user_id'");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){                
     
@@ -736,11 +736,11 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[$counter]);                
+                        $date2=date_create($dob[0]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
-                $counter++;               
+                           
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
@@ -763,7 +763,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[1]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
@@ -789,7 +789,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[2]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
@@ -815,7 +815,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[3]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
@@ -841,7 +841,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[4]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
@@ -867,7 +867,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[5]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 } 
@@ -893,7 +893,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[6]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
@@ -926,7 +926,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[7]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
@@ -952,7 +952,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[8]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
@@ -978,7 +978,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[9]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
@@ -1005,7 +1005,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[10]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
@@ -1032,7 +1032,7 @@ class myPDF extends FPDF{
                         $this->Cell(25,5,$dob[0],1,1,'C');
                     }else{
                         $this->SetTextColor(0,0,255);               
-                        $date2=date_create($dob[0]);                
+                        $date2=date_create($dob[11]);                
                         $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
                     }
                 }
