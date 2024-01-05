@@ -363,7 +363,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'7. HEIGHT (m)','LTR',0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->height,'TR',0,'C');
+                $this->Cell(40,5,$data->height,'TR',0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -412,7 +412,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'8. WEIGHT (kg)',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->weight,1,0,'C');
+                $this->Cell(40,5,$data->weight,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -445,7 +445,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'9. BLOOD TYPE','LTR',0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,strtoupper('"'.$data->bloodtype).'"','TR',0,'C');
+                $this->Cell(40,5,strtoupper('"'.$data->bloodtype).'"','TR',0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -494,7 +494,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'10. GSIS ID NO.','LTR',0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->gsis_no,'TR',0,'C');
+                $this->Cell(40,5,$data->gsis_no,'TR',0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -543,7 +543,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'11. PAG-IBIG ID NO.','LTR',0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->pagibig_no,'TR',0,'C');
+                $this->Cell(40,5,$data->pagibig_no,'TR',0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -592,7 +592,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'12. PHILHEALTH NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->philhealth_no,1,0,'C');
+                $this->Cell(40,5,$data->philhealth_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
@@ -626,37 +626,37 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'13. SSS NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->sss_no,1,0,'C');
+                $this->Cell(40,5,$data->sss_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(40,5,'19. TELEPHONE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->telephone),'BR',1,'C');
+                $this->Cell(70,5,strtoupper($data->telephone),'BR',1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'14. TIN NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->tin_no,1,0,'C');
+                $this->Cell(40,5,$data->tin_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(40,5,'20. MOBILE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->mobile),'BR',1,'C');
+                $this->Cell(70,5,strtoupper($data->mobile),'BR',1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'15. AGENCY EMPLOYEE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->emp_no,1,0,'C');
+                $this->Cell(40,5,$data->emp_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(40,5,'21. E-MAIL ADDRESS (if any)',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,$data->email,'BR',1,'C');
+                $this->Cell(70,5,$data->email,'BR',1,'L');
                 
             }
         }
@@ -725,7 +725,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(45,5,strtoupper($child[0]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[0]),1,0,'L');
                 
                 if($count<=0){
                     $this->SetTextColor(0,0,255);                                   
@@ -733,11 +733,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[0]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
                            
@@ -752,7 +752,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[1]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[1]),1,0,'L');
                                
                 if($count<=1){
                     $this->SetTextColor(0,0,255);                                   
@@ -760,11 +760,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[1]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
@@ -773,12 +773,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      OCCUPATION',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_occupation),1,0,'C');
+                $this->Cell(80,5,strtoupper($data->spouse_occupation),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[2]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[2]),1,0,'L');
                                
                 if($count<=2){
                     $this->SetTextColor(0,0,255);                                   
@@ -786,11 +786,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[2]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
@@ -799,12 +799,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      EMPLOYER/BUSINESS NAME',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_employer),1,0,'C');
+                $this->Cell(80,5,strtoupper($data->spouse_employer),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[3]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[3]),1,0,'L');
                                
                 if($count<=3){
                     $this->SetTextColor(0,0,255);                                   
@@ -812,11 +812,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[3]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
@@ -825,12 +825,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      BUSINESS ADDRESS',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_buss_add),1,0,'C');
+                $this->Cell(80,5,strtoupper($data->spouse_buss_add),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[4]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[4]),1,0,'L');
                 
                 if($count<=4){
                     $this->SetTextColor(0,0,255);                                   
@@ -838,11 +838,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[4]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
@@ -851,12 +851,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      TELEPHONE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_buss_tel),1,0,'C');
+                $this->Cell(80,5,strtoupper($data->spouse_buss_tel),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[5]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[5]),1,0,'L');
                                
                 if($count<=5){
                     $this->SetTextColor(0,0,255);                                   
@@ -864,11 +864,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[5]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
@@ -882,7 +882,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[6]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[6]),1,0,'L');
                                
                 if($count<=6){
                     $this->SetTextColor(0,0,255);                                   
@@ -890,11 +890,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[6]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
@@ -915,7 +915,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[7]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[7]),1,0,'L');
                                
                 if($count<=7){
                     $this->SetTextColor(0,0,255);                                   
@@ -923,11 +923,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[7]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
@@ -941,7 +941,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[8]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[8]),1,0,'L');
                                
                 if($count<=8){
                     $this->SetTextColor(0,0,255);                                   
@@ -949,11 +949,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[8]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
 
@@ -967,7 +967,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[9]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[9]),1,0,'L');
                                
                 if($count<=9){
                     $this->SetTextColor(0,0,255);                                   
@@ -975,11 +975,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[9]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
@@ -994,7 +994,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[10]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[10]),1,0,'L');
                                
                 if($count<=10){
                     $this->SetTextColor(0,0,255);                                   
@@ -1002,11 +1002,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[10]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
 
@@ -1021,7 +1021,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[11]),1,0,'C');
+                $this->Cell(45,5,strtoupper($child[11]),1,0,'L');
                                
                 if($count<=11){
                     $this->SetTextColor(0,0,255);                                   
@@ -1029,11 +1029,11 @@ class myPDF extends FPDF{
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'C');
+                        $this->Cell(25,5,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[11]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'C');
+                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
