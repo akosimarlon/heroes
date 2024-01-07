@@ -136,17 +136,30 @@
                                                 <td><?= $row['email'] ?></td>
                                                 <!-- <td><?= $row['mobile'] ?></td> -->
                                                 <td>
-                                                    <?php
-                                                        if($row['status']=='1'){
-                                                            echo '<span class="badge bg-primary">Approved</span>';
-                                                        }
-                                                        elseif($row['status']=='2'){
-                                                            echo '<span class="badge bg-warning text-light">Pending Approval</span>';
-                                                        }
-                                                        elseif($row['status']=='0'){
-                                                            echo '<span class="badge bg-danger text-light">Disapproved</span>';
-                                                        }
+                                                <?php                                                  
+
+                                                    $user_id2 = $row2['emp_no'];
+                                                    $query2 = "SELECT * FROM employment_record WHERE emp_no='$user_id2' ";
+                                                    $query_run2 = mysqli_query($con,$query2);
+
+                                                    if(mysqli_num_rows($query_run2) > 0 ){ 
+                                                        foreach($query_run2 as $row2){ 
                                                     ?>
+                                                        <?php
+                                                            if($row2['status']=='1'){
+                                                                echo '<span class="badge bg-primary">Approved</span>';
+                                                            }
+                                                            elseif($row2['status']=='2'){
+                                                                echo '<span class="badge bg-warning text-light">Pending Approval</span>';
+                                                            }
+                                                            elseif($row2['status']=='0'){
+                                                                echo '<span class="badge bg-danger text-light">Disapproved</span>';
+                                                            }
+                                                        ?>
+                                                    <?php
+                                                        }
+                                                    }
+                                                ?>
                                                 </td>
                                                 
                                                 <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
