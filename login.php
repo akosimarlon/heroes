@@ -225,10 +225,16 @@ if(isset($_SESSION['auth'])){
                 <?php include('message.php'); ?>
                 <form class="user" action="logincode.php" method="POST">
                 <?php
-                    $userID = $_SESSION['user_id'];
-                    $user_name = $_SESSION['username'];
-                    $user_role = $_SESSION['user_role'];
-                    $user_security = $_SESSION['security_key'];
+                    try{
+                        $userID = $_SESSION['user_id'];
+                        $user_name = $_SESSION['username'];
+                        $user_role = $_SESSION['user_role'];
+                        $user_security = $_SESSION['security_key'];
+                    }catch(Exception $e){
+                        header("Location: index.php");
+                        exit(0); 
+                    }
+                    
                     
                 ?>
                     <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success"> 
