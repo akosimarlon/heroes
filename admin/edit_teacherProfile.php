@@ -4559,7 +4559,7 @@
                                             if($emp_rec['status']=='1'){
                                                 echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
                                             }
-                                            elseif($row['status']=='0'){
+                                            else($row['status']=='0'){
                                                 echo '<h6><span class="badge bg-danger text-light">Pending HR Admin Approval</span></h6>';
                                             }
                                         ?>
@@ -4656,20 +4656,6 @@
                                                     <option value="">--Select Designation--</option>
                                                 </select>
                                             </div>
-
-                                            <div class="col-auto mb-5">
-                                                <label for="">Status</label>                                                
-                                                <?php
-                                                //if($row['status']=='1'){
-                                                //    echo '<span class="badge bg-primary">Active</span>';
-                                                //}
-                                                //elseif($row['status']=='0'){
-                                                //   echo '<span class="badge bg-danger text-light">Inactive</span>';
-                                                ?>
-                                            </div>
-
-                                            
-
                                             
                                             <h5 class="semi-bold text-primary">School Information</h5> 
                                             <!-- <h5 class="semi-bold text-primary">School Information <br>(For Teaching and Teaching Related Position)</h5>   -->
