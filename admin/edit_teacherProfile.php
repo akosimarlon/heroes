@@ -4559,7 +4559,7 @@
                                             if($emp_rec['status']=='1'){
                                                 echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
                                             }
-                                            else($row['status']=='0'){
+                                            else{
                                                 echo '<h6><span class="badge bg-danger text-light">Pending HR Admin Approval</span></h6>';
                                             }
                                         ?>
