@@ -4643,8 +4643,7 @@
                                             </div>
 
                                             <div class="col-auto mb-5">
-                                                <label for="">Status</label>
-                                                <!-- <input type="text" name="designation" value="" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus> -->
+                                                <label for="">Status</label>                                                
                                                 <?php
                                                 //if($row['status']=='1'){
                                                 //    echo '<span class="badge bg-primary">Active</span>';
