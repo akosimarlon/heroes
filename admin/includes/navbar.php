@@ -164,7 +164,7 @@
                             <div class="small text-gray-500">Emily Fowler · 58m</div>
                         </div>
                     </a>
-                    <!-- <a class="dropdown-item d-flex align-items-center" href="#">
+                    <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
                             <img class="rounded-circle" src="img/undraw_profile_2.svg"
                                 alt="">
@@ -200,7 +200,7 @@
                             <div class="small text-gray-500">Chicken the Dog · 2w</div>
                         </div>
                     </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a> -->
+                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                 </div>
             </li>
 
