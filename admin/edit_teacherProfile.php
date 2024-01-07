@@ -4641,6 +4641,21 @@
                                                     <option value="">--Select Designation--</option>
                                                 </select>
                                             </div>
+
+                                            <div class="col-auto mb-5">
+                                                <label for="">Status</label>
+                                                <!-- <input type="text" name="designation" value="" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus> -->
+                                                <?php
+                                                //if($row['status']=='1'){
+                                                //    echo '<span class="badge bg-primary">Active</span>';
+                                                //}
+                                                //elseif($row['status']=='0'){
+                                                //   echo '<span class="badge bg-danger text-light">Inactive</span>';
+                                                ?>
+                                            </div>
+
+                                            
+
                                             
                                             <h5 class="semi-bold text-primary">School Information</h5> 
                                             <!-- <h5 class="semi-bold text-primary">School Information <br>(For Teaching and Teaching Related Position)</h5>   -->
