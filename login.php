@@ -22,7 +22,7 @@ if(isset($_SESSION['auth'])){
     header("Location: index.php");
     exit(0);   
 }
-if (empty($_POST['current_user_id'])) {
+if (empty($_SESSION['user_id'])) {
     echo "<p>String is Empty</p>";
     header("Location: http://202.137.126.58/");
     exit();
