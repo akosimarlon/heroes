@@ -99,10 +99,10 @@
                                                 <td>                                                
                                                 <?php
                                                     if($row['status']=='1'){
-                                                        echo '<span class="badge bg-primary">Active</span>';
+                                                        echo '<span class="badge badge-pill bg-primary">Active</span>';
                                                     }
                                                     elseif($row['status']=='0'){
-                                                        echo '<span class="badge bg-danger text-light">Inactive</span>';
+                                                        echo '<span class="badge badge-pill bg-danger text-light">Inactive</span>';
                                                     }
                                                 ?>
                                                 </td>

@@ -4554,17 +4554,13 @@
                                             foreach($users_run as $emp_rec){
                                 ?>
                                 <h3 class="semi-bold text-primary mb-5">Employment Information
-                                    <div class="col-auto">
+                                    <div class="col-auto d-sm-inline-block">
                                         <?php
                                             if($emp_rec['status']=='1'){
-                                        ?>
-                                                <span class="badge bg-primary">HR Admin Approved</span>
-                                        <?php
+                                                echo '<span class="badge bg-primary">HR Admin Approved</span>';
                                             }
                                             elseif($row['status']=='0'){
-                                        ?>
-                                                <span class="badge bg-danger text-light">Pending HR Admin Approval</span>
-                                        <?php
+                                                echo '<span class="badge bg-danger text-light">Pending HR Admin Approval</span>';
                                             }
                                         ?>
                                     </div>
