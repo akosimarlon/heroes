@@ -144,10 +144,10 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-envelope fa-fw text-warning"></i>
                     <!-- Counter - Messages -->
-                    <span class="badge badge-danger badge-counter">0</span>
+                    <span class="badge badge-danger badge-counter">1</span>
                 </a>
                 <!-- Dropdown - Messages -->
-                <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="messagesDropdown">
                     <h6 class="dropdown-header">
                         Message Center
@@ -164,7 +164,7 @@
                             <div class="small text-gray-500">Emily Fowler · 58m</div>
                         </div>
                     </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
                             <img class="rounded-circle" src="img/undraw_profile_2.svg"
                                 alt="">
@@ -200,8 +200,8 @@
                             <div class="small text-gray-500">Chicken the Dog · 2w</div>
                         </div>
                     </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                </div> -->
+                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a> -->
+                </div>
             </li>
 
             <div class="topbar-divider d-none d-sm-block border-primary"></div>
@@ -261,3 +261,28 @@
 
     </nav>
     <!-- End of Topbar -->
+
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+    </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>

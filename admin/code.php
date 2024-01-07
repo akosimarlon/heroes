@@ -2749,18 +2749,18 @@ if(isset($_POST['saveEmpRecord'])){
         exit(0);
     } 
     
-    if($query_run){
+    // if($query_run){
 
-        $query2 = "UPDATE profile_completion SET ei_completed_fileds='12' WHERE emp_no='$emp_no' ";
-        $query_run2 = mysqli_query($con,$query2);
+    //     $query2 = "UPDATE profile_completion SET ei_completed_fileds='12' WHERE emp_no='$emp_no' ";
+    //     $query_run2 = mysqli_query($con,$query2);
 
-        $_SESSION['message'] = "Employment Record Updated Successfuly!";
-        $_SESSION['message_type'] = "primary";   
-        $_SESSION['tab_page'] = "#employment";
-        header("Window-target: _top");      
-        header("Location: edit_teacherProfile.php?emp_no=$emp_no");
-        exit(0);
-    }
+    //     $_SESSION['message'] = "Employment Record Updated Successfuly!";
+    //     $_SESSION['message_type'] = "primary";   
+    //     $_SESSION['tab_page'] = "#employment";
+    //     header("Window-target: _top");      
+    //     header("Location: edit_teacherProfile.php?emp_no=$emp_no");
+    //     exit(0);
+    // }
 
    
 
