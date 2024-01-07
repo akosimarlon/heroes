@@ -4543,23 +4543,18 @@
                         <div role="tabpanel" class="tab-pane" id="employment">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <a name="#other1"></a>
-                                <h3 class="semi-bold text-primary mb-5">Employment Information</h3>
-                                
-                                <form action="code.php" method="POST">                                    
-                                    <div class="row">
-                                        <?php 
-                                        if(isset($_GET['emp_no'])){
-                                            $user_id = $_GET['emp_no'];
-                                            //echo $user_id;
-                                            $users = "SELECT * FROM employment_record WHERE emp_no='$user_id'";
-                                            $users_run = mysqli_query($con,$users);
-                                            
-                                            if(mysqli_num_rows($users_run) > 0 ){
-                                                foreach($users_run as $emp_rec){
-                                        ?>
-                                            <input type="hidden" name="emp_no" value="<?=$emp_rec['emp_no'];?>">
-                                            
-                                            <div class="col-auto d-sm-inline-block">
+                                <?php 
+                                    if(isset($_GET['emp_no'])){
+                                        $user_id = $_GET['emp_no'];
+                                        //echo $user_id;
+                                        $users = "SELECT * FROM employment_record WHERE emp_no='$user_id'";
+                                        $users_run = mysqli_query($con,$users);
+                                        
+                                        if(mysqli_num_rows($users_run) > 0 ){
+                                            foreach($users_run as $emp_rec){
+                                ?>
+                                <h3 class="semi-bold text-primary mb-5">Employment Information
+                                <div class="col-auto d-sm-inline-block">
                                                 <?php
                                                     if($emp_rec['status']=='1'){
                                                         echo '<span class="badge bg-primary">HR Admin Approved</span>';
@@ -4569,6 +4564,14 @@
                                                     }
                                                 ?>
                                             </div>
+                                </h3>
+                                
+                                <form action="code.php" method="POST">                                    
+                                    <div class="row">
+                                        
+                                            <input type="hidden" name="emp_no" value="<?=$emp_rec['emp_no'];?>">
+                                            
+                                            
 
 
                                             <h5 class="semi-bold text-primary">Employment Records</h5>
@@ -4768,12 +4771,12 @@
                                                 <button type="submit" name="saveEmpRecord"  class="btn btn-lg btn-info"><i class="fa fa-save"></i> Save </button>
                                             </div>
 
-                                        <?php                             
-                                        }
-                                        ?>
+                                        
                                     </div>    
                                 </form>
-
+                                <?php                             
+                                    }
+                                ?>
                                 <div class="text-success">
                                     <hr class="border border-success border-2 opacity-50">
                                 </div>
