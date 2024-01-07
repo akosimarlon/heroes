@@ -196,7 +196,7 @@
                         </div>
                         <div>
                             <div class="text-truncate">System Update: Employment Information will be subject to Division HR Approval.</div>
-                            <div class="small text-gray-500">System Admin · 1w</div>
+                            <div class="small text-gray-500">System Administrator</div>
                         </div>
                     </a>
                     <!-- <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a> -->
