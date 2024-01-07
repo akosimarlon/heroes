@@ -272,7 +272,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
         <div class="modal-header bg-primary text-light">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">System Update   <span style="color:gray,font-size:12px"><i>(01/08/2024)</i></span></h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">System Update   <span style="color:gray;font-size:12px;"><i>(01/08/2024)</i></span></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-dark">
