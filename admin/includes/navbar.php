@@ -152,7 +152,7 @@
                     <h6 class="dropdown-header">
                         Message Center
                     </h6>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    <!-- <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
                             <img class="rounded-circle" src="img/undraw_profile_1.svg"
                                 alt="">
@@ -187,20 +187,19 @@
                                 the progress so far, keep up the good work!</div>
                             <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                         </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    </a> -->
+                    <a class="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#updateModal" href="#">
                         <div class="dropdown-list-image mr-3">
                             <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
                                 alt="">
                             <div class="status-indicator bg-success"></div>
                         </div>
                         <div>
-                            <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                told me that people say this to all dogs, even if they aren't good...</div>
-                            <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                            <div class="text-truncate">System Update: Employment Information will be subject to Division HR Approval.</div>
+                            <div class="small text-gray-500">System Admin · 1w</div>
                         </div>
                     </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                    <!-- <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a> -->
                 </div>
             </li>
 
@@ -264,24 +263,35 @@
 
 
     <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
     Launch demo modal
     </button> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <div class="modal-header bg-primary">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">System Update</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-            ...
+        <div class="modal-body text-dark">
+        <h2>Attention Deped DavaoSur Employees!</h2>
+
+        <p>We're excited to announce a System Update! To streamline the process and ensure accuracy and reliability of information, any changes made to your employment details under Employment Information Tab will now be subject to Division HR Admin approval.</p>
+
+        <p>As part of this update, you might notice a change in the progress bar when submitting updates to your employment information. This adjustment aims to provide you with a clearer indication of the approval process and ensure that your information is handled efficiently and accurately.</p>
+
+        <p>We appreciate your cooperation and patience during this transition. If you have any questions or require assistance, please don't hesitate to reach out to our Division HR department or Division ICT office.</p>
+
+        <p>Thank you for being part of our team and for your understanding as we work to improve our Project DavaoSur System for everyone's benefit!</p></br>
+
+
+        <p><i><b>Project DavaoSur Team</b></i></p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
         </div>
     </div>
