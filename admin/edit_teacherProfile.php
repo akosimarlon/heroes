@@ -4559,8 +4559,11 @@
                                             if($emp_rec['status']=='1'){
                                                 echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
                                             }
-                                            else{
-                                                echo '<h6><span class="badge bg-danger text-light">Pending HR Admin Approval</span></h6>';
+                                            elseif($emp_rec['status']=='2'){
+                                                echo '<h6><span class="badge bg-warning text-light">Pending HR Admin Approval</span></h6>';
+                                            }
+                                            elseif($emp_rec['status']=='0'){
+                                                echo '<h6><span class="badge bg-danger text-light">Disapproved</span></h6>';
                                             }
                                         ?>
                                     </div>

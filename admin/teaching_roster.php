@@ -101,8 +101,9 @@
                                     <th><b>Station</b></th>
                                     <th><b>District</b></th>
                                     <th><b>Email</b></th>
-                                    <th><b>Contact Number</b></th>                                    
-                                    <th><b>Status</b></th>                                    
+                                    <!-- <th><b>Contact Number</b></th>                                     -->
+                                    <th><b>Employment Record</b></th>                                    
+                                    <th><b>Profile Status</b></th>                                    
                                 </tr>
                             </thead>                            
                             <tbody>
@@ -133,18 +134,26 @@
                                                 <td><?= $row1['school_name'] ?></td>
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
-                                                <td><?= $row['mobile'] ?></td>
+                                                <!-- <td><?= $row['mobile'] ?></td> -->
+                                                <td>
+                                                    <?php
+                                                        if($row['status']=='1'){
+                                                            echo '<span class="badge bg-primary">Approved</span>';
+                                                        }
+                                                        elseif($row['status']=='2'){
+                                                            echo '<span class="badge bg-warning text-light">Pending Approval</span>';
+                                                        }
+                                                        elseif($row['status']=='0'){
+                                                            echo '<span class="badge bg-danger text-light">Disapproved</span>';
+                                                        }
+                                                    ?>
+                                                </td>
                                                 
                                                 <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
                                                 
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <?php
-                                                    //if($row['status']=='1'){
-                                                    //    echo '<span class="badge bg-primary">Active</span>';
-                                                    //}
-                                                    //elseif($row['status']=='0'){
-                                                    //    echo '<span class="badge bg-danger text-light">Inactive</span>';
-                                                    //}
+                                                    
 
                                                     $user_id = $row1['emp_no'];
                                                     $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
