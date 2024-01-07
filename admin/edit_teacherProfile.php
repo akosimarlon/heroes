@@ -4559,14 +4559,16 @@
                                         ?>
                                             <input type="hidden" name="emp_no" value="<?=$emp_rec['emp_no'];?>">
                                             
-                                            <?php
-                                                if($emp_rec['status']=='1'){
-                                                    echo '<span class="badge bg-primary">HR Admin Approved</span>';
-                                                }
-                                                elseif($row['status']=='0'){
-                                                    echo '<span class="badge bg-danger text-light">Pending HR Admin Approval</span>';
-                                                }
-                                            ?>
+                                            <div class="col-auto d-sm-inline-block">
+                                                <?php
+                                                    if($emp_rec['status']=='1'){
+                                                        echo '<span class="badge bg-primary">HR Admin Approved</span>';
+                                                    }
+                                                    elseif($row['status']=='0'){
+                                                        echo '<span class="badge bg-danger text-light">Pending HR Admin Approval</span>';
+                                                    }
+                                                ?>
+                                            </div>
 
 
                                             <h5 class="semi-bold text-primary">Employment Records</h5>
