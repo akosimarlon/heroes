@@ -2734,7 +2734,7 @@ if(isset($_POST['saveEmpRecord'])){
         $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', date_of_ass='$doass', 
                 position_type='$position_type', position_rank='$position_rank', position_id='$p', designation='$designation', item_no='$item_no',
                 plantilla_no='$plantilla_no', notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district',
-                notnonteaching='$notnonteaching', functional_div='$functional_div', office_name='$office_name' WHERE emp_no='$emp_no' ";
+                notnonteaching='$notnonteaching', functional_div='$functional_div', office_name='$office_name', status='0' WHERE emp_no='$emp_no' ";
 
         $query_run = mysqli_query($con,$query);         
 
