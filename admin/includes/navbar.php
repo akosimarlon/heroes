@@ -272,11 +272,11 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
         <div class="modal-header bg-primary text-light">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">System Update</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">System Update   <span style="color:yellow"><i>(01/08/2024)</i></span></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-dark">
-        <h2>Attention Deped DavaoSur Employees!</h2>
+        <h4>Attention Deped DavaoSur Employees!</h4>
 
         <p>We're excited to announce a System Update! To streamline the process and ensure accuracy and reliability of information, any changes made to your employment details under Employment Information Tab will now be subject to Division HR Admin approval.</p>
 
