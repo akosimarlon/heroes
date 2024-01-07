@@ -121,7 +121,7 @@
                                 skills_completed_fields,nacad_completed_fields,mem_completed_fields,oi_completed_fileds,ei_completed_fileds,tr_completed_fileds,nc_completed_fileds,mm_completed_fileds,spec_completed_fileds,aw_completed_fileds,completed_total,completed_percentage,status)
                                 VALUES ('$empno','5','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','5','3%','$status');";  
                     
-                    $query .= "INSERT INTO employment_record (emp_no,grade_level,date_of_emp,yrs_in_serv,position_rank,item_no,plantilla_no,status) VALUES ('$empno','','','','','','','0')";
+                    $query .= "INSERT INTO employment_record (emp_no,grade_level,date_of_emp,yrs_in_serv,position_rank,item_no,plantilla_no,status) VALUES ('$empno','','','','','','','$status')";
 
                         //position_type='$position_type', position_id='$p', designation='$designation', item_no='$item_no', plantilla_no='$plantilla_no', school_id='$school_id',
                         // school_name='$school_name', district='$district'
