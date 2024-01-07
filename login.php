@@ -226,7 +226,7 @@ if(isset($_SESSION['auth'])){
                 <form class="user" action="logincode.php" method="POST">
                 <?php
                     if(!isset($_SESSION['user_id'])){
-                        header("Location: index.php");
+                        header("Location: http://202.137.126.58/");
                         exit(0); 
                     }else{ 
                         $userID = $_SESSION['user_id'];
