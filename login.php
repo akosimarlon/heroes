@@ -22,6 +22,11 @@ if(isset($_SESSION['auth'])){
     header("Location: index.php");
     exit(0);   
 }
+if (empty($_POST['current_user_id'])) {
+    echo "<p>String is Empty</p>";
+    header("Location: http://202.137.126.58/");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -224,18 +229,11 @@ if(isset($_SESSION['auth'])){
             <div class="content">
                 <?php include('message.php'); ?>
                 <form class="user" action="logincode.php" method="POST">
-                <?php
-                    if(!isset($_SESSION['user_id'])){
-                        header("Location: http://202.137.126.58/");
-                        exit(0); 
-                    }else{ 
-                        $userID = $_SESSION['user_id'];
-                        $user_name = $_SESSION['username'];
-                        $user_role = $_SESSION['user_role'];
-                        $user_security = $_SESSION['security_key'];
-                    }
-                    
-                    
+                <?php                    
+                    $userID = $_SESSION['user_id'];
+                    $user_name = $_SESSION['username'];
+                    $user_role = $_SESSION['user_role'];
+                    $user_security = $_SESSION['security_key'];
                 ?>
                     <input type="hidden" name="userID" value="<?=$userID?>" class="form-control border-success"> 
                     <input type="hidden" name="user_name"  value="<?=$user_name?>" class="form-control border-success">
