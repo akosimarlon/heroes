@@ -225,14 +225,14 @@ if(isset($_SESSION['auth'])){
                 <?php include('message.php'); ?>
                 <form class="user" action="logincode.php" method="POST">
                 <?php
-                    try{
+                    if(!isset($_SESSION['user_id'])){
+                        header("Location: index.php");
+                        exit(0); 
+                    }else{ 
                         $userID = $_SESSION['user_id'];
                         $user_name = $_SESSION['username'];
                         $user_role = $_SESSION['user_role'];
                         $user_security = $_SESSION['security_key'];
-                    }catch(Exception $e){
-                        header("Location: index.php");
-                        exit(0); 
                     }
                     
                     
