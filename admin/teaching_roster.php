@@ -30,7 +30,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     
-                    <!-- <form action="code.php" method="POST"> -->
+                    <form action="code.php" method="POST">
                         <div class="modal-body">
                             
                             <div class="row">                                
@@ -38,6 +38,7 @@
                             </div>
                             <div class="row g-3">                            
                                 <div class="col-md-6">
+                                    <input type="text" id="Eempno" name="empno">
                                     <label>Item Number</label>
                                     <input type="text" id="Eitemnumber" class="form-control" readonly>
                                 </div>
@@ -66,10 +67,10 @@
                         </div>                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger">Reject</button>
-                            <button type="button" class="btn btn-success">Approve</button>
+                            <button type="button" name="rejectEmpInfo" class="btn btn-danger">Reject</button>
+                            <button type="button" name="approveEmpInfo" class="btn btn-success">Approve</button>
                         </div>
-                    <!-- </form> -->
+                    </form>
                 
                 
                 </div>
@@ -638,7 +639,7 @@
     $(document).ready(function() {
         $(document).on('click', '.forModalVerify', function(){            
             var id = $(this).data('id');
-            //var empno = $('#uempno'+id).val(); 
+            var empno = $('#uempno'+id).val(); 
             var empname = $('#emp_name'+id).val();
             var itemnumber = $('#itemnumber'+id).val();
             var dateappointment = $('#dateappointment'+id).val();
@@ -654,7 +655,7 @@
             document.getElementById('Eposition').value = position;
             document.getElementById('Edesignation').value = designation;
             document.getElementById('Ecategory').value = category;
-                         
+            document.getElementById('Eempno').value = empno;             
         });
     });
 
