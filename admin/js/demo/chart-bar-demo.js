@@ -47,7 +47,7 @@ $.ajax({
     var positionlabel = [];
     var data_array = [];
     var p,p2;
-    var partialtotal=0,totaldata = 0;
+    var totaldata = 0;
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
             
@@ -68,8 +68,8 @@ $.ajax({
       position.push(p);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
-      partialtotal = data[count].vals;
-      totaldata = totaldata + partialtotal;
+      totaldata += parseInt(data[count].vals);
+      
     }
     alert (totaldata);
     data_array.max = function() { return  Math.max.apply(Math, this); };
