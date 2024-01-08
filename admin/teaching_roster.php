@@ -34,7 +34,7 @@
                         <div class="modal-body">
                             
                             <div class="row">                                
-                                <h5><div class="col" id="Ename"></div></h5>
+                                <h4><div class="col" id="Ename"></div></h4>
                             </div>
                             <div class="row g-3">                            
                                 <div class="col-md-6">
@@ -177,7 +177,7 @@
                                                 foreach($query_run1 as $row){
                                         ?>
                                             <tr>
-                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['lastname'])?>">   
+                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['middlename']." ".$row['lastname'])?>">   
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
