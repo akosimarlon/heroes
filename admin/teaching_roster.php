@@ -135,7 +135,7 @@
         
 
             <!-- DataTales Example -->
-            <?php //include('message.php'); ?>
+            <?php include('message.php'); ?>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     
