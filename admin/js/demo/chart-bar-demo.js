@@ -68,7 +68,7 @@ $.ajax({
       position.push(p);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
-      partialtotal = count;
+      partialtotal = data[count].vals;
     }
     alert (partialtotal);
     data_array.max = function() { return  Math.max.apply(Math, this); };
