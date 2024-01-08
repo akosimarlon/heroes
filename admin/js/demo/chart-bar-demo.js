@@ -47,9 +47,9 @@ $.ajax({
     var positionlabel = [];
     var data_array = [];
     var p,p2;
-    var totaldata = data.length;
+    
     //date = JSON.parse(data);
-    for(var count=0; count<totaldata; count++){
+    for(var count=0; count<data.length; count++){
             
       if(data[count].poss == "Teacher I" ) {p = "Teacher-I";p2 = "T-I";}
       if(data[count].poss == "Teacher II" ) {p = "Teacher-II";p2 = "T-II";}
@@ -71,7 +71,7 @@ $.ajax({
     }
     
     data_array.max = function() { return  Math.max.apply(Math, this); };
-
+    var totaldata = data_array.length;
     var ctx = document.getElementById("myBarChart");
     var myBarChart = new Chart(ctx, {
       type: 'bar',
