@@ -71,7 +71,7 @@ $.ajax({
       totaldata += parseInt(data[count].vals);
       
     }
-    alert (totaldata);
+    
     data_array.max = function() { return  Math.max.apply(Math, this); };
     
     var ctx = document.getElementById("myBarChart");
@@ -114,7 +114,7 @@ $.ajax({
           yAxes: [{
             ticks: {
               min: 0,
-              max: 35,
+              max: totaldata,
               maxTicksLimit: 5,
               padding: 10,
               // Include a dollar sign in the ticks
