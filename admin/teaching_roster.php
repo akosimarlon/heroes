@@ -20,11 +20,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
+     
         <!-- Employment Information Modal -->
         <div class="modal fade" id="employmentInfoModal" tabindex="-1" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -34,7 +30,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
-                <form action="code.php" method="POST">
+                <!-- <form action="code.php" method="POST"> -->
                     <div class="modal-body">
                         
                         <div class="row">
@@ -81,7 +77,7 @@
                         <button type="button" class="btn btn-danger">Reject</button>
                         <button type="button" class="btn btn-success">Approve</button>
                     </div>
-                </form>
+                <!-- </form> -->
                 
                 
                 </div>
