@@ -113,7 +113,7 @@ $.ajax({
           yAxes: [{
             ticks: {
               min: 0,
-              max: totaldata,
+              max: 35,
               maxTicksLimit: 5,
               padding: 10,
               // Include a dollar sign in the ticks
