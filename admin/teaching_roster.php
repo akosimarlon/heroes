@@ -20,53 +20,117 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+        <!-- Employment Information Modal -->
+        <div class="modal fade" id="employmentInfoModal" tabindex="-1" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Verify Employment Information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <form action="code.php" method="POST">
+                    <div class="modal-body">
+                        
+                        <div class="row">
+                            <div class="col" id="Ename"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="hidden" name="userid" id="EuserID">
+                            <input type="hidden" name="oldempno" id="Eoldempno">
+                            <label>Employee Number</label>
+                            <input type="text" id="Eempno" name="empno" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Item Number</label>
+                            <input type="text" id="Eitemnumber" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Appointment</label>                                
+                            <input type="text" id="Edateappointment" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Assumption (First Day of Service)</label>                            
+                            <input type="text" id="Edateassumption" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Position Title</label>                            
+                            <input type="text" id="Eposition" class="form-control" readonly>
+                        </div>                            
+                        <div class="form-group">
+                            <label for="">Designation</label>
+                            <input type="text" id="Edesignation" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Category</label>
+                            <input type="text" id="Ecategory" class="form-control" readonly>
+                        </div>
+
+                    </div>                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger">Reject</button>
+                        <button type="button" class="btn btn-success">Approve</button>
+                    </div>
+                </form>
+                
+                
+                </div>
+            </div>
+        </div>
 
         <!-- Progress Modal -->
         <div class="modal fade" id="progressmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="exampleModalLabel">Personal Profile Status</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Personal Profile Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">    
+                        <!-- <input type="text" id="Eempno" name="empno" value="">
+                        <input type="text" id="Echildren_id" name="child_id" value="">-->   
+                    <div class="row"><h5><div class="col" id="Eemp_name"></div><div class="col" id="Epercentage"></div></h5></div>
+                    <ul style="list-style-type:none">
+                        <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
+                        <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
+                        <li><div class="row">Children's Information - <div class="col" id="Echild"></div></div></li>                    
+                        <li><div class="row">Elementary Education - <div class="col" id="Eelem"></div></div></li>                    
+                        <li><div class="row">Secondary Education - <div class="col" id="Esecond"></div></div></li>                    
+                        <li><div class="row">Vocational Education - <div class="col" id="Evoc"></div></div></li>                    
+                        <li><div class="row">College Education - <div class="col" id="Ecol"></div></div></li>                    
+                        <li><div class="row">Graduate Education - <div class="col" id="Egrad"></div></div></li>                    
+                        <li><div class="row">Civil Service Eligibility - <div class="col" id="Ecivil"></div></div></li>                    
+                        <li><div class="row">Work Experience - <div class="col" id="Eworkex"></div></div></li>                    
+                        <li><div class="row">Voluntary Work - <div class="col" id="Evolun"></div></div></li>                    
+                        <li><div class="row">Learning Development - <div class="col" id="Elearn"></div></div></li>                    
+                        <li><div class="row">Special Skills and Hobies - <div class="col" id="Eskills"></div></div></li>                    
+                        <li><div class="row">Non-Academic Distinctions - <div class="col" id="Enonacad"></div></div></li>                    
+                        <li><div class="row">Membership in Association - <div class="col" id="Emember"></div></div></li>                    
+                        <li><div class="row">Other Information - <div class="col" id="Eotherinfo"></div></div></li>                    
+                        <li><div class="row">Employment Information - <div class="col" id="Eemployment"></div></div></li>                    
+                        <li><div class="row">Subjects Handled - <div class="col" id="Esubject"></div></div></li>                    
+                        <li><div class="row">national Certificates - <div class="col" id="Enationalcert"></div></div></li>                    
+                        <li><div class="row">Major and Minor - <div class="col" id="Emajorminor"></div></div></li>                    
+                        <li><div class="row">Specialization - <div class="col" id="Especial"></div></div></li>                    
+                        <li><div class="row">Anciliary Work - <div class="col" id="Eanciliary"></div></div></li>                    
+                    </ul>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+                </div>
             </div>
-            <div class="modal-body">    
-                    <!-- <input type="text" id="Eempno" name="empno" value="">
-                    <input type="text" id="Echildren_id" name="child_id" value="">-->   
-                <div class="row"><h5><div class="col" id="Eemp_name"></div><div class="col" id="Epercentage"></div></h5></div>
-                <ul style="list-style-type:none">
-                    <li><div class="row">Personal Information - <div class="col" id="Epersonal"></div></div></li>
-                    <li><div class="row">Family Background - <div class="col" id="Efamily"></div></div></li>                    
-                    <li><div class="row">Children's Information - <div class="col" id="Echild"></div></div></li>                    
-                    <li><div class="row">Elementary Education - <div class="col" id="Eelem"></div></div></li>                    
-                    <li><div class="row">Secondary Education - <div class="col" id="Esecond"></div></div></li>                    
-                    <li><div class="row">Vocational Education - <div class="col" id="Evoc"></div></div></li>                    
-                    <li><div class="row">College Education - <div class="col" id="Ecol"></div></div></li>                    
-                    <li><div class="row">Graduate Education - <div class="col" id="Egrad"></div></div></li>                    
-                    <li><div class="row">Civil Service Eligibility - <div class="col" id="Ecivil"></div></div></li>                    
-                    <li><div class="row">Work Experience - <div class="col" id="Eworkex"></div></div></li>                    
-                    <li><div class="row">Voluntary Work - <div class="col" id="Evolun"></div></div></li>                    
-                    <li><div class="row">Learning Development - <div class="col" id="Elearn"></div></div></li>                    
-                    <li><div class="row">Special Skills and Hobies - <div class="col" id="Eskills"></div></div></li>                    
-                    <li><div class="row">Non-Academic Distinctions - <div class="col" id="Enonacad"></div></div></li>                    
-                    <li><div class="row">Membership in Association - <div class="col" id="Emember"></div></div></li>                    
-                    <li><div class="row">Other Information - <div class="col" id="Eotherinfo"></div></div></li>                    
-                    <li><div class="row">Employment Information - <div class="col" id="Eemployment"></div></div></li>                    
-                    <li><div class="row">Subjects Handled - <div class="col" id="Esubject"></div></div></li>                    
-                    <li><div class="row">national Certificates - <div class="col" id="Enationalcert"></div></div></li>                    
-                    <li><div class="row">Major and Minor - <div class="col" id="Emajorminor"></div></div></li>                    
-                    <li><div class="row">Specialization - <div class="col" id="Especial"></div></div></li>                    
-                    <li><div class="row">Anciliary Work - <div class="col" id="Eanciliary"></div></div></li>                    
-                </ul>
-                   
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-            </div>
-        </div>
         </div>
         
         <!-- Page Heading -->
@@ -135,7 +199,7 @@
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <!-- <td><?= $row['mobile'] ?></td> -->
-                                                <td>
+                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModal" data-id="<?=$row['id']?>">
                                                     <?php
                                                         if($row1['status']=='1'){
                                                             echo '<span class="badge bg-primary">Approved</span>';
