@@ -47,8 +47,9 @@ $.ajax({
     var positionlabel = [];
     var data_array = [];
     var p,p2;
+    var totaldata = data.length;
     //date = JSON.parse(data);
-    for(var count=0; count<data.length; count++){
+    for(var count=0; count<totaldata; count++){
             
       if(data[count].poss == "Teacher I" ) {p = "Teacher-I";p2 = "T-I";}
       if(data[count].poss == "Teacher II" ) {p = "Teacher-II";p2 = "T-II";}
@@ -111,7 +112,7 @@ $.ajax({
           yAxes: [{
             ticks: {
               min: 0,
-              max: 30,
+              max: totaldata,
               maxTicksLimit: 5,
               padding: 10,
               // Include a dollar sign in the ticks
