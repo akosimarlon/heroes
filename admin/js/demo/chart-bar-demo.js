@@ -47,7 +47,7 @@ $.ajax({
     var positionlabel = [];
     var data_array = [];
     var p,p2;
-    
+    var totaldata = 0;
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
             
@@ -68,10 +68,11 @@ $.ajax({
       position.push(p);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
+      totaldata += data[count].vals;
     }
     
     data_array.max = function() { return  Math.max.apply(Math, this); };
-    var totaldata = data_array.length;
+    
     var ctx = document.getElementById("myBarChart");
     var myBarChart = new Chart(ctx, {
       type: 'bar',
@@ -112,7 +113,7 @@ $.ajax({
           yAxes: [{
             ticks: {
               min: 0,
-              max: 35,
+              max: totaldata,
               maxTicksLimit: 5,
               padding: 10,
               // Include a dollar sign in the ticks
