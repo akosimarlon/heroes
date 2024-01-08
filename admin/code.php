@@ -2754,8 +2754,8 @@ if(isset($_POST['saveEmpRecord'])){
         $query2 = "UPDATE profile_completion SET ei_completed_fileds='0' WHERE emp_no='$emp_no' ";
         $query_run2 = mysqli_query($con,$query2);
 
-        $_SESSION['message'] = "Employment Record Updated Successfuly!";
-        $_SESSION['message_type'] = "primary";   
+        $_SESSION['message'] = "Pending Employment Record upon HR Admin Approval.";
+        $_SESSION['message_type'] = "warning";   
         $_SESSION['tab_page'] = "#employment";
         header("Window-target: _top");      
         header("Location: edit_teacherProfile.php?emp_no=$emp_no");
@@ -3095,6 +3095,19 @@ if(isset($_POST['rejectEmpInfo'])){
     $emp_no = clean($_POST['emp_no']);
     $query = "UPDATE employment_record SET status='0' WHERE emp_no='$emp_no' ";
     $query_run = mysqli_query($con,$query); 
+
+    if($query_run){
+
+        $query2 = "UPDATE profile_completion SET ei_completed_fileds='0' WHERE emp_no='$emp_no' ";
+        $query_run2 = mysqli_query($con,$query2);
+
+        $_SESSION['message'] = "Employment Record Disapproved!";
+        $_SESSION['message_type'] = "danger";   
+        //$_SESSION['tab_page'] = "#employment";
+        header("Window-target: _top");      
+        header("Location: teaching_roster.php?");
+        exit(0);
+    }
 }
 
 //########## For Approve Employee Information #############
@@ -3108,7 +3121,7 @@ if(isset($_POST['approveEmpInfo'])){
         $query2 = "UPDATE profile_completion SET ei_completed_fileds='12' WHERE emp_no='$emp_no' ";
         $query_run2 = mysqli_query($con,$query2);
 
-        $_SESSION['message'] = "Employment Record Updated Successfuly!";
+        $_SESSION['message'] = "Employment Record Approved!";
         $_SESSION['message_type'] = "primary";   
         //$_SESSION['tab_page'] = "#employment";
         header("Window-target: _top");      
