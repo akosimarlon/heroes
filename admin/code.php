@@ -3110,9 +3110,9 @@ if(isset($_POST['approveEmpInfo'])){
 
         $_SESSION['message'] = "Employment Record Updated Successfuly!";
         $_SESSION['message_type'] = "primary";   
-        $_SESSION['tab_page'] = "#employment";
+        //$_SESSION['tab_page'] = "#employment";
         header("Window-target: _top");      
-        header("Location: edit_teacherProfile.php?emp_no=$emp_no");
+        header("Location: teaching_roster.php?");
         exit(0);
     }
 }
