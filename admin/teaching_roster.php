@@ -27,9 +27,9 @@
 
         <!-- Employment Information Modal -->
         <div class="modal fade" id="employmentInfoModal" tabindex="-1" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Verify Employment Information</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -40,36 +40,35 @@
                         <div class="row">
                             <div class="col" id="Ename"></div>
                         </div>
-                        
-                        <div class="form-group">
-                            <input type="hidden" name="userid" id="EuserID">
-                            <input type="hidden" name="oldempno" id="Eoldempno">
-                            <label>Employee Number</label>
-                            <input type="text" id="Eempno" name="empno" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Item Number</label>
-                            <input type="text" id="Eitemnumber" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Date of Appointment</label>                                
-                            <input type="text" id="Edateappointment" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Date of Assumption (First Day of Service)</label>                            
-                            <input type="text" id="Edateassumption" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label>Position Title</label>                            
-                            <input type="text" id="Eposition" class="form-control" readonly>
-                        </div>                            
-                        <div class="form-group">
-                            <label for="">Designation</label>
-                            <input type="text" id="Edesignation" class="form-control" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Category</label>
-                            <input type="text" id="Ecategory" class="form-control" readonly>
+                        <div class="row g-3">
+                            <div class="col-md-6">                                
+                                <label>Employee Number</label>
+                                <input type="text" id="Eempno" name="empno" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Item Number</label>
+                                <input type="text" id="Eitemnumber" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date of Appointment</label>                                
+                                <input type="text" id="Edateappointment" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Date of Assumption (First Day of Service)</label>                            
+                                <input type="text" id="Edateassumption" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Position Title</label>                            
+                                <input type="text" id="Eposition" class="form-control" readonly>
+                            </div>                            
+                            <div class="col-md-6">
+                                <label for="">Designation</label>
+                                <input type="text" id="Edesignation" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Category</label>
+                                <input type="text" id="Ecategory" class="form-control" readonly>
+                            </div>
                         </div>
 
                     </div>                    
@@ -199,7 +198,7 @@
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <!-- <td><?= $row['mobile'] ?></td> -->
-                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModal" data-id="<?=$row['id']?>">
+                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModalVerify" data-id="<?=$row['id']?>">
                                                     <?php
                                                         if($row1['status']=='1'){
                                                             echo '<span class="badge bg-primary">Approved</span>';
@@ -475,6 +474,162 @@
     include('includes/scripts.php');
 ?>
 
+
+<!--####### FOR MODAL IN PROGRESS OF PROFILE STATUS ##### -->
+<script>
+    
+    $(document).ready(function() {
+        $(document).on('click', '.forModal', function(){            
+            var id = $(this).data('id');
+            var empno = $('#uempno'+id).val(); 
+            var empname = $('#emp_name'+id).val(); 
+            var percent = $('#percentage'+id).val(); 
+            //var nc = $('#nationalcert'+id).val()
+            //alert (nc);
+            if($('#personalinfo'+id).val() == 0 ){                
+                $('#Epersonal').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Epersonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#familybackground'+id).val() == 0 ){                
+                $('#Efamily').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Efamily').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#childreninfo'+id).val() == 0 ){                
+                $('#Echild').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Echild').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#elementary'+id).val() == 0 ){                
+                $('#Eelem').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eelem').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#secondary'+id).val() == 0 ){                
+                $('#Esecond').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Esecond').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#vocational'+id).val() == 0 ){                
+                $('#Evoc').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Evoc').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#college'+id).val() == 0 ){                
+                $('#Ecol').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Ecol').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#graduate'+id).val() == 0 ){                
+                $('#Egrad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Egrad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#civilservice'+id).val() == 0 ){                
+                $('#Ecivil').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Ecivil').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#workexperience'+id).val() == 0 ){                
+                $('#Eworkex').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eworkex').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#voluntarywork'+id).val() == 0 ){                
+                $('#Evolun').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Evolun').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#learningdev'+id).val() == 0 ){                
+                $('#Elearn').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Elearn').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#skills'+id).val() == 0 ){                
+                $('#Eskills').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eskills').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#nonacademic'+id).val() == 0 ){                
+                $('#Enonacad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Enonacad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#membership'+id).val() == 0 ){                
+                $('#Emember').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Emember').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#otherinfo'+id).val() == 0 ){                
+                $('#Eotherinfo').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#employment'+id).val() == 0 ){                
+                $('#Eemployment').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eemployment').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#subject'+id).val() == 0 ){                
+                $('#Esubject').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Esubject').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#nationalcert'+id).val() == 0 ){                
+                $('#Enationalcert').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Enationalcert').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#majorminor'+id).val() == 0 ){                
+                $('#Emajorminor').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Emajorminor').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#specialization'+id).val() == 0 ){                
+                $('#Especial').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Especial').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#anciliary'+id).val() == 0 ){                
+                $('#Eanciliary').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eanciliary').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }           
+
+            $('#Eemp_name').html(empname);
+            $('#Epercentage').html('('+percent+')');
+            //document.getElementById('Eemp_name').value = id;
+            //document.getElementById('Echildren_id').value = id;
+            //document.getElementById('Eempno').value = empno;             
+        });
+    });
+    
+
+</script>
+
+<!--####### FOR MODAL IN VERIFY EMPLOYMENT INFORMATION ##### -->
 <script>
     
     $(document).ready(function() {
