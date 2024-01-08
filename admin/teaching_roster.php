@@ -649,14 +649,22 @@
 
             $('#Ename').html(empname);            
             document.getElementById('Eitemnumber').value = itemnumber;
-            document.getElementById('Edateappointment').value = dateappointment;
-            document.getElementById('Edateassumption').value = dateassumption;
+            document.getElementById('Edateappointment').value = format(dateappointment);
+            document.getElementById('Edateassumption').value = format(dateassumption);
             document.getElementById('Eposition').value = position;
             document.getElementById('Edesignation').value = designation;
             document.getElementById('Ecategory').value = category;
                          
         });
     });
+
+    function format(inputDate) {
+        var date = new Date(inputDate);
+        if (!isNaN(date.getTime())) {
+            // Months use 0 index.
+            return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+        }
+    }
     
 
 </script>
