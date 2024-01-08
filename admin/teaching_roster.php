@@ -34,7 +34,7 @@
                         <div class="modal-body">
                             
                             <div class="row">                                
-                                <h4><div class="col" id="Ename"></div></h4>
+                                <h3><div class="col" id="Ename"></div></h3> 
                             </div>
                             <div class="row g-3">                            
                                 <div class="col-md-6">
