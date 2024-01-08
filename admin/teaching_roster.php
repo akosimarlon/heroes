@@ -38,7 +38,7 @@
                             </div>
                             <div class="row g-3">                            
                                 <div class="col-md-6">
-                                    <input type="text" id="Eempno" name="empno">
+                                    <input type="hidden" id="Eempno" name="emp_no">
                                     <label>Item Number</label>
                                     <input type="text" id="Eitemnumber" class="form-control" readonly>
                                 </div>
