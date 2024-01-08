@@ -4606,19 +4606,19 @@
                                                 <label for="">Grade Level</label>                                                
                                                 <select name="grade_level"  class="form-control border-success" required  style="width:220px;">
                                                     <option value="">--Select Grade Level--</option>
-                                                    <option value="0" <?=$emp_rec['grade_level']=='0' ? 'selected':'' ?> >Kinder</option>
-                                                    <option value="1" <?=$emp_rec['grade_level']=='1' ? 'selected':'' ?> >Grade 1</option>
-                                                    <option value="2" <?=$emp_rec['grade_level']=='2' ? 'selected':'' ?> >Grade 2</option>
-                                                    <option value="3" <?=$emp_rec['grade_level']=='3' ? 'selected':'' ?> >Grade 3</option>
-                                                    <option value="4" <?=$emp_rec['grade_level']=='4' ? 'selected':'' ?> >Grade 4</option>
-                                                    <option value="5" <?=$emp_rec['grade_level']=='5' ? 'selected':'' ?> >Grade 5</option>
-                                                    <option value="6" <?=$emp_rec['grade_level']=='6' ? 'selected':'' ?> >Grade 6</option>
-                                                    <option value="7" <?=$emp_rec['grade_level']=='7' ? 'selected':'' ?> >Grade 7</option>
-                                                    <option value="8" <?=$emp_rec['grade_level']=='8' ? 'selected':'' ?> >Grade 8</option>
-                                                    <option value="9" <?=$emp_rec['grade_level']=='9' ? 'selected':'' ?> >Grade 9</option>
-                                                    <option value="10" <?=$emp_rec['grade_level']=='10' ? 'selected':'' ?> >Grade 10</option>
-                                                    <option value="11" <?=$emp_rec['grade_level']=='11' ? 'selected':'' ?> >Grade 11</option>
-                                                    <option value="12" <?=$emp_rec['grade_level']=='12' ? 'selected':'' ?> >Grade 12</option>
+                                                    <option value="0" <?//=$emp_rec['grade_level']=='0' ? 'selected':'' ?> >Kinder</option>
+                                                    <option value="1" <?//=$emp_rec['grade_level']=='1' ? 'selected':'' ?> >Grade 1</option>
+                                                    <option value="2" <?//=$emp_rec['grade_level']=='2' ? 'selected':'' ?> >Grade 2</option>
+                                                    <option value="3" <?//=$emp_rec['grade_level']=='3' ? 'selected':'' ?> >Grade 3</option>
+                                                    <option value="4" <?//=$emp_rec['grade_level']=='4' ? 'selected':'' ?> >Grade 4</option>
+                                                    <option value="5" <?//=$emp_rec['grade_level']=='5' ? 'selected':'' ?> >Grade 5</option>
+                                                    <option value="6" <?//=$emp_rec['grade_level']=='6' ? 'selected':'' ?> >Grade 6</option>
+                                                    <option value="7" <?//=$emp_rec['grade_level']=='7' ? 'selected':'' ?> >Grade 7</option>
+                                                    <option value="8" <?//=$emp_rec['grade_level']=='8' ? 'selected':'' ?> >Grade 8</option>
+                                                    <option value="9" <?//=$emp_rec['grade_level']=='9' ? 'selected':'' ?> >Grade 9</option>
+                                                    <option value="10" <?//=$emp_rec['grade_level']=='10' ? 'selected':'' ?> >Grade 10</option>
+                                                    <option value="11" <?//=$emp_rec['grade_level']=='11' ? 'selected':'' ?> >Grade 11</option>
+                                                    <option value="12" <?//=$emp_rec['grade_level']=='12' ? 'selected':'' ?> >Grade 12</option>
                                                                                                                                             
                                                 </select>
                                             </div> -->
@@ -4633,7 +4633,7 @@
                                             </div>
                                             <!-- <div class="col-auto mb-5">
                                                 <label for="">Plantilla Number</label>
-                                                <input type="text" name="plantilla_no" value="<?=$emp_rec['plantilla_no'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
+                                                <input type="text" name="plantilla_no" value="<?//=$emp_rec['plantilla_no'];?>" style="width:320px;" class="form-control border-success" autocomplete="off" required autofocus>
                                             </div>     -->
                                             
 
@@ -4707,7 +4707,7 @@
                                             <div class="col-auto">
                                                 
                                                 <label for="">Functional Division</label>                                                
-                                                <select id="functional_div" name="functional_div" <?=$emp_rec['notnonteaching']=='yes' ? 'disabled':'' ?> class="form-control border-success" required  style="width:220px;">
+                                                <select id="functional_div" name="functional_div" <?=$emp_rec['notnonteaching']=='yes' ? 'readonly':'' ?> class="form-control border-success" required  style="width:220px;">
                                                     <option value="">--Please Select--</option>
                                                     <?php
                                                         $address = "SELECT DISTINCT(functional_div) FROM office ";
@@ -4728,7 +4728,7 @@
                                             <div class="col-auto mb-5">
                                                 
                                                 <label for="">Office</label>                                                
-                                                <select id="office_name" name="office_name" <?=$emp_rec['notnonteaching']=='yes' ? 'disabled':'' ?> class="form-control border-success" required  style="width:220px;">
+                                                <select id="office_name" name="office_name" <?=$emp_rec['notnonteaching']=='yes' ? 'readonly':'' ?> class="form-control border-success" required  style="width:220px;">
                                                     <option value="">--Please Select--</option>
                                                     <?php
                                                         $address = "SELECT DISTINCT(office_name) FROM office ";

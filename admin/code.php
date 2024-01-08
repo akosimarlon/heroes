@@ -2696,9 +2696,9 @@ if(isset($_POST['saveEmpRecord'])){
     $doass = clean($_POST['doass']);
     $yearinservice = clean($_POST['yearinservice']);
     $position_rank = clean($_POST['position_rank']);
-    $grade_level = clean($_POST['grade_level']);
+    //$grade_level = clean($_POST['grade_level']);
     $item_no = clean($_POST['item_no']);
-    $plantilla_no = clean($_POST['plantilla_no']);  
+    //$plantilla_no = clean($_POST['plantilla_no']);  
 
     $position_type = clean($_POST['position_type']);      
     $designation = clean($_POST['designation']); 
@@ -2722,18 +2722,18 @@ if(isset($_POST['saveEmpRecord'])){
         $office_name = "N/A";
     } 
 
-    if($position_rank == "teacher1" ) $p = "1";
-    if($position_rank == "teacher2" ) $p = "2";
-    if($position_rank == "teacher3" ) $p = "3";
-    if($position_rank == "ssteacher1" ) $p = "4";
-    if($position_rank == "mteacher1" ) $p = "5";
-    if($position_rank == "mteacher2" ) $p = "6";
-    if($position_rank == "mteacher3" ) $p = "7";
+    // if($position_rank == "teacher1" ) $p = "1";
+    // if($position_rank == "teacher2" ) $p = "2";
+    // if($position_rank == "teacher3" ) $p = "3";
+    // if($position_rank == "ssteacher1" ) $p = "4";
+    // if($position_rank == "mteacher1" ) $p = "5";
+    // if($position_rank == "mteacher2" ) $p = "6";
+    // if($position_rank == "mteacher3" ) $p = "7";
 
     try{
-        $query = "UPDATE employment_record SET grade_level='$grade_level', date_of_emp='$doapp', yrs_in_serv='$yearinservice', date_of_ass='$doass', 
-                position_type='$position_type', position_rank='$position_rank', position_id='$p', designation='$designation', item_no='$item_no',
-                plantilla_no='$plantilla_no', notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district',
+        $query = "UPDATE employment_record SET date_of_emp='$doapp', yrs_in_serv='$yearinservice', date_of_ass='$doass', 
+                position_type='$position_type', position_rank='$position_rank', designation='$designation', item_no='$item_no',
+                notteaching='$notteaching', school_id='$school_id', school_name='$sch_name', district='$district',
                 notnonteaching='$notnonteaching', functional_div='$functional_div', office_name='$office_name', status='2' WHERE emp_no='$emp_no' ";
 
         $query_run = mysqli_query($con,$query);         
