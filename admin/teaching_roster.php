@@ -40,11 +40,7 @@
                         <div class="row">
                             <div class="col" id="Ename"></div>
                         </div>
-                        <div class="row g-3">
-                            <div class="col-md-6">                                
-                                <label>Employee Number</label>
-                                <input type="text" id="Eempno" name="empno" class="form-control" readonly>
-                            </div>
+                        <div class="row g-3">                            
                             <div class="col-md-6">
                                 <label>Item Number</label>
                                 <input type="text" id="Eitemnumber" class="form-control" readonly>
@@ -68,6 +64,14 @@
                             <div class="col-md-6">
                                 <label for="">Category</label>
                                 <input type="text" id="Ecategory" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">School</label>
+                                <input type="text" id="Eschool" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">District</label>
+                                <input type="text" id="Edistrict" class="form-control" readonly>
                             </div>
                         </div>
 
