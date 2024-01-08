@@ -47,7 +47,7 @@ $.ajax({
     var positionlabel = [];
     var data_array = [];
     var p,p2;
-    var totaldata = 0;
+    var partialtotal=0,totaldata = 0;
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
             
@@ -68,9 +68,9 @@ $.ajax({
       position.push(p);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
-      totaldata += data[count].vals;
+      partialtotal = count;
     }
-    
+    alert (partialtotal);
     data_array.max = function() { return  Math.max.apply(Math, this); };
     
     var ctx = document.getElementById("myBarChart");
