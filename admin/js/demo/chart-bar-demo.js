@@ -69,8 +69,9 @@ $.ajax({
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
       partialtotal = data[count].vals;
+      totaldata = totaldata + partialtotal;
     }
-    alert (partialtotal);
+    alert (totaldata);
     data_array.max = function() { return  Math.max.apply(Math, this); };
     
     var ctx = document.getElementById("myBarChart");
