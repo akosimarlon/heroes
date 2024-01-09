@@ -92,7 +92,7 @@
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                 Non-Teaching Personnel</div>
                                                 <?php                                             
-                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching'";
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Non_Teaching' AND status='1'";
                                                     $users_run = mysqli_query($con,$users);                                                
                                                     if(mysqli_num_rows($users_run) > 0 ){
                                                         foreach($users_run as $user){
