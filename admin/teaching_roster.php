@@ -360,7 +360,7 @@
                                                 
                                                 ?>                                                
                                                 </td>
-                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
+                                                <!-- <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>"> -->
                                                 
                                             </tr>
                                             <?php
