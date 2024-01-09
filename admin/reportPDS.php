@@ -73,7 +73,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'    MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(150,5,strtoupper($data->middlename),1,1,'L');
+                $this->Cell(150,5,strtoupper(utf8_decode($data->middlename)),1,1,'L');
                 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
