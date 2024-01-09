@@ -56,8 +56,9 @@
                                     <th><b>Station</b></th>
                                     <th><b>Office</b></th>
                                     <th><b>Email</b></th>
-                                    <th><b>Contact Number</b></th>                                    
-                                    <th><b>Status</b></th>                                    
+                                    <!-- <th><b>Contact Number</b></th>                                     -->
+                                    <th><b>Employment Record</b></th>                                    
+                                    <th><b>Profile Status</b></th>                                    
                                 </tr>
                             </thead>                            
                             <tbody>
@@ -75,7 +76,8 @@
                                             if(mysqli_num_rows($query_run1) > 0){
                                                 foreach($query_run1 as $row){
                                         ?>
-                                            <tr>   
+                                            <tr>  
+                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['middlename']." ".$row['lastname'])?>">
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
@@ -87,18 +89,181 @@
                                                 <td><?= $row1['school_name'] ?></td>
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
-                                                <td><?= $row['mobile'] ?></td>
-                                                <td>                                                
+                                                <!-- <td><?//= $row['mobile'] ?></td> -->
+                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModalVerify" data-id="<?=$row1['id']?>">
+                                                    
+                                                    <input type="hidden" id="itemnumber<?=$row1['id']?>" value="<?=$row1['item_no']?>">
+                                                    <input type="hidden" id="dateappointment<?=$row1['id']?>" value="<?=$row1['date_of_emp']?>">
+                                                    <input type="hidden" id="dateassumption<?=$row1['id']?>" value="<?=$row1['date_of_ass']?>">
+                                                    <input type="hidden" id="position<?=$row1['id']?>" value="<?=$row1['position_rank']?>">
+                                                    <input type="hidden" id="designation<?=$row1['id']?>" value="<?=$row1['designation']?>">
+                                                    <input type="hidden" id="category<?=$row1['id']?>" value="<?=$row1['position_type']?>">
+
+                                                    <?php
+                                                        if($row1['status']=='1'){
+                                                            echo '<span class="badge bg-primary">Approved</span>';
+                                                        }
+                                                        elseif($row1['status']=='2'){
+                                                            echo '<span class="badge bg-warning text-light">Pending Approval</span>';
+                                                        }
+                                                        elseif($row1['status']=='0'){
+                                                            echo '<span class="badge bg-danger text-light">Disapproved</span>';
+                                                        }
+                                                    ?>
+                                                </td>
+
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
+                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <?php
-                                                    if($row['status']=='1'){
-                                                        echo '<span class="badge bg-primary">Active</span>';
+                                                    
+
+                                                    $user_id = $row1['emp_no'];
+                                                    $query = "SELECT * FROM profile_completion WHERE emp_no='$user_id' ";
+                                                    $query_run = mysqli_query($con,$query);
+
+                                                    if(mysqli_num_rows($query_run) > 0 ){ 
+                                                        foreach($query_run as $row){ 
+                                                    ?>   
+                                                    
+                                                        
+                                                        <input type="hidden" id="personalinfo<?=$row['id']?>" value="<?=$row['pi_completed_fileds']?>">
+                                                        <input type="hidden" id="familybackground<?=$row['id']?>" value="<?=$row['fb_completed_fileds']?>">
+                                                        <input type="hidden" id="childreninfo<?=$row['id']?>" value="<?=$row['child_completed_fileds']?>">
+                                                        <input type="hidden" id="elementary<?=$row['id']?>" value="<?=$row['elem_completed_fileds']?>">
+                                                        <input type="hidden" id="secondary<?=$row['id']?>" value="<?=$row['sec_completed_fileds']?>">
+                                                        <input type="hidden" id="vocational<?=$row['id']?>" value="<?=$row['voc_completed_fileds']?>">
+                                                        <input type="hidden" id="college<?=$row['id']?>" value="<?=$row['col_completed_fileds']?>">
+                                                        <input type="hidden" id="graduate<?=$row['id']?>" value="<?=$row['grad_completed_fileds']?>">
+                                                        <input type="hidden" id="civilservice<?=$row['id']?>" value="<?=$row['cse_completed_fileds']?>">
+                                                        <input type="hidden" id="workexperience<?=$row['id']?>" value="<?=$row['we_completed_fileds']?>">
+                                                        <input type="hidden" id="voluntarywork<?=$row['id']?>" value="<?=$row['vw_completed_fileds']?>">
+                                                        <input type="hidden" id="learningdev<?=$row['id']?>" value="<?=$row['ld_completed_fileds']?>">
+                                                        <input type="hidden" id="skills<?=$row['id']?>" value="<?=$row['skills_completed_fields']?>">
+                                                        <input type="hidden" id="nonacademic<?=$row['id']?>" value="<?=$row['nacad_completed_fields']?>">
+                                                        <input type="hidden" id="membership<?=$row['id']?>" value="<?=$row['mem_completed_fields']?>">
+                                                        <input type="hidden" id="otherinfo<?=$row['id']?>" value="<?=$row['oi_completed_fileds']?>">
+                                                        <input type="hidden" id="employment<?=$row['id']?>" value="<?=$row['ei_completed_fileds']?>">
+                                                        <input type="hidden" id="subject<?=$row['id']?>" value="<?=$row['tr_completed_fileds']?>">
+                                                        <input type="hidden" id="nationalcert<?=$row['id']?>" value="<?=$row['nc_completed_fileds']?>">
+                                                        <input type="hidden" id="majorminor<?=$row['id']?>" value="<?=$row['mm_completed_fileds']?>">
+                                                        <input type="hidden" id="specialization<?=$row['id']?>" value="<?=$row['spec_completed_fileds']?>">
+                                                        <input type="hidden" id="anciliary<?=$row['id']?>" value="<?=$row['aw_completed_fileds']?>">
+                                                        <input type="hidden" id="percentage<?=$row['id']?>" value="<?=$row['completed_percentage']?>">
+
+                                                        <div class="col-auto">
+                                                            <div class="h6 mb-0 mr-3 font-weight-bold"><?=$row['completed_percentage']?></div>
+                                                        </div>
+
+                                                        <?php
+                                                            
+                                                            $comp = intval(substr($row['completed_percentage'],0,-1));
+
+                                                            if($comp<=20){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$comp?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($comp<=60 && $comp>20){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($comp<=90 && $comp>60){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($comp<=99 && $comp>90){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-primary progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+                                                        <?php
+                                                            if($comp==100){
+                                                        ?>    
+                                                            <div class="col">
+                                                                <div class="progress progress-sm mr-2">
+                                                                    <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+                                                                        style="width: <?=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <?php
+                                                            }
+                                                        ?>
+
+
+
+
+
+
+
+                                                        <!-- <div class="col">
+                                                            <div class="progress progress-sm mr-2">
+                                                                <div class="progress-bar progress-bar-striped bg-primary progress-bar-animated" role="progressbar"
+                                                                    style="width: <?//=$row['completed_percentage']?>" aria-valuenow="50" aria-valuemin="0"
+                                                                    aria-valuemax="100">
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                    
+                                                <?php
+                                                        }
                                                     }
-                                                    elseif($row['status']=='0'){
-                                                        echo '<span class="badge bg-danger text-light">Inactive</span>';
-                                                    }
+                                                
+
+                                                
+                                                ?>
+                                                <?php
+                                                    // if($row['status']=='1'){
+                                                    //     echo '<span class="badge bg-primary">Active</span>';
+                                                    // }
+                                                    // elseif($row['status']=='0'){
+                                                    //     echo '<span class="badge bg-danger text-light">Inactive</span>';
+                                                    // }
                                                 ?>
                                                 </td>
-                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
+                                                <!-- <input type="hidden" id="uempno<?//=$row['id']?>" value="<?//=$row['emp_no']?>"> -->
                                                 
                                             </tr>
                                             <?php
@@ -273,3 +438,194 @@
     include('includes/footer.php');
     include('includes/scripts.php');
 ?>
+
+<!--####### FOR MODAL IN PROGRESS OF PROFILE STATUS ##### -->
+<script>
+    
+    $(document).ready(function() {
+        $(document).on('click', '.forModal', function(){            
+            var id = $(this).data('id');
+            var empno = $('#uempno'+id).val(); 
+            var empname = $('#emp_name'+id).val(); 
+            var percent = $('#percentage'+id).val(); 
+            //var nc = $('#nationalcert'+id).val()
+            //alert (nc);
+            if($('#personalinfo'+id).val() == 0 ){                
+                $('#Epersonal').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Epersonal').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#familybackground'+id).val() == 0 ){                
+                $('#Efamily').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Efamily').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#childreninfo'+id).val() == 0 ){                
+                $('#Echild').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Echild').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#elementary'+id).val() == 0 ){                
+                $('#Eelem').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eelem').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#secondary'+id).val() == 0 ){                
+                $('#Esecond').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Esecond').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#vocational'+id).val() == 0 ){                
+                $('#Evoc').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Evoc').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#college'+id).val() == 0 ){                
+                $('#Ecol').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Ecol').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#graduate'+id).val() == 0 ){                
+                $('#Egrad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Egrad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#civilservice'+id).val() == 0 ){                
+                $('#Ecivil').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Ecivil').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#workexperience'+id).val() == 0 ){                
+                $('#Eworkex').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eworkex').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#voluntarywork'+id).val() == 0 ){                
+                $('#Evolun').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Evolun').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#learningdev'+id).val() == 0 ){                
+                $('#Elearn').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Elearn').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#skills'+id).val() == 0 ){                
+                $('#Eskills').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eskills').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#nonacademic'+id).val() == 0 ){                
+                $('#Enonacad').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Enonacad').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#membership'+id).val() == 0 ){                
+                $('#Emember').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Emember').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#otherinfo'+id).val() == 0 ){                
+                $('#Eotherinfo').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eotherinfo').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#employment'+id).val() == 0 ){                
+                $('#Eemployment').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eemployment').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#subject'+id).val() == 0 ){                
+                $('#Esubject').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Esubject').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+            
+            if($('#nationalcert'+id).val() == 0 ){                
+                $('#Enationalcert').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Enationalcert').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#majorminor'+id).val() == 0 ){                
+                $('#Emajorminor').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Emajorminor').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#specialization'+id).val() == 0 ){                
+                $('#Especial').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Especial').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }
+
+            if($('#anciliary'+id).val() == 0 ){                
+                $('#Eanciliary').html("<span style='color:red'><i class='fa fa-times'></i></span>");                
+            }else{
+                $('#Eanciliary').html("<span style='color:green'><i class='fa fa-check'></i></span>");
+            }           
+
+            $('#Eemp_name').html(empname);
+            $('#Epercentage').html('('+percent+')');
+            //document.getElementById('Eemp_name').value = id;
+            //document.getElementById('Echildren_id').value = id;
+            //document.getElementById('Eempno').value = empno;             
+        });
+    });
+    
+
+</script>
+
+<!--####### FOR MODAL IN VERIFY EMPLOYMENT INFORMATION ##### -->
+<script>
+    
+    $(document).ready(function() {
+        $(document).on('click', '.forModalVerify', function(){            
+            var id = $(this).data('id');
+            var empno = $('#uempno'+id).val(); 
+            var empname = $('#emp_name'+id).val();
+            var itemnumber = $('#itemnumber'+id).val();
+            var dateappointment = $('#dateappointment'+id).val();
+            var dateassumption = $('#dateassumption'+id).val();
+            var position = $('#position'+id).val();
+            var designation = $('#designation'+id).val();
+            var category = $('#category'+id).val();
+
+            $('#Ename').html(empname);            
+            document.getElementById('Eitemnumber').value = itemnumber;
+            document.getElementById('Edateappointment').value = format(dateappointment);
+            document.getElementById('Edateassumption').value = format(dateassumption);
+            document.getElementById('Eposition').value = position;
+            document.getElementById('Edesignation').value = designation;
+            document.getElementById('Ecategory').value = category;
+            document.getElementById('Eempno').value = empno;             
+        });
+    });
+
+    function format(inputDate) {
+        var date = new Date(inputDate);
+        if (!isNaN(date.getTime())) {
+            // Months use 0 index.
+            return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+        }
+    }
+    
+
+</script>
