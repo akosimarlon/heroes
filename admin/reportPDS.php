@@ -173,7 +173,7 @@ class myPDF extends FPDF{
                     //$this->SetXY($x + 85, $y-6);                 
                 }
 
-
+                $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(50,5,'please indicate the details. ','LR',0,'L',true);
