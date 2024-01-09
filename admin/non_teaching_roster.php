@@ -13,6 +13,61 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         
+        <!-- Employment Information Modal -->
+        <div class="modal fade" id="employmentInfoModal" tabindex="-1" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-light">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Verify Employment Information</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    
+                    <form action="code.php" method="POST">
+                        <div class="modal-body">
+                            
+                            <div class="row">                                
+                                <h4><b><div class="col" id="Ename"></div></h4></b>
+                            </div>
+                            <div class="row g-3">                            
+                                <div class="col-md-6">
+                                    <input type="hidden" id="Eempno" name="emp_no">
+                                    <label>Item Number</label>
+                                    <input type="text" id="Eitemnumber" class="form-control" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Date of Appointment</label>                                
+                                    <input type="text" id="Edateappointment" class="form-control" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Date of Assumption (First Day of Service)</label>                            
+                                    <input type="text" id="Edateassumption" class="form-control" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Position Title</label>                            
+                                    <input type="text" id="Eposition" class="form-control" readonly>
+                                </div>                            
+                                <div class="col-md-6">
+                                    <label for="">Designation</label>
+                                    <input type="text" id="Edesignation" class="form-control" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Category</label>
+                                    <input type="text" id="Ecategory" class="form-control" readonly>
+                                </div>                                
+                            </div>
+
+                        </div>                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" name="rejectEmpInfo" class="btn btn-danger">Reject</button>
+                            <button type="submit" name="approveEmpInfo" class="btn btn-success">Approve</button>
+                        </div>
+                    </form>
+                
+                
+                </div>
+            </div>
+        </div>
 
         <!-- Progress Modal -->
         <div class="modal fade" id="progressmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -648,6 +703,43 @@
             //document.getElementById('Eempno').value = empno;             
         });
     });
+    
+
+</script>
+
+<!--####### FOR MODAL IN VERIFY EMPLOYMENT INFORMATION ##### -->
+<script>
+    
+    $(document).ready(function() {
+        $(document).on('click', '.forModalVerify', function(){            
+            var id = $(this).data('id');
+            var empno = $('#uempno'+id).val(); 
+            var empname = $('#emp_name'+id).val();
+            var itemnumber = $('#itemnumber'+id).val();
+            var dateappointment = $('#dateappointment'+id).val();
+            var dateassumption = $('#dateassumption'+id).val();
+            var position = $('#position'+id).val();
+            var designation = $('#designation'+id).val();
+            var category = $('#category'+id).val();
+
+            $('#Ename').html(empname);            
+            document.getElementById('Eitemnumber').value = itemnumber;
+            document.getElementById('Edateappointment').value = format(dateappointment);
+            document.getElementById('Edateassumption').value = format(dateassumption);
+            document.getElementById('Eposition').value = position;
+            document.getElementById('Edesignation').value = designation;
+            document.getElementById('Ecategory').value = category;
+            document.getElementById('Eempno').value = empno;             
+        });
+    });
+
+    function format(inputDate) {
+        var date = new Date(inputDate);
+        if (!isNaN(date.getTime())) {
+            // Months use 0 index.
+            return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+        }
+    }
     
 
 </script>
