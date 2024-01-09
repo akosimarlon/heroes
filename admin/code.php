@@ -440,13 +440,13 @@ if(isset($_POST['registerTeacher'])){
                             father_middlename,father_exname,mother_lastname,mother_firstname,mother_middlename,status) 
                            VALUES ('$empno','','','','','','','','','','','','','','','','$status');";
 
-                $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
-                            e_level,e_year,e_scholarship,educational_level,status) 
-                            VALUES ('$empno','','','','','Graduated','','','elementary','$status');";
+                // $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
+                //             e_level,e_year,e_scholarship,educational_level,status) 
+                //             VALUES ('$empno','','','','','Graduated','','','elementary','$status');";
 
-                $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
-                            e_level,e_year,e_scholarship,educational_level,status) 
-                            VALUES ('$empno','','','','','Graduated','','','secondary','$status');";
+                // $query .= "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,
+                //             e_level,e_year,e_scholarship,educational_level,status) 
+                //             VALUES ('$empno','','','','','Graduated','','','secondary','$status');";
 
                 $query .= "INSERT INTO other_info (emp_no,fullname,q34_a,q34_b,q34_b_details,q35_a,q35_a_details,q35_b,q35_b_date_filed,q35_b_status,q36,q36_details,q37,q37_details,q38_a,q38_a_details,q38_b,q38_b_details,q39,q39_details,q40_a,q40_a_details,q40_b,q40_b_details,q40_c,q40_c_details,refname1,refadd1,reftel1,refname2,refadd2,reftel2,refname3,refadd3,reftel3,gov_id,gov_id_no,gov_id_date,status) 
                             VALUES ('$empno','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','$status');";
