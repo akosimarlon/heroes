@@ -1352,6 +1352,9 @@ class myPDF extends FPDF{
 
 
                 //HIGHEST LEVEL / UNITS EARNED
+                if(strlen($data->e_level) > 30 ){
+                    $this->SetFont('Arial','',3);
+                }
                 if(strlen($data->e_level) < 10 ){ 
                     $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 }else{
