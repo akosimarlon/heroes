@@ -1,9 +1,8 @@
 <?php
-
-    require "fpdf.php";
-    header("Content-type: application/pdf; charset=utf-8");
+    require "fpdf.php";    
     include('authentication.php');
     include("includes/timezone.php");
+    header("Content-type: application/pdf; charset=utf-8");
 //$db = new PDO('mysql:host=localhost;dbname=ykgercov_dtr','ykgercov_dtr','AB1DIokBhcLwtr{');   //P@$$w0rd123456
 $db = new PDO('mysql:host=localhost;dbname=tis','root','@DavaosurDB2023');
 //define('PESO',chr(174));
