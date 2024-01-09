@@ -62,7 +62,7 @@
             </div>
         </div>
 
-        
+
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-2">
             <h3 class="h3 mb-0 text-gray-800">Non-Teaching Roster </h3><br>                
@@ -128,6 +128,7 @@
                                                 foreach($query_run1 as $row){
                                         ?>
                                             <tr>   
+                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['middlename']." ".$row['lastname'])?>">
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
