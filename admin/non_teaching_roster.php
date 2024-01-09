@@ -167,7 +167,7 @@
                                     <th><b>Profile Status</b></th>                                    
                                 </tr>
                             </thead>                            
-                            <tbody>
+                            <tbody class="text-dark">
                                 <?php
                                     $count = 1;
                                     $query = "SELECT * FROM employment_record where position_type ='Non_Teaching' ";
