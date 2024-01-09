@@ -155,7 +155,24 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'4. PLACE OF BIRTH',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+                //$this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+
+                //PLACE OF BIRTH
+                $pobLen = strlen($data->pob);
+                if($pobLen > 48 ){
+                    $this->SetFont('Arial','',3);
+                }
+                if($pobLen < 24 ){ 
+                    $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+                }else{
+                    $this->SetFont('Arial','',5); 
+                    $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+                    //$this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
+                    //$x = $this->GetX();
+                    //$y = $this->GetY();
+                    //$this->SetXY($x + 85, $y-6);                 
+                }
+
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
