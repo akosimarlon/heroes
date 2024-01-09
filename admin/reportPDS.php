@@ -1,6 +1,7 @@
 <?php
 
     require "fpdf.php";
+    header("Content-type: application/pdf; charset=utf-8");
     include('authentication.php');
     include("includes/timezone.php");
 //$db = new PDO('mysql:host=localhost;dbname=ykgercov_dtr','ykgercov_dtr','AB1DIokBhcLwtr{');   //P@$$w0rd123456
