@@ -147,7 +147,28 @@
                                                 </td>
                                                 
                                                 <td><?= $row['email'] ?></td>
-                                                <td><?= $row['mobile'] ?></td>
+                                                <!-- <td><?//= $row['mobile'] ?></td> -->
+                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModalVerify" data-id="<?=$row1['id']?>">
+                                                    
+                                                    <input type="hidden" id="itemnumber<?=$row1['id']?>" value="<?=$row1['item_no']?>">
+                                                    <input type="hidden" id="dateappointment<?=$row1['id']?>" value="<?=$row1['date_of_emp']?>">
+                                                    <input type="hidden" id="dateassumption<?=$row1['id']?>" value="<?=$row1['date_of_ass']?>">
+                                                    <input type="hidden" id="position<?=$row1['id']?>" value="<?=$row1['position_rank']?>">
+                                                    <input type="hidden" id="designation<?=$row1['id']?>" value="<?=$row1['designation']?>">
+                                                    <input type="hidden" id="category<?=$row1['id']?>" value="<?=$row1['position_type']?>">
+
+                                                    <?php
+                                                        if($row1['status']=='1'){
+                                                            echo '<span class="badge bg-primary">Approved</span>';
+                                                        }
+                                                        elseif($row1['status']=='2'){
+                                                            echo '<span class="badge bg-warning text-light">Pending Approval</span>';
+                                                        }
+                                                        elseif($row1['status']=='0'){
+                                                            echo '<span class="badge bg-danger text-light">Disapproved</span>';
+                                                        }
+                                                    ?>
+                                                </td>
                                                 <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
                                                 
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">

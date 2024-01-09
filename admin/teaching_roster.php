@@ -190,7 +190,7 @@
                                                 <td><?= $row1['school_name'] ?></td>
                                                 <td><?= $row1['district'] ?></td>
                                                 <td><?= $row['email'] ?></td>
-                                                <!-- <td><?= $row['mobile'] ?></td> -->
+                                                <!-- <td><?//= $row['mobile'] ?></td> -->
 
                                                 
 
