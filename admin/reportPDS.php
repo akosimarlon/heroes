@@ -165,7 +165,7 @@ class myPDF extends FPDF{
                 if($pobLen < 24 ){ 
                     $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
                 }else{
-                    $this->SetFont('Arial','',5); 
+                    $this->SetFont('Arial','',4); 
                     $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
                     //$this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
                     //$x = $this->GetX();
