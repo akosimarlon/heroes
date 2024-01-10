@@ -3625,39 +3625,39 @@
                                         </table>
                                     </div>
                                     
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-md-3 mb-3">
-                                            <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
+                                            
                                             <input type="hidden" id="uv_educ_level" value="vocational">
 
                                             <?php
-                                                    $na = "SELECT * FROM work_experience WHERE emp_no='$user_id' LIMIT 1";
-                                                    $na_run = mysqli_query($con,$na);
+                                                    // $na = "SELECT * FROM work_experience WHERE emp_no='$user_id' LIMIT 1";
+                                                    // $na_run = mysqli_query($con,$na);
                                                     
-                                                    if(mysqli_num_rows($na_run) > 0 ){
-                                                        foreach($na_run as $row){
-                                                            if($row['n_a']=="1"){
-                                                            ?>
+                                                    // if(mysqli_num_rows($na_run) > 0 ){
+                                                    //     foreach($na_run as $row){
+                                                    //         if($row['n_a']=="1"){
+                                                    //         ?>
                                                                 <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal" DISABLED><i class="fa fa-plus"></i> Add Work Experience</button>
                                                             <?php
-                                                            }else{
+                                                            //}else{
                                                             ?>
                                                                 <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
                                                             <?php
-                                                            }
-                                                        }
-                                                    }else{
+                                                    //        }
+                                                    //    }
+                                                    //}else{
                                                         ?>
                                                             <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
                                                         <?php
-                                                    }        
+                                                    //}        
                                                 ?>
 
                                             
 
                                         </div>
                                         
-                                    </div>
+                                    </div> -->
                                 </div>
 
                             
