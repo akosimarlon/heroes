@@ -2173,7 +2173,7 @@ class myPDF extends FPDF{
 
                 $skilllen = strlen($special_skills[$y]);
                 //echo $course_len;
-                if($skilllen < 92 ){
+                if($skilllen > 92 ){
                     $this->SetFont('Arial','',5);                    
                 }
                 if($skilllen < 47 ){
@@ -2190,7 +2190,7 @@ class myPDF extends FPDF{
                 
                 $nonacadlen = strlen($non_academic[$y]);
                 //echo $course_len;
-                if($nonacadlen < 92 ){
+                if($nonacadlen > 92 ){
                     $this->SetFont('Arial','',5);                    
                 }
                 if($nonacadlen < 47 ){
