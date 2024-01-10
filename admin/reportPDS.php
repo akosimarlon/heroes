@@ -1839,7 +1839,7 @@ class myPDF extends FPDF{
             //$this->Cell(15,8,date_format($date,"m/d/Y"),'BL',0,'C');
 
             for($y = 0; $y < 7; $y++){
-                $this->SetFont('Arial','',5);
+                $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);
                 
                 if($org_name[$y]=="N/A"){
@@ -1848,7 +1848,7 @@ class myPDF extends FPDF{
                     $orgnameadd = strlen($org_name[$y]." / ".$org_address[$y]);
                     
                     if($orgnameadd > 90 ){
-                        $this->SetFont('Arial','',4);                    
+                        $this->SetFont('Arial','',5);                    
                     }
                     if($orgnameadd < 60 ){
                         $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');                    
@@ -1867,7 +1867,7 @@ class myPDF extends FPDF{
                     
                     //echo $course_len;
                     if($orgname > 90 ){
-                        $this->SetFont('Arial','',4);                    
+                        $this->SetFont('Arial','',5);                    
                     }
                     if($orgname < 60 ){
                         $this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');                    
