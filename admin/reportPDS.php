@@ -1922,7 +1922,7 @@ class myPDF extends FPDF{
                     if($nature_len < 60 ){
                         $this->Cell(70,6,strtoupper($nature_work[$y]),'BLR',1,'C');                    
                     }else{
-                        //$this->SetFont('Arial','',6);
+                        //$this->SetFont('Arial','',6) ;
                         $this->MultiCell(70,3,strtoupper($nature_work[$y]),'BL','C');
                         $a = $this->GetX();
                         $b = $this->GetY();
