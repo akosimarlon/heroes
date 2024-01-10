@@ -2190,10 +2190,10 @@ class myPDF extends FPDF{
                 
                 $nonacadlen = strlen($non_academic[$y]);
                 //echo $course_len;
-                if($nonacadlen > 92 ){
+                if($nonacadlen > 110 ){
                     $this->SetFont('Arial','',4);                    
                 }
-                if($nonacadlen < 47 ){
+                if($nonacadlen < 56 ){
                     $this->Cell(80,6,strtoupper($non_academic[$y]),'BL',0,'C');                    
                 }else{
                     //$this->SetFont('Arial','',6);
@@ -2204,13 +2204,16 @@ class myPDF extends FPDF{
                 }
 
                 //$this->Cell(80,6,strtoupper($non_academic[$y]),'BL',0,'C'); 
-                
+                $this->SetFont('Arial','',6);
                 $memlen = strlen($mem_in_asso[$y]);
                 //echo $course_len;
-                if($memlen < 45 ){
+                if($memlen > 82 ){
+                    $this->SetFont('Arial','',5);                    
+                }
+                if($memlen < 42 ){
                     $this->Cell(55,6,strtoupper($mem_in_asso[$y]),'BLR',1,'C');                    
                 }else{
-                    $this->SetFont('Arial','',6);
+                    //$this->SetFont('Arial','',6);
                     $this->MultiCell(55,3,strtoupper($mem_in_asso[$y]),'BLR','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
