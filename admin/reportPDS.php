@@ -2191,7 +2191,7 @@ class myPDF extends FPDF{
                 $nonacadlen = strlen($non_academic[$y]);
                 //echo $course_len;
                 if($nonacadlen > 92 ){
-                    $this->SetFont('Arial','',5);                    
+                    $this->SetFont('Arial','',4);                    
                 }
                 if($nonacadlen < 47 ){
                     $this->Cell(80,6,strtoupper($non_academic[$y]),'BL',0,'C');                    
