@@ -1850,7 +1850,7 @@ class myPDF extends FPDF{
                     if($orgnameadd > 90 ){
                         $this->SetFont('Arial','',4);                    
                     }
-                    if($orgnameadd < 60 ){
+                    if($orgnameadd < 75 ){
                         $this->Cell(80,6,strtoupper($org_name[$y])." / ".strtoupper($org_address[$y]),'BL',0,'C');                    
                     }else{
                         //$this->SetFont('Arial','',6);
