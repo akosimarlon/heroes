@@ -3308,54 +3308,10 @@
                         <div role="tabpanel" class="tab-pane" id="civilservice">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <h3 class="semi-bold text-primary">Civil Service Eligibility</h3>
-                                 <!-- <div class="row mt-3">
-                                    <div class="col-md-3 mb-3">
-                                        <label for="">CAREER SERVICE</label>
-                                            <div id="inputFormRowcareer1" class="mb-3" >
-                                                <input type="text" name="careerservice[]" value="" title="CAREER SERVICE/RA 1080 (BOARD/BAR) UNDER SPECIAL LAWS/CES/CSEE/BARANGAY ELIGIBILITY/DRIVER'S LICENSE" class="form-control border-success" autocomplete="off" required autofocus>                                                
-                                            </div>
-                                        <div id="newRowcareer1" class="mb-3"></div>
-                                        <button id="addRowCareer" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Row</button>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">RATING</label>
-                                        <div id="inputFormRowcareer2" class="mb-3">
-                                            <input type="text" name="rating[]" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
-                                        </div>
-                                        <div id="newRowcareer2" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">Date of Examination/Conferment</label>
-                                        <div id="inputFormRowcareer3" class="mb-3">
-                                            <input type="date" class="form-control border-success" name="dateofexam[]" style="width:250px;" required  autofocus>    
-                                        </div>
-                                        <div id="newRowcareer3" class="mb-3"></div>
-                                    </div>                                    
-                                    <div class="col-auto">
-                                        <label for="">Place of Examination/Conferment</label>
-                                        <div id="inputFormRowcareer4" class="mb-3">
-                                            <input type="text" name="placeofexam[]" value="" class="form-control border-success" autocomplete="off" style="width:280px;" required autofocus placeholder="">
-                                        </div>
-                                        <div id="newRowcareer4" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">License Number</label>
-                                        <div id="inputFormRowcareer5" class="mb-3">
-                                            <input type="text" name="licenseno[]" value="" class="form-control border-success" autocomplete="off" style="width:250px;" required autofocus placeholder="">
-                                        </div>
-                                        <div id="newRowcareer5" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">Date of Validity</label>
-                                        <div id="inputFormRowcareer6" class="mb-3">
-                                            <input type="date" class="form-control border-success" name="dateofvalidity[]" style="width:250px;" required  autofocus>
-                                        </div>
-                                        <div id="newRowcareer6" class="mb-3"></div>
-                                    </div> 
-                                </div>  -->
+                                 
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
                                             <thead class="bg-primary text-light">
                                                 <tr>                                                        
                                                     <th>Career Service</th>
