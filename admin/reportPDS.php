@@ -2185,15 +2185,18 @@ class myPDF extends FPDF{
                     $b = $this->GetY();
                     $this->SetXY($a + 60, $b-6);
                 }
-                
+                $this->SetFont('Arial','',6);
                 //$this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');  
                 
                 $nonacadlen = strlen($non_academic[$y]);
                 //echo $course_len;
-                if($nonacadlen < 55 ){
+                if($nonacadlen < 92 ){
+                    $this->SetFont('Arial','',5);                    
+                }
+                if($nonacadlen < 47 ){
                     $this->Cell(80,6,strtoupper($non_academic[$y]),'BL',0,'C');                    
                 }else{
-                    $this->SetFont('Arial','',6);
+                    //$this->SetFont('Arial','',6);
                     $this->MultiCell(80,3,strtoupper($non_academic[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
