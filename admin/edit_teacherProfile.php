@@ -3826,17 +3826,17 @@
                                                 foreach($na_run as $row){
                                                     if($row['n_a']=="1"){
                                                     ?>
-                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal" disabled><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal" disabled><i class="fa fa-plus"></i> Add Training</button>
                                                     <?php
                                                     }else{
                                                     ?>
-                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Training</button>
                                                     <?php
                                                     }
                                                 }
                                             }else{
                                                 ?>
-                                                    <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                    <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Training</button>
                                                 <?php
                                             }        
                                         ?>
