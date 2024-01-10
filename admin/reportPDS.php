@@ -1912,7 +1912,7 @@ class myPDF extends FPDF{
                 
                 //$this->Cell(15,6,$o_to[$y],'BTL',0,'C');
                 $this->Cell(15,6,strtoupper($org_hours[$y]),'BL',0,'C');            
-                $this->Cell(70,6,strtoupper($nature_work[$y]),'BLR',1,'C');
+                //$this->Cell(70,6,strtoupper($nature_work[$y]),'BLR',1,'C');
 
                 $nature_len = strlen($nature_work[$y]);
                     
