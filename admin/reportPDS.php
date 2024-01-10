@@ -2073,10 +2073,14 @@ class myPDF extends FPDF{
                 
                 $conduct = strlen($conducted[$y]);
                 //echo $course_len;
-                if($conduct < 45 ){
+                $this->SetFont('Arial','',6);
+                if($conduct > 88 ){
+                    $this->SetFont('Arial','',5);                    
+                }
+                if($conduct < 44 ){
                     $this->Cell(55,8,strtoupper($conducted[$y]),'LBR',1,'C');                    
                 }else{
-                    $this->SetFont('Arial','',6);
+                    //$this->SetFont('Arial','',6);
                     $this->MultiCell(55,4,strtoupper($conducted[$y]),'LBR','C');
                     //$a = $this->GetX();
                     // $b = $this->GetY();
