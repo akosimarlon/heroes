@@ -2173,16 +2173,19 @@ class myPDF extends FPDF{
 
                 $skilllen = strlen($special_skills[$y]);
                 //echo $course_len;
-                if($skilllen < 40 ){
+                if($skilllen < 92 ){
+                    $this->SetFont('Arial','',4);                    
+                }
+                if($skilllen < 47 ){
                     $this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');                    
                 }else{
-                    $this->SetFont('Arial','',6);
+                    //$this->SetFont('Arial','',6);
                     $this->MultiCell(60,3,strtoupper($special_skills[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
                     $this->SetXY($a + 60, $b-6);
                 }
-
+                
                 //$this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');  
                 
                 $nonacadlen = strlen($non_academic[$y]);
