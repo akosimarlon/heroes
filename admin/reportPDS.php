@@ -2174,7 +2174,7 @@ class myPDF extends FPDF{
                 $skilllen = strlen($special_skills[$y]);
                 //echo $course_len;
                 if($skilllen > 92 ){
-                    $this->SetFont('Arial','',5);                    
+                    $this->SetFont('Arial','',4);                    
                 }
                 if($skilllen < 47 ){
                     $this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');                    
@@ -2208,7 +2208,7 @@ class myPDF extends FPDF{
                 $memlen = strlen($mem_in_asso[$y]);
                 //echo $course_len;
                 if($memlen > 82 ){
-                    $this->SetFont('Arial','',5);                    
+                    $this->SetFont('Arial','',4);                    
                 }
                 if($memlen < 42 ){
                     $this->Cell(55,6,strtoupper($mem_in_asso[$y]),'BLR',1,'C');                    
