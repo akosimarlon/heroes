@@ -3814,7 +3814,7 @@
                         <div role="tabpanel" class="tab-pane" id="learning">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <div class="d-sm-flex align-items-center justify-content-between">
-                                    <h3 class="semi-bold text-primary">Learning Development (L&D) Interventions/Training Programs Attended</h3>
+                                    <h4 class="semi-bold text-primary">Learning Development (L&D) Interventions/Training Programs Attended</h4>
                                     <input type="hidden" id="uv_educ_level" value="vocational">
                                             
 
