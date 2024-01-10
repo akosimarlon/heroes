@@ -3450,7 +3450,7 @@
                         </div>                       
 
                         <div role="tabpanel" class="tab-pane" id="work">
-                            <div class="design-process-content shadow bg-white rounded border-left-info">
+                            <div class="design-process-content shadow bg-white rounded border-left-info d-sm-flex align-items-center justify-content-between">
                                 <h3 class="semi-bold text-primary">Work Experience</h3>
                                     
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
