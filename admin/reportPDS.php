@@ -1867,7 +1867,7 @@ class myPDF extends FPDF{
                     
                     //echo $course_len;
                     if($orgname > 90 ){
-                        $this->SetFont('Arial','',5);                    
+                        $this->SetFont('Arial','',4);                    
                     }
                     if($orgname < 60 ){
                         $this->Cell(80,6,strtoupper($org_name[$y]),'BL',0,'C');                    
@@ -1880,7 +1880,7 @@ class myPDF extends FPDF{
                     }
 
                 }
-                $this->SetFont('Arial','',5);
+                $this->SetFont('Arial','',6);
                 if($o_from[$y]!=""){
                     
                     if($o_from[$y]=="N/A"){
