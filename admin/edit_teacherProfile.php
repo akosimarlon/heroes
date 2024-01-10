@@ -3813,59 +3813,34 @@
 
                         <div role="tabpanel" class="tab-pane" id="learning">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
-                                <h3 class="semi-bold text-primary">Learning Development (L&D) Interventions/Training Programs Attended</h3>
-                            <!--
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <label for="">Title of Learing</label>
-                                        <div id="inputFormRowLearn1" class="mb-3" >
-                                            <input type="text" name="titleoflearning[]" value="" title="TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS (Write in full)" style="width:600px;" class="form-control border-success" autocomplete="off" required autofocus>
-                                        </div>
-                                        <div id="newRowLearn1" class="mb-3"></div>
-                                        <button id="addRowLearn" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Row</button>                                        
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">Inclusive Dates of Attendance</label>
-                                        <div id="inputFormRowLearn2" class="mb-3" >
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input type="date" class="form-control border-success" name="traingfrom[]" style="width:140px;" required  autofocus>
-                                                </div> 
-                                                <div class="col">
-                                                    <input type="date" class="form-control border-success" name="trainingto[]" style="width:140px;" required  autofocus>                                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="newRowLearn2" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">No. of Hours</label>
-                                        <div id="inputFormRowLearn3" class="mb-3" >
-                                            <input type="text" name="traininghours[]" value="" class="form-control border-success" autocomplete="off" style="width:90px;" required autofocus>
-                                        </div>
-                                        <div id="newRowLearn3" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">Type of LD</label>
-                                        <div id="inputFormRowLearn4" class="mb-3" >                                        
-                                            <select name="typeofld" required class="form-control border-success" style="width:150px;" autofocus>
-                                                <option value="">--Please Select--</option>
-                                                <option value="technical">Technical</option>
-                                                <option value="managerial">Managerial</option>                                    
-                                                <option value="supervisory">Supervisory</option>                                    
-                                            </select>                                            
-                                        </div>
-                                        <div id="newRowLearn4" class="mb-3"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <label for="">Conducted/Sponsored By</label>
-                                        <div id="inputFormRowLearn5" class="mb-3" > 
-                                            <input type="text" name="trainingconducted[]" value="" style="width:300px;" class="form-control border-success" autocomplete="off" required autofocus>
-                                        </div>
-                                        <div id="newRowLearn5" class="mb-3"></div>
-                                    </div>
-                                </div>  
-                            -->                                
+                                <div class="d-sm-flex align-items-center justify-content-between">
+                                    <h3 class="semi-bold text-primary">Learning Development (L&D) Interventions/Training Programs Attended</h3>
+                                    <input type="hidden" id="uv_educ_level" value="vocational">
+                                            
+
+                                    <?php
+                                            $na = "SELECT * FROM learning_dev WHERE emp_no='$user_id' LIMIT 1";
+                                            $na_run = mysqli_query($con,$na);
+                                            
+                                            if(mysqli_num_rows($na_run) > 0 ){
+                                                foreach($na_run as $row){
+                                                    if($row['n_a']=="1"){
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal" disabled><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                    <?php
+                                                    }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                    <?php
+                                                    }
+                                                }
+                                            }else{
+                                                ?>
+                                                    <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
+                                                <?php
+                                            }        
+                                        ?>
+                                </div>                    
                                 
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
@@ -3943,38 +3918,7 @@
                                         </table>
                                     </div>
                                     
-                                    <div class="row">
-                                        <div class="col-md-3 mb-3">
-                                            <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="vocational">
-                                            
-
-                                            <?php
-                                                    $na = "SELECT * FROM learning_dev WHERE emp_no='$user_id' LIMIT 1";
-                                                    $na_run = mysqli_query($con,$na);
-                                                    
-                                                    if(mysqli_num_rows($na_run) > 0 ){
-                                                        foreach($na_run as $row){
-                                                            if($row['n_a']=="1"){
-                                                            ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal" disabled><i class="fa fa-plus"></i> Add Learning Development</button>
-                                                            <?php
-                                                            }else{
-                                                            ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
-                                                            <?php
-                                                            }
-                                                        }
-                                                    }else{
-                                                        ?>
-                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addLearningDevModal"><i class="fa fa-plus"></i> Add Learning Development</button>
-                                                        <?php
-                                                    }        
-                                                ?>
-
-                                        </div>
-                                        
-                                    </div>
+                                    
                                 </div>
 
                                 
