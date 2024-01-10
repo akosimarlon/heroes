@@ -3307,7 +3307,33 @@
 
                         <div role="tabpanel" class="tab-pane" id="civilservice">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
-                                <h3 class="semi-bold text-primary">Civil Service Eligibility</h3>
+                                <div class="d-sm-flex align-items-center justify-content-between">
+                                    <h3 class="semi-bold text-primary">Civil Service Eligibility</h3>
+                                    <input type="hidden" id="uv_educ_level" value="vocational">
+                                    
+                                        <?php
+                                            $na = "SELECT * FROM civil_service WHERE emp_no='$user_id' LIMIT 1";
+                                            $na_run = mysqli_query($con,$na);
+                                            
+                                            if(mysqli_num_rows($na_run) > 0 ){
+                                                foreach($na_run as $row){
+                                                    if($row['n_a']=="1"){
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal" disabled><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
+                                                    <?php
+                                                    }else{
+                                                    ?>
+                                                        <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal"><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
+                                                    <?php
+                                                    }
+                                                }
+                                            }else{
+                                                ?>
+                                                    <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal"><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
+                                                <?php
+                                            }        
+                                        ?>
+                                </div>
                                  
                                 <div class="row mt-3">
                                     <div class="col-md-12 mb-3">                                        
@@ -3369,37 +3395,7 @@
                                         </table>
                                     </div>
                                     
-                                    <div class="row">
-                                        <div class="col-md-3 mb-3">
-                                            <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
-                                            <input type="hidden" id="uv_educ_level" value="vocational">
-                                            
-                                            <?php
-                                                    $na = "SELECT * FROM civil_service WHERE emp_no='$user_id' LIMIT 1";
-                                                    $na_run = mysqli_query($con,$na);
-                                                    
-                                                    if(mysqli_num_rows($na_run) > 0 ){
-                                                        foreach($na_run as $row){
-                                                            if($row['n_a']=="1"){
-                                                            ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal" disabled><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
-                                                            <?php
-                                                            }else{
-                                                            ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal"><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
-                                                            <?php
-                                                            }
-                                                        }
-                                                    }else{
-                                                        ?>
-                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addcivilModal"><i class="fa fa-plus"></i> Add Civil Service Eligibility</button>
-                                                        <?php
-                                                    }        
-                                                ?>
-
-                                        </div>
-                                        
-                                    </div>
+                                    
                                 </div>
 
                             </div>
