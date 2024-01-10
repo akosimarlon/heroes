@@ -1913,6 +1913,21 @@ class myPDF extends FPDF{
                 //$this->Cell(15,6,$o_to[$y],'BTL',0,'C');
                 $this->Cell(15,6,strtoupper($org_hours[$y]),'BL',0,'C');            
                 $this->Cell(70,6,strtoupper($nature_work[$y]),'BLR',1,'C');
+
+                $nature_len = strlen($nature_work[$y]);
+                    
+                    if($nature_len > 90 ){
+                        $this->SetFont('Arial','',5);                    
+                    }
+                    if($nature_len < 60 ){
+                        $this->Cell(70,6,strtoupper($nature_work[$y]),'BLR',1,'C');                    
+                    }else{
+                        //$this->SetFont('Arial','',6);
+                        $this->MultiCell(70,3,strtoupper($nature_work[$y]),'BL','C');
+                        $a = $this->GetX();
+                        $b = $this->GetY();
+                        $this->SetXY($a + 120, $b-6);
+                    }
             }
 
         }                 
