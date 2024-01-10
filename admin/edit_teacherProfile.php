@@ -3452,8 +3452,7 @@
                         <div role="tabpanel" class="tab-pane" id="work">
                             <div class="design-process-content shadow bg-white rounded border-left-info">
                                 <h3 class="semi-bold text-primary">Work Experience</h3>
-                                    <div class="row d-none d-sm-inline-block">
-                                        <div class="col-md-3 mb-3">
+                                    
                                             <!-- <button id="addRowchild" type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add Child</button> -->
                                             <input type="hidden" id="uv_educ_level" value="vocational">
 
@@ -3465,26 +3464,24 @@
                                                         foreach($na_run as $row){
                                                             if($row['n_a']=="1"){
                                                             ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal" DISABLED><i class="fa fa-plus"></i> Add Work Experience</button>
+                                                                <button type="button" class="btn btn-info addCivil  d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#addWorkModal" DISABLED><i class="fa fa-plus"></i> Add Work Experience</button>
                                                             <?php
                                                             }else{
                                                             ?>
-                                                                <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
+                                                                <button type="button" class="btn btn-info addCivil  d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
                                                             <?php
                                                             }
                                                         }
                                                     }else{
                                                         ?>
-                                                            <button type="button" class="btn btn-info addCivil" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
+                                                            <button type="button" class="btn btn-info addCivil  d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#addWorkModal"><i class="fa fa-plus"></i> Add Work Experience</button>
                                                         <?php
                                                     }        
                                                 ?>
 
                                             
 
-                                        </div>
                                         
-                                    </div>
                                 <!-- <div class="row">
                                     <div class="col-auto">
                                         <label for="">Inclusive Dates (From - To)</label>
