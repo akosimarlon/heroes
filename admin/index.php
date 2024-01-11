@@ -68,12 +68,14 @@
                                                     //$users_run = mysqli_query($con,$users);
                                                     $users_run = mysqli_multi_query($con, $users); 
 
-                                                    if(mysqli_num_rows($users_run) > 0 ){
-                                                        foreach($users_run as $user){
+                                                    //if(mysqli_num_rows($users_run) > 0 ){
+                                                    //    foreach($users_run as $user){
+                                                    while ($user = mysqli_fetch_row($users_run)) {
+                                                    
                                                 ?>
                                             <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?> out of <?=$user['totalAll']?></div>
                                             <?php
-                                                        }
+                                                        //}
                                                     }
                                             ?>
                                         </div>
