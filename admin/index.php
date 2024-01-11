@@ -138,7 +138,7 @@
                                             <div class="text-xs font-weight-bold text-uppercase mb-1">
                                                 Teaching Related Personnel</div>
                                                 <?php                                             
-                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related'";
+                                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching_Related' AND status='1'";
                                                     $users_run = mysqli_query($con,$users);  
 
                                                     if(mysqli_num_rows($users_run) > 0 ){
