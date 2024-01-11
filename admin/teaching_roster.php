@@ -142,9 +142,9 @@
                         <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel</h6>
                         <div class="row">
                             <div class="col">
-                                <span class="badge bg-primary"><h5>Approved: </h5></span>
-                                <span class="badge bg-warning"><h5>Pending: </h5></span>
-                                <span class="badge bg-danger"><h5>Disapproved: </h5></span>
+                                <h5><span class="badge bg-primary">Approved: </span></h5>
+                                <h6><span class="badge bg-warning">Pending: </span></h6>
+                                <h4><span class="badge bg-danger">Disapproved: </span></h4>
                             </div> 
                         </div>   
                     </div>
