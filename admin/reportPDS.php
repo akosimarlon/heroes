@@ -1403,7 +1403,7 @@ class myPDF extends FPDF{
                 //$x = $this->GetX();
                 //$y = $this->GetY();                
                 //$this->SetXY($x,$y-5);
-                if(strlen($data->e_scholarship) > 15 ){
+                if(strlen($data->e_scholarship) > 16 ){
                     $this->SetFont('Arial','',4);
                 }
                 if(strlen($data->e_scholarship) < 10 ){ 
