@@ -141,10 +141,40 @@
                     <div class="d-sm-flex align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel</h6>
                         <div class="row">
-                            <div class="col">
-                                <span class="badge bg-primary" style="font-size:medium">Approved: </span>
-                                <span class="badge bg-warning"style="font-size:medium">Pending: </span>
-                                <span class="badge bg-danger" style="font-size:medium">Disapproved: </span>
+                            <div class="col">                                
+                                <span class="badge bg-primary" style="font-size:medium">Approved: 
+                                <?php    
+                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching' AND status='1'";
+                                    $users_run = mysqli_query($con,$users);                                                
+                                    if(mysqli_num_rows($users_run) > 0 ){
+                                        foreach($users_run as $user){
+                                            echo $user['total'];
+                                        }
+                                    }
+                                ?>
+                                </span>
+                                <span class="badge bg-warning"style="font-size:medium">Pending: 
+                                <?php    
+                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching' AND status='2'";
+                                    $users_run = mysqli_query($con,$users);                                                
+                                    if(mysqli_num_rows($users_run) > 0 ){
+                                        foreach($users_run as $user){
+                                            echo $user['total'];
+                                        }
+                                    }
+                                ?>
+                                </span>
+                                <span class="badge bg-danger" style="font-size:medium">Disapproved: 
+                                <?php    
+                                    $users = "SELECT COUNT(id) AS total FROM employment_record WHERE position_type='Teaching' AND status='0'";
+                                    $users_run = mysqli_query($con,$users);                                                
+                                    if(mysqli_num_rows($users_run) > 0 ){
+                                        foreach($users_run as $user){
+                                            echo $user['total'];
+                                        }
+                                    }
+                                ?>
+                                </span>
                             </div> 
                         </div>   
                     </div>
