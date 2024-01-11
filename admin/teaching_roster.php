@@ -138,10 +138,12 @@
             <?php include('message.php'); ?>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    
+                    <div class="d-sm-flex align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">Teaching Personnel</h6>
-                    
-                    
+                        <span class="badge bg-primary">Approved: </span>
+                        <span class="badge bg-warning">Pending: </span>
+                        <span class="badge bg-danger">Disapproved: </span>
+                    </div>
                 </div>
                 <div class="card-body">
 
