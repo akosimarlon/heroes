@@ -65,9 +65,17 @@
                                                     $users_run = mysqli_query($con,$users);                                                
                                                     if(mysqli_num_rows($users_run) > 0 ){
                                                         foreach($users_run as $user){
+
+                                                            $users1 = "SELECT COUNT(id) AS totalAll FROM employment_record WHERE position_type='Teaching' ";
+                                                            $users_run1 = mysqli_query($con,$users1);
+
+                                                            if(mysqli_num_rows($users_run1) > 0 ){
+                                                                foreach($users_run1 as $user1){
                                                 ?>
-                                            <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?></div>
+                                                <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?> out of <?=$user['totalAll']?> </div>
                                             <?php
+                                                                }
+                                                            }
                                                         }
                                                     }
                                             ?>
