@@ -1328,11 +1328,14 @@ class myPDF extends FPDF{
                 // $this->SetXY($x,$y-5);
                 //stripslashes($str);
                 //htmlspecialchars($str);
+                if(strlen($data->e_scholarship) > 16 ){
+                    $this->SetFont('Arial','',4);
+                }
                 if(strlen($data->e_scholarship) < 14 ){ 
-                    $this->SetFont('Arial','',4.4);
+                    //$this->SetFont('Arial','',4.4);
                     $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
-                    $this->SetFont('Arial','',3.5);   
+                    //$this->SetFont('Arial','',3.5);   
                     $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
                 }
             }
