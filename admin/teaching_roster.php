@@ -143,8 +143,8 @@
                         <div class="row">
                             <div class="col">
                                 <span class="badge bg-primary" style="font-size:medium">Approved: </span>
-                                <span class="badge bg-warning">Pending: </span>
-                                <span class="badge bg-danger">Disapproved: </span>
+                                <span class="badge bg-warning"style="font-size:medium">Pending: </span>
+                                <span class="badge bg-danger" style="font-size:medium">Disapproved: </span>
                             </div> 
                         </div>   
                     </div>
@@ -211,13 +211,13 @@
 
                                                     <?php
                                                         if($row1['status']=='1'){
-                                                            echo '<span class="badge bg-primary">Approved</span>';
+                                                            echo '<span class="badge bg-primary" style="font-size:small">Approved</span>';
                                                         }
                                                         elseif($row1['status']=='2'){
-                                                            echo '<span class="badge bg-warning text-light">Pending Approval</span>';
+                                                            echo '<span class="badge bg-warning text-light" style="font-size:small">Pending Approval</span>';
                                                         }
                                                         elseif($row1['status']=='0'){
-                                                            echo '<span class="badge bg-danger text-light">Disapproved</span>';
+                                                            echo '<span class="badge bg-danger text-light" style="font-size:small">Disapproved</span>';
                                                         }
                                                     ?>
                                                 </td>
