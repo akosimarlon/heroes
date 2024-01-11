@@ -194,7 +194,7 @@
 
                                                 
 
-                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModalVerify" data-id="<?=$row1['id']?>">
+                                                <td data-toggle="modal" data-target="#employmentInfoModal" class="forModalVerify" data-id="<?=$row1['id']?>" style="cursor: pointer;">
                                                     
                                                     <input type="hidden" id="itemnumber<?=$row1['id']?>" value="<?=$row1['item_no']?>">
                                                     <input type="hidden" id="dateappointment<?=$row1['id']?>" value="<?=$row1['date_of_emp']?>">
@@ -216,7 +216,7 @@
                                                     ?>
                                                 </td>
                                                 
-                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>">
+                                                <td data-toggle="modal" data-target="#progressmodal" class="forModal" data-id="<?=$row['id']?>" style="cursor: pointer;">
                                                 
                                                 <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <?php
