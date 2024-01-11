@@ -111,7 +111,7 @@
                                                             if(mysqli_num_rows($users_run1) > 0 ){
                                                                 foreach($users_run1 as $user1){
                                                 ?>
-                                                <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?> out of <?=$user['totalAll']?></div>
+                                                <div class="h5 mb-0 font-weight-bold">Total: <?=$user['total']?> out of <?=$user1['totalAll']?></div>
                                                 <?php
                                                                 }
                                                             }
