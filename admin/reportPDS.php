@@ -2149,7 +2149,7 @@ class myPDF extends FPDF{
                 if($conduct > 88 ){
                     $this->SetFont('Arial','',4);                    
                 }
-                if($conduct > 120 ){
+                if($conduct > 118 ){
                     $this->SetFont('Arial','',2.5);                    
                 }
                 if($conduct < 44 ){
