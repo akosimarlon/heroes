@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+            <button class="btn btn-primary" data-bs-target="#employmentInfoModal" data-bs-toggle="modal">Open first modal</button>
 
 
         <!-- Notification Modal -->
@@ -129,7 +129,8 @@
                         </div>                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#notifModal">Reject</button>
+                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+                            <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#notifModal">Reject</button> -->
                             <button type="submit" name="approveEmpInfo" class="btn btn-success">Approve</button>
                         </div>
                     </form>
