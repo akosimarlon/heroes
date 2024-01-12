@@ -2254,7 +2254,7 @@ class myPDF extends FPDF{
                 if($skilllen > 92 ){
                     $this->SetFont('Arial','',3);                    
                 }
-                if($skilllen < 47 ){
+                if($skilllen < 56 ){
                     $this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');                    
                 }else{
                     //$this->SetFont('Arial','',6);
