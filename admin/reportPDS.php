@@ -1410,7 +1410,7 @@ class myPDF extends FPDF{
                 if(strlen($data->e_level) > 29 ){
                     $this->SetFont('Arial','',3);
                 }
-                if(strlen($data->e_level) < 10 ){ 
+                if(strlen($data->e_level) < 15 ){ 
                     $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',4); 
