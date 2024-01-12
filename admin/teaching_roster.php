@@ -94,7 +94,7 @@
                         </div>                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" name="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#notifModal">Reject</button>
+                            <button type="button" name="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#notifModal">Reject</button>
                             <button type="submit" name="approveEmpInfo" class="btn btn-success">Approve</button>
                         </div>
                     </form>
