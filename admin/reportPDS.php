@@ -1388,7 +1388,7 @@ class myPDF extends FPDF{
                     $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 90, $y-6);
+                    $this->SetXY($x + 90, $y-$height);
                 }
                 
                 $this->SetFont('Arial','',5);
@@ -1404,7 +1404,7 @@ class myPDF extends FPDF{
                     $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 130, $y-6);
+                    $this->SetXY($x + 130, $y-$height);
                 }
 
                 $this->SetFont('Arial','',5);
@@ -1423,7 +1423,7 @@ class myPDF extends FPDF{
                     $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 165, $y-6);                 
+                    $this->SetXY($x + 165, $y-$height);                 
                 }
 
                 $this->SetFont('Arial','',5);
