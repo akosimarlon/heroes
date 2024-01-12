@@ -1367,7 +1367,7 @@ class myPDF extends FPDF{
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
 
                 $course_name = strlen($data->e_nameofschool);
-                if($course_name > 76 ){
+                if($course_name > 77 ){
                     $this->SetFont('Arial','',4);
                 }
                 if($course_name > 98 ){
