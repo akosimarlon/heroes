@@ -1543,7 +1543,7 @@ class myPDF extends FPDF{
                     $b = $this->GetY();
                     $this->SetXY($a + 60, $b-8);
                 }
-                
+                $this->SetFont('Arial','',5);
                 //$this->Cell(60,8,strtoupper($career_service[$y]),'BL',0,'C');
                 $this->Cell(20,8,strtoupper($rating[$y]),'BL',0,'C');
 
@@ -1564,7 +1564,22 @@ class myPDF extends FPDF{
 
                 }
 
-                $this->Cell(60,8,strtoupper($place_of_exam[$y]),'BL',0,'C');                
+                $place_len = strlen($place_of_exam[$y]);
+                if($place_len > 112 ){
+                    $this->SetFont('Arial','',4);                    
+                }
+                if($place_len < 56 ){
+                    $this->Cell(60,8,strtoupper($place_of_exam[$y]),'BL',0,'C');                     
+                }else{
+                    //$this->SetFont('Arial','',6);
+                    //$this->MultiCell(60,8,strtoupper($place_of_exam[$y]),'BL',0,'C'); 
+                    $this->MultiCell(60,4,strtoupper($place_of_exam[$y]),'BL','C');                    
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 160, $b-8);
+                }
+                $this->SetFont('Arial','',5);
+                //$this->Cell(60,8,strtoupper($place_of_exam[$y]),'BL',0,'C');                
                 $this->Cell(20,8,strtoupper($license_no[$y]),'BL',0,'C');
 
                 if($count<=$y){
