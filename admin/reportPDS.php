@@ -2150,7 +2150,7 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',4);                    
                 }
                 if($conduct > 118 ){
-                    $this->SetFont('Arial','',2.5);                    
+                    $this->SetFont('Arial','',3);                    
                 }
                 if($conduct < 44 ){
                     $this->Cell(55,8,strtoupper($conducted[$y]),'LBR',1,'C');                    
