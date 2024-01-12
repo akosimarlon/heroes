@@ -21,7 +21,7 @@
     <div class="container-fluid">
         
         <!-- Notification Modal -->
-        <div class="modal fade" id="notifModal" tabindex="-1" aria-labelledby="notifModalLabel" aria-hidden="true">
+        <div class="modal fade" id="notifModal" aria-labelledby="notifModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
