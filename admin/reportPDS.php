@@ -2294,7 +2294,7 @@ class myPDF extends FPDF{
                 if($memlen > 82 ){
                     $this->SetFont('Arial','',3);                    
                 }
-                if($memlen < 42 ){
+                if($memlen < 45 ){
                     $this->Cell(55,6,strtoupper($mem_in_asso[$y]),'BLR',1,'C');                    
                 }else{
                     //$this->SetFont('Arial','',6);
