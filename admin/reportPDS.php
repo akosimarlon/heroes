@@ -1408,8 +1408,8 @@ class myPDF extends FPDF{
                 }
 
                 $this->SetFont('Arial','',5);
-                $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
-                $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
+                $this->Cell(10,$height,strtoupper($data->e_from),1,0,'C');
+                $this->Cell(10,$height,strtoupper($data->e_to),1,0,'C');
 
 
                 //HIGHEST LEVEL / UNITS EARNED
