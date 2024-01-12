@@ -1358,10 +1358,16 @@ class myPDF extends FPDF{
 
             $stmt = $db->query("SELECT * FROM educational WHERE emp_no='$user_id' AND educational_level='graduate' ");            
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){
-            
+                $course_name = strlen($data->e_nameofschool);
+                if($course_name > 76 ){
+                    $height = 6;
+                }
+                if($course_name > 98 ){
+                    $height = 8;
+                }
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
-                $this->Cell(45,6,"GRADUATE STUDIES",1,0,'C',true);
+                $this->Cell(45,$height,"GRADUATE STUDIES",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
@@ -1376,7 +1382,7 @@ class myPDF extends FPDF{
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
                 if($course_name < 40 ){
                     //$this->SetFont('Arial','',5);
-                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                    $this->Cell(45,$height,strtoupper($data->e_nameofschool),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',5);
                     $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
@@ -1393,7 +1399,7 @@ class myPDF extends FPDF{
                 }
                 if($course_len < 35 ){
                     //$this->SetFont('Arial','',5);
-                    $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
+                    $this->Cell(40,$height,strtoupper($data->e_course),1,0,'C');
                 }else{                    
                     $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
@@ -1411,7 +1417,7 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',3);
                 }
                 if(strlen($data->e_level) < 10 ){ 
-                    $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
+                    $this->Cell(15,$height,strtoupper($data->e_level),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',4); 
                     $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
@@ -1421,7 +1427,7 @@ class myPDF extends FPDF{
                 }
 
                 $this->SetFont('Arial','',5);
-                $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
+                $this->Cell(15,$height,strtoupper($data->e_year),1,0,'C');
                 //$x = $this->GetX();
                 //$y = $this->GetY();                
                 //$this->SetXY($x,$y-5);
@@ -1429,7 +1435,7 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',4);
                 }
                 if(strlen($data->e_scholarship) < 10 ){ 
-                    $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
+                    $this->Cell(15,$height,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     //$this->SetFont('Arial','',4);   
                     $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
