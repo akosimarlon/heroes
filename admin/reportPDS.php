@@ -1385,7 +1385,7 @@ class myPDF extends FPDF{
                     $this->Cell(45,$height,strtoupper($data->e_nameofschool),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',5);
-                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $this->MultiCell(45,$height/2,strtoupper($data->e_nameofschool),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 90, $y-$height);
@@ -1401,7 +1401,7 @@ class myPDF extends FPDF{
                     //$this->SetFont('Arial','',5);
                     $this->Cell(40,$height,strtoupper($data->e_course),1,0,'C');
                 }else{                    
-                    $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
+                    $this->MultiCell(40,$height/2,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 130, $y-$height);
@@ -1420,7 +1420,7 @@ class myPDF extends FPDF{
                     $this->Cell(15,$height,strtoupper($data->e_level),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',4); 
-                    $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
+                    $this->MultiCell(15,$height/2,strtoupper($data->e_level),1,'C');   
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 165, $y-$height);                 
@@ -1438,7 +1438,10 @@ class myPDF extends FPDF{
                     $this->Cell(15,$height,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     //$this->SetFont('Arial','',4);   
-                    $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
+                    $this->MultiCell(15,$height/2,strtoupper($data->e_scholarship),1,'C');
+                    $x = $this->GetX();
+                    $y = $this->GetY();
+                    $this->SetXY($x + 195, $y-$height);
                 }
             }
 
