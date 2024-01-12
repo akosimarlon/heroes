@@ -2246,7 +2246,7 @@ class myPDF extends FPDF{
             }
 
             for($y = 0; $y < 7; $y++){
-                $this->SetFont('Arial','',6);
+                $this->SetFont('Arial','',5);
                 $this->SetTextColor(0,0,255);
 
                 $skilllen = strlen($special_skills[$y]);
@@ -2263,7 +2263,7 @@ class myPDF extends FPDF{
                     $b = $this->GetY();
                     $this->SetXY($a + 60, $b-6);
                 }
-                $this->SetFont('Arial','',6);
+                $this->SetFont('Arial','',5);
                 //$this->Cell(60,6,strtoupper($special_skills[$y]),'BL',0,'C');  
                 
                 $nonacadlen = strlen($non_academic[$y]);
@@ -2282,7 +2282,7 @@ class myPDF extends FPDF{
                 }
 
                 //$this->Cell(80,6,strtoupper($non_academic[$y]),'BL',0,'C'); 
-                $this->SetFont('Arial','',6);
+                $this->SetFont('Arial','',5);
                 $memlen = strlen($mem_in_asso[$y]);
                 //echo $course_len;
                 if($memlen > 82 ){
