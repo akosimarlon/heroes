@@ -18,43 +18,8 @@
     }
     </style>      
     <!-- Begin Page Content -->
-    <div class="container-fluid">
+    <div class="container-fluid">        
         
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Show a second modal and hide this one with the button below.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Hide this modal and show the first with the button below.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
-                </div>
-                </div>
-            </div>
-        </div>
-            <button class="btn btn-primary" data-bs-target="#employmentInfoModal" data-bs-toggle="modal">Open first modal</button>
-
-
         <!-- Notification Modal -->
         <div class="modal fade" id="notifModal" aria-labelledby="notifModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -129,8 +94,7 @@
                         </div>                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
-                            <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#notifModal">Reject</button> -->
+                            <button type="submit" name="rejectEmpInfo" class="btn btn-danger" >Reject</button>
                             <button type="submit" name="approveEmpInfo" class="btn btn-success">Approve</button>
                         </div>
                     </form>
@@ -140,7 +104,7 @@
             </div>
         </div>
 
-        <!-- Progress Modal rejectEmpInfo-->
+        <!-- Progress Modal -->
         <div class="modal fade" id="progressmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
