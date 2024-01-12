@@ -1284,8 +1284,12 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',5);
 
                 $course_name = strlen($data->e_nameofschool);
+                
                 if($course_name > 76 ){
                     $this->SetFont('Arial','',4);
+                }
+                if($course_name > 98 ){
+                    $this->SetFont('Arial','',3.5);
                 }
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
                 if($course_name < 40 ){
@@ -1365,6 +1369,9 @@ class myPDF extends FPDF{
                 $course_name = strlen($data->e_nameofschool);
                 if($course_name > 76 ){
                     $this->SetFont('Arial','',4);
+                }
+                if($course_name > 98 ){
+                    $this->SetFont('Arial','',3.5);
                 }
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
                 if($course_name < 40 ){
