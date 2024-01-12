@@ -1525,10 +1525,26 @@ class myPDF extends FPDF{
                 $date_of_validity[$x]=null;
             }
 
+            
             for($y = 0; $y < 10; $y++){
                 $this->SetFont('Arial','',5);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(60,8,strtoupper($career_service[$y]),'BL',0,'C');
+
+                $career_len = strlen($career_service[$y]);
+                if($career_len > 112 ){
+                    $this->SetFont('Arial','',4);                    
+                }
+                if($career_len < 56 ){
+                    $this->Cell(60,8,strtoupper($career_service[$y]),'BL',0,'C');                    
+                }else{
+                    //$this->SetFont('Arial','',6);
+                    $this->MultiCell(60,3,strtoupper($career_service[$y]),'BL',0,'C');                    
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 60, $b-6);
+                }
+                
+                //$this->Cell(60,8,strtoupper($career_service[$y]),'BL',0,'C');
                 $this->Cell(20,8,strtoupper($rating[$y]),'BL',0,'C');
 
                 if($count<=$y){
