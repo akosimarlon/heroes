@@ -43,7 +43,7 @@
         </div>
      
         <!-- Employment Information Modal -->
-        <div class="modal fade" id="employmentInfoModal" tabindex="-1" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
+        <div class="modal fade" id="employmentInfoModal" aria-labelledby="employmentInfoModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header bg-primary text-light">
@@ -86,7 +86,7 @@
                                     <input type="text" id="Ecategory" class="form-control" readonly>
                                 </div>                                
                                 <div class="col-md-6">
-                                    <label for="">Category</label>
+                                    <label for="">Remarks</label>
                                     <input type="text" id="" name="notif" class="form-control" readonly>
                                 </div>                                
                             </div>
