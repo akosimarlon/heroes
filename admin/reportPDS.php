@@ -1363,7 +1363,7 @@ class myPDF extends FPDF{
                     $height = 6;
                 }
                 if($course_name > 98 ){
-                    $height = 8;
+                    $height = 9;
                 }
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
