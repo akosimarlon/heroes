@@ -460,7 +460,7 @@
                 <div class="row">
                     <?php include('message.php'); ?>
                     <?php
-                        if($_SESSION['user_role'] == "Principals"){
+                        if($_SESSION['user_role'] == "Principals1231"){
                     ?>
                         <!-- Teaching Personnel -->
                         <div class="col-xl-3 col-md-6 mb-4">
