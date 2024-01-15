@@ -272,7 +272,7 @@ $(document).ready(function() {
         var username = $('#uusername'+id).val();
         var email = $('#uemail'+id).val();
         var status = $('#ustatus'+id).val();
-        echo status;
+        alert (status);
         $('#editadminprofile').modal('show');
         document.getElementById('EuserID').value = id;
         document.getElementById('Eempno').value = empno;
