@@ -4485,18 +4485,18 @@
                                     <div class="col-auto d-sm-inline-block">
                                         <?php
                                             if($emp_rec['status']=='1'){
-                                                echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
+                                                echo '<h6><span class="badge bg-primary" id="liveToastBtn">HR Admin Approved</span></h6>';
                                             }
                                             elseif($emp_rec['status']=='2'){
-                                                echo '<h6><span class="badge bg-warning text-light">Pending HR Admin Approval</span></h6>';
+                                                echo '<h6><span class="badge bg-warning text-light" id="liveToastBtn">Pending HR Admin Approval</span></h6>';
                                             }
                                             elseif($emp_rec['status']=='0'){
-                                                echo '<h6><span class="badge bg-danger text-light">Disapproved</span></h6>';
+                                                echo '<h6><span class="badge bg-danger text-light" id="liveToastBtn">Disapproved</span></h6>';
                                             }
                                         ?>
                                     </div>
 
-                                    <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+                                    <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
 
                                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
                                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
