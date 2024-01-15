@@ -14,33 +14,20 @@ $(document).ready(function() {
 function fetchchartdata() { 
 
 $.ajax({      
-  url: 'dataTeacherPosition.php',
+  url: 'databyDistrict.php',
   type: 'POST',
   dataType: 'JSON',
   success: function (data) {
-    var position = [];
-    var positionlabel = [];
+    var district = [];
+    
     var data_array = [];
     var p,p2;
     var totaldata = 0,max=0;
     //date = JSON.parse(data);
     for(var count=0; count<data.length; count++){
-            
-      if(data[count].poss == "Teacher I" ) {p = "Teacher-I";p2 = "T-I";}
-      if(data[count].poss == "Teacher II" ) {p = "Teacher-II";p2 = "T-II";}
-      if(data[count].poss == "Teacher III" ) {p = "Teacher-III";p2 = "T-III";}
-      if(data[count].poss == "Master Teacher I" ) {p = "Master Teacher-I";p2 = "MT-I";}
-      if(data[count].poss == "Master Teacher II" ) {p = "Master Teacher-II";p2 = "MT-II";}
-      if(data[count].poss == "Master Teacher III" ) {p = "Master Teacher-III";p2 = "MT-III";}
-      if(data[count].poss == "Special Education Teacher I" ) {p = "Special Education Teacher-I";p2 = "SET-I";};
-      if(data[count].poss == "Special Education Teacher II" ) {p = "Special Education Teacher-II";p2 = "SET-II";};
-      if(data[count].poss == "Special Education Teacher III" ) {p = "Special Education Teacher-III";p2 = "SET-III";};
-      if(data[count].poss == "Special Science Teacher I" ) {p = "Special Science Teacher-I";p2 = "SST-I";};
       
-      
-      positionlabel.push(p);
       //positionlabel.push(data[count].poss);
-      position.push(p);
+      district.push(data[count].dists);
       //position.push(data[count].poss);
       data_array.push(data[count].vals);
       totaldata = parseInt(data[count].vals);
@@ -56,7 +43,7 @@ $.ajax({
     var myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: position,
+        labels: district,
         datasets: [{
           label: "Total",
           backgroundColor: "#5376df",

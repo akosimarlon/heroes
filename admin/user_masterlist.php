@@ -91,6 +91,12 @@
                 </div>
                     <form action="code.php" method="POST">
                         <div class="modal-body">
+                            
+                            <div class="form-group">
+                                <input type="hidden" name="userid" id="EuserID">
+                                <label>Employee Number</label>
+                                <input type="text" name="emp_no" class="form-control" placeholder="Enter Employee Number" required autofocus>
+                            </div>
                             <div class="form-group">
                                 <label>First Name</label>
                                 <input type="hidden" name="userid" id="EuserID">
@@ -99,21 +105,11 @@
                             <div class="form-group">
                                 <label>Last Name</label>
                                 <input type="text" id="Elastname" name="lname" class="form-control" placeholder="Enter Last Name" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label>Username</label>
-                                <input type="hidden" name="oldusername" id="Eusername_old">
-                                <input type="text" id="Eusername" name="username" class="form-control" placeholder="Enter Username" required autofocus>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="hidden" name="oldemail" id="Eemail_old">
-                                <input type="email" id="Eemail" name="email" class="form-control" placeholder="Enter Email" required autofocus>
-                            </div>                            
+                            </div>                                                        
                             <div class="form-group">
                                 <label for="">Status</label>
                                 <input type="checkbox" id="Estatus" name="status" width="70px" height="70px" >
-                            </div>
+                            </div>                            
 
                         </div>
                         <div class="modal-footer">
