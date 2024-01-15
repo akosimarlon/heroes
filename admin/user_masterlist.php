@@ -95,7 +95,7 @@
                             <div class="form-group">
                                 <input type="hidden" name="userid" id="EuserID">
                                 <label>Employee Number</label>
-                                <input type="text" name="emp_no" class="form-control" placeholder="Enter Employee Number" required autofocus>
+                                <input type="text" id="Eempno" name="emp_no" class="form-control" placeholder="Enter Employee Number" required autofocus>
                             </div>
                             <div class="form-group">
                                 <label>First Name</label>
@@ -215,6 +215,7 @@
                                                     }
                                                 ?>
                                                 </td>
+                                                <input type="hidden" id="uempno<?=$row['id']?>" value="<?=$row['emp_no']?>">
                                                 <input type="hidden" id="ufname<?=$row['id']?>" value="<?=$row['fname']?>">
                                                 <input type="hidden" id="ulname<?=$row['id']?>" value="<?=$row['lname']?>">                                                
                                                 <input type="hidden" id="uemail<?=$row['id']?>" value="<?=$row['email']?>">
@@ -265,6 +266,7 @@
 $(document).ready(function() {
     $(document).on('click', '.editbtn', function(){
         var id=$(this).val(); 
+        var empno = $('#uempno'+id).val();
         var fname = $('#ufname'+id).val();
         var lname = $('#ulname'+id).val();
         var username = $('#uusername'+id).val();
@@ -273,6 +275,7 @@ $(document).ready(function() {
         
         $('#editadminprofile').modal('show');
         document.getElementById('EuserID').value = id;
+        document.getElementById('Eempno').value = empno;
         document.getElementById('Efirstname').value = fname;
         document.getElementById('Elastname').value = lname;
         document.getElementById('Eusername').value = username;
