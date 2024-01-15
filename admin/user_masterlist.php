@@ -106,10 +106,10 @@
                                 <label>Last Name</label>
                                 <input type="text" id="Elastname" name="lname" class="form-control" placeholder="Enter Last Name" required autofocus>
                             </div>                                                        
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">Status</label>
                                 <input type="checkbox" id="Estatus" name="status" width="70px" height="70px" >
-                            </div>                            
+                            </div>                             -->
 
                         </div>
                         <div class="modal-footer">
@@ -271,7 +271,7 @@ $(document).ready(function() {
         var lname = $('#ulname'+id).val();
         var username = $('#uusername'+id).val();
         var email = $('#uemail'+id).val();
-        var status = $('#ustatus'+id).val();
+        //var status = $('#ustatus'+id).val();
         
         $('#editadminprofile').modal('show');
         document.getElementById('EuserID').value = id;
@@ -282,7 +282,7 @@ $(document).ready(function() {
         document.getElementById('Eusername_old').value = username;
         document.getElementById('Eemail').value = email;
         document.getElementById('Eemail_old').value = email;
-        status=="1" ? document.getElementById('Estatus').checked = true : document.getElementById('Estatus').checked = false;   
+        //status=="1" ? document.getElementById('Estatus').checked = true : document.getElementById('Estatus').checked = false;   
     });
 });
 
