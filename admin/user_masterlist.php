@@ -98,8 +98,7 @@
                                 <input type="text" id="Eempno" name="emp_no" class="form-control" placeholder="Enter Employee Number" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label>First Name</label>
-                                <input type="hidden" name="userid" id="EuserID">
+                                <label>First Name</label>                                
                                 <input type="text" id="Efirstname" name="fname" class="form-control" placeholder="Enter First Name" required autofocus>
                             </div>
                             <div class="form-group">
@@ -114,7 +113,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                            
-                            <button type="submit" name="updateAdmin" class="btn btn-success btn-icon-split">
+                            <button type="submit" name="updateMasterList_unyanakaylabadulo" class="btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fa fa-save"></i>
                                 </span>

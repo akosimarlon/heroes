@@ -171,6 +171,60 @@ if(isset($_POST['updateAdmin'])){
 
 }
 
+//########## For Update Master List #######################################################
+if(isset($_POST['updateMasterList'])){
+    $user_id = clean($_POST['userid']);
+    $empno = clean($_POST['emp_no']);
+    $fname = ucwords(clean($_POST['fname']));
+    $lname = ucwords(clean($_POST['lname']));
+   
+    $current_admin_id = $_SESSION['auth_user']['user_id'];
+    if($user_id===$current_admin_id){
+        if($status=="0"){
+            $_SESSION['message'] = "Woops!, The Status of Active Admin Account cannot be changed.";
+            $_SESSION['message_type'] = "danger";            
+            header("location: register_admin.php");
+            exit();
+        }
+    }
+
+    if($old_username != $username){
+        $query2 = "SELECT * FROM users WHERE username='$username' ";
+        $query_run2 = mysqli_query($con,$query2);
+        if ($query_run2->num_rows > 0) {
+            $_SESSION['message'] = "Woops!, Username Already Exists.";
+            $_SESSION['message_type'] = "danger";            
+            header("location: register_admin.php");
+            exit();
+        }
+    }
+
+    if($old_email != $email){
+        $query2 = "SELECT * FROM users WHERE email='$email' ";
+        $query_run2 = mysqli_query($con,$query2);
+        if ($query_run2->num_rows > 0) {
+            $_SESSION['message'] = "Woops!, Email Already Exists.";
+            $_SESSION['message_type'] = "danger";            
+            header("location: register_admin.php");
+            exit();
+        }
+    }
+
+    $query = "UPDATE users SET fname='$fname', lname='$lname', username='$username', email='$email', status='$status' 
+                WHERE id='$user_id' ";
+    $query_run = mysqli_query($con,$query);
+
+    if($query_run){
+        $_SESSION['message'] = "Admin Account Updated Successfuly!";
+        $_SESSION['message_type'] = "primary";
+        header('Location: register_admin.php');
+        exit(0);
+
+
+    }
+
+}
+
 //########## For Update Teacher Account #######################################################
 if(isset($_POST['updateTeacher'])){
     $user_id = clean($_POST['userid']);
