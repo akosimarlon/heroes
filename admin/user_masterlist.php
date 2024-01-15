@@ -219,7 +219,7 @@
                                                 <input type="hidden" id="ufname<?=$row['id']?>" value="<?=$row['fname']?>">
                                                 <input type="hidden" id="ulname<?=$row['id']?>" value="<?=$row['lname']?>">                                                
                                                 <input type="hidden" id="uemail<?=$row['id']?>" value="<?=$row['email']?>">
-                                                <input type="hidden" id="ustatus<?=$row['id']?>" value="<?=$row['status']?>">
+                                                <input type="text" id="ustatus<?=$row['id']?>" value="<?=$row['status']?>">
 
                                                 
                                                 <td><button type="button" name="btn_admin_edit" class="btn btn-success btn-sm editbtn" value="<?=$row['id']?>"><i class="far fa-edit"></i> Edit</button></td>
@@ -272,7 +272,7 @@ $(document).ready(function() {
         var username = $('#uusername'+id).val();
         var email = $('#uemail'+id).val();
         var status = $('#ustatus'+id).val();
-        
+        echo status;
         $('#editadminprofile').modal('show');
         document.getElementById('EuserID').value = id;
         document.getElementById('Eempno').value = empno;
