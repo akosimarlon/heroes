@@ -1833,7 +1833,7 @@ class myPDF extends FPDF{
 
                 $dept_len = strlen($department[$y]);
                 //echo $course_len;
-                if($dept_len < 45 ){
+                if($dept_len < 46 ){
                     $this->Cell(60,8,strtoupper($department[$y]),'BL',0,'C');                    
                 }else{
                     $this->SetFont('Arial','',6);
@@ -1863,7 +1863,7 @@ class myPDF extends FPDF{
                 if(strlen($appointment[$y]) < 11 ){
                     $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
                 }else{
-                    $this->SetFont('Arial','',5);
+                    $this->SetFont('Arial','',4.5);
                     $this->MultiCell(15,4,strtoupper($appointment[$y]),1,'C');
                     $a = $this->GetX();
                     $b = $this->GetY();
