@@ -2969,7 +2969,7 @@ class myPDF extends FPDF{
                     if($mname == "N/A")
                         $mname = '';
                     else
-                        $mname = $mname.". ";
+                        $mname = substr(strtoupper($mname),0,1).". ";
                     
                     $exname = $data1->exname;
                     if($exname == "N/A")
