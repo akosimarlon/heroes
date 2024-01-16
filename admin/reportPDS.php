@@ -713,7 +713,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,"22. SPOUSE'S SURNAME",'TL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_lastname),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->spouse_lastname)),1,0,'L');
                
                 $this->SetFont('Arial','',4.5);
                 $this->SetTextColor(0,0,0);
@@ -730,7 +730,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(40,5,strtoupper($data->spouse_firstname),1,0,'L');
+                $this->Cell(40,5,strtoupper(utf8_decode($data->spouse_firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
@@ -764,12 +764,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_middlename),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->spouse_middlename)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[1]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[1])),1,0,'L');
                                
                 if($count<=1){
                     $this->SetTextColor(0,0,255);                                   
@@ -795,7 +795,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[2]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[2])),1,0,'L');
                                
                 if($count<=2){
                     $this->SetTextColor(0,0,255);                                   
@@ -821,7 +821,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[3]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[3])),1,0,'L');
                                
                 if($count<=3){
                     $this->SetTextColor(0,0,255);                                   
@@ -847,7 +847,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[4]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[4])),1,0,'L');
                 
                 if($count<=4){
                     $this->SetTextColor(0,0,255);                                   
@@ -873,7 +873,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[5]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[5])),1,0,'L');
                                
                 if($count<=5){
                     $this->SetTextColor(0,0,255);                                   
@@ -894,12 +894,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,"24. FATHER'S SURNAME",'TL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->father_lastname),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->father_lastname)),1,0,'L');
                
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[6]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[6])),1,0,'L');
                                
                 if($count<=6){
                     $this->SetTextColor(0,0,255);                                   
@@ -920,7 +920,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(40,5,strtoupper($data->father_firstname),1,0,'L');
+                $this->Cell(40,5,strtoupper(utf8_decode($data->father_firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
@@ -932,7 +932,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[7]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[7])),1,0,'L');
                                
                 if($count<=7){
                     $this->SetTextColor(0,0,255);                                   
@@ -953,12 +953,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->father_middlename),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->father_middlename)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[8]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[8])),1,0,'L');
                                
                 if($count<=8){
                     $this->SetTextColor(0,0,255);                                   
@@ -984,7 +984,7 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[9]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[9])),1,0,'L');
                                
                 if($count<=9){
                     $this->SetTextColor(0,0,255);                                   
@@ -1006,12 +1006,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      SURNAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->mother_lastname),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_lastname)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[10]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[10])),1,0,'L');
                                
                 if($count<=10){
                     $this->SetTextColor(0,0,255);                                   
@@ -1033,12 +1033,12 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->mother_firstname),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_firstname)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
-                $this->Cell(45,5,strtoupper($child[11]),1,0,'L');
+                $this->Cell(45,5,strtoupper(utf8_decode($child[11])),1,0,'L');
                                
                 if($count<=11){
                     $this->SetTextColor(0,0,255);                                   
@@ -1059,7 +1059,7 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'      MIDDLE NAME','BL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->mother_middlename),1,0,'L');
+                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_middlename)),1,0,'L');
 
                 $this->SetFont('Arial','I',6);
                 $this->SetTextColor(255,0,0);
