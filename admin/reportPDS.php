@@ -1860,7 +1860,7 @@ class myPDF extends FPDF{
 
                 
 
-                if(strlen($appointment[$y]) < 12 ){
+                if(strlen($appointment[$y]) < 11 ){
                     $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
                 }else{
                     $this->SetFont('Arial','',4);
