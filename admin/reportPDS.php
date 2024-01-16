@@ -2963,8 +2963,26 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','B',10);
                 $stmt1 = $db->query("SELECT * FROM personal_info WHERE emp_no='$user_id'");            
                 while($data1 = $stmt1->fetch(PDO::FETCH_OBJ)){
-                    $this->Cell(68,2,strtoupper($data1->firstname)." ".substr(strtoupper($data1->middlename),0,1).". ".strtoupper($data1->lastname),'L',0,'C');
+                    $fname = $data1->firstname;
+                    $lname = $data1->lastname;                    
+                    $mname = $data1->middlename;
+                    if($mname == "N/A")
+                        $mname = '';
+                    else
+                        $mname = $mname.". ";
+                    
+                    $exname = $data1->exname;
+                    if($exname == "N/A")
+                        $exname = '';
+                    else   
+                        $exname = ", ".$exname;
+
+
+                    $this->Cell(68,2,strtoupper($fname)." ".strtoupper($mname)."".strtoupper($lname)."".strtoupper($exname),'L',0,'C');
                 }
+               
+
+
                 //$this->Cell(68,2,"",'L',0,'C');
                 $this->Cell(4,2,"",'L',0,'C');
                 $this->Cell(42,2,"",'LR',0,'C');
