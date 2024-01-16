@@ -1863,12 +1863,26 @@ class myPDF extends FPDF{
                 if(strlen($appointment[$y]) < 11 ){
                     $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
                 }else{
-                    $this->SetFont('Arial','',4);
+                    $this->SetFont('Arial','',5);
                     $this->MultiCell(15,4,strtoupper($appointment[$y]),1,'C');
                     $a = $this->GetX();
                     $b = $this->GetY();
                     $this->SetXY($a + 185, $b-8);
                 }
+
+
+                // if(strlen($appointment[$y]) > 10 ){
+                //     $this->SetFont('Arial','',4);
+                // } 
+                //if(strlen($data->e_scholarship) < 10 ){                
+                    //$this->SetFont('Arial','',4.5);
+                //    $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
+                //}else{
+                    //$this->SetFont('Arial','',4);
+                //    $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
+                //}
+
+
 
                 $this->SetFont('Arial','',6);
                 //$this->Cell(10,8,substr(strtoupper($govt_service[$y]),0,1),'BLR',1,'C');
