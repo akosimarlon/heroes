@@ -1864,12 +1864,9 @@ class myPDF extends FPDF{
                     $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
                 }else{
                     $this->SetFont('Arial','',4.5);
-                    $this->MultiCell(15,4,strtoupper($appointment[$y]),1,'C');
-                    $a = $this->GetX();
-                    $b = $this->GetY();
-                    $this->SetXY($a + 185, $b-8);
+                    $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');                    
                 }
-
+                
 
                 // if(strlen($appointment[$y]) > 10 ){
                 //     $this->SetFont('Arial','',4);
