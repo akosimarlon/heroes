@@ -4485,13 +4485,19 @@
                                     <div class="col-auto d-sm-inline-block">
                                         <?php
                                             if($emp_rec['status']=='1'){
-                                                echo '<h6><span class="badge bg-primary" id="liveToastBtn">HR Admin Approved</span></h6>';
+                                                echo '<h6><span class="badge bg-primary" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="This top tooltip is themed via CSS variables.">HR Admin Approved</span></h6>';
                                             }
                                             elseif($emp_rec['status']=='2'){
-                                                echo '<h6><span class="badge bg-warning text-light" id="liveToastBtn">Pending HR Admin Approval</span></h6>';
+                                                echo '<h6><span class="badge bg-warning text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="This top tooltip is themed via CSS variables.">Pending HR Admin Approval</span></h6>';
                                             }
                                             elseif($emp_rec['status']=='0'){
-                                                echo '<h6><span class="badge bg-danger text-light" id="liveToastBtn">Disapproved</span></h6>';
+                                                echo '<h6><span class="badge bg-danger text-light" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-custom-class="custom-tooltip"
+                                                data-bs-title="This top tooltip is themed via CSS variables.">Disapproved</span></h6>';
                                             }
                                         ?>
                                     </div>
