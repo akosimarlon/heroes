@@ -4490,7 +4490,7 @@
                                                 data-bs-title="This top tooltip is themed via CSS variables.">HR Admin Approved</span></h6>';
                                             }
                                             elseif($emp_rec['status']=='2'){
-                                                echo '<h6><span class="badge bg-warning text-light" data-bs-toggle="tooltip" data-bs-placement="right"
+                                                echo '<h6><span class="badge bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="right"
                                                 data-bs-custom-class="custom-tooltip"
                                                 data-bs-title="This top tooltip is themed via CSS variables.">Pending HR Admin Approval</span></h6>';
                                             }
