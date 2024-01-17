@@ -87,7 +87,7 @@
                                 </div>                                
                                 <div class="col-md-6">
                                     <label for="">Remarks</label>
-                                    <input type="text" id="" name="notif" class="form-control" readonly>
+                                    <input type="text" id="" name="notif" class="form-control">
                                 </div>                                
                             </div>
 

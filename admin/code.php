@@ -3147,6 +3147,8 @@ function createZip($zipArchive, $folder){
 //########## For Reject Employee Information #############
 if(isset($_POST['rejectEmpInfo'])){
     $emp_no = clean($_POST['emp_no']);
+    $notification = clean($_POST['notif']);
+
     $query = "UPDATE employment_record SET status='0' WHERE emp_no='$emp_no' ";
     $query_run = mysqli_query($con,$query); 
 
