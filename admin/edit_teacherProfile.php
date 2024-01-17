@@ -4511,7 +4511,7 @@
                                             </div>
                                         </div>
                                     </div> -->
-                                    <div class="toast-container position-fixed top-0 end-0 p-3">
+                                    <div class="toast-container position-fixed top-50 start-50 translate-middle p-3">
                                         <div class="toast align-items-center" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
                                             <div class="d-flex">
                                                 <div class="toast-body">
