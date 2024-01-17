@@ -3034,7 +3034,7 @@ class myPDF extends FPDF{
                     if($exname == "N/A")
                         $exname = '';
                     else   
-                        $exname = ", ".$exname;
+                        $exname = " ".$exname;
 
 
                     $this->Cell(68,2,strtoupper($fname)." ".strtoupper($mname)."".strtoupper($lname)."".strtoupper($exname),'L',0,'C');
