@@ -1784,7 +1784,7 @@ class myPDF extends FPDF{
             $count = count($department);
             //echo $count;
             if($count > 20){
-                $pdf->Addpage('P','legal',0); 
+                //$pdf->Addpage('P','legal',0); 
             }
 
             $this->Cell(15,8,$count,'BL',0,'C');
