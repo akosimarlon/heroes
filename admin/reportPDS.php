@@ -1783,6 +1783,7 @@ class myPDF extends FPDF{
             }
             $count = count($department);
             //echo $count;
+            $this->Cell(15,8,$count,'BL',0,'C');
             for($x = $count; $x < 20; $x++){
                 $w_from[$x]=null;
                 $w_to[$x]=null;
