@@ -3292,16 +3292,16 @@ $pdf->signature();
 
 
 /****** PAGE 4 ********/
-//$pdf->Addpage('P','legal',0);
-//$pdf->fourthpage($db);
+$pdf->Addpage('P','legal',0);
+$pdf->fourthpage($db);
 
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
-if($workExAddPage==1){
+//if($workExAddPage==1){
     $pdf->Addpage('P','legal',0);
     $pdf->headerTable();
     $pdf->fourthpage($db);
     $pdf->continuesheet();
-}
+//}
 
 $pdf->Output();
 
