@@ -3306,8 +3306,8 @@ class myPDF extends FPDF{
                 array_push($govt_service,$gov);
             }
             $count = count($department);
-            $c = $count-20;
-            for($x = $c; $x < 20; $x++){
+            
+            for($x = $count-20; $x < 20; $x++){
                 $w_from[$x]=null;
                 $w_to[$x]=null;
                 $position_title[$x]="";
@@ -3318,7 +3318,7 @@ class myPDF extends FPDF{
                 $govt_service[$x]="";
             }
 
-            for($y = $c; $y < $c+(20-$c); $y++){
+            for($y = 0; $y < 20; $y++){
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);               
 
