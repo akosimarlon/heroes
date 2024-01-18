@@ -1655,7 +1655,7 @@ class myPDF extends FPDF{
        
     }
 
-    function workexperience($db,$workExAddPage){
+    function workexperience($db){
 
         if(isset($_GET['emp_no'])){
             $user_id = $_GET['emp_no']; 
@@ -1798,8 +1798,8 @@ class myPDF extends FPDF{
                 // global $appointment;
                 // global $govt_service;
                 //$GLOBALS["workExAddPage"] = 1;
-                $workExAddPage = 1;
-                
+                //$workExAddPage = 1;
+                $GLOBALS['workExAddPage'] = 1;         
 
             }
 
@@ -3379,7 +3379,7 @@ $pdf->signature();
 $pdf->Addpage('P','legal',0);
 $pdf->civilservice($db);
 $pdf->continuesheet();
-$pdf->workexperience($db,$workExAddPage); 
+$pdf->workexperience($db); 
 $pdf->continuesheet();
 $pdf->signature();
 
