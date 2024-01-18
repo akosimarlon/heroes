@@ -3298,9 +3298,9 @@ $pdf->signature();
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
 //if($workExAddPage==1){
     $pdf->Addpage('P','Legal',0);
-    $pdf->headerTable();
+    //$pdf->headerTable();
     $pdf->fourthpage($db);
-    $pdf->continuesheet();
+    //$pdf->continuesheet();
 //}
 
 $pdf->Output();
