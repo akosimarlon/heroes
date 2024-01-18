@@ -1787,23 +1787,11 @@ class myPDF extends FPDF{
                 array_push($govt_service,$gov);
             }
             $count = count($department);
-            //echo $count;
-            if($count > 20){                
-                // global $w_from;
-                // global $w_to;
-                // global $position_title;
-                // global $department;
-                // global $salary;
-                // global $step;
-                // global $appointment;
-                // global $govt_service;
-                //$GLOBALS["workExAddPage"] = 1;
-                //$workExAddPage = 1;
-                $GLOBALS['workExAddPage'] = 1;         
-
+            
+            if($count > 20){                                
+                $GLOBALS['workExAddPage'] = 1;
             }
-
-            //$this->Cell(15,8,$count,'BL',0,'C');
+            
             for($x = $count; $x < 20; $x++){
                 $w_from[$x]=null;
                 $w_to[$x]=null;
@@ -3186,8 +3174,12 @@ class myPDF extends FPDF{
         //$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
 
-    function workExperienceSeparatePage(){
-        $this->SetFont('Arial','I',10);
+    function workExperienceSeparatePage($db){
+
+        if(isset($_GET['emp_no'])){
+            $user_id = $_GET['emp_no'];
+
+            $this->SetFont('Arial','I',10);
             $this->SetFillColor(115,115,115);
             $this->SetTextColor(255,255,255);
             $this->Cell(195,5,'V.  WORK EXPERIENCE','LTR',1,'L',true);
@@ -3283,6 +3275,129 @@ class myPDF extends FPDF{
             $this->Cell(15,1,"",'BL',0,'L',true);
             $this->Cell(15,1,"",'BL',0,'L',true);
             $this->Cell(10,1,"",'BLR',1,'L',true);
+
+            $w_from = array();
+            $w_to = array();
+            $position_title = array();
+            $department = array();
+            $salary = array();
+            $step = array();
+            $appointment = array();
+            $govt_service = array();
+
+            $stmt = $db->query("SELECT * FROM work_experience WHERE emp_no='$user_id' ORDER BY w_from DESC");            
+            while($data = $stmt->fetch(PDO::FETCH_OBJ)){
+                $wf = $data->w_from;
+                $wt = $data->w_to;
+                $pt = $data->position_title;
+                $dept = $data->department;
+                $sal = $data->salary;
+                $stp = $data->step;
+                $app = $data->appointment;
+                $gov = $data->govt_service;
+
+                array_push($w_from,$wf);
+                array_push($w_to,$wt);
+                array_push($position_title,$pt);
+                array_push($department,$dept);
+                array_push($salary,$sal);
+                array_push($step,$stp);
+                array_push($appointment,$app);
+                array_push($govt_service,$gov);
+            }
+            $count = count($department);
+            
+            for($x = $count-20; $x < 20; $x++){
+                $w_from[$x]=null;
+                $w_to[$x]=null;
+                $position_title[$x]="";
+                $department[$x]="";
+                $salary[$x]="";
+                $step[$x]="";
+                $appointment[$x]="";
+                $govt_service[$x]="";
+            }
+
+            for($y = $count-20; $y < 20; $y++){
+                $this->SetFont('Arial','',6);
+                $this->SetTextColor(0,0,255);               
+
+                if($count<=$y){
+                    $this->Cell(15,8,"",'BL',0,'L');
+                }else{                     
+                    
+                    if($w_from[$y]=="N/A"){
+                        $this->Cell(15,8,$w_from[$y],'BL',0,'C');
+                    }else{
+                        $date=date_create($w_from[$y]);                
+                        $this->Cell(15,8,date_format($date,"m/d/Y"),'BL',0,'C');
+                    }
+
+
+                }
+
+                if($count<=$y){
+                    $this->Cell(15,8,"",'BL',0,'L');
+                }else{
+                    if($w_to[$y] == "PRESENT"){
+                        $this->Cell(15,8,strtoupper($w_to[$y]),'BL',0,'C');
+                    }else{
+
+                        if($w_to[$y]=="N/A"){
+                            $this->Cell(15,8,$w_to[$y],'BL',0,'C');
+                        }else{
+                            $date=date_create($w_to[$y]);                
+                            $this->Cell(15,8,date_format($date,"m/d/Y"),'BL',0,'C');
+                        }
+
+                    }   
+                }   
+                         
+                $this->Cell(50,8,strtoupper($position_title[$y]),'BL',0,'C');
+
+                $dept_len = strlen($department[$y]);
+                if($dept_len < 46 ){
+                    $this->Cell(60,8,strtoupper($department[$y]),'BL',0,'C');                    
+                }else{
+                    $this->SetFont('Arial','',6);
+                    $this->MultiCell(60,4,strtoupper($department[$y]),'BL','C');
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 140, $b-8);
+                }
+                
+
+                if($salary[$y]==""){
+                    $this->Cell(15,8,"",'BL',0,'C');
+                }else{
+                    
+                    if($salary[$y]=="N/A"){
+                        $this->Cell(15,8,$salary[$y],'BL',0,'C');
+                    }else{
+                        $this->Cell(15,8,"P".number_format($salary[$y]),'BL',0,'C');
+                    }
+                    
+                }
+                $this->Cell(15,8,strtoupper($step[$y]),'BL',0,'C');
+
+                if(strlen($appointment[$y]) < 11 ){
+                    $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');
+                }else{
+                    $this->SetFont('Arial','',4.5);
+                    $this->Cell(15,8,strtoupper($appointment[$y]),'BL',0,'C');                    
+                }
+
+
+                $this->SetFont('Arial','',6);
+                if($govt_service[$y]=="N/A"){
+                    $this->Cell(10,8,$govt_service[$y],'BLR',1,'C');
+                }else{
+                    $this->Cell(10,8,substr(strtoupper($govt_service[$y]),0,1),'BLR',1,'C');
+                }
+
+            }
+
+        }
     }
 
     //Cell with horizontal scaling if text is too wide
@@ -3401,7 +3516,7 @@ $pdf->fourthpage($db);
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
 if($workExAddPage==1){
     $pdf->Addpage('P','Legal',0);
-    $pdf->workExperienceSeparatePage();
+    $pdf->workExperienceSeparatePage($db);
     //$pdf->fourthpage($db);
     //$pdf->continuesheet();
 }
