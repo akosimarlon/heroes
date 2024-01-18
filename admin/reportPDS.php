@@ -8,6 +8,9 @@ $db = new PDO('mysql:host=localhost;dbname=tis','root','@DavaosurDB2023');
 //define('PESO',chr(174));
 class myPDF extends FPDF{    
     
+
+
+
     function headerTable(){
         $this->SetFont('Arial','BI',8);
         $this->Cell(1,0,'CS Form No. 212',0,2,'L');
@@ -1783,11 +1786,20 @@ class myPDF extends FPDF{
             }
             $count = count($department);
             //echo $count;
-            if($count > 20){
-                //$pdf->Addpage('P','legal',0); 
+            if($count > 20){                
+                global $w_from;
+                global $w_to;
+                global $position_title;
+                global $department;
+                global $salary;
+                global $step;
+                global $appointment;
+                global $govt_service;
+                $GLOBALS["workExAddPage"] = 1;
+
             }
 
-            $this->Cell(15,8,$count,'BL',0,'C');
+            //$this->Cell(15,8,$count,'BL',0,'C');
             for($x = $count; $x < 20; $x++){
                 $w_from[$x]=null;
                 $w_to[$x]=null;
@@ -3282,6 +3294,11 @@ $pdf->signature();
 /****** PAGE 4 ********/
 $pdf->Addpage('P','legal',0);
 $pdf->fourthpage($db);
+
+/****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
+if($workExAddPage==1){
+    $pdf->Addpage('P','legal',0);
+}
 
 $pdf->Output();
 
