@@ -3296,12 +3296,12 @@ $pdf->signature();
 //$pdf->fourthpage($db);
 
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
-//if($workExAddPage==1){
+if($workExAddPage==1){
     $pdf->Addpage('P','Legal',0);
     //$pdf->headerTable();
     $pdf->fourthpage($db);
     //$pdf->continuesheet();
-//}
+}
 
 $pdf->Output();
 
