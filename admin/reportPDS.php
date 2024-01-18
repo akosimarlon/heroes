@@ -1787,14 +1787,14 @@ class myPDF extends FPDF{
             $count = count($department);
             //echo $count;
             if($count > 20){                
-                global $w_from;
-                global $w_to;
-                global $position_title;
-                global $department;
-                global $salary;
-                global $step;
-                global $appointment;
-                global $govt_service;
+                // global $w_from;
+                // global $w_to;
+                // global $position_title;
+                // global $department;
+                // global $salary;
+                // global $step;
+                // global $appointment;
+                // global $govt_service;
                 $GLOBALS["workExAddPage"] = 1;
 
             }
