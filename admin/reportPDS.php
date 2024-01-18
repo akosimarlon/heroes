@@ -1799,6 +1799,7 @@ class myPDF extends FPDF{
                 // global $govt_service;
                 //$GLOBALS["workExAddPage"] = 1;
                 $workExAddPage = 1;
+                global $workExAddPage;
 
             }
 
