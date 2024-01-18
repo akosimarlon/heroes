@@ -1782,7 +1782,7 @@ class myPDF extends FPDF{
                 array_push($govt_service,$gov);
             }
             $count = count($department);
-            //echo $count;
+            echo $count;
             for($x = $count; $x < 20; $x++){
                 $w_from[$x]=null;
                 $w_to[$x]=null;
