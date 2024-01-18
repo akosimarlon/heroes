@@ -3322,7 +3322,7 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);               
 
-                if($c<=$y){
+                if($count<=$y){
                     $this->Cell(15,8,"",'BL',0,'L');
                 }else{                     
                     
@@ -3336,7 +3336,7 @@ class myPDF extends FPDF{
 
                 }
 
-                if($c<=$y){
+                if($count<=$y){
                     $this->Cell(15,8,"",'BL',0,'L');
                 }else{
                     if($w_to[$y] == "PRESENT"){
