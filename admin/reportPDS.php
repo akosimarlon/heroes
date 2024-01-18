@@ -1795,7 +1795,7 @@ class myPDF extends FPDF{
                 // global $step;
                 // global $appointment;
                 // global $govt_service;
-                $GLOBALS["workExAddPage"] = 1;
+                //$GLOBALS["workExAddPage"] = 1;
 
             }
 
@@ -3395,12 +3395,12 @@ $pdf->Addpage('P','legal',0);
 $pdf->fourthpage($db);
 
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
-if($workExAddPage==1){
+//if($workExAddPage==1){
     //$pdf->Addpage('P','Legal',0);
     //$pdf->workExperienceSeparatePage();
     //$pdf->fourthpage($db);
     //$pdf->continuesheet();
-}
+//}
 
 $pdf->Output();
 
