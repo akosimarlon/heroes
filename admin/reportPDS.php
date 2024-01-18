@@ -3299,6 +3299,8 @@ $pdf->fourthpage($db);
 if($workExAddPage==1){
     $pdf->Addpage('P','legal',0);
     $pdf->headerTable();
+    $pdf->fourthpage($db);
+    $pdf->continuesheet();
 }
 
 $pdf->Output();
