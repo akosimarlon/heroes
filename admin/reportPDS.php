@@ -6,9 +6,11 @@
 //$db = new PDO('mysql:host=localhost;dbname=ykgercov_dtr','ykgercov_dtr','AB1DIokBhcLwtr{');   //P@$$w0rd123456
 $db = new PDO('mysql:host=localhost;dbname=tis','root','@DavaosurDB2023');
 //define('PESO',chr(174));
+$workExAddPage = 0;
+
 class myPDF extends FPDF{    
     
-
+    
 
 
     function headerTable(){
@@ -1796,6 +1798,7 @@ class myPDF extends FPDF{
                 // global $appointment;
                 // global $govt_service;
                 //$GLOBALS["workExAddPage"] = 1;
+                $workExAddPage = 1;
 
             }
 
@@ -3395,12 +3398,12 @@ $pdf->Addpage('P','legal',0);
 $pdf->fourthpage($db);
 
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
-//if($workExAddPage==1){
+if($workExAddPage==1){
     //$pdf->Addpage('P','Legal',0);
     //$pdf->workExperienceSeparatePage();
     //$pdf->fourthpage($db);
     //$pdf->continuesheet();
-//}
+}
 
 $pdf->Output();
 
