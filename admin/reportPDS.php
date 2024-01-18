@@ -53,13 +53,13 @@ class myPDF extends FPDF{
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'2. SURNAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(150,5,strtoupper($data->lastname),1,1,'L');
+                $this->Cell(150,5,strtoupper(utf8_decode($data->lastname)),1,1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
                 $this->Cell(45,5,'    FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(110,5,strtoupper($data->firstname),1,0,'L');
+                $this->Cell(110,5,strtoupper(utf8_decode($data->firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
