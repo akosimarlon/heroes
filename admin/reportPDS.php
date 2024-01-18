@@ -3182,6 +3182,105 @@ class myPDF extends FPDF{
         //$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
 
+    function workExperienceSeparatePage(){
+        $this->SetFont('Arial','I',10);
+            $this->SetFillColor(115,115,115);
+            $this->SetTextColor(255,255,255);
+            $this->Cell(195,5,'V.  WORK EXPERIENCE','LTR',1,'L',true);
+            $this->SetFont('Arial','I',7);
+            $this->Cell(195,3,'(Include private employment.  Start from your recent work) Description of duties should be indicated in the attached Work Experience sheet.','LBR',1,'L',true);
+
+            $this->SetFont('Arial','',4);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(30,2,"",'TL',0,'L',true);            
+            $this->Cell(50,2,"",'TL',0,'L',true);
+            $this->Cell(60,2,"",'TL',0,'L',true);
+            $this->Cell(15,2,"",'TL',0,'L',true);
+            $this->Cell(15,2,"",'TL',0,'L',true);
+            $this->Cell(15,2,"",'TL',0,'L',true);
+            $this->Cell(10,2,"",'TLR',1,'L',true);                        
+            
+            $this->SetFont('Arial','',6);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(30,2,"28.    INCLUSIVE DATES",'L',0,'L',true);            
+            $this->Cell(50,2,"",'LR',0,'C',true);
+            $this->Cell(60,2,"",'LR',0,'C',true);            
+            $this->Cell(15,2,"",'LR',0,'C',true); 
+            $this->SetFont('Arial','',4);           
+            $this->Cell(15,2,"SALARY/ JOB/ PAY",'LR',0,'C',true);            
+            $this->Cell(15,2,"",'LR',0,'C',true);            
+            $this->Cell(10,2,"",'LR',1,'C',true);
+
+            $this->SetFont('Arial','',6);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(30,2,"(mm/dd/yyyy)",'L',0,'C',true);            
+            $this->Cell(50,2,"POSITION TITLE",'LR',0,'C',true);
+            $this->Cell(60,2,"DEPARTMENT / AGENCY / OFFICE / COMPANY",'LR',0,'C',true);            
+            $this->Cell(15,2,"MONTHLY",'LR',0,'C',true); 
+            $this->SetFont('Arial','',4);           
+            $this->Cell(15,2,"GRADE (if",'LR',0,'C',true);   
+            $this->SetFont('Arial','',5);         
+            $this->Cell(15,2,"STATUS OF",'LR',0,'C',true);            
+            $this->Cell(10,2,"GOV'T",'LR',1,'C',true);
+
+            $this->SetFont('Arial','',6);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(30,2,"",'LB',0,'C',true);  
+            $this->SetFont('Arial','',5);          
+            $this->Cell(50,2,"(Write in full/Do not abbreviate)",'LR',0,'C',true);
+            $this->Cell(60,2,"(Write in full/Do not abbreviate)",'LR',0,'C',true);   
+            $this->SetFont('Arial','',6);         
+            $this->Cell(15,2,"SALARY",'LR',0,'C',true); 
+            $this->SetFont('Arial','',4);           
+            $this->Cell(15,2,"applicable)& STEP",'LR',0,'C',true);   
+            $this->SetFont('Arial','',5);         
+            $this->Cell(15,2,"APPOINTMENT",'LR',0,'C',true);            
+            $this->Cell(10,2,"SERVICE",'LR',1,'C',true);
+
+            $this->SetFont('Arial','',6);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(15,2,"",'LT',0,'C',true);  
+            $this->Cell(15,2,"",'LT',0,'C',true);              
+            $this->Cell(50,2,"",'LR',0,'C',true);
+            $this->Cell(60,2,"",'LR',0,'C',true);                       
+            $this->Cell(15,2,"",'LR',0,'C',true); 
+            $this->SetFont('Arial','',4);           
+            $this->Cell(15,2,'(Format "00-0")/','LR',0,'C',true);   
+            $this->SetFont('Arial','',5);         
+            $this->Cell(15,2,"",'LR',0,'C',true);            
+            $this->Cell(10,2,"(Y/ N)",'LR',1,'C',true);
+
+            $this->SetFont('Arial','',6);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(15,2,"From",'L',0,'C',true);  
+            $this->Cell(15,2,"To",'L',0,'C',true);
+            $this->Cell(50,2,"",'LR',0,'C',true);
+            $this->Cell(60,2,"",'LR',0,'C',true);                       
+            $this->Cell(15,2,"",'LR',0,'C',true); 
+            $this->SetFont('Arial','',4);           
+            $this->Cell(15,2,"INCREMENT",'LR',0,'C',true);
+            $this->Cell(15,2,"",'LR',0,'C',true);            
+            $this->Cell(10,2,"",'LR',1,'C',true);
+
+            $this->SetFont('Arial','',4);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(15,1,"",'BL',0,'L',true);            
+            $this->Cell(15,1,"",'BL',0,'L',true);            
+            $this->Cell(50,1,"",'BL',0,'L',true);
+            $this->Cell(60,1,"",'BL',0,'L',true);
+            $this->Cell(15,1,"",'BL',0,'L',true);
+            $this->Cell(15,1,"",'BL',0,'L',true);
+            $this->Cell(15,1,"",'BL',0,'L',true);
+            $this->Cell(10,1,"",'BLR',1,'L',true);
+    }
+
     //Cell with horizontal scaling if text is too wide
     function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true){
         //Get string width
@@ -3292,14 +3391,14 @@ $pdf->signature();
 
 
 /****** PAGE 4 ********/
-//$pdf->Addpage('P','legal',0);
-//$pdf->fourthpage($db);
+$pdf->Addpage('P','legal',0);
+$pdf->fourthpage($db);
 
 /****** ADD SEPARATE PAGE FOR WORK EXPERIENCE ********/
 if($workExAddPage==1){
     $pdf->Addpage('P','Legal',0);
-    //$pdf->headerTable();
-    $pdf->fourthpage($db);
+    $pdf->workExperienceSeparatePage();
+    //$pdf->fourthpage($db);
     //$pdf->continuesheet();
 }
 
