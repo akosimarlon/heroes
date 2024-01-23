@@ -1,12 +1,11 @@
 <?php
-    session_start();
+    include('authentication.php');
     if($_SESSION['auth_role'] != "1"){
         $_SESSION['message'] = "You are not an Authorized user to that page.";
         $_SESSION['message_type'] = "danger";
         header("Location: 403.php");
         exit(0);
     }
-    include('authentication.php');
     include('includes/header.php');
     include('includes/navbar.php');    
 ?>        
