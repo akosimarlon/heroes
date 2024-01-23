@@ -1,6 +1,6 @@
 <?php
     //session_start();
-    if($_SESSION['auth_role'] != "1"){
+    if(strcmp($_SESSION['auth_role'],"1") == 0){
         $_SESSION['message'] = "You are not an Authorized user to that page.";
         $_SESSION['message_type'] = "danger";
         header("Location: 403.php");
