@@ -194,9 +194,7 @@
         ?>
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-5">
-            <h1 class="h3 mb-0 text-gray-800"><strong>
-             <?=$_GET['emp_no']?><?=$_SESSION['auth_user']['user_empno']?>
-            Profile Details</strong></h1>
+            <h1 class="h3 mb-0 text-gray-800"><strong>Profile Details</strong></h1>
             <span class="d-none d-sm-inline-block text-dark">                        
             <div id="timestamp"></div></span>
         </div>     
