@@ -2414,8 +2414,8 @@ if(isset($_POST['updateAnciliaryWork'])){
 if(isset($_POST['savePersonal'])){
     $old_emp_no = clean($_POST['old_emp_no']);
     $old_email = clean($_POST['old_email']);
-    $lname = ucwords(clean($_POST['lname']));    
-    $fname = ucwords(clean($_POST['fname']));
+    $lname = strtoupper(clean($_POST['lname']));    
+    $fname = strtoupper(clean($_POST['fname']));
     $mname = strtoupper(clean($_POST['mname']));
     $xname = clean($_POST['xname']);
     $fullname = $fname.' '.($mname=='N/A' ? '': $mname).' '.$lname.' '.($xname=='N/A' ? '': ', '.$xname);
@@ -2537,8 +2537,11 @@ if(isset($_POST['savePersonal'])){
                 country='$country', country_name='$hcountry', telephone='$telephone', mobile='$mobile', email='$email'
                 WHERE emp_no='$old_emp_no'; ";       
                 
-        $query .= "UPDATE users SET email='$email', emp_no='$emp_no' 
+        $query .= "UPDATE users SET email='$email', lname='$lname', fname='$fname', emp_no='$emp_no' 
                     WHERE emp_no='$old_emp_no'; ";
+
+        $query .= "UPDATE masterlist SET lname='$lname', fname='$fname' 
+        WHERE emp_no='$old_emp_no'; ";
 
         $query .= "UPDATE address SET emp_no='$emp_no', r_hbl_no='$r_houseno', r_st_pur='$r_street', r_sub_vil='$r_village', r_brgy='$r_barangay',
                     r_city_mun='$r_city', r_prov='$r_province', r_zip='$r_zipcode', p_hbl_no='$p_houseno', p_st_pur='$p_street', p_sub_vil='$p_village',
