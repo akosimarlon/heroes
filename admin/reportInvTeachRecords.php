@@ -180,6 +180,10 @@
     <div class="container-fluid">
         <?php
             if(isset($_GET['emp_no'])){
+
+                echo $_GET['emp_no'];
+                echo $_SESSION['auth_user']['user_empno'];
+
                 $user_id = $_GET['emp_no'];
                 
                 $users = "SELECT * FROM personal_info WHERE emp_no='$user_id'";
