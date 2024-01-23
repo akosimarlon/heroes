@@ -242,7 +242,7 @@
                                         ?>
                                             <tr>
                                                 
-                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['middlename']." ".$row['lastname'])?>">   
+                                                <input type="hidden" id="emp_name<?=$row['id']?>" value="<?=strtoupper($row['firstname']." ".$row['middlename']=='N/A' ? '': strtoupper(utf8_decode($row['middlename']))." ".$row['lastname'])?>">   
                                                 <td><?= $count++ ?></td>                                    
                                                 <td><?= $row1['emp_no'] ?></td>
                                                 <td><?= strtoupper($row['firstname']." ".substr($row['middlename'],0,1).". ".$row['lastname']) ?></td>
