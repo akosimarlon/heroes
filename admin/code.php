@@ -2567,8 +2567,10 @@ if(isset($_POST['savePersonal'])){
         $_SESSION['message'] = "Personal Information Updated Successfuly!" . updateProgress();
         $_SESSION['message_type'] = "primary";  
         $_SESSION['tab_page'] = "#personal";
-
-        
+        $user_name = $fname.' '.$lname;
+        $_SESSION['auth_user'] = [                                        
+            'user_name'=>$user_name,
+        ];
 
         header("Window-target: _top");       
         header("Location: edit_teacherProfile.php?emp_no=$emp_no");
