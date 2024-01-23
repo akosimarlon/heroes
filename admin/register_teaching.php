@@ -1,11 +1,11 @@
 <?php
     //session_start();
-    if(strcmp($_SESSION['auth_role'],"1") == 0){
-        $_SESSION['message'] = "You are not an Authorized user to that page.";
-        $_SESSION['message_type'] = "danger";
-        header("Location: 403.php");
-        exit(0);
-    }
+    // if($_SESSION['auth_role'] != "1"){
+    //     $_SESSION['message'] = "You are not an Authorized user to that page.";
+    //     $_SESSION['message_type'] = "danger";
+    //     header("Location: 403.php");
+    //     exit(0);
+    // }
     include('authentication.php');
     include('includes/header.php');
     include('includes/navbar.php');  
@@ -18,6 +18,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h3><?=$_SESSION['auth_role']?></h3>
             <h1 class="h3 mb-0 text-gray-800">User Accounts</h3> </h1>    
         </div>
 
