@@ -663,6 +663,7 @@ if(isset($_POST['registerEducational'])){
         //     $query_run = mysqli_query($con,$query);            
         // }        
         // else{
+
             $query = "INSERT INTO educational (emp_no,e_nameofschool,e_course,e_from,e_to,e_level,e_year,e_scholarship,educational_level,n_a,status) 
                         VALUES ('".$empno."','".$nameofschool."','".$course."','".$from."','".$to."','".$level."','".$year."','".$scholarship."','".$educ_level."','".$novoc."','1')";
             $query_run = mysqli_query($con,$query);
@@ -2414,6 +2415,8 @@ if(isset($_POST['updateAnciliaryWork'])){
 if(isset($_POST['savePersonal'])){
     $old_emp_no = clean($_POST['old_emp_no']);
     $old_email = clean($_POST['old_email']);
+    $old_fname = clean($_POST['old_fname']);
+    $old_lname = clean($_POST['old_lname']);
     $lname = strtoupper(clean($_POST['lname']));    
     $fname = strtoupper(clean($_POST['fname']));
     $mname = strtoupper(clean($_POST['mname']));
@@ -2439,6 +2442,9 @@ if(isset($_POST['savePersonal'])){
     $is_filipino = "yes";
     $dual_birth = '0';
     $dual_natural = '0';
+
+    //if($old_fname != $fname && $old_lname != $lname)
+    
 
     if($sss == ""){
         $sss = "N/A";
