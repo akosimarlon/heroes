@@ -2001,7 +2001,7 @@ if(isset($_POST['updateLearningDev'])){
                                 $_SESSION['message_type'] = "danger";
                                 $_SESSION['tab_page'] = "#learning";
                                 header("Window-target: _top"); 
-                                header("Location: register_teaching.php");
+                                header("Location: edit_teacherProfile.php?emp_no=$empno");
                                 exit(0);
                             // echo 'image Not uploaded ! try again';
                             }
@@ -2051,7 +2051,7 @@ if(isset($_POST['updateLearningDev'])){
                 $_SESSION['message_type'] = "danger";
                 $_SESSION['tab_page'] = "#learning";
                 header("Window-target: _top"); 
-                header("Location: register_teaching.php");
+                header("Location: edit_teacherProfile.php?emp_no=$empno");
                 exit(0);
             // echo 'image Not uploaded ! try again';
             }
