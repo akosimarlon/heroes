@@ -1908,7 +1908,7 @@
                                             <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">Last Name:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="lname" value="<?=$user['lastname'];?>" class="form-control border-success" autocomplete="off" required  autofocus>                                                
+                                                    <input type="text" name="lname" value="<?=$user['lastname'];?>" class="form-control border-success" autocomplete="off" required readonly autofocus>                                                
                                                 </div>                                            
                                                 <label for="" class="col-sm-2 col-form-label ml-5">Employee ID Number:</label>
                                                 <div class="col-sm-3">
@@ -1919,7 +1919,7 @@
                                             <div class="row mb-3">
                                                 <label for="" class="col-sm-2 col-form-label ml-3">First Name:</label>
                                                 <div class="col-sm-3">
-                                                    <input type="text" name="fname" value="<?=$user['firstname'];?>" class="form-control border-success" autocomplete="off"  required >
+                                                    <input type="text" name="fname" value="<?=$user['firstname'];?>" class="form-control border-success" autocomplete="off" readonly required >
                                                 </div>
                                                 <label for="" class="col-sm-2 col-form-label ml-5">GSIS ID No.:</label>
                                                 <div class="col-sm-3">
