@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     if($_SESSION['auth_role'] == "2"){
         $_SESSION['message'] = "You are not an Authorized user to that page.";
         $_SESSION['message_type'] = "danger";
