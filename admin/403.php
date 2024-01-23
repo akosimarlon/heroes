@@ -8,6 +8,7 @@
         <div class="container-fluid">
         
             <div class="text-center">
+                <h3><?=$_SESSION['auth_role']?></h3>
                 <h1>ERROR</h1>
                 <div class="error mx-auto" data-text="403">403</div>
                 <p class="lead text-gray-800 mb-2"><h2 class="mb-5">Forbidden Page</h2></p>
