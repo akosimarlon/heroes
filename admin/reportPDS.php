@@ -1180,7 +1180,7 @@ class myPDF extends FPDF{
                 $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
                 
                 if(strlen($data->e_scholarship) > 16 ){
-                    $this->SetFont('Arial','',4);
+                    $this->SetFont('Arial','',3);
                 }
                 if(strlen($data->e_scholarship) < 12 ){
                     $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
