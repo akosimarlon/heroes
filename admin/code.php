@@ -3164,7 +3164,7 @@ if(isset($_POST['rejectEmpInfo'])){
         $query2 = "UPDATE profile_completion SET ei_completed_fileds='0' WHERE emp_no='$emp_no' ";
         $query_run2 = mysqli_query($con,$query2);
 
-        $query3 = "INSERT INTO notification('emp_no','message','status') VALUES('$emp_no','$notification','1') ";
+        $query3 = "INSERT INTO notifications('emp_no','message','status') VALUES('$emp_no','$notification','1') ";
         $query_run3 = mysqli_query($con,$query3);
 
         $_SESSION['message'] = "Employment Record Disapproved!";
