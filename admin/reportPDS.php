@@ -1279,19 +1279,19 @@ class myPDF extends FPDF{
                 
                 $this->SetFont('Arial','',5);
                 $course_len = strlen($data->e_course);
-                if($course_len > 76 ){
+                if($course_len > 70 ){
                     $this->SetFont('Arial','',3);
                 }
                 //echo $course_len;
                 if($course_len < 35 ){
                     $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
                 }else{
-                    $this->SetFont('Arial','',5);
+                    //$this->SetFont('Arial','',5);
                     $this->MultiCell(40,3,strtoupper($data->e_course),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
                     $this->SetXY($x + 130, $y-6);
-                }
+                }                
 
                 $this->SetFont('Arial','',5);
                 $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
@@ -1321,8 +1321,7 @@ class myPDF extends FPDF{
                 } 
                 if(strlen($data->e_scholarship) < 12 ){                
                     //$this->SetFont('Arial','',4.5);
-                    //
-                    $this->Cell(15,6,strtoupper($data->e_scholarship)."@",1,1,'C');
+                    $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
                     //$this->SetFont('Arial','',4);
                     $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
