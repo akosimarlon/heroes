@@ -3051,7 +3051,7 @@ class myPDF extends FPDF{
                         $exname = " ".$exname;
 
 
-                    $this->Cell(68,2,strtoupper($fname)." ".strtoupper($mname)."".strtoupper($lname)."".strtoupper($exname),'L',0,'C');
+                    $this->Cell(68,2,strtoupper(utf8_decode($fname))." ".strtoupper($mname)."".strtoupper(utf8_decode($lname))."".strtoupper($exname),'L',0,'C');
                 }
                
 
