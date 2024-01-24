@@ -4486,7 +4486,7 @@
                                 <h3 class="semi-bold text-primary mb-5">Employment Information
                                     <div class="col-auto d-sm-inline-block">
                                         <?php
-                                            $notif = "SELECT * FROM notifications ORDER BY id WHERE emp_no='$user_id' DESC LIMIT 1";
+                                            $notif = "SELECT * FROM notifications WHERE emp_no='$user_id' ORDER BY id DESC LIMIT 1";
                                             $notif_run = mysqli_query($con,$notif);
                                             
                                             if(mysqli_num_rows($notif_run) > 0 ){
