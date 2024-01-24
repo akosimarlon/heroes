@@ -125,12 +125,15 @@ else{
 
 if(isset($_GET['emp_no'])){
     //strcmp($_GET['emp_no'],"1202650") != 0 && 
-    if(strcmp($_GET['emp_no'],$_SESSION['auth_user']['user_empno']) != 0){        
-        $_SESSION['message'] = "That action is not authorized!";
-        $_SESSION['message_type'] = "danger";
-        header("Location: 403.php");
-        exit(0);
+    if(strcmp($_SESSION['auth_user']['user_empno'],"1202650") != 0){
+        if(strcmp($_GET['emp_no'],$_SESSION['auth_user']['user_empno']) != 0){        
+            $_SESSION['message'] = "That action is not authorized!";
+            $_SESSION['message_type'] = "danger";
+            header("Location: 403.php");
+            exit(0);
+        }
     }
+    
 }
 
 // if($_SESSION['user_empno'] != $_GET['emp_no'] ){
