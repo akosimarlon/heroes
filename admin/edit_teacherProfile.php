@@ -4486,17 +4486,25 @@
                                 <h3 class="semi-bold text-primary mb-5">Employment Information
                                     <div class="col-auto d-sm-inline-block">
                                         <?php
-                                            if($emp_rec['status']=='1'){
-                                                echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
-                                            }
-                                            elseif($emp_rec['status']=='2'){
-                                                echo '<h6><span class="badge bg-warning text-dark">Pending HR Admin Approval</span></h6>';
-                                            }
-                                            elseif($emp_rec['status']=='0'){
-                                                echo '<h6><span class="badge bg-danger text-light" data-bs-toggle="tooltip" data-bs-placement="right"
-                                                data-bs-custom-class="custom-tooltip"
-                                                data-bs-title="Reason:            ">Disapproved</span></h6>';
-                                            }
+                                            $notif = "SELECT * FROM notifications ORDER BY id WHERE emp_no='$user_id' DESC LIMIT 1";
+                                            $notif_run = mysqli_query($con,$notif);
+                                            
+                                            if(mysqli_num_rows($notif_run) > 0 ){
+                                                foreach($notif_run as $noti){
+                                                    if($emp_rec['status']=='1'){
+                                                        echo '<h6><span class="badge bg-primary">HR Admin Approved</span></h6>';
+                                                    }
+                                                    elseif($emp_rec['status']=='2'){
+                                                        echo '<h6><span class="badge bg-warning text-dark">Pending HR Admin Approval</span></h6>';
+                                                    }
+                                                    elseif($emp_rec['status']=='0'){
+                                                        echo '<h6><span class="badge bg-danger text-light" data-bs-toggle="tooltip" data-bs-placement="right"
+                                                        data-bs-custom-class="custom-tooltip"
+                                                        data-bs-title="Reason: '.$noti['message'].'">Disapproved</span></h6>';
+                                                    }
+
+                                                }
+                                            }        
                                         ?>
                                     </div>
 
