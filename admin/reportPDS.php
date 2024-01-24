@@ -1283,7 +1283,7 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',3);
                 }
                 //echo $course_len;
-                if($course_len < 35 ){
+                if($course_len < 36 ){
                     $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',5);
