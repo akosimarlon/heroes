@@ -118,8 +118,7 @@ else{
         header("Location: ".$home_location);
         //header("Location: ../login.php");
         exit(0);
-    }
-       
+    }       
      
 }
 
