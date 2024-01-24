@@ -7,6 +7,7 @@
 $db = new PDO('mysql:host=localhost;dbname=tis','root','@DavaosurDB2023');
 //define('PESO',chr(174));
 $workExAddPage = 0;
+$trainingAddPage = 0;
 
 class myPDF extends FPDF{    
     
@@ -2154,6 +2155,10 @@ class myPDF extends FPDF{
             }
             $count = count($title_of_ld);
             //echo $count;
+            if($count > 20){                                
+                $GLOBALS['trainingAddPage'] = 1;                
+            }
+
             for($x = $count; $x < 20; $x++){
                 $title_of_ld[$x]="";
                 $ld_from[$x]=null;
@@ -3399,6 +3404,176 @@ class myPDF extends FPDF{
 
         }
     }
+    
+    function trainingSeparatePage($db){
+
+        if(isset($_GET['emp_no'])){
+            $user_id = $_GET['emp_no']; 
+
+            $this->SetFont('Arial','I',9);
+            $this->SetFillColor(115,115,115);
+            $this->SetTextColor(255,255,255);
+            $this->Cell(195,5,'VII.  LEARNING AND DEVELOPMENT (L&D) INTERVENTIONS/TRAINING PROGRAMS ATTENDED','LTR',1,'L',true);
+            $this->SetFont('Arial','I',6);
+            $this->Cell(195,3,'(Start from the most recent L&D/training program and include only the relevant L&D/training taken for the last five (5) years for Division Chief/Executive/Managerial positions)','LBR',1,'L',true);
+
+            $this->SetFont('Arial','',5);
+            $this->SetTextColor(0,0,0);
+            $this->SetFillColor(194,194,194);
+            $this->Cell(80,1,"",'TL',0,'L',true);            
+            $this->Cell(30,1,"",'TL',0,'L',true);
+            $this->Cell(15,1,"",'TL',0,'L',true);
+            $this->Cell(15,1,"",'TL',0,'L',true);
+            $this->Cell(55,1,"",'TLR',1,'L',true);    
+            
+            $this->Cell(80,2,"",'L',0,'L',true);            
+            $this->Cell(30,2,"INCLUSIVE DATES OF",'L',0,'C',true);
+            $this->Cell(15,2,"",'L',0,'L',true);
+            $this->SetFont('Arial','',4);
+            $this->Cell(15,2,"Type of LD",'L',0,'C',true);
+            $this->Cell(55,2,"",'LR',1,'L',true);       
+
+            $this->SetFont('Arial','',5);
+            $this->Cell(80,3,"30.       TITLE OF LEARNING AND DEVELOPMENT INTERVENTIONS/TRAINING PROGRAMS",'L',0,'L',true);
+            $this->Cell(30,3,"ATTENDANCE",'LR',0,'C',true); 
+            $this->Cell(15,3,"NUMBER OF",'L',0,'C',true); 
+            $this->SetFont('Arial','',4);
+            $this->Cell(15,3,"( Managerial/",'L',0,'C',true); 
+            $this->SetFont('Arial','',5);
+            $this->Cell(55,3," CONDUCTED/ SPONSORED BY",'LR',1,'C',true);            
+            
+            $this->SetFont('Arial','',5);
+            $this->Cell(80,2," (Write in full)",'L',0,'C',true);           
+            $this->Cell(30,2,"(mm/dd/yyyy)",'LBR',0,'C',true);          
+            $this->Cell(15,2,"HOURS",'LR',0,'C',true);
+            $this->SetFont('Arial','',4);
+            $this->Cell(15,2,"Supervisory/",'L',0,'C',true);
+            $this->Cell(55,2,"(Write in full)",'LR',1,'C',true);
+            
+            $this->SetFont('Arial','',5);
+            $this->Cell(80,3,"",'BL',0,'C',true);            
+            $this->Cell(15,3,"From",'BTL',0,'C',true);
+            $this->Cell(15,3,"To",'BTL',0,'C',true);
+            $this->Cell(15,3," ",'BL',0,'C',true);            
+            $this->SetFont('Arial','',4);
+            $this->Cell(15,3,"Technical/etc) ",'BL',0,'C',true);            
+            $this->Cell(55,3,"",'LBR',1,'C',true);
+
+            $title_of_ld = array();
+            $ld_from = array();
+            $ld_to = array();
+            $o_to = array();
+            $ld_hours = array();
+            $type_of_ld = array();
+            $conducted = array();
+
+            $stmt = $db->query("SELECT * FROM learning_dev WHERE emp_no='$user_id' AND is_added='1' ORDER BY ld_from DESC");            
+            while($data = $stmt->fetch(PDO::FETCH_OBJ)){
+                $title = $data->title_of_ld;
+                $ldfrom = $data->ld_from;
+                $ldto = $data->ld_to;
+                $ldhours = $data->ld_hours;
+                $ldtype = $data->type_of_ld;
+                $ldconduct = $data->conducted;
+
+                array_push($title_of_ld,$title);
+                array_push($ld_from,$ldfrom);
+                array_push($ld_to,$ldto);
+                array_push($ld_hours,$ldhours);
+                array_push($type_of_ld,$ldtype);
+                array_push($conducted,$ldconduct);
+            }
+            $count = count($title_of_ld);
+        
+            for($x = $count; $x < 50; $x++){
+                $title_of_ld[$x]="";
+                $ld_from[$x]=null;
+                $ld_to[$x]=null;
+                $ld_hours[$x]="";
+                $type_of_ld[$x]="";
+                $conducted[$x]="";
+            }
+
+            for($y = 20; $y < 50; $y++){                
+                $this->SetFont('Arial','',6);
+                $this->SetTextColor(0,0,255);
+
+                $titleld = strlen($title_of_ld[$y]);
+                //echo $course_len;
+                if($titleld > 90 ){
+                    $this->SetFont('Arial','',5);                    
+                }
+                if($titleld > 140 ){
+                    $this->SetFont('Arial','',4);                    
+                }
+                if($titleld > 185 ){
+                    $this->SetFont('Arial','',3);                    
+                }
+                if($titleld < 62 ){
+                    $this->Cell(80,8,strtoupper($title_of_ld[$y]),'BL',0,'C');                    
+                }else{
+                    //$this->SetFont('Arial','',6);
+                    $this->MultiCell(80,4,strtoupper($title_of_ld[$y]),'BL','C');
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 80, $b-8);
+                }
+                
+                $this->SetFont('Arial','',6);
+                //$this->Cell(80,8,strtoupper($title_of_ld[$y]),'BL',0,'C');
+                if($count<=$y){
+                    $this->Cell(15,8,"",'BL',0,'L');
+                }else{                     
+                                        
+                    if($ld_from[$y]=="N/A"){
+                        $this->Cell(15,8,$ld_from[$y],'BTL',0,'C');
+                    }else{
+                        $date=date_create($ld_from[$y]);                
+                        $this->Cell(15,8,date_format($date,"m/d/Y"),'BTL',0,'C');
+                    }
+                    
+                }            
+                if($count<=$y){
+                    $this->Cell(15,8,"",'BL',0,'L');
+                }else{                     
+                    
+                    if($ld_to[$y]=="N/A"){
+                        $this->Cell(15,8,$ld_to[$y],'BTL',0,'C');
+                    }else{
+                        $date=date_create($ld_to[$y]);                
+                        $this->Cell(15,8,date_format($date,"m/d/Y"),'BTL',0,'C');
+                    }
+
+                } 
+                $this->Cell(15,8,strtoupper($ld_hours[$y]),'BL',0,'C');
+                $this->Cell(15,8,strtoupper($type_of_ld[$y]),'BL',0,'C');  
+                
+                $conduct = strlen($conducted[$y]);
+                //echo $course_len;
+                $this->SetFont('Arial','',6);
+                if($conduct > 88 ){
+                    $this->SetFont('Arial','',4);                    
+                }
+                if($conduct > 118 ){
+                    $this->SetFont('Arial','',3.5);                    
+                }
+                if($conduct > 150 ){
+                    $this->SetFont('Arial','',2.5);                    
+                }
+                if($conduct < 44 ){
+                    $this->Cell(55,8,strtoupper($conducted[$y]),'LBR',1,'C');                    
+                }else{
+                    //$this->SetFont('Arial','',6);
+                    $this->MultiCell(55,4,strtoupper($conducted[$y]),'LBR','C');
+                    //$a = $this->GetX();
+                    // $b = $this->GetY();
+                    //$this->SetXY($a + 205, $b-8);
+                }
+                //$this->Cell(55,8,strtoupper($conducted[$y]),'LBR',1,'C');
+            }
+
+        } 
+    }
 
     //Cell with horizontal scaling if text is too wide
     function CellFit($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $scale=false, $force=true){
@@ -3517,6 +3692,14 @@ $pdf->fourthpage($db);
 if($workExAddPage==1){
     $pdf->Addpage('P','Legal',0);
     $pdf->workExperienceSeparatePage($db);
+    //$pdf->fourthpage($db);
+    //$pdf->continuesheet();
+}
+
+/****** ADD SEPARATE PAGE FOR TRAINING/LEARNING DEVELOPMENT********/
+if($trainingAddPage==1){
+    $pdf->Addpage('P','Legal',0);
+    $pdf->trainingSeparatePage($db);
     //$pdf->fourthpage($db);
     //$pdf->continuesheet();
 }
