@@ -1176,7 +1176,7 @@ class myPDF extends FPDF{
                 }
 
                 $this->SetFont('Arial','',5);
-                //$this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
+                ///$this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
                 $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
                 
                 if(strlen($data->e_scholarship) > 16 ){
