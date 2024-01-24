@@ -100,7 +100,7 @@
                         </div>                    
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" name="rejectEmpInfo" class="btn btn-danger" >Reject</button>
+                            <button type="submit" name="rejectEmpInfo" class="btn btn-danger" >Disapprove</button>
                             <button type="submit" name="approveEmpInfo" class="btn btn-success">Approve</button>
                         </div>
                     </form>
