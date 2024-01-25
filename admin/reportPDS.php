@@ -3110,7 +3110,20 @@ class myPDF extends FPDF{
 
                 $place_only = substr($data->gov_id_date,13,strlen($data->gov_id_date));
 
-                $this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L'); 
+                $issuance = strlen($display_date.$place_only);
+                //echo $course_len;
+                if($issuance < 29 ){
+                    $this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L');                  
+                }else{
+                    $this->SetFont('Arial','',4);
+                    $this->Cell(40,1,$display_date.' - '.$place_only,'R',0,'L');                  
+                    //$this->MultiCell(60,4,strtoupper($department[$y]),'BL','C');
+                    $a = $this->GetX();
+                    $b = $this->GetY();
+                    $this->SetXY($a + 73, $b-2);
+                }
+
+                //$this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L'); 
                 $this->Cell(4,2,"",0,0,'L');   
                 $this->Cell(68,2,strtoupper(date("F d, Y")),'L',0,'C');
                 $this->Cell(4,2,"",'L',0,'C');

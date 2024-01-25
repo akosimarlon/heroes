@@ -645,7 +645,7 @@ if(isset($_POST['registerEducational'])){
         $educ_field = "sec_completed_fileds";
     }
     if($educ_level == "vocational"){
-        $educ_field = "voc_completed_fileds";  
+        $educ_field = "voc_completed_fileds";   
     }
     if($educ_level == "college"){
         $educ_field = "col_completed_fileds";
