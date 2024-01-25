@@ -3120,9 +3120,9 @@ class myPDF extends FPDF{
                     //$this->MultiCell(60,4,strtoupper($department[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
-                    $this->SetXY($a + 73, $b-2);
+                    $this->SetXY($a + 64, $b-2);
                 }
-                
+
                 $this->SetFont('Arial','',7);
                 //$this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L'); 
                 $this->Cell(4,2,"",0,0,'L');   
