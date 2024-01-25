@@ -3122,7 +3122,8 @@ class myPDF extends FPDF{
                     $b = $this->GetY();
                     $this->SetXY($a + 73, $b-2);
                 }
-
+                
+                $this->SetFont('Arial','',7);
                 //$this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L'); 
                 $this->Cell(4,2,"",0,0,'L');   
                 $this->Cell(68,2,strtoupper(date("F d, Y")),'L',0,'C');
