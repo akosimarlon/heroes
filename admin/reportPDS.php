@@ -3120,7 +3120,7 @@ class myPDF extends FPDF{
                     //$this->MultiCell(60,4,strtoupper($department[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
-                    $this->SetXY($a + 64, $b-2);
+                    $this->SetXY($a + 40, $b-2);
                 }
 
                 $this->SetFont('Arial','',7);
