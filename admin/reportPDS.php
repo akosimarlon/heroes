@@ -3116,11 +3116,11 @@ class myPDF extends FPDF{
                     $this->Cell(40,2,$display_date.' - '.$place_only,'R',0,'L');                  
                 }else{
                     $this->SetFont('Arial','',4);
-                    $this->Cell(40,1,$display_date.' - '.$place_only,'R',0,'L');                  
+                    $this->MultiCell(40,1,$display_date.' - '.$place_only,'R',0,'L');                  
                     //$this->MultiCell(60,4,strtoupper($department[$y]),'BL','C');
                     $a = $this->GetX();
                     $b = $this->GetY();
-                    $this->SetXY($a + 40, $b-2);
+                    $this->SetXY($a + 73, $b-2);
                 }
 
                 $this->SetFont('Arial','',7);
