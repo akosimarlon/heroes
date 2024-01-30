@@ -752,10 +752,9 @@ class myPDF extends FPDF{
                 $child_len = strlen($child[0]);
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
-                }
-                              
-                $this->Cell(45,5,strtoupper($child[0]),1,0,'L');
-                
+                }                              
+                $this->Cell(45,5,strtoupper(utf8_decode($child[0])),1,0,'L');
+                $this->SetFont('Arial','',6);
                 
                 // if($course_name < 35 ){
                 //     $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
@@ -791,7 +790,13 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[1]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[1])),1,0,'L');
+                $this->SetFont('Arial','',6);
+                
                                
                 if($count<=1){
                     $this->SetTextColor(0,0,255);                                   
@@ -817,7 +822,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[2]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[2])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=2){
                     $this->SetTextColor(0,0,255);                                   
@@ -843,7 +853,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[3]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[3])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=3){
                     $this->SetTextColor(0,0,255);                                   
@@ -869,7 +884,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[4]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[4])),1,0,'L');
+                $this->SetFont('Arial','',6);
                 
                 if($count<=4){
                     $this->SetTextColor(0,0,255);                                   
@@ -895,7 +915,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[5]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[5])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=5){
                     $this->SetTextColor(0,0,255);                                   
@@ -921,7 +946,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[6]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[6])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=6){
                     $this->SetTextColor(0,0,255);                                   
@@ -954,7 +984,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[7]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[7])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=7){
                     $this->SetTextColor(0,0,255);                                   
@@ -980,7 +1015,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[8]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[8])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=8){
                     $this->SetTextColor(0,0,255);                                   
@@ -1006,7 +1046,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[9]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[9])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=9){
                     $this->SetTextColor(0,0,255);                                   
@@ -1033,7 +1078,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[10]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[10])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=10){
                     $this->SetTextColor(0,0,255);                                   
@@ -1060,7 +1110,12 @@ class myPDF extends FPDF{
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
                 $this->SetTextColor(0,0,255);
+                $child_len = strlen($child[11]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }                              
                 $this->Cell(45,5,strtoupper(utf8_decode($child[11])),1,0,'L');
+                $this->SetFont('Arial','',6);
                                
                 if($count<=11){
                     $this->SetTextColor(0,0,255);                                   
