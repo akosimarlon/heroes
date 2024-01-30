@@ -2257,7 +2257,7 @@ class myPDF extends FPDF{
                 if($titleld > 185 ){
                     $this->SetFont('Arial','',3);                    
                 }
-                if($titleld < 62 ){
+                if($titleld <= 62 ){
                     $this->Cell(80,8,strtoupper($title_of_ld[$y]),'BL',0,'C');                    
                 }else{
                     //$this->SetFont('Arial','',6);
