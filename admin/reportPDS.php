@@ -1420,7 +1420,7 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',3);
                 }
                 //$this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
-                if($course_name < 40 ){
+                if($course_name < 41 ){
                     $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',5);
