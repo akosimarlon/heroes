@@ -3573,7 +3573,7 @@ class myPDF extends FPDF{
             }
             $count = count($title_of_ld);
         
-            for($x = $count; $x < 50; $x++){
+            for($x = $count; $x < 60; $x++){
                 $title_of_ld[$x]="";
                 $ld_from[$x]=null;
                 $ld_to[$x]=null;
