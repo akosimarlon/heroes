@@ -747,9 +747,25 @@ class myPDF extends FPDF{
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
-                $this->SetTextColor(0,0,255);                
+                $this->SetTextColor(0,0,255);  
+                
+                $child_len = strlen($child[0]);
+                if($child_len > 34 ){
+                    $this->SetFont('Arial','',4);
+                }
+                              
                 $this->Cell(45,5,strtoupper($child[0]),1,0,'L');
                 
+                
+                // if($course_name < 35 ){
+                //     $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                // }else{                    
+                //     $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                //     $x = $this->GetX();
+                //     $y = $this->GetY();
+                //     $this->SetXY($x + 90, $y-6);
+                // }
+
                 if($count<=0){
                     $this->SetTextColor(0,0,255);                                   
                     $this->Cell(25,5,"",1,1,'C');
