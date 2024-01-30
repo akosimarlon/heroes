@@ -2647,7 +2647,7 @@ class myPDF extends FPDF{
                     $this->SetTextColor(0,0,0);                
                     $this->Cell(10,4,"Yes",0, 0);
 
-                    if($data->q37 == "male")
+                    if($data->q37 == "no")
                     $check = "3"; else $check = "";
                     $this->SetFont('ZapfDingbats','', 12);
                     $this->SetTextColor(0,0,255);
