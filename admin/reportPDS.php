@@ -3573,7 +3573,7 @@ class myPDF extends FPDF{
             }
             $count = count($title_of_ld);
         
-            for($x = $count; $x < 60; $x++){
+            for($x = $count; $x < 56; $x++){
                 $title_of_ld[$x]="";
                 $ld_from[$x]=null;
                 $ld_to[$x]=null;
@@ -3582,7 +3582,7 @@ class myPDF extends FPDF{
                 $conducted[$x]="";
             }
 
-            for($y = 20; $y < 60; $y++){                
+            for($y = 20; $y < 56; $y++){                
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);
 
