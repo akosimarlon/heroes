@@ -2439,7 +2439,7 @@
                                             </thead>                            
                                             <tbody>
                                                         <?php
-                                                            $address = "SELECT * FROM children WHERE emp_no='$user_id'";
+                                                            $address = "SELECT * FROM children WHERE emp_no='$user_id' ORDER BY child_dob DESC";
                                                             $address_run = mysqli_query($con,$address);
                                                             
                                                             if(mysqli_num_rows($address_run) > 0 ){

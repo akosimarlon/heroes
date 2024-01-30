@@ -691,7 +691,7 @@ class myPDF extends FPDF{
             $user_id = $_GET['emp_no'];  
             $child = array();
             $dob = array();
-            $stmt1 = $db->query("SELECT * FROM children WHERE emp_no='$user_id'");            
+            $stmt1 = $db->query("SELECT * FROM children WHERE emp_no='$user_id' ORDER BY child_dob DESC");            
             while($data1 = $stmt1->fetch(PDO::FETCH_OBJ)){
                 $name = $data1->child_name;
                 $bday = $data1->child_dob;
