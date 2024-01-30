@@ -3582,7 +3582,7 @@ class myPDF extends FPDF{
                 $conducted[$x]="";
             }
 
-            for($y = 20; $y < 50; $y++){                
+            for($y = 20; $y < 60; $y++){                
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,255);
 
