@@ -1210,7 +1210,7 @@ class myPDF extends FPDF{
             
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
-                $this->Cell(45,6,"ELEMENTARY",1,0,'C',true);
+                $this->Cell(45,8,"ELEMENTARY",1,0,'C',true);
                 $this->SetTextColor(0,0,255);
                 $this->SetFont('Arial','',5);
 
@@ -1219,44 +1219,44 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',4);
                 }
                 if($course_name < 40 ){
-                    $this->Cell(45,6,strtoupper($data->e_nameofschool),1,0,'C');
+                    $this->Cell(45,8,strtoupper($data->e_nameofschool),1,0,'C');
                 }else{                    
-                    $this->MultiCell(45,3,strtoupper($data->e_nameofschool),1,'C');
+                    $this->MultiCell(45,4,strtoupper($data->e_nameofschool),1,'C');
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 90, $y-6);
+                    $this->SetXY($x + 90, $y-8);
                 }
                 
                 $this->SetFont('Arial','',5);
-                $this->Cell(40,6,strtoupper($data->e_course),1,0,'C');
-                $this->Cell(10,6,strtoupper($data->e_from),1,0,'C');
-                $this->Cell(10,6,strtoupper($data->e_to),1,0,'C');
+                $this->Cell(40,8,strtoupper($data->e_course),1,0,'C');
+                $this->Cell(10,8,strtoupper($data->e_from),1,0,'C');
+                $this->Cell(10,8,strtoupper($data->e_to),1,0,'C');
 
                 //HIGHEST LEVEL / UNITS EARNED
                 if(strlen($data->e_level) > 29 ){
                     $this->SetFont('Arial','',3);
                 }
                 if(strlen($data->e_level) < 10 ){ 
-                    $this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
+                    $this->Cell(15,8,strtoupper($data->e_level),1,0,'C');
                 }else{
                     //$this->SetFont('Arial','',4); 
-                    $this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
+                    $this->MultiCell(15,4,strtoupper($data->e_level),1,'C');   
                     $x = $this->GetX();
                     $y = $this->GetY();
-                    $this->SetXY($x + 165, $y-6);                 
+                    $this->SetXY($x + 165, $y-8);                 
                 }
 
                 $this->SetFont('Arial','',5);
                 ///$this->Cell(15,6,strtoupper($data->e_level),1,0,'C');
-                $this->Cell(15,6,strtoupper($data->e_year),1,0,'C');
+                $this->Cell(15,8,strtoupper($data->e_year),1,0,'C');
                 
                 if(strlen($data->e_scholarship) > 16 ){
                     $this->SetFont('Arial','',3);
                 }
                 if(strlen($data->e_scholarship) < 12 ){
-                    $this->Cell(15,6,strtoupper($data->e_scholarship),1,1,'C');
+                    $this->Cell(15,8,strtoupper($data->e_scholarship),1,1,'C');
                 }else{
-                    $this->MultiCell(15,3,strtoupper($data->e_scholarship),1,'C');
+                    $this->MultiCell(15,4,strtoupper($data->e_scholarship),1,'C');
                 }
 
                 
