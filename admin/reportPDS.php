@@ -57,29 +57,29 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'2. SURNAME','L',0,'L',true);
+                $this->Cell(45,6,'2. SURNAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(150,5,strtoupper(utf8_decode($data->lastname)),1,1,'L');
+                $this->Cell(150,6,strtoupper(utf8_decode($data->lastname)),1,1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'    FIRST NAME','L',0,'L',true);
+                $this->Cell(45,6,'    FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(110,5,strtoupper(utf8_decode($data->firstname)),1,0,'L');
+                $this->Cell(110,6,strtoupper(utf8_decode($data->firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(30,5,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
+                $this->Cell(30,6,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(10,5,strtoupper($data->exname),'TRB',1,'L',true);
+                $this->Cell(10,6,strtoupper($data->exname),'TRB',1,'L',true);
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'    MIDDLE NAME','L',0,'L',true);
+                $this->Cell(45,6,'    MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(150,5,strtoupper(utf8_decode($data->middlename)),1,1,'L');
+                $this->Cell(150,6,strtoupper(utf8_decode($data->middlename)),1,1,'L');
                 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
