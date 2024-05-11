@@ -433,13 +433,13 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'8. WEIGHT (kg)',1,0,'L',true);
+                $this->Cell(45,6,'8. WEIGHT (kg)',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->weight,1,0,'L');
+                $this->Cell(40,6,$data->weight,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(40,5,'ZIP CODE','LBR',0,'C',true);
+                $this->Cell(40,6,'ZIP CODE','LBR',0,'C',true);
                 
             }
         }
@@ -452,7 +452,7 @@ class myPDF extends FPDF{
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){  
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->r_zip),'BR',1,'C');
+                $this->Cell(70,6,strtoupper($data->r_zip),'BR',1,'C');
             }
         } 
     }
