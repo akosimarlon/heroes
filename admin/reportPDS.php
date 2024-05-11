@@ -613,13 +613,13 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'12. PHILHEALTH NO.',1,0,'L',true);
+                $this->Cell(45,6,'12. PHILHEALTH NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->philhealth_no,1,0,'L');
+                $this->Cell(40,6,$data->philhealth_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(40,5,'ZIP CODE','LBR',0,'C',true);
+                $this->Cell(40,6,'ZIP CODE','LBR',0,'C',true);
                 
             }
         }
@@ -632,7 +632,7 @@ class myPDF extends FPDF{
             while($data = $stmt->fetch(PDO::FETCH_OBJ)){  
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->p_zip),'BR',1,'C');
+                $this->Cell(70,6,strtoupper($data->p_zip),'BR',1,'C');
             }
         } 
     }
@@ -647,39 +647,39 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'13. SSS NO.',1,0,'L',true);
+                $this->Cell(45,6,'13. SSS NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->sss_no,1,0,'L');
+                $this->Cell(40,6,$data->sss_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(40,5,'19. TELEPHONE NO.',1,0,'L',true);
+                $this->Cell(40,6,'19. TELEPHONE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->telephone),'BR',1,'L');
+                $this->Cell(70,6,strtoupper($data->telephone),'BR',1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'14. TIN NO.',1,0,'L',true);
+                $this->Cell(45,6,'14. TIN NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->tin_no,1,0,'L');
+                $this->Cell(40,6,$data->tin_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(40,5,'20. MOBILE NO.',1,0,'L',true);
+                $this->Cell(40,6,'20. MOBILE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,strtoupper($data->mobile),'BR',1,'L');
+                $this->Cell(70,6,strtoupper($data->mobile),'BR',1,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'15. AGENCY EMPLOYEE NO.',1,0,'L',true);
+                $this->Cell(45,6,'15. AGENCY EMPLOYEE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(40,5,$data->emp_no,1,0,'L');
+                $this->Cell(40,6,$data->emp_no,1,0,'L');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(40,5,'21. E-MAIL ADDRESS (if any)',1,0,'L',true);
+                $this->Cell(40,6,'21. E-MAIL ADDRESS (if any)',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
-                $this->Cell(70,5,$data->email,'BR',1,'L');
+                $this->Cell(70,6,$data->email,'BR',1,'L');
                 
             }
         }
