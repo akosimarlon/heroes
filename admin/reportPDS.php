@@ -717,33 +717,33 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,"22. SPOUSE'S SURNAME",'TL',0,'L',true);
+                $this->Cell(45,6,"22. SPOUSE'S SURNAME",'TL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->spouse_lastname)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->spouse_lastname)),1,0,'L');
                
                 $this->SetFont('Arial','',4.5);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(45,5,'23. NAME of CHILDREN  (Write full name and list all)',1,0,'L',true);
+                $this->Cell(45,6,'23. NAME of CHILDREN  (Write full name and list all)',1,0,'L',true);
                 
                 $this->SetFont('Arial','',4.5);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(25,5,'DATE OF BIRTH (mm/dd/yyyy) ',1,1,'C',true);
+                $this->Cell(25,6,'DATE OF BIRTH (mm/dd/yyyy) ',1,1,'C',true);
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
+                $this->Cell(45,6,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(40,5,strtoupper(utf8_decode($data->spouse_firstname)),1,0,'L');
+                $this->Cell(40,6,strtoupper(utf8_decode($data->spouse_firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(30,5,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
+                $this->Cell(30,6,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(10,5,strtoupper($data->spouse_exname),'TRB',0,'L',true);
+                $this->Cell(10,6,strtoupper($data->spouse_exname),'TRB',0,'L',true);
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -753,7 +753,7 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[0])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[0])),1,0,'L');
                 $this->SetFont('Arial','',6);
                 
                 // if($course_name < 35 ){
@@ -767,15 +767,15 @@ class myPDF extends FPDF{
 
                 if($count<=0){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[0]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
                            
@@ -783,9 +783,9 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      MIDDLE NAME','L',0,'L',true);
+                $this->Cell(45,6,'      MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->spouse_middlename)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->spouse_middlename)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -794,30 +794,30 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[1])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[1])),1,0,'L');
                 $this->SetFont('Arial','',6);
                 
                                
                 if($count<=1){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[1]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      OCCUPATION',1,0,'L',true);
+                $this->Cell(45,6,'      OCCUPATION',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_occupation),1,0,'L');
+                $this->Cell(80,6,strtoupper($data->spouse_occupation),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -826,29 +826,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[2])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[2])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=2){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[2]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      EMPLOYER/BUSINESS NAME',1,0,'L',true);
+                $this->Cell(45,6,'      EMPLOYER/BUSINESS NAME',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_employer),1,0,'L');
+                $this->Cell(80,6,strtoupper($data->spouse_employer),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -857,29 +857,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[3])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[3])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=3){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[3]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      BUSINESS ADDRESS',1,0,'L',true);
+                $this->Cell(45,6,'      BUSINESS ADDRESS',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_buss_add),1,0,'L');
+                $this->Cell(80,6,strtoupper($data->spouse_buss_add),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -888,29 +888,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[4])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[4])),1,0,'L');
                 $this->SetFont('Arial','',6);
                 
                 if($count<=4){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[4]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      TELEPHONE NO.',1,0,'L',true);
+                $this->Cell(45,6,'      TELEPHONE NO.',1,0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper($data->spouse_buss_tel),1,0,'L');
+                $this->Cell(80,6,strtoupper($data->spouse_buss_tel),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -919,29 +919,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[5])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[5])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=5){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[5]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 } 
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,"24. FATHER'S SURNAME",'TL',0,'L',true);
+                $this->Cell(45,6,"24. FATHER'S SURNAME",'TL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->father_lastname)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->father_lastname)),1,0,'L');
                
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -950,36 +950,36 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[6])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[6])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=6){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[6]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
+                $this->Cell(45,6,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(40,5,strtoupper(utf8_decode($data->father_firstname)),1,0,'L');
+                $this->Cell(40,6,strtoupper(utf8_decode($data->father_firstname)),1,0,'L');
 
                 $this->SetFont('Arial','',6);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(30,5,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
+                $this->Cell(30,6,'NAME EXTENSION (JR., SR)  ','TLB',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(10,5,strtoupper($data->father_exname),'TRB',0,'L',true);
+                $this->Cell(10,6,strtoupper($data->father_exname),'TRB',0,'L',true);
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -988,29 +988,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[7])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[7])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=7){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[7]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      MIDDLE NAME','L',0,'L',true);
+                $this->Cell(45,6,'      MIDDLE NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->father_middlename)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->father_middlename)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -1019,29 +1019,29 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[8])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[8])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=8){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[8]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,"25. MOTHER'S MAIDEN NAME",'TL',0,'L',true);
+                $this->Cell(45,6,"25. MOTHER'S MAIDEN NAME",'TL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,'',1,0,'L',true);
+                $this->Cell(80,6,'',1,0,'L',true);
                
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -1050,20 +1050,20 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[9])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[9])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=9){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[9]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
@@ -1071,9 +1071,9 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      SURNAME','L',0,'L',true);
+                $this->Cell(45,6,'      SURNAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_lastname)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->mother_lastname)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -1082,20 +1082,20 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[10])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[10])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=10){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[10]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
 
@@ -1103,9 +1103,9 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      FIRST NAME','L',0,'L',true);
+                $this->Cell(45,6,'      FIRST NAME','L',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_firstname)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->mother_firstname)),1,0,'L');
 
                 //###### CHILD ############
                 $this->SetFont('Arial','',6);                
@@ -1114,34 +1114,34 @@ class myPDF extends FPDF{
                 if($child_len > 34 ){
                     $this->SetFont('Arial','',4);
                 }                              
-                $this->Cell(45,5,strtoupper(utf8_decode($child[11])),1,0,'L');
+                $this->Cell(45,6,strtoupper(utf8_decode($child[11])),1,0,'L');
                 $this->SetFont('Arial','',6);
                                
                 if($count<=11){
                     $this->SetTextColor(0,0,255);                                   
-                    $this->Cell(25,5,"",1,1,'C');
+                    $this->Cell(25,6,"",1,1,'C');
                 }else{
                     if($dob[0]=="N/A"){
                         $this->SetTextColor(0,0,255);
-                        $this->Cell(25,5,$dob[0],1,1,'L');
+                        $this->Cell(25,6,$dob[0],1,1,'L');
                     }else{
                         $this->SetTextColor(0,0,255);               
                         $date2=date_create($dob[11]);                
-                        $this->Cell(25,5,date_format($date2,"m/d/Y"),1,1,'L');
+                        $this->Cell(25,6,date_format($date2,"m/d/Y"),1,1,'L');
                     }
                 }
                 
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'      MIDDLE NAME','BL',0,'L',true);
+                $this->Cell(45,6,'      MIDDLE NAME','BL',0,'L',true);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(80,5,strtoupper(utf8_decode($data->mother_middlename)),1,0,'L');
+                $this->Cell(80,6,strtoupper(utf8_decode($data->mother_middlename)),1,0,'L');
 
                 $this->SetFont('Arial','I',6);
                 $this->SetTextColor(255,0,0);
                 $this->SetFillColor(194,194,194);                
-                $this->Cell(70,5,'(Continue on separate sheet if necessary)',1,1,'C',true);         
+                $this->Cell(70,6,'(Continue on separate sheet if necessary)',1,1,'C',true);         
 
                
             }
