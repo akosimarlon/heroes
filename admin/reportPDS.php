@@ -159,7 +159,7 @@ class myPDF extends FPDF{
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'4. PLACE OF BIRTH',1,0,'L',true);
+                $this->Cell(45,6,'4. PLACE OF BIRTH',1,0,'L',true);
                 $this->SetTextColor(0,0,255);                
                 //$this->Cell(40,5,strtoupper($data->pob),1,0,'C');
 
@@ -169,10 +169,10 @@ class myPDF extends FPDF{
                     $this->SetFont('Arial','',3);
                 }
                 if($pobLen < 24 ){ 
-                    $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+                    $this->Cell(40,6,strtoupper($data->pob),1,0,'C');
                 }else{
                     $this->SetFont('Arial','',4); 
-                    $this->Cell(40,5,strtoupper($data->pob),1,0,'C');
+                    $this->Cell(40,6,strtoupper($data->pob),1,0,'C');
                     //$this->MultiCell(15,3,strtoupper($data->e_level),1,'C');   
                     //$x = $this->GetX();
                     //$y = $this->GetY();
@@ -182,12 +182,12 @@ class myPDF extends FPDF{
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(50,5,'please indicate the details. ','LR',0,'L',true);
-                $this->Cell(60,5,"Pls. indicate country:", "R",1,'C');
+                $this->Cell(50,6,'please indicate the details. ','LR',0,'L',true);
+                $this->Cell(60,6,"Pls. indicate country:", "R",1,'C');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(45,5,'5. SEX',1,0,'L',true);
+                $this->Cell(45,6,'5. SEX',1,0,'L',true);
                 
                 
                 if($data->sex == "male")
@@ -195,33 +195,33 @@ class myPDF extends FPDF{
                 $this->SetFont('ZapfDingbats','', 12);
                 $this->SetTextColor(0,0,255);
                 //$this->Cell(5);
-                $this->Cell(1,5," ".$check, 'B', 0);
+                $this->Cell(1,6," ".$check, 'B', 0);
                 $this->SetTextColor(0,0,0);
                 $this->SetFont('ZapfDingbats','', 10);
-                $this->Cell(4,5, "r",'B', 0);
+                $this->Cell(4,6, "r",'B', 0);
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);                ;
-                $this->Cell(10,5,"Male",'B', 0);
+                $this->Cell(10,6,"Male",'B', 0);
                 
                 if($data->sex == "female")
                 $check = "3"; else $check = "";
                 $this->SetFont('ZapfDingbats','', 12);
                 $this->SetTextColor(0,0,255);
-                $this->Cell(1,5," ".$check, 'B', 0);
+                $this->Cell(1,6," ".$check, 'B', 0);
                 $this->SetTextColor(0,0,0);
                 $this->SetFont('ZapfDingbats','', 10);
-                $this->Cell(4,5, "r",'B', 0);
+                $this->Cell(4,6, "r",'B', 0);
                 $this->SetFont('Arial','',7);
                 $this->SetTextColor(0,0,0);                
-                $this->Cell(20,5,"Female","RB", 0,1);
+                $this->Cell(20,6,"Female","RB", 0,1);
 
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
-                $this->Cell(50,5,'','LRB',0,'L',true);
+                $this->Cell(50,6,'','LRB',0,'L',true);
 
                 $this->SetTextColor(0,0,255);
-                $this->Cell(60,5,strtoupper($data->country_name), "RB",1,'C');
+                $this->Cell(60,6,strtoupper($data->country_name), "RB",1,'C');
 
                 $this->SetTextColor(0,0,0);
                 $this->SetFillColor(194,194,194);
